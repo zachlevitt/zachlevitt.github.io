@@ -1,47 +1,93 @@
-body {
-  min-height: 75rem; /* Can be removed; just added for demo purposes */
-}
-
 .navbar {
   margin-bottom: 0;
 }
 
 .jumbotron {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  margin-bottom: 0;
   background-color: #fff;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.button-group{
+  margin: auto;
+  width: 100%;
+  align-items: center;
+}
+.button {
+  padding: 5px 10px 5px 10px;
+  background-color: #e7e7e7;
+  border-color: white;
+  border-width: 1px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  width: 33%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  background-color: #ffffff; /* Green */
+  color: white;
+}
+
+.button a {
+  color: black;
+}
+
+.button a:hover {
+  text-decoration: none;
+}
+
+.jumbotron-heading {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.jumbotron .container {
+  max-width: 500px;
+  text-align: left;
+}
+
+.jumbotron p {
+  max-width: 100%;
+}
+
+.self {
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
+.intro-text {
+  margin-top: 15px;
 }
 
 .album {
-  min-height: 50rem; /* Can be removed; just added for demo purposes */
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   background-color: #f7f7f7;
 }
 
+.album .container {
+  max-width: 500px;
+}
+
 .card {
-  float: left;
-  width: 33.333%;
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+  height: 350px;
 }
 
-.card > img {
+.card img {
+  margin-bottom: 10px;
+  height: 275px;
+  width: 100%;
+}
+
+.card > a {
   margin-bottom: .75rem;
+  height: 275px;
 }
 
 .card-text {

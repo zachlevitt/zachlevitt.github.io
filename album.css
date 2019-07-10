@@ -28,7 +28,8 @@
 .button:hover {
   background-color: #ffffff; /* Green */
   color: white;
-  font-weight: bold;
+  border-color: black;
+  border-width: 1px;
 }
 
 .button a {

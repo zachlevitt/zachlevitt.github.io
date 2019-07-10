@@ -28,6 +28,7 @@
 .button:hover {
   background-color: #ffffff; /* Green */
   color: white;
+  font-weight: bold;
 }
 
 .button a {

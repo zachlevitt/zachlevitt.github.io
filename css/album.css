@@ -4,8 +4,8 @@
 
 .jumbotron {
   background-color: #fff;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .button-group{
@@ -55,16 +55,8 @@
   max-width: 100%;
 }
 
-.self {
-  max-width: 100%;
-  margin-bottom: 10px;
-}
-
 .jumbotron p:last-child {
   margin-bottom: 0;
-}
-.intro-text {
-  margin-top: 15px;
 }
 
 .album {
@@ -76,25 +68,25 @@
 }
 
 .card {
-  padding: .75rem;
-  margin-bottom: 2rem;
   border: 0;
-  height: 350px;
+  margin-bottom:30px;
+  margin-top: 30px;
 }
 
 .card img {
-  margin-bottom: 10px;
-  height: 275px;
   width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
-.card > a {
-  margin-bottom: .75rem;
-  height: 275px;
-}
 
 .card-text {
   font-size: 85%;
+}
+
+.subhead {
+  font-weight: lighter;
+  line-height: 18px
 }
 
 footer {

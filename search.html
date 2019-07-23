@@ -13,7 +13,8 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/album.css" rel="stylesheet">
+    <link href="album.css" rel="stylesheet">
+    <script src="jquery-3.4.1.min.js"></script>
   </head>
 
   <body>
@@ -21,52 +22,38 @@
     <section class="jumbotron">
       <div class="container">
         
-        <h1 class="jumbotron-heading">Zach Levitt</h1>
-
-        <!--<img class="self" src="zach_levitt.jpeg" alt="Card image cap">-->
-        <div class="intro-text">
-          
-          <p>Hello! I'm a student at Middlebury College studying Computer Science and Geography.</p>
-
-          <p>During Summer 2019, I interned at the <a class="link"  href="https://www.latimes.com/people/zach-levitt" target="_blank">Los Angeles Times</a> with the Graphics and Data Visualization desk</a>.</p>
-
-          <p>Previously, I was a Summer Fellow with the <a class="link" href="https://sites.tufts.edu/vrdi/" target="_blank">Voting Rights Data Institute</a> and interned with the GIS/Graphics team at the <a href="http://www.pvpc.org/" target="_blank">Pioneer Valley Planning Commission</a>.</p>
-
-          <p>Please be in touch via <a href="mailto:levittzach@gmail.com">email</a> or <a href="https://twitter.com/zachwlevitt" target="_blank">Twitter</a>. My resume is <a href="Levitt_Resume.pdf" target="_blank">here</a> and you can view my work below.</p>
+        <h1 class="jumbotron-heading">Zach Levitt 2</h1>
+        <div class="button-group">
+          <button class="button"><a href="http://go.middlebury.edu/zachlevitt/" target="_blank">Portfolio</a></button>
+          <button class="button"><a href="Levitt_Resume.pdf" target="_blank">Resume</a></button>
+          <button class="button"><a href="mailto:levittzach@gmail.com">Contact</a></button>
 
         </div>
-       
+
+        <form>
+          Nieghborhood: <input type="text" name="hood"><br>
+          Factor: <input type="text" name="factor"><br>
+          <input type="submit" value="Submit">
+        </form>
+        
       </div>
-
     </section>
-
-    <hr>
 
     <div class="album text-muted">
       <div class="container">
 
+        <div class="row">
           <div class="card">
-            <h5>Which power companies are the worst polluters?</h5>
-            <p class="subhead">Los Angeles Times, June 2019</p>
-            <p class="card-text">Designed, developed, and produced a custom build for an article on the worst power company polluters. Article includes an interactive search of power companies and visualizations of the top carbon polluters in 2017.</p>
-            <a href="https://www.latimes.com/projects/la-fi-power-companies-ranked-climate-change/" target="_blank"><img src="power_companies.png" alt="Power companies graphic link"></a>
-            
+            <a href="https://www.latimes.com/projects/la-fi-power-companies-ranked-climate-change/" target="_blank"><img src="power.png" alt="Power companies graphic link"></a>
+            <p class="card-text">Designed and developed this custom build for the Los Angeles Times that includes an interactive search of power companies and charts explaining the top polluters in 2017.</p>
           </div>
-          <hr>
           <div class="card">
-            <h5>Midd Music</h5>
-            <p class="subhead">CS312: Software Development, Middlebury College, May 2019</p>
-            <p class="card-text">Worked with fellow Software Development students to develop Midd Music, a Middlebury-specific platform to connect student musicians with music fans on campus. Developed using React.js and Node.js.</p>
             <a href="https://still-spire-36724.herokuapp.com" target="_blank"><img src="mmusic.png" alt="Midd music graphic link"></a>
-            
+            <p class="card-text">Worked with fellow Software Development students to develop Midd Music, a Middlebury-specific platform to connect student musicians with music fans on campus.</p>
           </div>
-          <hr>
           <div class="card">
-            <h5>Congressional Redistricting Rules</h5>
-            <p class="subhead">Voting Rights Data Institute, July 2018</p>
-            <p class="card-text">Developed an interactive visualization of congressional redistricting rules by state. Built application using R Shiny and Leaflet.</p>
             <a href="https://vrdiapps.shinyapps.io/stateRules/" target="_blank"><img src="mggg.jpeg" alt="Card image cap"></a>
-            
+            <p class="card-text">Built an interactive R Shiny app using Leaflet visualizing the congressional redistricting rules by state to provide an accessible guide for the entire country</p>
           </div>
 
           <!--<div class="card">
@@ -94,6 +81,7 @@
             <img data-src="holder.js/100px280/thumb" alt="Card image cap">
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>-->
+        </div>
 
       </div>
     </div>
@@ -101,7 +89,7 @@
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
-          <a href="">Back to top</a>
+          <a href="#">Back to top</a>
         </p>
         <p>&copy; Zach Levitt 2019</p>
       </div>

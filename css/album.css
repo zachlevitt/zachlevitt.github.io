@@ -55,6 +55,10 @@
   max-width: 100%;
 }
 
+.jumbotron a {
+  color: #1E9476;
+}
+
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
@@ -77,6 +81,10 @@
   width: 100%;
   height: auto;
   margin-bottom: 10px;
+}
+
+.card a {
+  color: black;
 }
 
 

@@ -10,6 +10,9 @@
 
 .section-header {
   text-align: center;
+  font-weight: lighter;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .button-group{
@@ -96,7 +99,10 @@
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
 }
+
+
 
 .example:hover .image {
   opacity: 0.40;

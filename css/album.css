@@ -15,11 +15,16 @@ p {
 
 }
 
+h2.about {
+
+}
+
+
 
 h2.about a {
   color: gray;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: lighter;
 }
 
 h2.about a:hover {
@@ -104,9 +109,12 @@ h2.about a:hover {
   margin-top: 50px;
 }
 
+h1.jumbotron-heading {
+    margin-bottom: 50px;
+}
+
 .jumbotron-heading a {
   font-weight: bold;
-  margin-bottom: 15px;
   color: black;
 }
 

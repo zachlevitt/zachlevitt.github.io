@@ -2,7 +2,6 @@
   
 .overlay2 h5 {
   font-size: 14px;
-  margin-top: 10px;
 }
 
 
@@ -10,9 +9,13 @@ p {
   font-size: 12px;
 }
 
+h2.about {
+  font-size: 14px;
+}
+
 .overlay2 {
   float: left;
-  /*height: 100%;*/
+  height: 100%;
   width: 100%!important;
 }
 
@@ -20,8 +23,8 @@ p {
   display: block;
   width: 100%!important;
   margin-bottom: 10px!important;
+  
 }
-
 
 
 }
@@ -37,12 +40,15 @@ h2.about {
 }
 
 h2.about:last-of-type {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .overlay2 h5 {
-  margin-top: 10px;
-  font-weight: 400;
+  font-weight: medium;
+}
+
+hr {
+  border-top: 2px solid rgba(0,0,0,.1);
 }
 
 
@@ -54,8 +60,8 @@ h2.about a {
 }
 
 h2.about a:hover {
-  color: darkblue;
   text-decoration: none;
+  color: gray;
 }
 
 .section-header {
@@ -75,7 +81,7 @@ h2.about a:hover {
   padding: 0px;
   margin: auto;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 h1.jumbotron-heading {
@@ -89,7 +95,7 @@ h1.jumbotron-heading {
 
 .jumbotron-heading a:hover {
   text-decoration: none;
-  color: darkblue;
+  color: gray;
 }
 
 .jumbotron p {
@@ -138,11 +144,26 @@ footer p {
 
 .image {
   display: block;
-  width: 47%;
+  width: 60%;
   margin-left: 0%;
   height: auto;
   margin-bottom: 20px;
   float: left;
+  
+}
+
+.image3 {
+  width: 60%;
+  margin-left: 0%;
+  height: auto;
+  margin-bottom: 20px;
+  float: left;
+  
+}
+
+.image_hp {
+  padding: 5px!important;
+  border: 1px solid lightgray!important;
 }
 
 .image2 {
@@ -156,7 +177,11 @@ footer p {
 
 
 .example .image:hover {
-  opacity: 0.60;
+  opacity: 0.70;
+}
+
+.image_hp:hover {
+  opacity: 0.70;
 }
 
 /*.overlay1 {
@@ -176,12 +201,11 @@ footer p {
   position: relative;
   float: right;
   /*height: 100%;*/
-  width: 47%;
+  width: 37%;
 }
 
 .overlay2 a:hover{
-  text-decoration: none;
-  color: darkblue;
+  text-decoration: underline;
 }
 
 .overlay2 a {
@@ -221,6 +245,7 @@ footer p {
 
 .card-text {
   font-weight: 300;
+  font-size: 14px;
   color: gray;
 }
 
@@ -230,10 +255,14 @@ footer p {
 }
 
 .card-text2 a {
-  font-weight: 300;
   color: black;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
+}
+
+.card-text2 a:hover {
+  text-decoration: none;
+  color: gray;
 }
 
 .subhead {
@@ -253,4 +282,42 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 33.3%;
+  max-width: 33.3%;
+  padding: 0 10px 0 10px;
+}
+
+.column img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }

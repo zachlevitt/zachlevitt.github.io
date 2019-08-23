@@ -177,6 +177,7 @@ footer p {
 .image5 {
   display: block;
   width: 90%;
+  margin: auto;
   margin-left: 0%;
   height: auto;
   margin-bottom: 10px;

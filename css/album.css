@@ -184,6 +184,7 @@ footer p {
   height: auto;
   max-height: 600px;
   margin-bottom: 50px;
+  max-width: 100%;
 }
 
 

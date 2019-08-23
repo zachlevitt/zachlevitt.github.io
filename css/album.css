@@ -4,6 +4,10 @@
   font-size: 14px;
 }
 
+.image5 {
+  max-height: 500px
+}
+
 
 p {
   font-size: 12px;
@@ -179,6 +183,7 @@ footer p {
   width: 90%;
   margin: auto;
   height: auto;
+  max-height: 800px
   margin-bottom: 10px;
 }
 

@@ -22,24 +22,73 @@
 
 <body>
   <section class="jumbotron">
-    <h1 class="jumbotron-heading"><a href="index.html">Crisis Pregnancy Centers in CA</a>
-    </h1>
-    <h2 class="about">Data from the <a href="https://crisispregnancycentermap.com" target="_blank">Crisis Pregnancy Center Map</a>, University of Georgia.</h2>
+    <h1 class="jumbotron-heading">Crisis Pregnancy Centers in California</h1>
+    <h2 class="about">Explore the relationship between crisis pregnancy centers and socioeconomic markers in California. Click on a marker below to view it on the map.</h2>
   </section>
+  <div class="button-group">
+    <button onclick="myFunctionMHINC()" type="button" class="button" id="income">Median Household Income</button>
+    <button onclick="myFunctionBLK()" type="button" id="income">Percent Black</button>
+    <button onclick="myFunctionHL()" type="button" id="income">Percent Hispanic/Latino</button>
+    <button onclick="myFunctionWHT()" type="button" id="income">Percent White</button>
+  </div>
 
   <div id="map" style="height:600px;width:100%"></div>
   <script>
+
 	mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazFpcHpncngxc21nM2ptdjNxZ2d6eGV6In0.UQA6j8m__GZSNau11Ry3qg';
+
 	var map = new mapboxgl.Map({
 	container: 'map', // container id
 	style: 'mapbox://styles/zachlevitt/ck1iqf6ku07b21cmjrub08uk0', // stylesheet location
-	center: [-120.227741, 37.271008], // starting position [lng, lat]
-	zoom: 5 // starting zoom
+	center: [-118.278395, 34.028578], // starting position [lng, lat]
+	zoom: 9, // starting zoom
+  minZoom: 8
 	});
+  function myFunctionMHINC(){
+      map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
+      map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
+      map.setLayoutProperty('tracts-HL', 'visibility', 'none');
+    if (map.getLayoutProperty('tracts-MHINC', 'visibility') == 'none'){
+      map.setLayoutProperty('tracts-MHINC', 'visibility', 'visible');
+    }
+  };
+
+  function myFunctionBLK(){
+      map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
+      map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
+      map.setLayoutProperty('tracts-HL', 'visibility', 'none');
+    if (map.getLayoutProperty('tracts-BLK', 'visibility') == 'none'){
+      map.setLayoutProperty('tracts-BLK', 'visibility', 'visible');
+    }
+  };
+
+  function myFunctionWHT(){
+      map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
+      map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
+      map.setLayoutProperty('tracts-HL', 'visibility', 'none');
+    if (map.getLayoutProperty('tracts-WHT', 'visibility') == 'none'){
+      map.setLayoutProperty('tracts-WHT', 'visibility', 'visible');
+    }
+  };
+
+  function myFunctionHL(){
+      map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
+      map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
+      map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
+    if (map.getLayoutProperty('tracts-HL', 'visibility') == 'none'){
+      map.setLayoutProperty('tracts-HL', 'visibility', 'visible');
+    }
+  };
+
+	map.addControl(new mapboxgl.NavigationControl());
+
+
 </script>
+
 
   <footer class="text-muted">
     <div class="container">
+    	<h2 class="about">Data from the <a href="https://crisispregnancycentermap.com" target="_blank">Crisis Pregnancy Center Map</a>, University of Georgia.</h2>
       <p class="float-right">
         <a href="">Back to top</a>
       </p>

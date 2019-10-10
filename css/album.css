@@ -30,6 +30,23 @@ h2.about {
   
 }
 
+.button-group {
+  background-color: black;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+button.button {
+  background-color: white!important;
+  font-weight: normal;
+  margin-right: 10px;
+  border-radius: 2px!important;
+  padding: 3px 10px!important;
+  margin-bottom: 5px!important;
+  border: 1px solid lightgray!important;
+  color: red!important;
+}
+
 
 }
 

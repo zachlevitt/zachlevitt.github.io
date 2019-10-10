@@ -23,7 +23,7 @@
 <body>
   <section class="jumbotron">
     <h1 class="jumbotron-heading">Crisis Pregnancy Centers in California</h1>
-    <h2 class="about">Explore the relationship between crisis pregnancy centers and socioeconomic markers in California. Click on a marker below to view it on the map.</h2>
+    <h2 class="about">Explore the relationship between crisis pregnancy centers and socioeconomic status in California. Choose a socioeconomic factor to view it on the map.</h2>
     <div class="button-group">
     <button onclick="myFunctionMHINC()" type="button" class="button" id="income">Median Household Income</button>
     <button onclick="myFunctionBLK()" type="button" id="income">Percent Black</button>
@@ -43,8 +43,12 @@
 	style: 'mapbox://styles/zachlevitt/ck1iqf6ku07b21cmjrub08uk0', // stylesheet location
 	center: [-118.278395, 34.028578], // starting position [lng, lat]
 	zoom: 9, // starting zoom
-  minZoom: 8
+  minZoom: 7
 	});
+
+  console.log(map.getStyle().layers);
+
+  map.getStyle().layers
   function myFunctionMHINC(){
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');

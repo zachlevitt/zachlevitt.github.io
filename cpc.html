@@ -40,15 +40,19 @@
 
 	var map = new mapboxgl.Map({
 	container: 'map', // container id
-	style: 'mapbox://styles/zachlevitt/ck1iqf6ku07b21cmjrub08uk0', // stylesheet location
+	style: 'mapbox://styles/zachlevitt/ck1iqf6ku07b21cmjrub08uk0/draft', // stylesheet location
 	center: [-118.278395, 34.028578], // starting position [lng, lat]
 	zoom: 9, // starting zoom
   minZoom: 6
 	});
 
-  console.log(map.getStyle().layers);
+  map.addControl(new mapboxgl.NavigationControl());
 
-  map.getStyle().layers
+  //console.log(map.getStyle());
+  //var nav = new mapboxgl.NavigationControl();
+  //map.addControl(nav, 'top-left');
+
+  //map.getStyle().layers
   function myFunctionMHINC(){
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
@@ -85,7 +89,7 @@
     }
   };
 
-	map.addControl(new mapboxgl.NavigationControl());
+
 
 
 </script>

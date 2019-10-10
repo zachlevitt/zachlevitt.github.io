@@ -98,9 +98,9 @@ h2.about a:hover {
   font-family: 'Helvetica', 'Arial', sans-serif;
   max-width: 800px;
   background-color: #fff;
-  margin-bottom: 30px;
-  padding: 0px;
   margin: auto;
+  margin-bottom: 50px;
+  padding: 0px;
   text-align: center;
   margin-top: 25px;
 }

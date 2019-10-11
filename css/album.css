@@ -30,8 +30,7 @@ p {
   
 }
 
-.button-group {
-  background-color: black;
+/*.button-group {
   margin: auto;
   margin-bottom: 20px!important;
 }
@@ -44,13 +43,12 @@ button.button {
   padding: 3px 10px!important;
   margin-bottom: 5px!important;
   border: 1px solid lightgray!important;
-  color: red!important;
   font-size: 12px;
 }
 
 button#income {
   font-size: 12px;
-}
+}*/
 
 
 }

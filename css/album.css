@@ -27,7 +27,10 @@ p {
   display: block;
   width: 100%!important;
   margin-bottom: 10px!important;
-  
+}
+
+h3.about {
+  font-size: 14px!important;
 }
 
 /*.button-group {

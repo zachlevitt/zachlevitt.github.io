@@ -31,7 +31,9 @@
     <button onclick="myFunctionWHT()" type="button" id="income">Percent White</button>
   </div>
 
-  <h2 class="about" id="explainer"><b style="padding-bottom:2px;border-bottom:3px solid #0c0684">Median Household Income by Census Tract</b></h4>
+  <h2 class="about" id="explainer"><b style="padding-bottom:2px;border-bottom:3px solid #0c0684">Median Household Income by Census Tract</b></h2>
+  <h2 class="about" id="explainer2"><span style="color:#0c0684; font-weight:bold; padding: 5px">Higher income</span>shown in darker values.</h2>
+
   </section>
   
 
@@ -58,8 +60,10 @@
   function myFunctionMHINC(){
       var element;
       element = document.getElementById("explainer");
+      element2  = document.getElementById("explainer2");
       if (element) {
         element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #0c0684'>Median Household Income by Census Tract</b>";
+        element2.innerHTML = "<span style='color:#0c0684; font-weight:bold; padding: 5px'>Higher income</span>shown with darker values.";
       }
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
@@ -72,8 +76,10 @@
   function myFunctionBLK(){
     var element;
       element = document.getElementById("explainer");
+      element2  = document.getElementById("explainer2");
       if (element) {
         element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #930b0b'>Percent Black or African American by Census Tract</b>";
+        element2.innerHTML = "<span style='color:#930b0b; font-weight:bold; padding: 5px'>Higher Percent Black or African American</span>shown with darker values.";
       }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
@@ -88,8 +94,10 @@
   function myFunctionWHT(){
     var element;
       element = document.getElementById("explainer");
+      element2  = document.getElementById("explainer2");
       if (element) {
         element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #e29d36'>Percent White by Census Tract</b>";
+        element2.innerHTML = "<span style='color:#e29d36; font-weight:bold; padding: 5px'>Higher Percent White</span>shown with darker values.";
       }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
@@ -102,8 +110,10 @@
   function myFunctionHL(){
     var element;
       element = document.getElementById("explainer");
+      element2  = document.getElementById("explainer2");
       if (element) {
         element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #6c9c35'>Percent Hispanic/Latino by Census Tract</b>";
+        element2.innerHTML = "<span style='color:#6c9c35; font-weight:bold; padding: 5px'>Higher Percent Hispanic/Latino</span>shown with darker values.";
       }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
@@ -112,10 +122,6 @@
       map.setLayoutProperty('tracts-HL', 'visibility', 'visible');
     }
   };
-
-
-
-
 </script>
 
 

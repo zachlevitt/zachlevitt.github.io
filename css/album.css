@@ -4,6 +4,10 @@
   font-size: 14px;
 }
 
+#explainer{
+  margin-top: 50px;
+}
+
 .image5 {
   max-height: 500px
 }
@@ -11,10 +15,6 @@
 
 p {
   font-size: 12px;
-}
-
-h2.about {
-  font-size: 14px;
 }
 
 .overlay2 {
@@ -33,7 +33,7 @@ h2.about {
 .button-group {
   background-color: black;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 20px!important;
 }
 
 button.button {
@@ -58,6 +58,8 @@ h2.about {
   color: black;
   font-size: 18px;
   font-weight:300;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 h2.about:last-of-type {
@@ -99,7 +101,7 @@ h2.about a:hover {
   max-width: 800px;
   background-color: #fff;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding: 0px;
   text-align: center;
   margin-top: 25px;
@@ -107,6 +109,7 @@ h2.about a:hover {
 
 h1.jumbotron-heading {
     margin-bottom: 25px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .jumbotron-heading a {

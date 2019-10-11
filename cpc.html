@@ -30,6 +30,8 @@
     <button onclick="myFunctionHL()" type="button" id="income">Percent Hispanic/Latino</button>
     <button onclick="myFunctionWHT()" type="button" id="income">Percent White</button>
   </div>
+
+  <h2 class="about" id="explainer"><b>Median Household Income by Census Tract</b></h4>
   </section>
   
 
@@ -54,6 +56,11 @@
 
   //map.getStyle().layers
   function myFunctionMHINC(){
+      var element;
+      element = document.getElementById("explainer");
+      if (element) {
+        element.innerHTML = "Median Household Income by Census Tract";
+      }
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
       map.setLayoutProperty('tracts-HL', 'visibility', 'none');
@@ -63,15 +70,27 @@
   };
 
   function myFunctionBLK(){
+    var element;
+      element = document.getElementById("explainer");
+      if (element) {
+        element.innerHTML = "<b>Percent Black or African American by Census Tract</b>";
+      }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
       map.setLayoutProperty('tracts-HL', 'visibility', 'none');
     if (map.getLayoutProperty('tracts-BLK', 'visibility') == 'none'){
       map.setLayoutProperty('tracts-BLK', 'visibility', 'visible');
     }
+
+
   };
 
   function myFunctionWHT(){
+    var element;
+      element = document.getElementById("explainer");
+      if (element) {
+        element.innerHTML = "<b>Percent White by Census Tract</b>";
+      }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
       map.setLayoutProperty('tracts-HL', 'visibility', 'none');
@@ -81,6 +100,11 @@
   };
 
   function myFunctionHL(){
+    var element;
+      element = document.getElementById("explainer");
+      if (element) {
+        element.innerHTML = "<b>Percent Hispanic/Latino by Census Tract</b>";
+      }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');

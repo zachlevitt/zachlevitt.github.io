@@ -31,7 +31,7 @@
     <button onclick="myFunctionWHT()" type="button" id="income">Percent White</button>
   </div>
 
-  <h2 class="about" id="explainer"><b>Median Household Income by Census Tract</b></h4>
+  <h2 class="about" id="explainer"><b style="padding-bottom:2px;border-bottom:3px solid #0c0684">Median Household Income by Census Tract</b></h4>
   </section>
   
 
@@ -59,7 +59,7 @@
       var element;
       element = document.getElementById("explainer");
       if (element) {
-        element.innerHTML = "Median Household Income by Census Tract";
+        element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #0c0684'>Median Household Income by Census Tract</b>";
       }
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
@@ -73,7 +73,7 @@
     var element;
       element = document.getElementById("explainer");
       if (element) {
-        element.innerHTML = "<b>Percent Black or African American by Census Tract</b>";
+        element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #930b0b'>Percent Black or African American by Census Tract</b>";
       }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');
@@ -89,7 +89,7 @@
     var element;
       element = document.getElementById("explainer");
       if (element) {
-        element.innerHTML = "<b>Percent White by Census Tract</b>";
+        element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #e29d36'>Percent White by Census Tract</b>";
       }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-BLK', 'visibility', 'none');
@@ -103,7 +103,7 @@
     var element;
       element = document.getElementById("explainer");
       if (element) {
-        element.innerHTML = "<b>Percent Hispanic/Latino by Census Tract</b>";
+        element.innerHTML = "<b style='padding-bottom:2px;border-bottom:3px solid #6c9c35'>Percent Hispanic/Latino by Census Tract</b>";
       }
       map.setLayoutProperty('tracts-MHINC', 'visibility', 'none');
       map.setLayoutProperty('tracts-WHT', 'visibility', 'none');

@@ -45,6 +45,11 @@ button.button {
   margin-bottom: 5px!important;
   border: 1px solid lightgray!important;
   color: red!important;
+  font-size: 12px;
+}
+
+button#income {
+  font-size: 12px;
 }
 
 
@@ -58,7 +63,7 @@ h2.about {
   color: black;
   font-size: 18px;
   font-weight:300;
-  margin-top: 15px;
+  margin-top: 35px;
   margin-bottom: 15px;
 }
 

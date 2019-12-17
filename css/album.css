@@ -56,6 +56,15 @@ button#income {
 
 }
 
+.art_header {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 28px;
+  color: gray;
+}
+
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
@@ -64,8 +73,10 @@ h2.about {
   color: black;
   font-size: 18px;
   font-weight:300;
+  margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
+  max-width: 800px;
 }
 
 h2.about:last-of-type {
@@ -162,7 +173,7 @@ footer p {
 
 
 .container2 {
-  width: 80%;
+  width: 90%;
   max-width: 650px;
   margin: auto;
   margin-top: 30px;
@@ -210,8 +221,15 @@ footer p {
   margin: auto;
   height: auto;
   max-height: 600px;
-  margin-bottom: 50px;
   max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.art_figure {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  color: gray;
 }
 
 

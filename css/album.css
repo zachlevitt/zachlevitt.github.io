@@ -346,14 +346,14 @@ footer p {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 33.3%;
-  max-width: 33.3%;
+  flex: 25%;
+  max-width: 25%;
   padding: 0 10px 0 10px;
 }
 

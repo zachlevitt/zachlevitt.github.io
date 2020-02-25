@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Home | Designing Interactive Maps for Climate Change</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/css/album.css" rel="stylesheet">
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
+<link rel='stylesheet' type='text/css' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' />
+</head>
+
+<body>
+  <div id="geocoder" class="geocoder" style=""></div>
+  <div id="map" style="height:650px;width:100%"></div>
+  <script>
+
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazFpcHpncngxc21nM2ptdjNxZ2d6eGV6In0.UQA6j8m__GZSNau11Ry3qg';
+
+  var map = new mapboxgl.Map({
+  container: 'map', // container id
+  style: 'mapbox://styles/zachlevitt/ck71cbegj0a0f1iqjn8regnj4/draft', // stylesheet location
+  center: [-118.278395, 34.028578], // starting position [lng, lat]
+  zoom: 5, // starting zoom
+  minZoom: 3
+  });
+
+  map.addControl(new mapboxgl.NavigationControl());
+
+  var geocoder = new MapboxGeocoder({
+  accessToken: mapboxgl.accessToken,
+  country: 'us',
+  mapboxgl: mapboxgl,
+  placeholder: "ex. 200 N Spring St, Los Angeles, CA",
+});
+
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+</script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

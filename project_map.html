@@ -7,7 +7,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../favicon.ico">
 
-  <title>Home | Designing Interactive Maps for Climate Change</title>
+  <title>Map | Designing Interactive Maps for Climate Change</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
 
@@ -15,41 +15,52 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="/css/album.css" rel="stylesheet">
+  <link href="/map.css" rel="stylesheet">
 
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+  <script type="text/javascript" src="https://d1qqc1e9kvmdh8.cloudfront.net/js/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
 <link rel='stylesheet' type='text/css' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' />
 </head>
 
 <body>
-  <div id="geocoder" class="geocoder" style=""></div>
-  <div id="map" style="height:650px;width:100%"></div>
-  <script>
+  <div class="left_side" style="width:30%;float:left;background-color:#000000;height:700px">
+  <h1 class="title">What does climate change mean in <span id="title-switcher" value=0 style="color:lightblue">your county</span>?</h1> 
+  <h2 class="subtext">Search for your address:</h2>
+  <div id="geocoder" class="geocoder" style="width:100%"></div>
 
+  <h2 class="subtext2">Or view scenarios for major urban centers:</h2>
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazFpcHpncngxc21nM2ptdjNxZ2d6eGV6In0.UQA6j8m__GZSNau11Ry3qg';
+  <div class="button-group">
+                        <button class="landmark" type="button" id="dodger">New York City</button>
+                        <button class="landmark" type="button" id="pyramid">Los Angeles</button>
+                        <button class="landmark" type="button" id="disneyland">Chicago</button>
+                    </div>
 
-  var map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/zachlevitt/ck71cbegj0a0f1iqjn8regnj4/draft', // stylesheet location
-  center: [-118.278395, 34.028578], // starting position [lng, lat]
-  zoom: 5, // starting zoom
-  minZoom: 3
-  });
+  <!--<div class="box2" style="height:300px;width:80%;border:1px white solid;margin-left:10px;margin-top:50px"><h3>Hampshire County, MA</h3></div>-->
+  <!--<h2 class="subtext"><i>Choose a climate change indicator:</i></h2>
+  <ul class="indicators">
+    <li>Mortality <i class='fas fa-angle-double-right' style='color:gray'></i></li>
+    <li>Sea level rise <i class='fas fa-angle-double-right' style='color:gray'></i></li>
+    <li>Economic change <i class='fas fa-angle-double-right' style='color:gray'></i></li>
+  </ul>-->
+  
+  <!--<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Select an indicator to view national distribution:</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+  </div>
+</div>-->
 
-  map.addControl(new mapboxgl.NavigationControl());
+  <!--<h2 class="subtext">PLACEHOLDER FOR LEGEND</h2>-->
+  <!--<h2 class="subtext2">Zach Levitt, Middlebury College</h2>-->
 
-  var geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken,
-  country: 'us',
-  mapboxgl: mapboxgl,
-  placeholder: "ex. 200 N Spring St, Los Angeles, CA",
-});
-
-
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-</script>
+</div>
+  <div id="map" style="height:700px;min-height:600px;width:70%;margin-left:30%"></div>
+<script type="text/javascript" src="project_map.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,114 @@
+.mapboxgl-ctrl-geocoder{
+	width:90%!important;
+	background-color: black!important;
+	border: 1px white solid!important;
+	color: white;
+	margin-left:10px;
+}
+
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	min-height: 600px;
+	max-height: 100%;
+}
+
+.mapboxgl-ctrl-geocoder input[type='text']{
+	color:white!important;
+	font-size:16px!important;
+}
+
+input {
+	color:white!important;
+}
+
+.indicators {
+	list-style-type: none;
+}
+
+.indicators li {
+	color: white;
+	margin: 5px;
+}
+
+button.landmark {
+	background-color:black;
+	color:gray;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.button-group {
+	width:95%;
+	margin-left: 10px;
+}
+
+h1.title {
+	color:white;
+	font-size: 36px;
+	font-weight: bold;
+	margin-left:10px;
+	margin-top:25px;
+}
+
+h2.subtext {
+	color:white;
+	font-size: 28px;
+	margin-left:10px;
+	margin-top:50px;
+	margin-bottom:15px;
+	font-weight:bold;
+}
+
+h2.subtext2{
+	font-size:20px;
+	color: white;
+	margin-top:30px;
+	margin-left:10px;
+}
+
+wn Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+

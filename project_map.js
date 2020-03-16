@@ -2,14 +2,19 @@
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA';
 
-document.getElementById('box2').style.visibility='hidden';
+var bounds = [
+[-180.549495, 0], // Southwest coordinates
+[-38.908874,72.551] // Northeast coordinates
+];
 
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/zachlevitt/ck71cbegj0a0f1iqjn8regnj4/draft', // stylesheet location
   center: [-114.278395, 38.028578], // starting position [lng, lat]
   zoom: 3, // starting zoom
-  minZoom: 3
+  minZoom: 3,
+  maxZoom: 6,
+  maxBounds: bounds
   });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -22,7 +27,7 @@ var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
   country: 'us',
   mapboxgl: mapboxgl,
-  placeholder: "Search for any U.S. address",
+  placeholder: "ex. Cook County, IL",
 });
 
 
@@ -110,19 +115,72 @@ map.getCanvas().style.cursor = '';
 // counter = new Counter(elem, 5000);
 //counter.start();
 //
-//
 
-var color_dict = {10: '#ffffff',9:'#ffffcc',8:'#ffeda0',7:'#fed976',6:'#feb24c',5:'#fd8d3c',4:'#fc4e2a',3:'#e31a1c',2:'#bd0026',1:'#800026'}
+var color_dict = {20:'#08306b',
+                  19:'#08519c',
+                  18:'#2171b5',
+                  17:'#4292c6',
+                  16:'#6baed6',
+                  15:'#9ecae1',
+                  14:'#c6dbef',
+                  13:'#deebf7',
+                  12:'#f7fbff',
+                  11:'#ffffff',
+                  10:'#ffffff',
+                  9:'#fff5f0',
+                  8:'#fee0d2',
+                  7:'#fcbba1',
+                  6:'#fc9272',
+                  5:'#fb6a4a',
+                  4:'#ef3b2c',
+                  3:'#cb181d',
+                  2:'#a50f15',
+                  1:'#67000d'}
 
 var county_GEOID, county_income, county_name,county_agr,county_mortality,county_energy_exp,county_labor_low,county_labor_high,county_coastal,county_property,county_crime,county_total_damage,center_coordinates
 
-function color_graph(indicator, num){
+geocoder.on('result', function(ev) {
+
+
+  //check if control is there
+  map.scrollZoom.enable();
+  map.dragPan.enable();
+  map.doubleClickZoom.enable();
+  map.touchZoomRotate.enable();
+
+  //app.map.setLayoutProperty('epicenters-8-12-19-5boyv3',"visibility","none");
+  
+  //coordinates = ev.result.geometry.coordinates
+  var coordinates = ev.result.center
+  //app.map.getSource('single-point').setData(ev.result.geometry);
+  var query = "https://api.mapbox.com/v4/zachlevitt.4rpv0z04/tilequery/"+coordinates[0]+","+coordinates[1]+".json?limit=20&access_token=pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA"
+  display(coordinates, query);
+  
+})
+
+
+function color_graph(indicator, num, percentile){
   if (num == 0){
     num = 1
   }
   var table_id = indicator + "_" + num
-  console.log(table_id)
+  //console.log(table_id)
   document.getElementById(table_id).style.backgroundColor = color_dict[num]
+    //document.getElementById(indicator).innerHTML = "<span style='font-weight:bold;color:" + color_dict[num] + "'>" + percentile + "</span>th percentile"
+}
+
+function decolorGraph(){
+  var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
+  
+  for (var i = 0; i < indicators.length; i++){
+    var indicator = indicators[i]
+    document.getElementById(indicator).innerHTML = ""
+    for (var j=1; j< 21; j++){
+      var table_id = indicators[i] + "_" + j
+      console.log(table_id)
+      document.getElementById(table_id).style.backgroundColor = 'black'
+    }
+  }
 }
 
 function display(coordinates, query){
@@ -133,10 +191,12 @@ function display(coordinates, query){
       }).done(function(data) {
   const entries = Object.entries(data.features)
   //console.log("entires:" + entries)
-  console.log(entries[0][1].properties)
+  //console.log(entries[0][1].properties)
   //var properties = entries[0][1].properties
-
   county_GEOID = entries[0][1].properties.GEOID
+  if (county_GEOID.slice(0,1)=='0'){
+    county_GEOID = county_GEOID.slice(1)
+  }
   county_income = counties_data[county_GEOID]['county_income_2012']
   county_name = counties_data[county_GEOID]['county_name'] + ", " + counties_data[county_GEOID]['state_code']
   county_agr = counties_data[county_GEOID]['agricultural_damage']
@@ -150,29 +210,44 @@ function display(coordinates, query){
   county_crime = (counties_data[county_GEOID]['violent_crime']).toFixed(2)
   //var county_total_damage = (entries[0][1].properties[`Total dama`]).toFixed(2)
   county_total_damage = (counties_data[county_GEOID]['total_damages']).toFixed(2)
-  center_coordinates = [entries[0][1].properties.xcoord-0.8,entries[0][1].properties.ycoord]
+  center_coordinates = [entries[0][1].properties.xcoord-5,entries[0][1].properties.ycoord]
+  
 
   map.setFilter('counties',['==', 'GEOID', county_GEOID])
   map.setFilter('counties-border',['==', 'GEOID', county_GEOID])
+  map.setFilter('centroids_info',['==', 'GEOID', county_GEOID])
   map.setFilter('states-6all0o',['==', 'name', states[county_GEOID.substring(0,2)].name])
   map.setLayoutProperty('counties',"visibility","visible");
+  map.setLayoutProperty('centroids_info',"visibility","visible")
   map.setLayoutProperty('counties-border',"visibility","visible");
   map.setLayoutProperty('states-6all0o',"visibility","visible");
+  map.setLayoutProperty('centroids-ranks-c9ustg',"visibility","visible")
   //console.log(map.queryRenderedFeatures({ layers: ['states-6all0o'] }))
   //
+  //var layers = map.getStyle().layers;
+  console.log("county damage: " + county_total_damage)
+  //
+  //map.setFilter('better',['<', 'Total dama', county_total_damage])
+  //console.log(map.getFilter('better'))
+  //map.setLayoutProperty('better',"visibility","visible");
+  //map.setFilter('worse',[">", 'Total dama', county_total_damage])
+  //map.setLayoutProperty('worse',"visibility","visible");
 
-  var indicators = ["agricultural", "mortality","labor_high","coastal","property","violent","total"]
-
+  var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
   var values = [county_agr,county_mortality,county_energy_exp,county_labor_high,county_coastal,county_property,county_crime,county_total_damage]
 
-  document.getElementById("name").innerHTML = county_name;
+  document.getElementById("name").innerHTML = "<span style='color:white;font-weight:bold'>" + county_name + "</span>"
 
+
+  var percentile;
   for (var i = 0; i < indicators.length; i++){
 
     var id = indicators[i] + "_rank"
-    var num = Math.round((counties_data[county_GEOID][id]/3144)*10)
-    color_graph(indicators[i],num)
-
+    var raw_num = counties_data[county_GEOID][id]/3144
+    percentile = 100-Math.round(raw_num*100)
+    var raw_num2 = counties_data[county_GEOID][id]/6288
+    var chart_num = Math.round(raw_num*20)
+    color_graph(indicators[i],chart_num, percentile)
   }
 
   //
@@ -215,39 +290,41 @@ function display(coordinates, query){
   document.getElementById("data3").innerHTML = "For more context, compare these impacts to <span onClick='countyCompare()' style='text-decoration:underline'>another county</span>, all counties in <span onClick='stateCompare()' style='text-decoration:underline'>" + states[county_GEOID.substring(0,2)].name + "</span> or the entire <span onClick='regionCompare()' style='text-decoration:underline'>"+ states[county_GEOID.substring(0,2)].region+"</span>."*/
   //document.getElementById("data3").innerHTML = ;
   //document.getElementById("data4").innerHTML = county_mortality;
-  document.getElementById('box2').style.visibility='visible' 
-  map.flyTo({center:center_coordinates,zoom:5})
-});
+  document.getElementById('box2').style.display = 'block'
+  document.getElementById('box2').style.height = 'auto' 
+  document.getElementById('box1').style.display='none' 
+  document.getElementById('box1').style.height='0px' 
+  map.flyTo({center:center_coordinates,zoom:4});
+  //map.setZoom(4)
+  })
 }
-
-geocoder.on('result', function(ev) {
-
-
-  //check if control is there
-  map.scrollZoom.enable();
-  map.dragPan.enable();
-  map.doubleClickZoom.enable();
-  map.touchZoomRotate.enable();
-
-  //app.map.setLayoutProperty('epicenters-8-12-19-5boyv3',"visibility","none");
-  
-  //coordinates = ev.result.geometry.coordinates
-  var coordinates = ev.result.center
-  //app.map.getSource('single-point').setData(ev.result.geometry);
-  var query = "https://api.mapbox.com/v4/zachlevitt.4rpv0z04/tilequery/"+coordinates[0]+","+coordinates[1]+".json?limit=20&access_token=pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA"
-  //console.log(query)
-  display(coordinates, query);
-  
-})
 
  function myFunction(prompt) {
    //document.getElementById("myDropdown").classList.toggle("show");
-   console.log(prompt)
-   console.log(county_GEOID)
-   console.log(counties_data[county_GEOID])
+   //console.log(prompt)
+   //console.log(county_GEOID)
+   //console.log(counties_data[county_GEOID])
    //whatever is clicked, add layer
    //style it based on the value and the rank
    //
+ }
+
+ function searchAgain(){
+    document.getElementById('box2').style.display='none'
+    document.getElementById('box2').style.height='0px' 
+    document.getElementById('box1').style.display='block' 
+    document.getElementById('box2').style.height = 'auto' 
+
+    map.setLayoutProperty('counties',"visibility","none");
+    map.setLayoutProperty('counties-border',"visibility","none");
+    map.setLayoutProperty('states-6all0o',"visibility","none");
+    map.setLayoutProperty('centroids-ranks-c9ustg',"visibility","none")
+    decolorGraph()
+    //map.setLayoutProperty('better',"visibility","hidden");
+    //map.setLayoutProperty('worse',"visibility","hidden");
+    //document.querySelector('.mapboxgl-ctrl-geocoder').display = 'none'
+    map.flyTo({center: [-114.278395, 38.028578],zoom: 3});
+  
  }
 
 

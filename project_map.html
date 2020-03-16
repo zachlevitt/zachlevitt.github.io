@@ -29,56 +29,74 @@
 
 <body>
   <div id="map" style="max-height:100%;height:100%;min-height:690px;width:100%"></div>
-  <div class="left_side">
-  <!--<h4 class="intro">If the United States continues fossil-fuel-in10sive economic growth until 2080,</h4>-->
-  <h1 class="title">How bad could climate change be where you live?<!--<span id="title-switcher" value=0 style="color:lightblue">your county</span>?--></h1> 
-  <!--<h2 class="subtext">Search for your address:</h2>-->
-  <div id="geocoder" class="geocoder" style="width:100%"></div>
+  <div id="left_side" class="left_side">
+    <!--<h4 class="intro">If the United States continues fossil-fuel-in10sive economic growth until 2080,</h4>-->
+    <div id="box1" class="box1" style="display:block">
+      <h1 class="header1">Climate Change in the United States</h1>
+      <h1 class="title">By 2100, climate change will have profoundly alter everyday life in the United States. However, these effects will not be distributed equally across space. By integrating climate models with economic data, researchers have developed <a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">estimated economic damages</a> from climate change for every county in the United States. Use this map to understand the risks your county faces.</h1>
 
-  <!--<h2 class="subtext2">Or view scenarios for major urban centers:</h2>
+      <h1 class="title2" style="color:white">Search for your address</h1> 
+      <!--<h2 class="subtext">Search for your address:</h2>-->
+      <div id="geocoder" class="geocoder" style="width:100%"></div>
 
-  <div class="button-group">
-                        <button class="landmark" type="button" id="dodger">New York City</button>
-                        <button class="landmark" type="button" id="pyramid">Los Angeles</button>
-                        <button class="landmark" type="button" id="disneyland">Chicago</button>
-                    </div>-->
+      <p class="info">&#9432 Developed by Zach Levitt, 2020. Learn more about this project <a href="project_home.html">here</a>.</p>
 
-   <div id="box2" class="box2">
+      <!--<h2 class="subtext2">Or view scenarios for major urban centers:</h2>
+
+      <div class="button-group">
+                            <button class="landmark" type="button" id="dodger">New York City</button>
+                            <button class="landmark" type="button" id="pyramid">Los Angeles</button>
+                            <button class="landmark" type="button" id="disneyland">Chicago</button>
+                        </div>-->
+    </div>
+   <div class="box2" id="box2" style="display:none">
     <div class="information">
       <h2 class="county_name" id="name"></h2>
-      <h4 class="click_info"><i>How does this county compare? Click on any indicator</i></h4>
+      <h4 class="click_info">Compared to every county in the United States</h4>
+      
+      <table class="risk" id="sample"><td style="background-color:#08306b"></td><td style="background-color:#08519c"></td><td style="background-color:#2171b5"></td><td style="background-color:#4292c6"></td><td style="background-color:#6baed6"></td><td style="background-color:#9ecae1"></td><td style="background-color:#c6dbef"></td><td style="background-color:#deebf7"></td><td style="background-color:#f7fbff"></td><td style="background-color:#ffffff"></td><td style="background-color:#ffffff"></td><td style="background-color:#fff5f0"></td><td style="background-color:#fee0d2"></td><td style="background-color:#fcbba1"></td><td style="background-color:#fc9272"></td><td style="background-color:#fb6a4a"></td><td style="background-color:#ef3b2c"></td><td style="background-color:#cb181d"></td><td style="background-color:#a50f15"></td><td style="background-color:#67000d"></td></table>
+      <table class="labels"><td>Better</td><td>National median</td><td>Worse</td></table>
 
-      <h2 class="risk_label">Overall economic damage</h2>
+      
+      <!--<h2 class="risk_label2" id="total"></h2>-->
+      <table class="risk"><td id="total_20"></td><td id="total_19"></td><td id="total_18"></td><td id="total_17"></td><td id="total_16"></td><td id="total_15"></td><td id="total_14"></td><td id="total_13"></td><td id="total_12"></td><td id="total_11"></td><td id="total_10"></td><td id="total_9"></td><td id="total_8"></td><td id="total_7"></td><td id="total_6"></td><td id="total_5"></td><td id="total_4"></td><td id="total_3"></td><td id="total_2"></td><td id="total_1"></td></table>
+      <h2 class="risk_label">TOTAL ECONOMIC DAMAGE<span id="total" style="color: gray"></span></h2>
 
-      <table class="risk"><td id="total_10"></td><td id="total_9"></td><td id="total_8"></td><td id="total_7"></td><td id="total_6"></td><td id="total_5"></td><td id="total_4"></td><td id="total_3"></td><td id="total_2"></td><td id="total_1"></td></table>
+    
+    <!--<h2 class="risk_label2" id="mortality"></h2>-->
+    <table class="risk"><td id="mortality_20"></td><td id="mortality_19"></td><td id="mortality_18"></td><td id="mortality_17"></td><td id="mortality_16"></td><td id="mortality_15"></td><td id="mortality_14"></td><td id="mortality_13"></td><td id="mortality_12"></td><td id="mortality_11"></td><td id="mortality_10"></td><td id="mortality_9"></td><td id="mortality_8"></td><td id="mortality_7"></td><td id="mortality_6"></td><td id="mortality_5"></td><td id="mortality_4"></td><td id="mortality_3"></td><td id="mortality_2"></td><td id="mortality_1"></td></table>
+    <h2 class="risk_label">MORTALITY RATE<span id="mortality" style="color: gray"></span></h2>
 
-  <div class="column">
+    
+    <!--<h2 class="risk_label2" id="coastal"></h2>-->
+    <table class="risk"><td id="coastal_20"></td><td id="coastal_19"></td><td id="coastal_18"></td><td id="coastal_17"></td><td id="coastal_16"></td><td id="coastal_15"></td><td id="coastal_14"></td><td id="coastal_13"></td><td id="coastal_12"></td><td id="coastal_11"></td><td id="coastal_10"></td><td id="coastal_9"></td><td id="coastal_8"></td><td id="coastal_7"></td><td id="coastal_6"></td><td id="coastal_5"></td><td id="coastal_4"></td><td id="coastal_3"></td><td id="coastal_2"></td><td id="coastal_1"></td></table>
+    <h2 class="risk_label">DAMAGE FROM SEA LEVEL RISE<span id="coastal" style="color: gray"></span></h2>
 
-    <h2 class="risk_label">Mortality</h2>
-    <table class="risk"><td id="mortality_10"></td><td id="mortality_9"></td><td id="mortality_8"></td><td id="mortality_7"></td><td id="mortality_6"></td><td id="mortality_5"></td><td id="mortality_4"></td><td id="mortality_3"></td><td id="mortality_2"></td><td id="mortality_1"></td></table>
+    
+    <!--<h2 class="risk_label2" id="agricultural"></h2>-->
+    <table class="risk"><td id="agricultural_20"></td><td id="agricultural_19"></td><td id="agricultural_18"></td><td id="agricultural_17"></td><td id="agricultural_16"></td><td id="agricultural_15"></td><td id="agricultural_14"></td><td id="agricultural_13"></td><td id="agricultural_12"></td><td id="agricultural_11"></td><td id="agricultural_10"></td><td id="agricultural_9"></td><td id="agricultural_8"></td><td id="agricultural_7"></td><td id="agricultural_6"></td><td id="agricultural_5"></td><td id="agricultural_4"></td><td id="agricultural_3"></td><td id="agricultural_2"></td><td id="agricultural_1"></td></table>
+    <h2 class="risk_label">CHANGE IN AGRICULTURAL YIELDS (maize, soybeans, wheat, cotton)<span id="agricultural" style="color: gray"></span></h2>
 
-    <h2 class="risk_label">Coastal damage</h2>
-    <table class="risk"><td id="coastal_10"></td><td id="coastal_9"></td><td id="coastal_8"></td><td id="coastal_7"></td><td id="coastal_6"></td><td id="coastal_5"></td><td id="coastal_4"></td><td id="coastal_3"></td><td id="coastal_2"></td><td id="coastal_1"></td></table>
+    <!--<h2 class="risk_label">PROPERTY CRIME &#8594;</h2>
+    <table class="risk"><td id="property_10"></td><td id="property_9"></td><td id="property_8"></td><td id="property_7"></td><td id="property_6"></td><td id="property_5"></td><td id="property_5"></td><td id="property_3"></td><td id="property_2"></td><td id="property_1"></td></table>-->
 
-    <h2 class="risk_label">Agriculture</h2>
-    <table class="risk"><td id="agricultural_10"></td><td id="agricultural_9"></td><td id="agricultural_8"></td><td id="agricultural_7"></td><td id="agricultural_6"></td><td id="agricultural_5"></td><td id="agricultural_4"></td><td id="agricultural_3"></td><td id="agricultural_2"></td><td id="agricultural_1"></td></table>
+
+    
+    <!--<h2 class="risk_label2" id="violent"></h2>-->
+    <table class="risk"><td id="violent_20"></td><td id="violent_19"></td><td id="violent_18"></td><td id="violent_17"></td><td id="violent_16"></td><td id="violent_15"></td><td id="violent_14"></td><td id="violent_13"></td><td id="violent_12"></td><td id="violent_11"></td><td id="violent_10"></td><td id="violent_9"></td><td id="violent_8"></td><td id="violent_7"></td><td id="violent_6"></td><td id="violent_5"></td><td id="violent_4"></td><td id="violent_3"></td><td id="violent_2"></td><td id="violent_1"></td></table>
+    <h2 class="risk_label">VIOLENT CRIME<span id="violent" style="color: gray"></span></h2>
+
+
+    
+    <!--<h2 class="risk_label2" id="labor_high"></h2>-->
+    <table class="risk"><td id="labor_high_20"></td><td id="labor_high_19"></td><td id="labor_high_18"></td><td id="labor_high_17"></td><td id="labor_high_16"></td><td id="labor_high_15"></td><td id="labor_high_14"></td><td id="labor_high_13"></td><td id="labor_high_12"></td><td id="labor_high_11"></td><td id="labor_high_10"></td><td id="labor_high_9"></td><td id="labor_high_8"></td><td id="labor_high_7"></td><td id="labor_high_6"></td><td id="labor_high_5"></td><td id="labor_high_4"></td><td id="labor_high_3"></td><td id="labor_high_2"></td><td id="labor_high_1"></td></table>
+    <h2 class="risk_label">HIGH RISK LABOR SUPPLY<span id="labor_high" style="color: gray"></span></h2>
+
+
+    <h1 class="searchAgain" onClick="searchAgain()">↻ Search for another location</h1>
     
   </div>
-  <div class="column">
-
-    <h2 class="risk_label">Property crime</h2>
-    <table class="risk"><td id="property_10"></td><td id="property_9"></td><td id="property_8"></td><td id="property_7"></td><td id="property_6"></td><td id="property_5"></td><td id="property_5"></td><td id="property_3"></td><td id="property_2"></td><td id="property_1"></td></table>
-
-
-    <h2 class="risk_label">Violent crime</h2>
-    <table class="risk"><td id="violent_10"></td><td id="violent_9"></td><td id="violent_8"></td><td id="violent_7"></td><td id="violent_6"></td><td id="violent_5"></td><td id="violent_4"></td><td id="violent_3"></td><td id="violent_2"></td><td id="violent_1"></td></table>
-
-
-    <h2 class="risk_label">High risk labor supply</h2>
-    <table class="risk"><td id="labor_high_10"></td><td id="labor_high_9"></td><td id="labor_high_8"></td><td id="labor_high_7"></td><td id="labor_high_6"></td><td id="labor_high_5"></td><td id="labor_high_4"></td><td id="labor_high_3"></td><td id="labor_high_2"></td><td id="labor_high_1"></td></table>
-    
-  </div>
-  </div>
+</div>
   <!--<h2 class="subtext"><i>Choose a climate change indicator:</i></h2>
   <ul class="indicators">
     <li>Mortality <i class='fas fa-angle-double-right' style='color:gray'></i></li>
@@ -96,8 +114,6 @@
 
   <!--<h2 class="subtext">PLACEHOLDER FOR LEGEND</h2>-->
   <!--<h2 class="subtext2">Zach Levitt, Middlebury College</h2>-->
-
-</div>
 <script type="text/javascript" src="project_map.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 </body>

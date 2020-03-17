@@ -319,6 +319,7 @@ function display(coordinates, query){
     map.setLayoutProperty('counties-border',"visibility","none");
     map.setLayoutProperty('states-6all0o',"visibility","none");
     map.setLayoutProperty('centroids-ranks-c9ustg',"visibility","none")
+    map.setLayoutProperty('centroids_info',"visibility","none")
     decolorGraph()
     //map.setLayoutProperty('better',"visibility","hidden");
     //map.setLayoutProperty('worse',"visibility","hidden");

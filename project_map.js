@@ -236,7 +236,7 @@ function display(coordinates, query){
   var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
   var values = [county_agr,county_mortality,county_energy_exp,county_labor_high,county_coastal,county_property,county_crime,county_total_damage]
 
-  document.getElementById("name").innerHTML = "<span style='color:white;font-weight:bold'>" + county_name + "</span>"
+  document.getElementById("name").innerHTML = county_name
 
 
   var percentile;
@@ -294,7 +294,7 @@ function display(coordinates, query){
   document.getElementById('box2').style.height = 'auto' 
   document.getElementById('box1').style.display='none' 
   document.getElementById('box1').style.height='0px' 
-  map.flyTo({center:center_coordinates,zoom:4});
+  map.flyTo({center:center_coordinates,zoom:5});
   //map.setZoom(4)
   })
 }

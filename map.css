@@ -104,7 +104,7 @@ h1.searchAgain {
 	color:darkgray;
 	text-align: center;
 	font-size: 16px;
-	margin-top: 20px;
+	margin-top: 30px;
 	font-weight: normal;
 }
 
@@ -157,7 +157,7 @@ h4.data_header {
 
 h2.county_name {
 	font-size: 28px;
-	color: gray;
+	color: #FABF38;
 	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 5px;

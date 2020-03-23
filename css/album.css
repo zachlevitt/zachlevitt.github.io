@@ -57,12 +57,13 @@ button#income {
 }
 
 .art_header {
-  font-weight: normal;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 25px;
   font-size: 28px;
-  color: gray;
+  color: black;
+  border: none;
 }
 
 body {
@@ -76,7 +77,12 @@ h2.about {
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  max-width: 800px;
+  max-width: 600px;
+  text-align:left;
+}
+
+h2#about.about {
+  text-align:center;
 }
 
 h2.about:last-of-type {
@@ -173,8 +179,8 @@ footer p {
 
 
 .container2 {
-  width: 90%;
-  max-width: 650px;
+  width: 95%;
+  max-width: 900px;
   margin: auto;
   margin-top: 30px;
 }
@@ -217,22 +223,21 @@ footer p {
 }
 
 .image5 {
-  display: block;
-  margin: auto;
-  height: auto;
-  max-height: 600px;
-  max-width: 100%;
-  margin-bottom: 10px;
+  display:block;
+  max-width:600px;
+  max-height: 500px;
+  margin:auto;
+  margin-bottom:2px;
 }
 
 .art_figure {
-  max-width: 100%;
-  text-align: center;
-  margin-bottom: 50px;
+  margin:auto;
+  margin-left:0px;
+  margin-bottom: 20px;
   color: gray;
+  text-align:center;
+  font-size:12px;
 }
-
-
 
 .example .image:hover {
   opacity: 0.70;
@@ -350,6 +355,18 @@ footer p {
   margin: auto;
 }
 
+.column_art{
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 10px 0 10px;
+}
+
+.column_art img {
+  margin-bottom: 3px;
+  vertical-align: middle;
+  width: 100%;
+}
+
 /* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
@@ -370,11 +387,21 @@ footer p {
     flex: 50%;
     max-width: 50%;
   }
+
+  .column_art {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
   .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .column_art {
     flex: 100%;
     max-width: 100%;
   }

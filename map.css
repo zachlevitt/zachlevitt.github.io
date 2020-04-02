@@ -118,21 +118,25 @@ h1.recenter:last-of-type{
 
 .circles{
 	margin:auto;
-	width:80%;
-	margin-top:20px;
-	margin-bottom: 5px;
+	width:90%;
+	margin-top:10px;
+	margin-bottom: 0px;
 }
 
 .dot {
   border-radius: 50%;
   display: inline-block;
   border:1px solid #bbb;
-  margin-left:5px;
+  margin-right:25px;
   margin-bottom:0px;
 }
 
 .menus1{
 	margin-top:10px;
+}
+
+.menus {
+	margin-top:25px;
 }
 
 h1.recenter {
@@ -221,7 +225,7 @@ h2.table_heading {
 	margin-top: 5px;
 	margin-bottom: 10px;
 	text-align:left;
-	width:80%;
+	width:90%;
 	font-weight:normal;
 }
 
@@ -239,12 +243,12 @@ h2.title{
 h3.robo{
 	color:white;
 	font-size: 18px;
-	width:80%;
+	width:90%;
 	margin:auto;
 	margin-top:25px;
 	margin-bottom:25px;
 	text-align: left
-	line-height: 22px;
+	line-height: 24px;
 	font-weight: normal;
 }
 
@@ -258,12 +262,13 @@ fieldset {
       display: block;
       margin: 10px 0 5px 0;
       color:darkgray;
+      font-size:14px;
     }
 
 .ui-button{
 	background-color:#000000;
 	color:white;
-	font-size:18px;
+	font-size:16px;
 	
 }
 
@@ -275,24 +280,24 @@ fieldset {
 	width:100%!important;
 	background-color:#000000;
 	color:white;
-	font-size:18px;
+	font-size:16px;
 }
 
 #comparison-button{
 	background-color: #000000;
 	color:white;
-	font-size:18px;
+	font-size:16px;
 }
 
 .ui-button:hover{
 	background-color:#000000;
 	color:white;
-	font-size:18px;
+	font-size:16px;
 }
 .ui-menu-item{
 	background-color:#000000;
 	color:white;
-	font-size:18px;
+	font-size:16px;
 }
 
 h2.risk_label {
@@ -329,11 +334,10 @@ h4.data1 {
 
 table.risk {
 	width: 90%;
-	max-width: 350px;
 	height: 20px;
 	margin: auto;
 	margin-top: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 2px;
 	/*background-image: linear-gradient(to right, white ,black);*/
 	background-color: black;
 	border-bottom: 1px solid gray;
@@ -350,18 +354,17 @@ table.risk#sample{
 
 table.labels {
 	width: 90%;
-	max-width: 350px;
 	height: 20px;
 	margin: auto;
 	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 	background-color: black;
 	text-align: center;
 	border: none;
 }
 
 table.labels td{
-	width:50%;
+	width:33%;
 	color: gray;
 	font-size: 11px;
 	text-align: right;

@@ -49,7 +49,7 @@ $('#indicator').on('selectmenuchange', function() {
     var indicator = document.getElementById("indicator").value;
     if (indicator == "total"){
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
-      document.getElementById("indicator_title").innerHTML = "Change in county GDP, 2080-2099 (national percentiles)"
+      document.getElementById("indicator_title").innerHTML = "National percentile for change in GDP, 2080-2099"
       document.getElementById("indicator2").innerHTML = "the GDP"
       map.setLayoutProperty('centroids-ranks-total','visibility','visible')
 
@@ -78,7 +78,7 @@ $('#indicator').on('selectmenuchange', function() {
     else if (indicator == "mortality"){
       console.log("hello hello")
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
-      document.getElementById("indicator_title").innerHTML = "Change in mortality rate, 2080-2099 (national percentiles)"
+      document.getElementById("indicator_title").innerHTML = "National percentile for change in mortality rate, 2080-2099"
       document.getElementById("indicator2").innerHTML = "the mortality rate"
       map.setLayoutProperty('centroids-ranks-mortality','visibility','visible')
       //map.setPaintProperty("centroids-ranks-", "circle-color",["<",
@@ -103,7 +103,7 @@ $('#indicator').on('selectmenuchange', function() {
 
     else if (indicator == "agricultural"){
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
-      document.getElementById("indicator_title").innerHTML = "Change in agricultural yields, 2080-2099 (national percentiles)"
+      document.getElementById("indicator_title").innerHTML = "National percentile for change in agricultural yields, 2080-2099"
       document.getElementById("indicator2").innerHTML = "agricultural yields (average of maize, wheat, soybeans, cotton)"
       map.setLayoutProperty('centroids-ranks-agr','visibility','visible')
       //document.getElementById("risk_label").innerHTML = "Change in agricultural yields"
@@ -125,7 +125,7 @@ $('#indicator').on('selectmenuchange', function() {
 
     else if (indicator == "violent"){
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
-      document.getElementById("indicator_title").innerHTML = "Change in violent crime rates, 2080-2099 (national percentiles)"
+      document.getElementById("indicator_title").innerHTML = "National percentile for change in violent crime rate, 2080-2099"
       document.getElementById("indicator2").innerHTML = "the violent crime rate"
       map.setLayoutProperty('centroids-ranks-violent','visibility','visible')
       //document.getElementById("risk_label").innerHTML = "Change in violent crime rates"
@@ -541,6 +541,11 @@ function recenter(){
     document.getElementById('box2').style.height = 'auto' 
     $("#indicator").val("total");
     $("#comparison").val("all");
+
+    map.setFilter('centroids-ranks-total',undefined)
+    map.setFilter('centroids-ranks-mortality',undefined)
+    map.setFilter('centroids-ranks-agr',undefined)
+    map.setFilter('centroids-ranks-violent',undefined)
 
     //map.setLayoutProperty('counties',"visibility","none");
     //map.setLayoutProperty('counties-border',"visibility","none");

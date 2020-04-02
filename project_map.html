@@ -11,7 +11,6 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -58,15 +57,38 @@
    <div id="box2" class="box2"  style="display:none">
     <div class="information">
 
-      <h2 id="name" class="title" style="color:#FFF700;font-size:28px;width:auto;margin-top:20px"></h2>
+      <!--<h2 id="name" class="title" style="color:#FFF700;font-size:28px;width:auto;margin-top:20px"></h2>-->
+
+      <h3 class="robo">In <span id="name2" style="color:#FFF700"></span>, scientists predict that <span id="indicator2"></span> could <span id="crease"></span> by <span id="number" style="border-bottom:2px white solid"></span> between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>
+
+      <!--<h2 class="title" id="title">Compared to <span id="comparison_title" style="color:white">all U.S. counties</span></h2>-->
+
+            
+      
+      <!--<h2 class="risk_label" id="risk_label">Total economic damage</h2>-->
+      <!--<table class="risk" id="sample"><td style="background-color:#67a9cf"></td><td style="background-color:#f7f7f7"></td><td style="background-color:#fc8d59"></td></table>-->
+<table class="labels"><td style="text-align:left">0</td><td id="100">100</td></table>
+      <table class="risk" id="sample"><td id="table_20" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_19" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_18" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_17" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_16" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_15" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_14" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_13" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_12" style="background-color:#ffffff;opacity:0.8"></td><td id="table_11" style="background-color:#ffffff;opacity:0.8"></td><td id="table_10" style="background-color:#ffffff;opacity:0.8"></td><td id="table_9" style="background-color:#ffffff;opacity:0.8"></td><td id="table_8" style="background-color:#fdae61;opacity:0.8"></td><td id="table_7" style="background-color:#fdae61;opacity:0.8"></td><td id="table_6" style="background-color:#fdae61;opacity:0.8"></td><td id="table_5" style="background-color:#fdae61;opacity:0.8"></td><td id="table_4" style="background-color:#d7191c;opacity:0.8"></td><td id="table_3" style="background-color:#d7191c;opacity:0.8"></td><td id="table_2" style="background-color:#d7191c;opacity:0.8"></td><td id="table_1" style="background-color:#d7191c;opacity:0.8"></td></table>
+
+      <h2 class="table_heading" id="indicator_title">Change in county GDP, 2080-2099 (national percentiles)</h2>
+
+       <div class="circles">
+        <span style="height:5px;width:5px" class="dot"></span>
+        <span style="height:10px;width:10px" class="dot"></span>
+        <span style="height:15px;width:15px" class="dot"></span>
+        <span style="height:25px;width:25px" class="dot"></span>
+        <span style="height:40px;width:40px" class="dot"></span>
+        </div>
+
+        <h2 class="table_heading" style="text-align:left;width:80%">County population, 2012 (low to high)</h2>
 
       <div class="menus">
          <form action="#">
  
           <fieldset>
-            <label for="indicator"><i>Chooose an indicator:</i></label>
+            <label for="indicator"><i>Select indicator:</i></label>
             <select name="indicator" id="indicator">
-              <option selected="selected" value="total">Gross Domestic Product (GDP)</option>
+              <option value="total">Gross Domestic Product (GDP)</option>
               <option value="mortality">Mortality rate</option>
               <option value="violent">Violent crime rate</option>
               <option value="agricultural">Agricultural yields</option>
@@ -75,24 +97,13 @@
         </form>
       </div>
 
-      <h3 class="robo">Scientists predict that <span id="indicator2"></span> in <span id="name2" style="color:#FFF700"></span> could <span id="crease"></span> by <span id="number" style="color:white"></span> between 2080 and 2099.</h3>
-
-      <!--<h2 class="title" id="title">Compared to <span id="comparison_title" style="color:white">all U.S. counties</span></h2>-->
-
-            <h2 class="table_heading" id="indicator_title" style="">Change in county GDP, 2080-2099 (national percentiles)</h2>
-      
-      <!--<h2 class="risk_label" id="risk_label">Total economic damage</h2>-->
-      <!--<table class="risk" id="sample"><td style="background-color:#67a9cf"></td><td style="background-color:#f7f7f7"></td><td style="background-color:#fc8d59"></td></table>-->
-<table class="labels"><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td></table>
-      <table class="risk" id="sample"><td id="table_20" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_19" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_18" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_17" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_16" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_15" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_14" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_13" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_12" style="background-color:#ffffff;opacity:0.8"></td><td id="table_11" style="background-color:#ffffff;opacity:0.8"></td><td id="table_10" style="background-color:#ffffff;opacity:0.8"></td><td id="table_9" style="background-color:#ffffff;opacity:0.8"></td><td id="table_8" style="background-color:#fdae61;opacity:0.8"></td><td id="table_7" style="background-color:#fdae61;opacity:0.8"></td><td id="table_6" style="background-color:#fdae61;opacity:0.8"></td><td id="table_5" style="background-color:#fdae61;opacity:0.8"></td><td id="table_4" style="background-color:#d7191c;opacity:0.8"></td><td id="table_3" style="background-color:#d7191c;opacity:0.8"></td><td id="table_2" style="background-color:#d7191c;opacity:0.8"></td><td id="table_1" style="background-color:#d7191c;opacity:0.8"></td></table>
-
       <div class="menus1">
         <form action="#">
  
           <fieldset>
-            <label for="comparison"><i>Choose which counties to display:</i></label>
+            <label for="comparison"><i>Filter map display:</i></label>
             <select name="comparison" id="comparison">
-                <option  selected="selected" value="all">All U.S. counties</option>
+                <option value="all">All U.S. counties</option>
                 <option value="pop">Similar population size</option>
                 <option value="income">Similar average income level</option>
                 <option value="state">Counties in the same state</option>
@@ -154,8 +165,8 @@
     <table class="risk"><td id="labor_high_20"></td><td id="labor_high_19"></td><td id="labor_high_18"></td><td id="labor_high_17"></td><td id="labor_high_16"></td><td id="labor_high_15"></td><td id="labor_high_14"></td><td id="labor_high_13"></td><td id="labor_high_12"></td><td id="labor_high_11"></td><td id="labor_high_10"></td><td id="labor_high_9"></td><td id="labor_high_8"></td><td id="labor_high_7"></td><td id="labor_high_6"></td><td id="labor_high_5"></td><td id="labor_high_4"></td><td id="labor_high_3"></td><td id="labor_high_2"></td><td id="labor_high_1"></td></table>
     <h2 class="risk_label">HIGH-RISK LABOR SUPPLY &rarr;<span id="labor_high" style="color: gray"></span></h2> -->
 
-
-    <h1 class="searchAgain" onClick="searchAgain()">↻ Search for another location</h1>
+    <h1 class="recenter" onClick="recenter()">Recenter map</h1>
+    <h1 class="recenter" onClick="searchAgain()">New search</h1>
     
   </div>
 </div>

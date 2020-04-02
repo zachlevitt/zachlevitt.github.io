@@ -40,16 +40,17 @@ $( function() {
   } );
 
 $('#indicator').on('selectmenuchange', function() {
+
     //document.getElementById("title").innerHTML = "Change in " + indicator
     map.setLayoutProperty('centroids-ranks-total','visibility','none')
     map.setLayoutProperty('centroids-ranks-mortality','visibility','none')
     map.setLayoutProperty('centroids-ranks-agr','visibility','none')
     map.setLayoutProperty('centroids-ranks-violent','visibility','none')
-
+    var indicator = document.getElementById("indicator").value;
     if (indicator == "total"){
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
       document.getElementById("indicator_title").innerHTML = "Change in county GDP, 2080-2099 (national percentiles)"
-      document.getElementById("indicator2").innerHTML = "the county GDP"
+      document.getElementById("indicator2").innerHTML = "the GDP"
       map.setLayoutProperty('centroids-ranks-total','visibility','visible')
 
       //document.getElementById("risk_label").innerHTML = "Change in county GDP"
@@ -65,6 +66,9 @@ $('#indicator').on('selectmenuchange', function() {
         var crease = "increase"
       }
 
+      var percentile = 100-(100*counties_data[county_GEOID]['total_rank']/3144)
+      document.getElementById("percentile").innerHTML = percentile.toFixed(0)
+
       document.getElementById("crease").innerHTML = crease
       document.getElementById("number").innerHTML = Math.abs(county_total_damage) + "%"
       var chart_num = Math.round(counties_data[county_GEOID]['total_rank']/157)
@@ -72,6 +76,7 @@ $('#indicator').on('selectmenuchange', function() {
     }
 
     else if (indicator == "mortality"){
+      console.log("hello hello")
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
       document.getElementById("indicator_title").innerHTML = "Change in mortality rate, 2080-2099 (national percentiles)"
       document.getElementById("indicator2").innerHTML = "the mortality rate"
@@ -86,6 +91,9 @@ $('#indicator').on('selectmenuchange', function() {
       else {
         var crease = "decrease"
       }
+
+      var percentile = 100-(100*counties_data[county_GEOID]['mortality_rank']/3144)
+      document.getElementById("percentile").innerHTML = percentile.toFixed(0)
 
       document.getElementById("crease").innerHTML = crease
       document.getElementById("number").innerHTML = Math.abs(county_mortality) + " people per 100,000 residents"
@@ -106,6 +114,9 @@ $('#indicator').on('selectmenuchange', function() {
         var crease = "decrease"
       }
 
+      var percentile = 100-(100*counties_data[county_GEOID]['agricultural_rank_rank']/3144)
+      document.getElementById("percentile").innerHTML = percentile.toFixed(0)
+
       document.getElementById("crease").innerHTML = crease
       document.getElementById("number").innerHTML = Math.abs(county_agr) + "%"
       var chart_num = Math.round(counties_data[county_GEOID]['agricultural_rank']/157)
@@ -124,6 +135,8 @@ $('#indicator').on('selectmenuchange', function() {
       else {
         var crease = "decrease"
       }
+      var percentile = 100-(100*counties_data[county_GEOID]['violent_rank']/3144)
+      document.getElementById("percentile").innerHTML = percentile.toFixed(0)
       document.getElementById("crease").innerHTML = crease
       document.getElementById("number").innerHTML = Math.abs(county_crime) + "%"
       var chart_num = Math.round(counties_data[county_GEOID]['violent_rank']/157)
@@ -134,6 +147,14 @@ $('#indicator').on('selectmenuchange', function() {
 
 $('#comparison').on('selectmenuchange', function() {
     var comparison = document.getElementById("comparison").value;
+    if (comparison == "all"){
+      //document.getElementById("comparison_title").innerHTML = "counties with similar population"
+      map.setFilter('centroids-ranks-total',undefined)
+      map.setFilter('centroids-ranks-mortality',undefined)
+      map.setFilter('centroids-ranks-agr',undefined)
+      map.setFilter('centroids-ranks-violent',undefined)
+      //map.flyTo({center:[38.178,-105.650],zoom:3.25});
+    }
     if (comparison == "pop"){
       //document.getElementById("comparison_title").innerHTML = "counties with similar population"
       map.setFilter('centroids-ranks-total',["all",['<', 'county_pop', county_pop_rank+100],['>', 'county_pop', county_pop_rank-100]])
@@ -416,7 +437,7 @@ function display(coordinates, query){
   //var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
   //var values = [county_agr,county_mortality,county_labor_high,county_coastal,county_crime,county_total_damage]
   //var changes = ["agricultural yields","mortality rate","high-risk labor supply","damage from coastal storms and sea level rise","violent crime rate","total direct economic damage across sectors"]
-  document.getElementById("name").innerHTML = county_name
+  //document.getElementById("name").innerHTML = county_name
   document.getElementById("name2").innerHTML = county_name
   if (county_total_damage > 0){
     crease = "decrease"
@@ -424,9 +445,11 @@ function display(coordinates, query){
   else{
     crease = "increase"
   }
+  var percentile = 100-(100*counties_data[county_GEOID]['total_rank']/3144)
+  document.getElementById("percentile").innerHTML = percentile.toFixed(0)
   document.getElementById("crease").innerHTML = crease
   document.getElementById("number").innerHTML = Math.abs(county_total_damage) + "%"
-  document.getElementById("indicator2").innerHTML = "the county GDP"
+  document.getElementById("indicator2").innerHTML = "the GDP"
   /*var output_increase = "increases in ";
   var output_decrease = "decreases in";
   for (var i = 0; i < changes.length; i++){
@@ -498,12 +521,17 @@ function display(coordinates, query){
   document.getElementById('box2').style.height = 'auto' 
   document.getElementById('box1').style.display='none' 
   document.getElementById('box1').style.height='0px' 
-  console.log(counties_data[county_GEOID]['total_rank'])
+  //console.log(counties_data[county_GEOID]['total_rank'])
   var chart_num = Math.round(counties_data[county_GEOID]['total_rank']/157)
+  //console.log(chart_num)
   color_graph(chart_num)
-  map.flyTo({center:center_coordinates,zoom:4.2});
+  map.flyTo({center:center_coordinates,zoom:5});
   //map.setZoom(map.getZoom())
   })
+}
+
+function recenter(){
+  map.flyTo({center:center_coordinates,zoom:5});
 }
 
  function searchAgain(){

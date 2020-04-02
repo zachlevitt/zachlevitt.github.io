@@ -16,7 +16,7 @@
 	background-color:#000000;
 	height:auto;
 	min-height: 500px;
-	max-height: 600px;
+	max-height: 650px;
 	position: absolute;
 	top:-20px;
 	left:-20px;
@@ -104,8 +104,48 @@ h1.searchAgain {
 	color:darkgray;
 	text-align: center;
 	font-size: 16px;
-	margin-top: 50px;
+	margin-top: 20px;
 	font-weight: normal;
+}
+
+h1.recenter:first-of-type{
+	margin-top:40px;
+}
+
+h1.recenter:last-of-type{
+	margin-bottom:20px;
+}
+
+.circles{
+	margin:auto;
+	width:80%;
+	margin-top:20px;
+	margin-bottom: 5px;
+}
+
+.dot {
+  border-radius: 50%;
+  display: inline-block;
+  border:1px solid #bbb;
+  margin-left:5px;
+  margin-bottom:0px;
+}
+
+.menus1{
+	margin-top:10px;
+}
+
+h1.recenter {
+	border: 1px gray solid;
+	padding: 3px;
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	text-align:center;
+	color:gray;
+	width:auto;
+	max-width:180px;
 }
 
 h1.header1 {
@@ -175,12 +215,13 @@ h4.data_header {
 }
 
 h2.table_heading {
-	font-size: 13px;
+	font-size: 12px;
 	color:darkgray;
 	margin: auto;
-	margin-top: 30px;
-	margin-bottom: 5px;
-	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	text-align:left;
+	width:80%;
 	font-weight:normal;
 }
 
@@ -196,14 +237,14 @@ h2.title{
 }
 
 h3.robo{
-	color:darkgray;
-	font-size: 16px;
+	color:white;
+	font-size: 18px;
 	width:80%;
 	margin:auto;
 	margin-top:25px;
 	margin-bottom:25px;
 	text-align: left
-	line-height: 16px;
+	line-height: 22px;
 	font-weight: normal;
 }
 
@@ -292,7 +333,7 @@ table.risk {
 	height: 20px;
 	margin: auto;
 	margin-top: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	/*background-image: linear-gradient(to right, white ,black);*/
 	background-color: black;
 	border-bottom: 1px solid gray;
@@ -320,7 +361,7 @@ table.labels {
 }
 
 table.labels td{
-	width:20%;
+	width:50%;
 	color: gray;
 	font-size: 11px;
 	text-align: right;

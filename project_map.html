@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -17,10 +20,13 @@
 
   <script src = "/counties.js"></script>
   <script src = "/states.js"></script>
+  <script src = "/state_abbrev.js"></script>
 
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.js'></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
   <script type="text/javascript" src="https://d1qqc1e9kvmdh8.cloudfront.net/js/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <!--<script src='https://api.mapbox.com/mapbox.js/plugins/geojson-ex10t/v0.0.1/geojson-ex10t.js'></script>-->
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
@@ -32,8 +38,8 @@
   <div id="left_side" class="left_side">
     <!--<h4 class="intro">If the United States continues fossil-fuel-in10sive economic growth until 2080,</h4>-->
     <div id="box1" class="box1" style="display:block">
-      <h1 class="header1">Climate Change in the United States</h1>
-      <h1 class="title">By 2100, climate change will have profoundly altered life in the United States. However, these effects will not be distributed equally across space. By integrating climate models with economic data, researchers have developed <a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">estimated economic damages</a> from climate change for every county in the United States. Use this map to understand the risks your county faces.</h1>
+      <h1 class="header1">What does climate change mean for where you live?</h1>
+      <h1 class="title">By 2100, climate change will have profoundly altered life in the United States. However, these effects will not be distributed equally across space. By integrating climate models with economic data, researchers have developed <a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">estimated economic damages</a> from climate change for every county in the United States between 2080 and 2099. Use this map to understand the changes your county could experience and how they compare with the rest of the country.</h1>
 
       <h1 class="title2" style="color:white">Search for your address</h1> 
       <!--<h2 class="subtext">Search for your address:</h2>-->
@@ -49,48 +55,104 @@
                             <button class="landmark" type="button" id="disneyland">Chicago</button>
                         </div>-->
     </div>
-   <div class="box2" id="box2" style="display:none">
+   <div id="box2" class="box2"  style="display:none">
     <div class="information">
-      <h2 class="county_name" id="name"></h2>
-      <h4 class="click_info">Changes compared to all United States counties</h4>
+
+      <h2 id="name" class="title" style="color:#FFF700;font-size:28px;width:auto;margin-top:20px"></h2>
+
+      <div class="menus">
+         <form action="#">
+ 
+          <fieldset>
+            <label for="indicator"><i>Chooose an indicator:</i></label>
+            <select name="indicator" id="indicator">
+              <option selected="selected" value="total">Gross Domestic Product (GDP)</option>
+              <option value="mortality">Mortality rate</option>
+              <option value="violent">Violent crime rate</option>
+              <option value="agricultural">Agricultural yields</option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+
+      <h3 class="robo">Scientists predict that <span id="indicator2"></span> in <span id="name2" style="color:#FFF700"></span> could <span id="crease"></span> by <span id="number" style="color:white"></span> between 2080 and 2099.</h3>
+
+      <!--<h2 class="title" id="title">Compared to <span id="comparison_title" style="color:white">all U.S. counties</span></h2>-->
+
+            <h2 class="table_heading" id="indicator_title" style="">Change in county GDP, 2080-2099 (national percentiles)</h2>
       
-      <table class="risk" id="sample"><td style="background-color:#08306b"></td><td style="background-color:#08519c"></td><td style="background-color:#2171b5"></td><td style="background-color:#4292c6"></td><td style="background-color:#6baed6"></td><td style="background-color:#9ecae1"></td><td style="background-color:#c6dbef"></td><td style="background-color:#deebf7"></td><td style="background-color:#f7fbff"></td><td style="background-color:#ffffff"></td><td style="background-color:#ffffff"></td><td style="background-color:#fff5f0"></td><td style="background-color:#fee0d2"></td><td style="background-color:#fcbba1"></td><td style="background-color:#fc9272"></td><td style="background-color:#fb6a4a"></td><td style="background-color:#ef3b2c"></td><td style="background-color:#cb181d"></td><td style="background-color:#a50f15"></td><td style="background-color:#67000d"></td></table>
-      <table class="labels"><td>Better</td><td>National median</td><td>Worse</td></table>
+      <!--<h2 class="risk_label" id="risk_label">Total economic damage</h2>-->
+      <!--<table class="risk" id="sample"><td style="background-color:#67a9cf"></td><td style="background-color:#f7f7f7"></td><td style="background-color:#fc8d59"></td></table>-->
+<table class="labels"><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td></table>
+      <table class="risk" id="sample"><td id="table_20" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_19" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_18" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_17" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_16" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_15" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_14" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_13" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_12" style="background-color:#ffffff;opacity:0.8"></td><td id="table_11" style="background-color:#ffffff;opacity:0.8"></td><td id="table_10" style="background-color:#ffffff;opacity:0.8"></td><td id="table_9" style="background-color:#ffffff;opacity:0.8"></td><td id="table_8" style="background-color:#fdae61;opacity:0.8"></td><td id="table_7" style="background-color:#fdae61;opacity:0.8"></td><td id="table_6" style="background-color:#fdae61;opacity:0.8"></td><td id="table_5" style="background-color:#fdae61;opacity:0.8"></td><td id="table_4" style="background-color:#d7191c;opacity:0.8"></td><td id="table_3" style="background-color:#d7191c;opacity:0.8"></td><td id="table_2" style="background-color:#d7191c;opacity:0.8"></td><td id="table_1" style="background-color:#d7191c;opacity:0.8"></td></table>
+
+      <div class="menus1">
+        <form action="#">
+ 
+          <fieldset>
+            <label for="comparison"><i>Choose which counties to display:</i></label>
+            <select name="comparison" id="comparison">
+                <option  selected="selected" value="all">All U.S. counties</option>
+                <option value="pop">Similar population size</option>
+                <option value="income">Similar average income level</option>
+                <option value="state">Counties in the same state</option>
+                <!--<option value="region">Counties in the same region</option>
+                <option value="similar">Counties with similar values</option>-->
+                <!--<option value="greater">Counties with greater risk</option>
+                <option value="lower">Counties with lower risk</option>-->
+            </select>
+            
+        
+          </fieldset>
+        </form>
+
+      </div>
+      
+
 
       
-      <!--<h2 class="risk_label2" id="total"></h2>-->
-      <table class="risk"><td id="total_20"></td><td id="total_19"></td><td id="total_18"></td><td id="total_17"></td><td id="total_16"></td><td id="total_15"></td><td id="total_14"></td><td id="total_13"></td><td id="total_12"></td><td id="total_11"></td><td id="total_10"></td><td id="total_9"></td><td id="total_8"></td><td id="total_7"></td><td id="total_6"></td><td id="total_5"></td><td id="total_4"></td><td id="total_3"></td><td id="total_2"></td><td id="total_1"></td></table>
-      <h2 class="risk_label">TOTAL ECONOMIC DAMAGE &rarr;<span id="total" style="color: gray"></span></h2>
+      
+      <!--<h4 class="click_info">Based on scientific estimates, between 2080 and 2099 <span id="name" style="font-weight: bold"></span> will experience <span id="changes"></span></h4>-->
+      
+      <!---->
+
+      <!---->
+
+      
+      <!--<h2 class="risk_label2" id="total"></h2>
+
+        <table class="risk"><td id="total_20"></td><td id="total_19"></td><td id="total_18"></td><td id="total_17"></td><td id="total_16"></td><td id="total_15"></td><td id="total_14"></td><td id="total_13"></td><td id="total_12"></td><td id="total_11"></td><td id="total_10"></td><td id="total_9"></td><td id="total_8"></td><td id="total_7"></td><td id="total_6"></td><td id="total_5"></td><td id="total_4"></td><td id="total_3"></td><td id="total_2"></td><td id="total_1"></td></table>
+      
 
     
-    <!--<h2 class="risk_label2" id="mortality"></h2>-->
+    <h2 class="risk_label2" id="mortality"></h2>
     <table class="risk"><td id="mortality_20"></td><td id="mortality_19"></td><td id="mortality_18"></td><td id="mortality_17"></td><td id="mortality_16"></td><td id="mortality_15"></td><td id="mortality_14"></td><td id="mortality_13"></td><td id="mortality_12"></td><td id="mortality_11"></td><td id="mortality_10"></td><td id="mortality_9"></td><td id="mortality_8"></td><td id="mortality_7"></td><td id="mortality_6"></td><td id="mortality_5"></td><td id="mortality_4"></td><td id="mortality_3"></td><td id="mortality_2"></td><td id="mortality_1"></td></table>
     <h2 class="risk_label">MORTALITY RATE &rarr;<span id="mortality" style="color: gray"></span></h2>
 
     
-    <!--<h2 class="risk_label2" id="coastal"></h2>-->
+    <h2 class="risk_label2" id="coastal"></h2>
     <table class="risk"><td id="coastal_20"></td><td id="coastal_19"></td><td id="coastal_18"></td><td id="coastal_17"></td><td id="coastal_16"></td><td id="coastal_15"></td><td id="coastal_14"></td><td id="coastal_13"></td><td id="coastal_12"></td><td id="coastal_11"></td><td id="coastal_10"></td><td id="coastal_9"></td><td id="coastal_8"></td><td id="coastal_7"></td><td id="coastal_6"></td><td id="coastal_5"></td><td id="coastal_4"></td><td id="coastal_3"></td><td id="coastal_2"></td><td id="coastal_1"></td></table>
     <h2 class="risk_label">DAMAGE FROM SEA LEVEL RISE &rarr;<span id="coastal" style="color: gray"></span></h2>
 
     
-    <!--<h2 class="risk_label2" id="agricultural"></h2>-->
+    <h2 class="risk_label2" id="agricultural"></h2>
     <table class="risk"><td id="agricultural_20"></td><td id="agricultural_19"></td><td id="agricultural_18"></td><td id="agricultural_17"></td><td id="agricultural_16"></td><td id="agricultural_15"></td><td id="agricultural_14"></td><td id="agricultural_13"></td><td id="agricultural_12"></td><td id="agricultural_11"></td><td id="agricultural_10"></td><td id="agricultural_9"></td><td id="agricultural_8"></td><td id="agricultural_7"></td><td id="agricultural_6"></td><td id="agricultural_5"></td><td id="agricultural_4"></td><td id="agricultural_3"></td><td id="agricultural_2"></td><td id="agricultural_1"></td></table>
     <h2 class="risk_label">AGRICULTURAL YIELDS (maize, soybeans, wheat, cotton) &rarr;<span id="agricultural" style="color: gray"></span></h2>
 
-    <!--<h2 class="risk_label">PROPERTY CRIME &#8594;</h2>
-    <table class="risk"><td id="property_10"></td><td id="property_9"></td><td id="property_8"></td><td id="property_7"></td><td id="property_6"></td><td id="property_5"></td><td id="property_5"></td><td id="property_3"></td><td id="property_2"></td><td id="property_1"></td></table>-->
+    <h2 class="risk_label">PROPERTY CRIME &#8594;</h2>
+    <table class="risk"><td id="property_10"></td><td id="property_9"></td><td id="property_8"></td><td id="property_7"></td><td id="property_6"></td><td id="property_5"></td><td id="property_5"></td><td id="property_3"></td><td id="property_2"></td><td id="property_1"></td></table>
 
 
     
-    <!--<h2 class="risk_label2" id="violent"></h2>-->
+    <h2 class="risk_label2" id="violent"></h2>
     <table class="risk"><td id="violent_20"></td><td id="violent_19"></td><td id="violent_18"></td><td id="violent_17"></td><td id="violent_16"></td><td id="violent_15"></td><td id="violent_14"></td><td id="violent_13"></td><td id="violent_12"></td><td id="violent_11"></td><td id="violent_10"></td><td id="violent_9"></td><td id="violent_8"></td><td id="violent_7"></td><td id="violent_6"></td><td id="violent_5"></td><td id="violent_4"></td><td id="violent_3"></td><td id="violent_2"></td><td id="violent_1"></td></table>
     <h2 class="risk_label">VIOLENT CRIME &rarr;<span id="violent" style="color: gray"></span></h2>
 
 
     
-    <!--<h2 class="risk_label2" id="labor_high"></h2>-->
+    <h2 class="risk_label2" id="labor_high"></h2>
     <table class="risk"><td id="labor_high_20"></td><td id="labor_high_19"></td><td id="labor_high_18"></td><td id="labor_high_17"></td><td id="labor_high_16"></td><td id="labor_high_15"></td><td id="labor_high_14"></td><td id="labor_high_13"></td><td id="labor_high_12"></td><td id="labor_high_11"></td><td id="labor_high_10"></td><td id="labor_high_9"></td><td id="labor_high_8"></td><td id="labor_high_7"></td><td id="labor_high_6"></td><td id="labor_high_5"></td><td id="labor_high_4"></td><td id="labor_high_3"></td><td id="labor_high_2"></td><td id="labor_high_1"></td></table>
-    <h2 class="risk_label">HIGH-RISK LABOR SUPPLY &rarr;<span id="labor_high" style="color: gray"></span></h2>
+    <h2 class="risk_label">HIGH-RISK LABOR SUPPLY &rarr;<span id="labor_high" style="color: gray"></span></h2> -->
 
 
     <h1 class="searchAgain" onClick="searchAgain()">↻ Search for another location</h1>

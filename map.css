@@ -15,7 +15,7 @@
 	float:left;
 	background-color:#000000;
 	height:auto;
-	min-height: 450px;
+	min-height: 500px;
 	max-height: 600px;
 	position: absolute;
 	top:-20px;
@@ -92,30 +92,30 @@ a:hover {
 h1.title {
 	color:darkgray;
 	font-size: 16px;
-	margin-left: 15px;
-	margin-right: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
 	margin-top:10px;
 	text-align: justify;
-	line-height: 24px;
-	font-weight: bold;
+	line-height: 20px;
+	font-weight: normal;
 }
 
 h1.searchAgain {
 	color:darkgray;
 	text-align: center;
 	font-size: 16px;
-	margin-top: 30px;
+	margin-top: 50px;
 	font-weight: normal;
 }
 
 h1.header1 {
-	color:#FABF38;
+	color:white;
 	margin: auto;
 	font-size: 34px;
 	text-align: center;
 	margin-top:20px;
 	margin-bottom: 20px;
-	width:90%;
+	width:95%;
 	font-weight: normal;
 }
 
@@ -155,19 +155,110 @@ h4.data_header {
 	margin: 10px;
 }
 
-h2.county_name {
-	font-size: 28px;
-	color: #FABF38;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:active .dropdown-content {
+  display: block;
+}
+
+h2.table_heading {
+	font-size: 13px;
+	color:darkgray;
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 30px;
 	margin-bottom: 5px;
 	text-align: center;
+	font-weight:normal;
+}
+
+h2.title{
+	font-size: 20px;
+	color: gray;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-weight:normal;
+	width:auto;
+}
+
+h3.robo{
+	color:darkgray;
+	font-size: 16px;
+	width:80%;
+	margin:auto;
+	margin-top:25px;
+	margin-bottom:25px;
+	text-align: left
+	line-height: 16px;
+	font-weight: normal;
+}
+
+fieldset {
+      border: 0;
+      text-align:left;
+      width:80%;
+      margin:auto;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px 0;
+      color:darkgray;
+    }
+
+.ui-button{
+	background-color:#000000;
+	color:white;
+	font-size:18px;
+	
+}
+
+.ui-state-active,.ui-widget-content {
+	background:gray;
+	border:1px solid black;
+}
+.ui-selectmenu-button.ui-button{
+	width:100%!important;
+	background-color:#000000;
+	color:white;
+	font-size:18px;
+}
+
+#comparison-button{
+	background-color: #000000;
+	color:white;
+	font-size:18px;
+}
+
+.ui-button:hover{
+	background-color:#000000;
+	color:white;
+	font-size:18px;
+}
+.ui-menu-item{
+	background-color:#000000;
+	color:white;
+	font-size:18px;
 }
 
 h2.risk_label {
 	font-size: 12px;
-	color: gray;
+	color: white;
 	margin: auto;
+	margin-top: 20px;
 	text-align: left;
 	width: 90%;
 	max-width: 350px;
@@ -200,8 +291,8 @@ table.risk {
 	max-width: 350px;
 	height: 20px;
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-top: 0px;
+	margin-bottom: 20px;
 	/*background-image: linear-gradient(to right, white ,black);*/
 	background-color: black;
 	border-bottom: 1px solid gray;
@@ -212,7 +303,7 @@ table.risk td {
 }
 
 table.risk#sample{
-	margin-top: 20px;
+	margin-top: 0px;
 	border: none;
 }
 
@@ -221,18 +312,18 @@ table.labels {
 	max-width: 350px;
 	height: 20px;
 	margin: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	background-color: black;
 	text-align: center;
 	border: none;
 }
 
 table.labels td{
-	width:33%;
-	color: white;
-	font-size: 10px;
-	text-align: center;
+	width:20%;
+	color: gray;
+	font-size: 11px;
+	text-align: right;
 }
 
 

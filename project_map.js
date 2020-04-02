@@ -1,5 +1,3 @@
-
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA';
 
 var bounds = [
@@ -33,6 +31,140 @@ var geocoder = new MapboxGeocoder({
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
+$( function() {
+    $( "#indicator" ).selectmenu();
+ 
+    $( "#comparison" ).selectmenu();
+
+
+  } );
+
+$('#indicator').on('selectmenuchange', function() {
+    //document.getElementById("title").innerHTML = "Change in " + indicator
+    map.setLayoutProperty('centroids-ranks-total','visibility','none')
+    map.setLayoutProperty('centroids-ranks-mortality','visibility','none')
+    map.setLayoutProperty('centroids-ranks-agr','visibility','none')
+    map.setLayoutProperty('centroids-ranks-violent','visibility','none')
+
+    if (indicator == "total"){
+      //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
+      document.getElementById("indicator_title").innerHTML = "Change in county GDP, 2080-2099 (national percentiles)"
+      document.getElementById("indicator2").innerHTML = "the county GDP"
+      map.setLayoutProperty('centroids-ranks-total','visibility','visible')
+
+      //document.getElementById("risk_label").innerHTML = "Change in county GDP"
+      //map.setPaintProperty("centroids-ranks-c9ustg", "circle-color",["case",
+        //["get", "total_rank"],1048,"#fc8d59",2096,"#f7f7f7","#67a9cf"])
+    //var raw_num = counties_data[county_GEOID]['total_rank']/3144
+    //percentile = 100-Math.round(raw_num*100)
+
+      if (county_total_damage > 0){
+        var crease = "decrease"
+      }
+      else {
+        var crease = "increase"
+      }
+
+      document.getElementById("crease").innerHTML = crease
+      document.getElementById("number").innerHTML = Math.abs(county_total_damage) + "%"
+      var chart_num = Math.round(counties_data[county_GEOID]['total_rank']/157)
+      color_graph(chart_num)
+    }
+
+    else if (indicator == "mortality"){
+      //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
+      document.getElementById("indicator_title").innerHTML = "Change in mortality rate, 2080-2099 (national percentiles)"
+      document.getElementById("indicator2").innerHTML = "the mortality rate"
+      map.setLayoutProperty('centroids-ranks-mortality','visibility','visible')
+      //map.setPaintProperty("centroids-ranks-", "circle-color",["<",
+       // ["get", "mortality_"],1048,"#fc8d59",2096,"#f7f7f7","#67a9cf"])
+      //document.getElementById("risk_label").innerHTML = "Change in mortality rate"
+      
+      if (county_mortality > 0){
+        var crease = "increase"
+      }
+      else {
+        var crease = "decrease"
+      }
+
+      document.getElementById("crease").innerHTML = crease
+      document.getElementById("number").innerHTML = Math.abs(county_mortality) + " people per 100,000 residents"
+      var chart_num = Math.round(counties_data[county_GEOID]['mortality_rank']/157)
+      color_graph(chart_num)
+    }
+
+    else if (indicator == "agricultural"){
+      //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
+      document.getElementById("indicator_title").innerHTML = "Change in agricultural yields, 2080-2099 (national percentiles)"
+      document.getElementById("indicator2").innerHTML = "agricultural yields (average of maize, wheat, soybeans, cotton)"
+      map.setLayoutProperty('centroids-ranks-agr','visibility','visible')
+      //document.getElementById("risk_label").innerHTML = "Change in agricultural yields"
+      if (county_agr > 0){
+        var crease = "increase"
+      }
+      else {
+        var crease = "decrease"
+      }
+
+      document.getElementById("crease").innerHTML = crease
+      document.getElementById("number").innerHTML = Math.abs(county_agr) + "%"
+      var chart_num = Math.round(counties_data[county_GEOID]['agricultural_rank']/157)
+      color_graph(chart_num)
+    }
+
+    else if (indicator == "violent"){
+      //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
+      document.getElementById("indicator_title").innerHTML = "Change in violent crime rates, 2080-2099 (national percentiles)"
+      document.getElementById("indicator2").innerHTML = "the violent crime rate"
+      map.setLayoutProperty('centroids-ranks-violent','visibility','visible')
+      //document.getElementById("risk_label").innerHTML = "Change in violent crime rates"
+      if (county_crime > 0){
+        var crease = "increase"
+      }
+      else {
+        var crease = "decrease"
+      }
+      document.getElementById("crease").innerHTML = crease
+      document.getElementById("number").innerHTML = Math.abs(county_crime) + "%"
+      var chart_num = Math.round(counties_data[county_GEOID]['violent_rank']/157)
+      color_graph(chart_num)
+    }
+
+});
+
+$('#comparison').on('selectmenuchange', function() {
+    var comparison = document.getElementById("comparison").value;
+    if (comparison == "pop"){
+      //document.getElementById("comparison_title").innerHTML = "counties with similar population"
+      map.setFilter('centroids-ranks-total',["all",['<', 'county_pop', county_pop_rank+100],['>', 'county_pop', county_pop_rank-100]])
+      map.setFilter('centroids-ranks-mortality',["all",['<', 'county_pop', county_pop_rank+100],['>', 'county_pop', county_pop_rank-100]])
+      map.setFilter('centroids-ranks-agr',["all",['<', 'county_pop', county_pop_rank+100],['>', 'county_pop', county_pop_rank-100]])
+      map.setFilter('centroids-ranks-violent',["all",['<', 'county_pop', county_pop_rank+100],['>', 'county_pop', county_pop_rank-100]])
+      //map.flyTo({center:[38.178,-105.650],zoom:3.25});
+    }
+
+    else if (comparison == "income"){
+      //document.getElementById("comparison_title").innerHTML = "counties with similar income level"
+      map.setFilter('centroids-ranks-total',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
+      map.setFilter('centroids-ranks-mortality',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
+      map.setFilter('centroids-ranks-agr',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
+      map.setFilter('centroids-ranks-violent',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
+      //map.flyTo({center:[38.178,-105.650],zoom:3.25});
+    }
+
+    else if (comparison == "state"){
+      //document.getElementById("comparison_title").innerHTML = "counties with similar income level"
+      map.setFilter('centroids-ranks-total',['==','STATEFP', county_GEOID.substring(0,2)])
+      map.setFilter('centroids-ranks-mortality',['==','STATEFP', county_GEOID.substring(0,2)])
+      map.setFilter('centroids-ranks-agr',['==','STATEFP', county_GEOID.substring(0,2)])
+      map.setFilter('centroids-ranks-violent',['==','STATEFP', county_GEOID.substring(0,2)])
+
+    }
+
+
+
+    
+});
 /*map.on('click', 'counties-w-centroid-8luv4d', function(e) {
   var coordinates = e.features[0].geometry.coordinates[0][0]
   //var description = e.features[0].properties.description
@@ -116,6 +248,38 @@ map.getCanvas().style.cursor = '';
 //counter.start();
 //
 
+// var popup = new mapboxgl.Popup({
+//   closeButton: false,
+//   closeOnClick: false
+// });
+
+// map.on('mouseenter', 'centroids-ranks-total', function(e) {
+// // Change the cursor style as a UI indicator.
+//   //map.getCanvas().style.cursor = 'pointer';
+ 
+//   var coordinates = e.features[0].geometry.coordinates.slice();
+//   var description = e.features[0].properties.STATEFP;
+   
+//   // Ensure that if the map is zoomed out such that multiple
+//   // copies of the feature are visible, the popup appears
+//   // over the copy being pointed to.
+//   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+//   coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+// }
+ 
+// // Populate the popup and set its coordinates
+// // based on the feature found.
+// popup
+//   .setLngLat(coordinates)
+//   .setHTML(description)
+//   .addTo(map);
+// });
+ 
+// map.on('mouseleave', 'places', function() {
+//   map.getCanvas().style.cursor = '';
+//   popup.remove();
+// });
+
 var color_dict = {20:'#08306b',
                   19:'#08519c',
                   18:'#2171b5',
@@ -137,7 +301,7 @@ var color_dict = {20:'#08306b',
                   2:'#a50f15',
                   1:'#67000d'}
 
-var county_GEOID, county_income, county_name,county_agr,county_mortality,county_energy_exp,county_labor_low,county_labor_high,county_coastal,county_property,county_crime,county_total_damage,center_coordinates
+var crease,state_code,percentile, county_GEOID, county_income_rank,county_pop_rank, county_name,county_agr,county_mortality,county_energy_exp,county_labor_low,county_labor_high,county_coastal,county_property,county_crime,county_total_damage,center_coordinates
 
 geocoder.on('result', function(ev) {
 
@@ -158,17 +322,20 @@ geocoder.on('result', function(ev) {
   
 })
 
-
-function color_graph(indicator, num, percentile){
+function color_graph(num){
+  
+  for (var i = 1; i < 21; i++){
+    var table_id = "table_" + i
+    document.getElementById(table_id).style.border = '0px'
+  }
   if (num == 0){
     num = 1
   }
-  var table_id = indicator + "_" + num
-  //console.log(table_id)
-  document.getElementById(table_id).style.backgroundColor = color_dict[num]
+  var table_id = "table_" + num
+  document.getElementById(table_id).style.border = '2px #FFF700 solid'
     //document.getElementById(indicator).innerHTML = "<span style='font-weight:bold;color:" + color_dict[num] + "'>" + percentile + "</span>th percentile"
 }
-
+/*
 function decolorGraph(){
   var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
   
@@ -181,7 +348,7 @@ function decolorGraph(){
       document.getElementById(table_id).style.backgroundColor = 'black'
     }
   }
-}
+}*/
 
 function display(coordinates, query){
 
@@ -197,9 +364,19 @@ function display(coordinates, query){
   if (county_GEOID.slice(0,1)=='0'){
     county_GEOID = county_GEOID.slice(1)
   }
-  county_income = counties_data[county_GEOID]['county_income_2012']
+  county_pop_rank = counties_data[county_GEOID]['county_pop_rank']
+  county_income_rank = counties_data[county_GEOID]['county_income_rank']
   county_name = counties_data[county_GEOID]['county_name'] + ", " + counties_data[county_GEOID]['state_code']
-  county_agr = counties_data[county_GEOID]['agricultural_damage']
+  if (counties_data[county_GEOID]['agricultural_damage'] != ""){
+    county_agr = (counties_data[county_GEOID]['agricultural_damage']).toFixed(2)
+  }
+
+  else {
+    county_agr = 0
+  }
+  
+  state_code = counties_data[county_GEOID]['state_code']
+  console.log(state_code)
   //county_agr = county_agr.toFixed(2)
   county_mortality = (counties_data[county_GEOID]['mortality']).toFixed(2)
   county_energy_exp = (counties_data[county_GEOID]['energy_expenditures']).toFixed(2)
@@ -210,22 +387,25 @@ function display(coordinates, query){
   county_crime = (counties_data[county_GEOID]['violent_crime']).toFixed(2)
   //var county_total_damage = (entries[0][1].properties[`Total dama`]).toFixed(2)
   county_total_damage = (counties_data[county_GEOID]['total_damages']).toFixed(2)
-  center_coordinates = [entries[0][1].properties.xcoord-5,entries[0][1].properties.ycoord]
+  center_coordinates = [entries[0][1].properties.xcoord-4,entries[0][1].properties.ycoord]
   
 
-  map.setFilter('counties',['==', 'GEOID', county_GEOID])
-  map.setFilter('counties-border',['==', 'GEOID', county_GEOID])
+  //map.setFilter('counties',['==', 'GEOID', county_GEOID])
+  //map.setFilter('counties-border',['==', 'GEOID', county_GEOID])
   map.setFilter('centroids_info',['==', 'GEOID', county_GEOID])
   map.setFilter('states-6all0o',['==', 'name', states[county_GEOID.substring(0,2)].name])
-  map.setLayoutProperty('counties',"visibility","visible");
+  map.setFilter('county-rank',['==', 'GEOID', county_GEOID])
+  //map.setFilter('centroids-ranks-c9ustg',['!=', 'GEOID', county_GEOID])
+  //map.setLayoutProperty('counties',"visibility","visible");
   map.setLayoutProperty('centroids_info',"visibility","visible")
-  map.setLayoutProperty('counties-border',"visibility","visible");
+  //map.setLayoutProperty('counties-border',"visibility","visible");
   map.setLayoutProperty('states-6all0o',"visibility","visible");
-  map.setLayoutProperty('centroids-ranks-c9ustg',"visibility","visible")
+  map.setLayoutProperty('centroids-ranks-total',"visibility","visible")
+  map.setLayoutProperty('county-rank',"visibility","visible")
   //console.log(map.queryRenderedFeatures({ layers: ['states-6all0o'] }))
   //
   //var layers = map.getStyle().layers;
-  console.log("county damage: " + county_total_damage)
+  //console.log("county damage: " + county_total_damage)
   //
   //map.setFilter('better',['<', 'Total dama', county_total_damage])
   //console.log(map.getFilter('better'))
@@ -233,14 +413,38 @@ function display(coordinates, query){
   //map.setFilter('worse',[">", 'Total dama', county_total_damage])
   //map.setLayoutProperty('worse',"visibility","visible");
 
-  var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
-  var values = [county_agr,county_mortality,county_energy_exp,county_labor_high,county_coastal,county_property,county_crime,county_total_damage]
-
+  //var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
+  //var values = [county_agr,county_mortality,county_labor_high,county_coastal,county_crime,county_total_damage]
+  //var changes = ["agricultural yields","mortality rate","high-risk labor supply","damage from coastal storms and sea level rise","violent crime rate","total direct economic damage across sectors"]
   document.getElementById("name").innerHTML = county_name
+  document.getElementById("name2").innerHTML = county_name
+  if (county_total_damage > 0){
+    crease = "decrease"
+  }
+  else{
+    crease = "increase"
+  }
+  document.getElementById("crease").innerHTML = crease
+  document.getElementById("number").innerHTML = Math.abs(county_total_damage) + "%"
+  document.getElementById("indicator2").innerHTML = "the county GDP"
+  /*var output_increase = "increases in ";
+  var output_decrease = "decreases in";
+  for (var i = 0; i < changes.length; i++){
+    if (values[i]>0){
+      output_increase = output_increase.concat(changes[i],", ")
+    }
 
+    else {
+      output_decrease = output_decrease.concat(changes[i],", ")
+    }
+  }*/
 
-  var percentile;
-  for (var i = 0; i < indicators.length; i++){
+  //console.log("decreases: ",output_decrease)
+  //console.log("increases: ",output_increase)
+  //document.getElementById("changes").innerHTML = output_increase
+
+  
+  /*for (var i = 0; i < indicators.length; i++){
 
     var id = indicators[i] + "_rank"
     var raw_num = counties_data[county_GEOID][id]/3144
@@ -248,7 +452,7 @@ function display(coordinates, query){
     var raw_num2 = counties_data[county_GEOID][id]/6288
     var chart_num = Math.round(raw_num*20)
     color_graph(indicators[i],chart_num, percentile)
-  }
+  }*/
 
   //
   
@@ -294,33 +498,32 @@ function display(coordinates, query){
   document.getElementById('box2').style.height = 'auto' 
   document.getElementById('box1').style.display='none' 
   document.getElementById('box1').style.height='0px' 
-  map.flyTo({center:center_coordinates,zoom:5});
-  //map.setZoom(4)
+  console.log(counties_data[county_GEOID]['total_rank'])
+  var chart_num = Math.round(counties_data[county_GEOID]['total_rank']/157)
+  color_graph(chart_num)
+  map.flyTo({center:center_coordinates,zoom:4.2});
+  //map.setZoom(map.getZoom())
   })
 }
-
- function myFunction(prompt) {
-   //document.getElementById("myDropdown").classList.toggle("show");
-   //console.log(prompt)
-   //console.log(county_GEOID)
-   //console.log(counties_data[county_GEOID])
-   //whatever is clicked, add layer
-   //style it based on the value and the rank
-   //
- }
 
  function searchAgain(){
     document.getElementById('box2').style.display='none'
     document.getElementById('box2').style.height='0px' 
     document.getElementById('box1').style.display='block' 
     document.getElementById('box2').style.height = 'auto' 
+    $("#indicator").val("total");
+    $("#comparison").val("all");
 
-    map.setLayoutProperty('counties',"visibility","none");
-    map.setLayoutProperty('counties-border',"visibility","none");
+    //map.setLayoutProperty('counties',"visibility","none");
+    //map.setLayoutProperty('counties-border',"visibility","none");
     map.setLayoutProperty('states-6all0o',"visibility","none");
-    map.setLayoutProperty('centroids-ranks-c9ustg',"visibility","none")
+    map.setLayoutProperty('centroids-ranks-total','visibility','none')
+    map.setLayoutProperty('centroids-ranks-mortality','visibility','none')
+    map.setLayoutProperty('centroids-ranks-agr','visibility','none')
+    map.setLayoutProperty('centroids-ranks-violent','visibility','none')
     map.setLayoutProperty('centroids_info',"visibility","none")
-    decolorGraph()
+    map.setLayoutProperty('county-rank',"visibility","none")
+    //decolorGraph()
     //map.setLayoutProperty('better',"visibility","hidden");
     //map.setLayoutProperty('worse',"visibility","hidden");
     //document.querySelector('.mapboxgl-ctrl-geocoder').display = 'none'

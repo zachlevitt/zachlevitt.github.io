@@ -33,24 +33,27 @@
 </head>
 
 <body>
-  <div id="map" style="max-height:100%;height:100%;min-height:690px;width:67%;margin-left:33%"></div>
-  <div id="left_side" class="left_side">
+  <div id="map" style="height:100%;max-height:100%;min-height:800px;width:67%;margin-left:33%"></div>
+  <div class="left_side" id="left_side" >
     <!--<h4 class="intro">If the United States continues fossil-fuel-in10sive economic growth until 2080,</h4>-->
     <div id="box1" class="box1" style="display:block">
       <h1 class="header1">United States of Climate Change</h1>
       <h1 class="header2">What could the climate crisis mean for where you live?</h1>
-      <h1 class="byline">By <a href="zachlevitt.github.io" target="_blank">Zach Levitt</a></h1>
-      <h1 class="text">Climate change can often feel like an invisible threat. Sea level rise, warming temperatures, more frequent major storms, economic upheaval. With the uncertainty of the future, it is often difficult to situate these threats in a particular geographic location or temporal moment.</h1>
+      <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
+      <h1 class="text">Sea level rise, increasing temperatures, frequent coastal storms, economic upheaval, worsening social inequality. Despite its gravity, the climate crisis can often feel like an invisible and distant threat.</h1>
 
-      <h1 class="text">This project seeks to visualize and personalize the ways in which everyday life in America will be profoundly altered by climate change by 2100. The disastrous impacts mentioned above will not be distributed equally across space. Thus, by integrating climate models with economic data, researchers have developed <a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">estimated economic damages</a> from climate change for every county in the United States between 2080 and 2099.</h1>
+      <h1 class="text">Yet researchers from across the United States recently developed estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>). These estimates show that climate change damage is not distributed equally across space. Explore the nationwide maps for each of the indicators below:</h1>
 
-      <h1 class="text">Use this map to understand the changes your county could experience and how they compare with the rest of the country.</h1>
+      <h1 class="national">Total economic damage</h1>
+      <h1 class="national">Violent crime rate</h1>
+      <h1 class="national">Agricultural yields</h1>
+      <h1 class="national">Mortality rate</h1>
 
-      <h1 class="title2" style="color:white">Search for your address</h1> 
+      <h1 class="text">What does this mean for your county? Use the map to explore the geography of climate change in the United States and understand the risks your county faces.</h1>
+
+      <h1 class="title2" id="search" style="color:white">Search for your address</h1> 
       <!--<h2 class="subtext">Search for your address:</h2>-->
       <div id="geocoder" class="geocoder" style="width:100%"></div>
-
-      <p class="info">&#9432 Developed by Zach Levitt, 2020. Learn more about this project <a href="project_home.html">here</a>.</p>
 
       <!--<h2 class="subtext2">Or view scenarios for major urban centers:</h2>
 
@@ -178,7 +181,10 @@
     <h1 class="recenter" onClick="searchAgain()">New search</h1>
     
   </div>
+
+
 </div>
+<p class="info">&#9432 Developed by Zach Levitt, 2020. Learn more about this project <a href="project_home.html">here</a>.</p>
   <!--<h2 class="subtext"><i>Choose a climate change indicator:</i></h2>
   <ul class="indicators">
     <li>Mortality <i class='fas fa-angle-double-right' style='color:gray'></i></li>

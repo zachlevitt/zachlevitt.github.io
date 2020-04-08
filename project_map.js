@@ -1,18 +1,18 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA';
 
-var bounds = [
-[-180.549495, 0], // Southwest coordinates
-[-38.908874,72.551] // Northeast coordinates
-];
+// var bounds = [
+// [-180.549495, 0], // Southwest coordinates
+// [-38.908874,72.551] // Northeast coordinates
+// ];
 
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/zachlevitt/ck71cbegj0a0f1iqjn8regnj4/draft', // stylesheet location
-  center: [-114.278395, 38.028578], // starting position [lng, lat]
-  zoom: 3, // starting zoom
+  center: [-1.750,-0.727], // starting position [lng, lat]
+  zoom: 3.2, // starting zoom
   minZoom: 3,
-  maxZoom: 6,
-  maxBounds: bounds
+  maxZoom: 6
+  //maxBounds: bounds
   });
 
 map.addControl(new mapboxgl.NavigationControl());

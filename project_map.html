@@ -35,21 +35,20 @@
 <body>
   <div id="map" style="height:100%;max-height:100%;min-height:800px;width:67%;margin-left:33%"></div>
   <div class="left_side" id="left_side" >
-    <!--<h4 class="intro">If the United States continues fossil-fuel-in10sive economic growth until 2080,</h4>-->
     <div id="box1" class="box1" style="display:block">
       <h1 class="header1">United States of Climate Change</h1>
       <h1 class="header2">What could the climate crisis mean for where you live?</h1>
       <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
       <h1 class="text">Sea level rise, increasing temperatures, frequent coastal storms, economic upheaval, worsening social inequality. Despite its gravity, the climate crisis can often feel like an invisible and distant threat.</h1>
 
-      <h1 class="text">Yet researchers from across the United States recently developed estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>). These estimates show that climate change damage is not distributed equally across space. Explore the nationwide maps for each of the indicators below:</h1>
+      <h1 class="text">In order for policy makers to have more spatially accurate predictions, researchers from across the United States have developed estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>). This study examines the changes to a range of factors, including county GDP, agricultural yields, mortality rates, and crime rates. Click on a factor below to explore nationwide patterns:</h1>
 
-      <h1 class="national">Total economic damage</h1>
+      <h1 class="national" style="margin-top:25px">Total economic damage</h1>
       <h1 class="national">Violent crime rate</h1>
       <h1 class="national">Agricultural yields</h1>
-      <h1 class="national">Mortality rate</h1>
+      <h1 class="national" style="margin-bottom:25px">Mortality rate</h1>
 
-      <h1 class="text">What does this mean for your county? Use the map to explore the geography of climate change in the United States and understand the risks your county faces.</h1>
+      <h1 class="text">These national maps demonstrate national geography yet may still feel difficult to contextualize. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>
 
       <h1 class="title2" id="search" style="color:white">Search for your address</h1> 
       <!--<h2 class="subtext">Search for your address:</h2>-->
@@ -68,7 +67,7 @@
 
       <!--<h2 id="name" class="title" style="color:#FFF700;font-size:28px;width:auto;margin-top:20px"></h2>-->
 
-      <h3 class="robo">In <span id="name2" style="color:#FFF700"></span>, scientists predict that <span id="indicator2"></span> could <span id="crease"></span> by <span id="number" style="border-bottom:1px white solid"></span> between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>
+      <h3 class="robo" id="robo">In <span id="name2" style="color:#FFF700"></span>, scientists predict that <span id="indicator2"></span> could <span id="crease"></span> by <span id="number" style="border-bottom:1px white solid"></span> between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>
 
       <!--<h2 class="title" id="title">Compared to <span id="comparison_title" style="color:white">all U.S. counties</span></h2>-->
 
@@ -77,7 +76,7 @@
       <!--<h2 class="risk_label" id="risk_label">Total economic damage</h2>-->
       <!--<table class="risk" id="sample"><td style="background-color:#67a9cf"></td><td style="background-color:#f7f7f7"></td><td style="background-color:#fc8d59"></td></table>-->
       <h2 class="table_heading" id="indicator_title">National percentile for change in county GDP, 2080-2099</h2>
-      <table class="risk" id="sample"><td id="table_20" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_19" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_18" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_17" style="background-color:#2c7bb6;opacity:0.8"></td><td id="table_16" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_15" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_14" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_13" style="background-color:#abd9e9;opacity:0.8"></td><td id="table_12" style="background-color:#ffffff;opacity:0.8"></td><td id="table_11" style="background-color:#ffffff;opacity:0.8"></td><td id="table_10" style="background-color:#ffffff;opacity:0.8"></td><td id="table_9" style="background-color:#ffffff;opacity:0.8"></td><td id="table_8" style="background-color:#fdae61;opacity:0.8"></td><td id="table_7" style="background-color:#fdae61;opacity:0.8"></td><td id="table_6" style="background-color:#fdae61;opacity:0.8"></td><td id="table_5" style="background-color:#fdae61;opacity:0.8"></td><td id="table_4" style="background-color:#d7191c;opacity:0.8"></td><td id="table_3" style="background-color:#d7191c;opacity:0.8"></td><td id="table_2" style="background-color:#d7191c;opacity:0.8"></td><td id="table_1" style="background-color:#d7191c;opacity:0.8"></td></table>
+      <table class="risk" id="sample"><td id="table_20" style="background-color:#ffffff;opacity:0.8"></td><td id="table_19" style="background-color:#ffffff;opacity:0.8"></td><td id="table_18" style="background-color:#ffffff;opacity:0.8"></td><td id="table_17" style="background-color:#ffffff;opacity:0.8"></td><td id="table_16" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_15" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_14" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_13" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_12" style="background-color:#ea9555;opacity:0.8"></td><td id="table_11" style="background-color:#ea9555;opacity:0.8"></td><td id="table_10" style="background-color:#ea9555;opacity:0.8"></td><td id="table_9" style="background-color:#ea9555;opacity:0.8"></td><td id="table_8" style="background-color:#d95f20;opacity:0.8"></td><td id="table_7" style="background-color:#d95f20;opacity:0.8"></td><td id="table_6" style="background-color:#d95f20;opacity:0.8"></td><td id="table_5" style="background-color:#d95f20;opacity:0.8"></td><td id="table_4" style="background-color:#c80000;opacity:0.8"></td><td id="table_3" style="background-color:#c80000;opacity:0.8"></td><td id="table_2" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
 
       <table class="labels"><td style="text-align:left">0</td><td style="text-align:center">National median</td><td id="100">100</td></table>
 

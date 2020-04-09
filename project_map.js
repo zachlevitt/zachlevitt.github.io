@@ -1,18 +1,23 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA';
 
 var bounds = [
-[-15.119,-26.466], // Southwest coordinates
-[18.037,23.505] // Northeast coordinates
+[-22.119,-37.7], // Southwest coordinates
+[22.037,32.505] // Northeast coordinates
 ];
+
+// var bounds = [
+// [-18.119,-30.7], // Southwest coordinates
+// [16.037,25.505] // Northeast coordinates
+// ];
 
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/zachlevitt/ck71cbegj0a0f1iqjn8regnj4/draft', // stylesheet location
-  center: [0,-2.0], // starting position [lng, lat]
-  zoom: 3.6, // starting zoom
+  center: [-2.5,1.5], // starting position [lng, lat]
+  zoom: 3, // starting zoom
   minZoom: 3,
-  maxZoom: 6
-  //maxBounds: bounds
+  maxZoom: 6,
+  maxBounds: bounds
   });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -51,7 +56,7 @@ $('#indicator').on('selectmenuchange', function() {
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
       document.getElementById("indicator_title").innerHTML = "National percentile for change in GDP, 2080-2099"
       document.getElementById("indicator2").innerHTML = "the GDP"
-      map.setLayoutProperty('centroids-ranks-total','visibility','visible')
+      map.setLayoutProperty('total','visibility','visible')
 
       //document.getElementById("risk_label").innerHTML = "Change in county GDP"
       //map.setPaintProperty("centroids-ranks-c9ustg", "circle-color",["case",
@@ -421,7 +426,7 @@ function display(coordinates, query){
   map.setLayoutProperty('centroids_info',"visibility","visible")
   //map.setLayoutProperty('counties-border',"visibility","visible");
   map.setLayoutProperty('states',"visibility","visible");
-  map.setLayoutProperty('centroids-ranks-total',"visibility","visible")
+  map.setLayoutProperty('total',"visibility","visible")
   map.setLayoutProperty('county-rank',"visibility","visible")
   //console.log(map.queryRenderedFeatures({ layers: ['states-6all0o'] }))
   //
@@ -519,19 +524,19 @@ function display(coordinates, query){
   //document.getElementById("data4").innerHTML = county_mortality;
   document.getElementById('box2').style.display = 'block'
   document.getElementById('box2').style.height = 'auto' 
-  $("html, body, #left_side").animate({scrollTop: $("#box2").offset().top}, 500);
+  $("html, body, #left_side").animate({scrollTop: $("#robo").offset().top}, 500);
   //console.log(counties_data[county_GEOID]['total_rank'])
   var chart_num = Math.round(counties_data[county_GEOID]['total_rank']/157)
   //console.log(chart_num)
   color_graph(chart_num)
-  console.log(center_coordinates)
-  map.flyTo({center:center_coordinates,zoom:5});
+  //console.log(center_coordinates)
+  map.flyTo({center:center_coordinates,zoom:5.5});
   //map.setZoom(map.getZoom())
   })
 }
 
 function recenter(){
-  map.flyTo({center:center_coordinates,zoom:5});
+  map.flyTo({center:center_coordinates,zoom:5.5});
 }
 
  function searchAgain(){

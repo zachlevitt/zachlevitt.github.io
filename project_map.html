@@ -27,6 +27,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="js/scrollmagic/minified/ScrollMagic.min.js"></script>
   <!--<script src='https://api.mapbox.com/mapbox.js/plugins/geojson-ex10t/v0.0.1/geojson-ex10t.js'></script>-->
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
 <link rel='stylesheet' type='text/css' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' />
@@ -34,21 +35,81 @@
 
 <body>
   <div id="map" style="height:100%;max-height:100%;min-height:800px;width:67%;margin-left:33%"></div>
-  <div class="left_side" id="left_side" >
+  <div id="menu"><a href="#" id="populated-places" onClick="show('populated-places')" class="">Show major cities</a><a href="#" id="states-outline" onClick="show('states-outline')" class="active">Hide state outlines</a></div>
+  <div class="left_side" id="left_side" onscroll="onScroll()">
     <div id="box1" class="box1" style="display:block">
-      <h1 class="header1">United States of Climate Change</h1>
-      <h1 class="header2">What could the climate crisis mean for where you live?</h1>
+      <h1 class="header1">Geographies of <span style="color:#C80000;font-size:46px">Climate Change</span> in the United States</h1>
       <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
-      <h1 class="text">Sea level rise, increasing temperatures, frequent coastal storms, economic upheaval, worsening social inequality. Despite its gravity, the climate crisis can often feel like an invisible and distant threat.</h1>
+      <!--<h2 class="byline">A senior project completed as part of a joint degree in geography and computer science at Middlebury College.<br><br>Advised by Dr. Jeff Howarth.</h1>-->
+      <h1 class="text" id="sec1">Increasing temperatures. Sea level rise. Frequent natural disasters. Economic upheaval. Worsening social inequality.</h1>
 
-      <h1 class="text">In order for policy makers to have more spatially accurate predictions, researchers from across the United States have developed estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>). This study examines the changes to a range of factors, including county GDP, agricultural yields, mortality rates, and crime rates. Click on a factor below to explore nationwide patterns:</h1>
+      <h1 class="text" id="sec1">Climate change poses grave threats to the world yet often appears as an invisible and distant threat. This is especially true for much of the United States, where the crisis is highly politicized and it is easy to feel guarded from the worst effects.</h1>
 
-      <h1 class="national" style="margin-top:25px">Total economic damage</h1>
-      <h1 class="national">Violent crime rate</h1>
-      <h1 class="national">Agricultural yields</h1>
-      <h1 class="national" style="margin-bottom:25px">Mortality rate</h1>
+      <h1 class="text" id="sec1">Therefore, this project is guided by two primary questions. First, how will climate change impact the United States? And second, what is the geography of climate change effects look like? By visualizing and evaluating the estimated impacts, this mapping tool hopes to motivate people to recognize how climate change could alter life in the United States by 2100.</h1>
 
-      <h1 class="text">These national maps demonstrate national geography yet may still feel difficult to contextualize. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>
+      <h1 class="text">Utilizing data from a recent 2017 study of estimated climate change damages for every county in the United States (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), this project examines a range of economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates. The data reflect estimated changes in these indicators between 2080 and 2099.</h1>
+
+      <h1 class="text">Due to the nature of these projections the raw changes are less meaningful than relative impact. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>
+      
+      <div class="introduction" id="pop">
+        <h1 class="text_scroll">Visualizing the geography of climate change depends on the existing population geography of the United States. While counties are a helpful unit of analysis for this study, their populations vary significantly.</h1>
+        <h1 class="text_scroll">For example, how do you compare places like Los Angeles County (over 9 million people) and Loving County, Texas (just over 100 people). This project visualizes population values using <span style="color:white;font-size:14px;padding:2px;border-radius:3px;border:1px solid white;">brightness</span>, meaning highly populated counties will be displayed with brighter colors while less populaed counties will appear dimmer.<i> Click on a county to view specific population information.</i></h1>
+        <h1 class="national">County population (2012)</h1>
+        <table class="population" id="overall"><td id="table_20" style="background-color:#ffffff;opacity:0.2"></td><td id="table_13" style="background-color:#ffffff;opacity:0.4"></td><td id="table_9" style="background-color:#ffffff;opacity:0.6"></td><td id="table_5" style="background-color:#ffffff;opacity:0.8"></td><td id="table_1" style="background-color:#ffffff;opacity:1"></td></table>
+        <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
+
+      </div>
+      
+      <div class="introduction" id="mortality_rate" style="height:500px;">
+        <h1 class="text_scroll">One of the most extreme effects of climate change will be an uneven geography of mortality due to rising temperatures. The South, especially the rural counties of the Southeast, are expected to suffer the greatest increases in mortality due to rising temperatures while Northern counties may benefit from more temperate climates.</h1>
+
+        <h1 class="text_scroll">The white to red gradient represents the relative severity of a certain county's estimated change compared to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.</h1>
+        <div id="mortality_legend">
+      <h1 class="national" style="max-width:250px">Change in deaths per 100,000 (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
+      <table class="labels_left"><tr><td valign="top">Largest decrease</td></tr><tr><td valign="bottom">Largest increase</td></tr></table>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#eedabf;opacity:0.4"></td><td id="table_9" style="background-color:#eedabf;opacity:0.6"></td><td id="table_5" style="background-color:#eedabf;opacity:0.8"></td><td id="table_1" style="background-color:#eedabf;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#ebb075;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#ebb075;opacity:0.6"></td><td id="table_5" style="background-color:#ebb075;opacity:0.8"></td><td id="table_1" style="background-color:#ebb075;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#e28740;opacity:0.2"></td><td id="table_13" style="background-color:#e28740;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#e28740;opacity:0.8"></td><td id="table_1" style="background-color:#e28740;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#d35617;opacity:0.2"></td><td id="table_13" style="background-color:#d35617;opacity:0.4"></td><td id="table_9" style="background-color:#d35617;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#d35617;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+      </div>
+    </div>
+
+    <!--<div class="introduction" id="violent_crime">
+      <h1 class="national">VIOLENT CRIME RATE (% change)</h1>
+      <h2 class="top">Worse change</h2>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.75"></td><td id="table_13" style="background-color:#ebb075;opacity:0.75"></td><td id="table_9" style="background-color:#e28740;opacity:0.75"></td><td id="table_5" style="background-color:#d35617;opacity:0.75"></td><td id="table_1" style="background-color:#c80000;opacity:0.75"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.5"></td><td id="table_13" style="background-color:#ebb075;opacity:0.5"></td><td id="table_9" style="background-color:#e28740;opacity:0.5"></td><td id="table_5" style="background-color:#d35617;opacity:0.5"></td><td id="table_1" style="background-color:#c80000;opacity:0.5"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.25"></td><td id="table_13" style="background-color:#ebb075;opacity:0.25"></td><td id="table_9" style="background-color:#e28740;opacity:0.25"></td><td id="table_5" style="background-color:#d35617;opacity:0.25"></td><td id="table_1" style="background-color:#c80000;opacity:0.25"></td></table>
+    </div>-->
+    <div class="introduction" id="agricultural_yields">
+      <div id="agricultural_legend">
+      <h1 class="national">Percent change in agricultural yields</h1>
+      <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
+      <table class="labels_left"><tr><td valign="top">Largest increase</td></tr><tr><td valign="bottom">Largest decrease</td></tr></table>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#eedabf;opacity:0.4"></td><td id="table_9" style="background-color:#eedabf;opacity:0.6"></td><td id="table_5" style="background-color:#eedabf;opacity:0.8"></td><td id="table_1" style="background-color:#eedabf;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#ebb075;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#ebb075;opacity:0.6"></td><td id="table_5" style="background-color:#ebb075;opacity:0.8"></td><td id="table_1" style="background-color:#ebb075;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#e28740;opacity:0.2"></td><td id="table_13" style="background-color:#e28740;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#e28740;opacity:0.8"></td><td id="table_1" style="background-color:#e28740;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#d35617;opacity:0.2"></td><td id="table_13" style="background-color:#d35617;opacity:0.4"></td><td id="table_9" style="background-color:#d35617;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#d35617;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+      </div>
+    </div>
+    <div class="introduction" id="total_econ" style="margin-bottom:300px">
+      <div id="total_legend">
+      <h1 class="national">Percent change in County GDP</h1>
+      <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
+      <table class="labels_left"><tr><td valign="top">Largest increase</td></tr><tr><td valign="bottom">Largest decrease</td></tr></table>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#eedabf;opacity:0.4"></td><td id="table_9" style="background-color:#eedabf;opacity:0.6"></td><td id="table_5" style="background-color:#eedabf;opacity:0.8"></td><td id="table_1" style="background-color:#eedabf;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#ebb075;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#ebb075;opacity:0.6"></td><td id="table_5" style="background-color:#ebb075;opacity:0.8"></td><td id="table_1" style="background-color:#ebb075;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#e28740;opacity:0.2"></td><td id="table_13" style="background-color:#e28740;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#e28740;opacity:0.8"></td><td id="table_1" style="background-color:#e28740;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#d35617;opacity:0.2"></td><td id="table_13" style="background-color:#d35617;opacity:0.4"></td><td id="table_9" style="background-color:#d35617;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#d35617;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+      </div>
+    </div>
+
+      <h1 class="text">These maps demonstrate the nationwide geography of a sample of climate change impacts. However, at this point you may be wondering how your county compares. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>
 
       <h1 class="title2" id="search" style="color:white">Search for your address</h1> 
       <!--<h2 class="subtext">Search for your address:</h2>-->
@@ -65,33 +126,22 @@
    <div id="box2" class="box2"  style="display:none">
     <div class="information">
 
-      <!--<h2 id="name" class="title" style="color:#FFF700;font-size:28px;width:auto;margin-top:20px"></h2>-->
+      <h2 id="name3" class="title" style="color:#fff700;font-size:26px;margin-top:20px;margin-bottom:15px"></h2>
 
-      <h3 class="robo" id="robo">In <span id="name2" style="color:#FFF700"></span>, scientists predict that <span id="indicator2"></span> could <span id="crease"></span> by <span id="number" style="border-bottom:1px white solid"></span> between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>
+      <h3 class="robo">Change in mortality rate: <span id="mortality_value"></span></h3>
+      <h3 class="robo_value"><span id="mortality_percentile"> deaths per 100,000 people</span></h3>
+      <h3 class="robo">Change in agricultural yields: <span id="agricultural_value"></span></h3>
+      <h3 class="robo_value"><span id="agricultural_percentile"></span>%</h3>
+      <h3 class="robo">Change in violent crime rate: <span id="violent_value"></span></h3>
+       <h3 class="robo_value"><span id="violent_percentile"></span>%</h3>
+      <h3 class="robo">Change in county GDP: <span id="total_value"></span></h3>
+       <h3 class="robo_value"><span id="total_percentile"></span>%</h3>
 
-      <!--<h2 class="title" id="title">Compared to <span id="comparison_title" style="color:white">all U.S. counties</span></h2>-->
+      <!--<h3 class="robo" id="robo">Relative to other counties, <span id="name3" style="color:#FFF700"></span> faces the highest risk of <span id="crease1"></span> in <span id="indicator1"></span> due to climate change. With an estimated <span id="crease2"></span> of <span id="min_number" style="border-bottom:1px white solid"></span>, the county ranks <span id="min_rank"></span> in country for change in <span id="indicator2"></span></h3>-->
 
-            
-      
-      <!--<h2 class="risk_label" id="risk_label">Total economic damage</h2>-->
-      <!--<table class="risk" id="sample"><td style="background-color:#67a9cf"></td><td style="background-color:#f7f7f7"></td><td style="background-color:#fc8d59"></td></table>-->
-      <h2 class="table_heading" id="indicator_title">National percentile for change in county GDP, 2080-2099</h2>
-      <table class="risk" id="sample"><td id="table_20" style="background-color:#ffffff;opacity:0.8"></td><td id="table_19" style="background-color:#ffffff;opacity:0.8"></td><td id="table_18" style="background-color:#ffffff;opacity:0.8"></td><td id="table_17" style="background-color:#ffffff;opacity:0.8"></td><td id="table_16" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_15" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_14" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_13" style="background-color:#f9c99f;opacity:0.8"></td><td id="table_12" style="background-color:#ea9555;opacity:0.8"></td><td id="table_11" style="background-color:#ea9555;opacity:0.8"></td><td id="table_10" style="background-color:#ea9555;opacity:0.8"></td><td id="table_9" style="background-color:#ea9555;opacity:0.8"></td><td id="table_8" style="background-color:#d95f20;opacity:0.8"></td><td id="table_7" style="background-color:#d95f20;opacity:0.8"></td><td id="table_6" style="background-color:#d95f20;opacity:0.8"></td><td id="table_5" style="background-color:#d95f20;opacity:0.8"></td><td id="table_4" style="background-color:#c80000;opacity:0.8"></td><td id="table_3" style="background-color:#c80000;opacity:0.8"></td><td id="table_2" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        <!--<Scientists estimate that the county could between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>-->
 
-      <table class="labels"><td style="text-align:left">0</td><td style="text-align:center">National median</td><td id="100">100</td></table>
-
-
-      <h2 class="table_heading" style="margin-top:15px">County population, 2012 (low to high)</h2>
-       <div class="circles">
-        <span style="height:5px;width:5px" class="dot"></span>
-        <span style="height:10px;width:10px" class="dot"></span>
-        <span style="height:15px;width:15px" class="dot"></span>
-        <span style="height:25px;width:25px" class="dot"></span>
-        <span style="height:40px;width:40px" class="dot"></span>
-        </div>
-      <table class="labels" style="width:55%;margin-right:45%;margin-left:5%"><td style="text-align:left">10,000</td><td style="text-align:center">500,000</td><td id="100">2,000,000+</td></table>
-
-        
+      <div id="legend_search"></div>
 
       <div class="menus">
          <form action="#">
@@ -129,10 +179,32 @@
         </form>
 
       </div>
-      
+
+      <!--<h3 class="robo">Select an indicator</h3>
+      <div id="menu2"><a href="#" id="counties-total" onClick="show('counties-total')" class="active">Total economic damage</a><a href="#" id="counties-mortality" onClick="show('counties-mortality')" class="">Mortality rate</a><a href="#" id="counties-agricultural" onClick="show('counties-agricultural')" class="">Agricultural yields</a><a href="#" id="counties-violent" onClick="show('counties-violent')" class="">Violent crime rate</a></div>-->
 
 
+      <!--<h2 class="title" id="title">Compared to <span id="comparison_title" style="color:white">all U.S. counties</span></h2>-->
+
+            
       
+      <!--<h2 class="risk_label" id="risk_label">Total economic damage</h2>-->
+      <!--<table class="risk" id="sample"><td style="background-color:#67a9cf"></td><td style="background-color:#f7f7f7"></td><td style="background-color:#fc8d59"></td></table>-->
+      <!--<h2 class="table_heading" id="indicator_title">National percentile for change in county GDP, 2080-2099</h2>
+      <table class="risk" id="sample"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_19" style="background-color:#eedabf;opacity:0.8"></td><td id="table_18" style="background-color:#eedabf;opacity:0.8"></td><td id="table_17" style="background-color:#eedabf;opacity:0.8"></td><td id="table_16" style="background-color:#ebb075;opacity:0.8"></td><td id="table_15" style="background-color:#ebb075;opacity:0.8"></td><td id="table_14" style="background-color:#ebb075;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_12" style="background-color:#e28740;opacity:0.8"></td><td id="table_11" style="background-color:#e28740;opacity:0.8"></td><td id="table_10" style="background-color:#e28740;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_8" style="background-color:#d35617;opacity:0.8"></td><td id="table_7" style="background-color:#d35617;opacity:0.8"></td><td id="table_6" style="background-color:#d35617;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_4" style="background-color:#c80000;opacity:0.8"></td><td id="table_3" style="background-color:#c80000;opacity:0.8"></td><td id="table_2" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>-->
+
+      <!--<table class="labels"><td style="text-align:left">0</td><td style="text-align:center">National median</td><td id="100">100</td></table>-->
+
+
+      <!--<h2 class="table_heading" style="margin-top:15px">County population, 2012 (low to high)</h2>
+       <div class="circles">
+        <span style="height:5px;width:5px" class="dot"></span>
+        <span style="height:10px;width:10px" class="dot"></span>
+        <span style="height:15px;width:15px" class="dot"></span>
+        <span style="height:25px;width:25px" class="dot"></span>
+        <span style="height:40px;width:40px" class="dot"></span>
+        </div>
+      <table class="labels" style="width:55%;margin-right:45%;margin-left:5%"><td style="text-align:left">10,000</td><td style="text-align:center">500,000</td><td id="100">2,000,000+</td></table>-->
       
       <!--<h4 class="click_info">Based on scientific estimates, between 2080 and 2099 <span id="name" style="font-weight: bold"></span> will experience <span id="changes"></span></h4>-->
       
@@ -176,8 +248,8 @@
     <table class="risk"><td id="labor_high_20"></td><td id="labor_high_19"></td><td id="labor_high_18"></td><td id="labor_high_17"></td><td id="labor_high_16"></td><td id="labor_high_15"></td><td id="labor_high_14"></td><td id="labor_high_13"></td><td id="labor_high_12"></td><td id="labor_high_11"></td><td id="labor_high_10"></td><td id="labor_high_9"></td><td id="labor_high_8"></td><td id="labor_high_7"></td><td id="labor_high_6"></td><td id="labor_high_5"></td><td id="labor_high_4"></td><td id="labor_high_3"></td><td id="labor_high_2"></td><td id="labor_high_1"></td></table>
     <h2 class="risk_label">HIGH-RISK LABOR SUPPLY &rarr;<span id="labor_high" style="color: gray"></span></h2> -->
 
-    <h1 class="recenter" onClick="recenter()">Recenter map</h1>
-    <h1 class="recenter" onClick="searchAgain()">New search</h1>
+    <!--<h1 class="recenter" id="recenter" onClick="recenter()">Recenter map</h1>
+    <h1 class="recenter" onClick="searchAgain()">New search</h1>-->
     
   </div>
 

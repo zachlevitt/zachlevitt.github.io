@@ -56,17 +56,30 @@ button#income {
 
 }
 
+.art {
+  background-color:#2c2c2c;
+  margin-top:20px;
+}
+
+.art_header {
+  font-weight: bold;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: black;
+  border: none;
+}
+
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 h2.about {
-  color: black;
+  color: gray;
   font-size: 18px;
   font-weight:300;
   margin: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
   max-width: 600px;
   text-align:left;
 }
@@ -88,7 +101,7 @@ hr {
 }
 
 h2.about a {
-  color: black;
+  color: gray;
   font-weight: bold;
   font-size: 18px;
 }
@@ -105,29 +118,27 @@ h2.about a:hover {
   margin-top: 50px;
 }
 
-
-
-.jumbotron {
+.jumbotron2 {
   width: 100%;
   font-family: 'Helvetica', 'Arial', sans-serif;
   max-width: 800px;
-  background-color: #ffffff;
+  border-bottom: 2px solid #000000;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   padding: 0px;
   text-align: center;
-  margin-top: 25px;
+  margin-top:25px;
+  padding-bottom:25px;
 }
 
 h1.jumbotron-heading {
-  margin-top: 25px;
     margin-bottom: 25px;
     font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .jumbotron-heading a {
   font-weight: bold;
-  color: black;
+  color: white;
   margin-top: 25px;
 }
 
@@ -219,6 +230,16 @@ footer p {
   max-height: 500px;
   margin:auto;
   margin-bottom:2px;
+  border:5px black solid
+}
+
+.art_figure {
+  margin:auto;
+  margin-left:0px;
+  margin-bottom: 20px;
+  color: gray;
+  text-align:center;
+  font-size:12px;
 }
 
 .example .image:hover {
@@ -337,7 +358,17 @@ footer p {
   margin: auto;
 }
 
+.column_art{
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 10px 0 10px;
+}
 
+.column_art img {
+  margin-bottom: 3px;
+  vertical-align: middle;
+  width: 100%;
+}
 
 /* Create four equal columns that sits next to each other */
 .column {
@@ -359,6 +390,11 @@ footer p {
     flex: 50%;
     max-width: 50%;
   }
+
+  .column_art {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -368,4 +404,8 @@ footer p {
     max-width: 100%;
   }
 
+  .column_art {
+    flex: 100%;
+    max-width: 100%;
+  }
 }

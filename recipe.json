@@ -1,0 +1,13 @@
+{
+  "recipe": {
+    "version": 1,
+    "layers": {
+      "counties_poly_ranks-0uu085": {
+        "source": "mapbox://zachlevitt.7a0x3gca/counties_poly_ranks-0uu085",
+        "minzoom": 3,
+        "maxzoom": 8
+      }
+    }
+  },
+  "id": "zachlevitt"
+}

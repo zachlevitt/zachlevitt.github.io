@@ -34,8 +34,53 @@
 </head>
 
 <body>
-  <div id="map" style="height:100%;max-height:100%;min-height:800px;width:67%;margin-left:33%"></div>
-  <div id="menu"><a href="#" id="populated-places" onClick="show('populated-places')" class="">Show major cities</a><a href="#" id="states-outline" onClick="show('states-outline')" class="active">Hide state outlines</a></div>
+  <div id="map" style="height:600px;margin-bottom:10%;max-height:90%;width:67%;margin-left:33%"></div>
+  <div id="menu">
+    <div class="layers" style="">
+      <div class="menus">
+         <form action="#">
+ 
+          <fieldset>
+            <label for="indicator"><i>Select indicator:</i></label>
+            <select name="indicator" id="indicator">
+              <option value="total">Gross Domestic Product (GDP)</option>
+              <option value="mortality">Mortality rate</option>
+              <option value="violent">Violent crime rate</option>
+              <option value="agricultural">Agricultural yields</option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="filter" style="display:block">
+      <div class="menus1">
+        <form action="#">
+ 
+          <fieldset>
+            <label for="comparison"><i>Filter map display:</i></label>
+            <select name="comparison" id="comparison">
+                <option value="all">All U.S. counties</option>
+                <option value="pop">Similar population size</option>
+                <option value="income">Similar average income level</option>
+                <option value="state">Counties in the same state</option>
+                <!--<option value="region">Counties in the same region</option>
+                <option value="similar">Counties with similar values</option>-->
+                <!--<option value="greater">Counties with greater risk</option>
+                <option value="lower">Counties with lower risk</option>-->
+            </select>
+            
+        
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+    <div class="display_buttons" id="symbolization"><a style="" href="#" id="population" onClick="show('population')" class="">Hide population</a></div>
+    <div class="display_buttons" id="reference"><a href="#" id="populated-places" onClick="show('populated-places')" class="">Show major cities</a><a href="#" id="states-outline" onClick="show('states-outline')" class="active">Hide state outlines</a></div>
+
+    
+    
+  </div>
   <div class="left_side" id="left_side" onscroll="onScroll()">
     <div id="box1" class="box1" style="display:block">
       <h1 class="header1">Geographies of <span style="color:#C80000;font-size:46px">Climate Change</span> in the United States</h1>
@@ -43,44 +88,57 @@
       <!--<h2 class="byline">A senior project completed as part of a joint degree in geography and computer science at Middlebury College.<br><br>Advised by Dr. Jeff Howarth.</h1>-->
       <h1 class="text" id="sec1">Increasing temperatures. Sea level rise. Frequent natural disasters. Economic upheaval. Worsening social inequality.</h1>
 
-      <h1 class="text" id="sec1">Climate change poses grave threats to the world yet often appears as an invisible and distant threat. This is especially true for much of the United States, where the crisis is highly politicized and it is easy to feel guarded from the worst effects.</h1>
+      <h1 class="text" id="sec1">Climate change poses grave threats to the world yet it can often feel like an invisible and distant threat. This is especially true for many in the United States, where the crisis is highly politicized and it is easy to feel guarded from the worst effects. So what would it take for Americans to understand the ways in which climate change could fundamentally alter life and worsen existing inequalities?</h1>
 
-      <h1 class="text" id="sec1">Therefore, this project is guided by two primary questions. First, how will climate change impact the United States? And second, what is the geography of climate change effects look like? By visualizing and evaluating the estimated impacts, this mapping tool hopes to motivate people to recognize how climate change could alter life in the United States by 2100.</h1>
+      <h1 class="text" id="sec1">With this challenging question as its premise, this project seeks to make climate change in America more visible and personalized by visualizing its geography. Utilizing data from a recent 2017 study of estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), I examined the expected change for several economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates. The projections reflect estimated changes in these indicators between 2080 and 2099 due to climate change.</h1>
 
-      <h1 class="text">Utilizing data from a recent 2017 study of estimated climate change damages for every county in the United States (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), this project examines a range of economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates. The data reflect estimated changes in these indicators between 2080 and 2099.</h1>
+      <h1 class="text">Due to the nature of these data the raw changes are less meaningful than the relative geography of impact. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>
 
-      <h1 class="text">Due to the nature of these projections the raw changes are less meaningful than relative impact. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>
-      
-      <div class="introduction" id="pop">
-        <h1 class="text_scroll">Visualizing the geography of climate change depends on the existing population geography of the United States. While counties are a helpful unit of analysis for this study, their populations vary significantly.</h1>
-        <h1 class="text_scroll">For example, how do you compare places like Los Angeles County (over 9 million people) and Loving County, Texas (just over 100 people). This project visualizes population values using <span style="color:white;font-size:14px;padding:2px;border-radius:3px;border:1px solid white;">brightness</span>, meaning highly populated counties will be displayed with brighter colors while less populaed counties will appear dimmer.<i> Click on a county to view specific population information.</i></h1>
-        <h1 class="national">County population (2012)</h1>
-        <table class="population" id="overall"><td id="table_20" style="background-color:#ffffff;opacity:0.2"></td><td id="table_13" style="background-color:#ffffff;opacity:0.4"></td><td id="table_9" style="background-color:#ffffff;opacity:0.6"></td><td id="table_5" style="background-color:#ffffff;opacity:0.8"></td><td id="table_1" style="background-color:#ffffff;opacity:1"></td></table>
-        <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
-
-      </div>
-      
-      <div class="introduction" id="mortality_rate" style="height:500px;">
-        <h1 class="text_scroll">One of the most extreme effects of climate change will be an uneven geography of mortality due to rising temperatures. The South, especially the rural counties of the Southeast, are expected to suffer the greatest increases in mortality due to rising temperatures while Northern counties may benefit from more temperate climates.</h1>
-
-        <h1 class="text_scroll">The white to red gradient represents the relative severity of a certain county's estimated change compared to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.</h1>
+      <div class="introduction" id="mortality_data" style="margin-top:250px;height:470px;">
+        <h1 class="text_scroll">Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates. The South, especially the rural counties of the Southeast, are expected to suffer the greatest increases due to rising temperatures while Northern counties may experience lower rates due to more temperate climates.</h1>
+        <h1 class="text_scroll">These patterns are represented on the map by showing the relative severity of a certain county's estimated change compared to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;background-color:#c80000;font-weight:bold;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.</h1>
+        <h1 class="text_scroll"><i> Click on a county to view the estimated change.</i></h1>
         <div id="mortality_legend">
-      <h1 class="national" style="max-width:250px">Change in deaths per 100,000 (2080-2099)</h1>
-      <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
-      <table class="labels_left"><tr><td valign="top">Largest decrease</td></tr><tr><td valign="bottom">Largest increase</td></tr></table>
-      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#eedabf;opacity:0.4"></td><td id="table_9" style="background-color:#eedabf;opacity:0.6"></td><td id="table_5" style="background-color:#eedabf;opacity:0.8"></td><td id="table_1" style="background-color:#eedabf;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#ebb075;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#ebb075;opacity:0.6"></td><td id="table_5" style="background-color:#ebb075;opacity:0.8"></td><td id="table_1" style="background-color:#ebb075;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#e28740;opacity:0.2"></td><td id="table_13" style="background-color:#e28740;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#e28740;opacity:0.8"></td><td id="table_1" style="background-color:#e28740;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#d35617;opacity:0.2"></td><td id="table_13" style="background-color:#d35617;opacity:0.4"></td><td id="table_9" style="background-color:#d35617;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#d35617;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+      <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+          <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
       </div>
+      </div>
+
+      <div class="introduction" id="" style="height:200px;margin-top:150px">
+        <h1 class="text_scroll">This map displays change in the number of deaths per 100,000 people, meaning the changes are scaled to the population of a given county. However, the map would suggest that these changes will be felt equally in rural counties like Loving County, Texas (about 100 people) and urban counties like Los Angeles County (over 9 million people).</h1></div>
+      
+      <div class="introduction" id="pop" style="height:250px;">
+        <h1 class="text_scroll">Therefore, it is helpful to visualize the geography of climate change while overlaying the existing population geography of the United States. <!--While counties are a helpful unit of analysis for this study, their populations vary significantly. --></h1>
+        <h1 class="text_scroll">This map displays population density by county in 2012 using <span style="color:white;font-size:14px;padding:2px;border-radius:3px;border:1px solid white;">brightness</span>.</h1>
+        <h1 class="national">Population density (people/square mile)</h1>
+        <table class="population" id="overall"><td id="table_20" style="background-color:#ffffff;opacity:0.2"></td><td id="table_13" style="background-color:#ffffff;opacity:0.4"></td><td id="table_9" style="background-color:#ffffff;opacity:0.6"></td><td id="table_5" style="background-color:#ffffff;opacity:0.8"></td><td id="table_1" style="background-color:#ffffff;opacity:1"></td></table>
+        <table class="labels2"><td style="text-align:left">50</td><td style="text-align:center"></td><td id="100">2000+</td></table>
+
+      </div>
+      
+      
+      <div class="introduction" id="mortality_rate" style="height:450px;">
+        <h1 class="text_scroll">By combining these maps, we get a more accurate visualization of the geography of climate change mortality. While the estimated change in deaths is +31.39 people/100,000 people for Loving County and +10.69 in Los Angeles County, when we standardize for population this accounts for an estimated 0.03 deaths in Loving and more than 1065 deaths in Los Angeles.</h1>
+
+        <div id="mortality_legend">
+      <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+      <table class="labels_left"><tr><td valign="top">2 million+ people</td></tr><tr><td valign="bottom">10,000</td></tr></table>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.6"></td><td id="table_13" style="background-color:#ebb075;opacity:0.6"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.6"></td><td id="table_1" style="background-color:#c80000;opacity:0.6"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.4"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.4"></td><td id="table_5" style="background-color:#d35617;opacity:0.4"></td><td id="table_1" style="background-color:#c80000;opacity:0.4"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.2"></td><td id="table_9" style="background-color:#e28740;opacity:0.2"></td><td id="table_5" style="background-color:#d35617;opacity:0.2"></td><td id="table_1" style="background-color:#c80000;opacity:0.2"></td></table>
+      </div>
+      <h1 class="text_scroll" style="margin-top:30px">Scroll down to view the national distribution of other indicators of climate change risk.</h1>
     </div>
 
     <!--<div class="introduction" id="violent_crime">
       <h1 class="national">VIOLENT CRIME RATE (% change)</h1>
       <h2 class="top">Worse change</h2>
       <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.75"></td><td id="table_13" style="background-color:#ebb075;opacity:0.75"></td><td id="table_9" style="background-color:#e28740;opacity:0.75"></td><td id="table_5" style="background-color:#d35617;opacity:0.75"></td><td id="table_1" style="background-color:#c80000;opacity:0.75"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.5"></td><td id="table_13" style="background-color:#ebb075;opacity:0.5"></td><td id="table_9" style="background-color:#e28740;opacity:0.5"></td><td id="table_5" style="background-color:#d35617;opacity:0.5"></td><td id="table_1" style="background-color:#c80000;opacity:0.5"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.25"></td><td id="table_13" style="background-color:#ebb075;opacity:0.25"></td><td id="table_9" style="background-color:#e28740;opacity:0.25"></td><td id="table_5" style="background-color:#d35617;opacity:0.25"></td><td id="table_1" style="background-color:#c80000;opacity:0.25"></td></table>
     </div>-->
@@ -96,7 +154,7 @@
         <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
       </div>
     </div>
-    <div class="introduction" id="total_econ" style="margin-bottom:300px">
+    <div class="introduction" id="total_econ" style="margin-bottom:100px">
       <div id="total_legend">
       <h1 class="national">Percent change in County GDP</h1>
       <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
@@ -123,7 +181,7 @@
                             <button class="landmark" type="button" id="disneyland">Chicago</button>
                         </div>-->
     </div>
-   <div id="box2" class="box2"  style="display:none">
+   <div id="box2" class="box2"  style="display:block">
     <div class="information">
 
       <h2 id="name3" class="title" style="color:#fff700;font-size:26px;margin-top:20px;margin-bottom:15px"></h2>
@@ -142,43 +200,6 @@
         <!--<Scientists estimate that the county could between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>-->
 
       <div id="legend_search"></div>
-
-      <div class="menus">
-         <form action="#">
- 
-          <fieldset>
-            <label for="indicator"><i>Select indicator:</i></label>
-            <select name="indicator" id="indicator">
-              <option value="total">Gross Domestic Product (GDP)</option>
-              <option value="mortality">Mortality rate</option>
-              <option value="violent">Violent crime rate</option>
-              <option value="agricultural">Agricultural yields</option>
-            </select>
-          </fieldset>
-        </form>
-      </div>
-
-      <div class="menus1">
-        <form action="#">
- 
-          <fieldset>
-            <label for="comparison"><i>Filter map display:</i></label>
-            <select name="comparison" id="comparison">
-                <option value="all">All U.S. counties</option>
-                <option value="pop">Similar population size</option>
-                <option value="income">Similar average income level</option>
-                <option value="state">Counties in the same state</option>
-                <!--<option value="region">Counties in the same region</option>
-                <option value="similar">Counties with similar values</option>-->
-                <!--<option value="greater">Counties with greater risk</option>
-                <option value="lower">Counties with lower risk</option>-->
-            </select>
-            
-        
-          </fieldset>
-        </form>
-
-      </div>
 
       <!--<h3 class="robo">Select an indicator</h3>
       <div id="menu2"><a href="#" id="counties-total" onClick="show('counties-total')" class="active">Total economic damage</a><a href="#" id="counties-mortality" onClick="show('counties-mortality')" class="">Mortality rate</a><a href="#" id="counties-agricultural" onClick="show('counties-agricultural')" class="">Agricultural yields</a><a href="#" id="counties-violent" onClick="show('counties-violent')" class="">Violent crime rate</a></div>-->

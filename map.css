@@ -185,16 +185,17 @@ h1.text a:hover {
 }
 
 #menu {
-	width:200px;
-	height:auto;
+	width:67%;
+	height:10%;
+	min-height:100px;
 	position: absolute;
-	top:0;
-	margin-left:80%;
-	margin-top:130px;
+	bottom:0;
+	margin-left:33%;
+	margin-top:10px;
 	background-color:black;
 }
 
-#menu a {
+.display_buttons a {
 font-size: 13px;
 color: gray;
 background-color:black;
@@ -205,6 +206,8 @@ padding: 5px;
 text-decoration: none;
 border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 text-align: center;
+width:100%;
+
 }
  
 #menu a.active {
@@ -304,21 +307,41 @@ h1.recenter:last-of-type{
   margin-bottom:0px;
 }
 
+.layers {
+	width:25%;
+	margin-right:10px;
+	float:left;
+	height:100%;
+}
+
+.filter {
+	width:25%;
+	margin-right:10px;
+	float:left;
+	height:100%;
+}
+
+.display_buttons {
+	width:20%;
+	margin-right:10px;
+	float:left;
+	height:100%;
+}
 .menus1{
 	margin-top:10px;
 }
 
 .menus {
-	margin-top:25px;
+	margin-top:10px;
 }
 
 h1.national {
 	margin:auto;
 	margin-top: 30px;
 	margin-bottom: 10px;
-	font-size: 14px;
+	font-size: 13px;
 	text-align:center;
-	color: darkgray;
+	color: gray;
 	width:auto;
 	font-weight:normal;
 }
@@ -510,14 +533,14 @@ h3.robo_value{
 fieldset {
       border: 0;
       text-align:left;
-      width:80%;
+      width:200px;
       margin:auto;
     }
     label {
       display: block;
       margin: 10px 0 5px 0;
       color:darkgray;
-      font-size:14px;
+      font-size:11px;
     }
 
 .ui-button{
@@ -611,6 +634,20 @@ table.population {
 }
 
 table.population td {
+	width:20%;
+}
+
+table.full {
+	width: 180px;
+	height: 20px;
+	margin: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	/*background-image: linear-gradient(to right, white ,black);*/
+	background-color: #262626;
+}
+
+table.full td {
 	width:20%;
 }
 

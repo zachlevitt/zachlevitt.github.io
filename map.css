@@ -18,6 +18,57 @@
   box-shadow: 3px 3px 2px #000000;
 }
 
+div.ui-selectmenu-menu.ui-front.ui-selectmenu-open {
+	bottom:90px!important;
+	top:auto!important;
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropup content */
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropup content (Hidden by Default) */
+.dropup-content {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropup */
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropup links on hover */
+.dropup-content a:hover {background-color: #ddd}
+
+/* Show the dropup menu on hover */
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+/* Change the background color of the dropup button when the dropup content is shown */
+.dropup:hover .dropbtn {
+  background-color: #2980B9;
+}
+
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
@@ -128,12 +179,13 @@ p.info {
 }
 
 
-
 body {
 	font-family: Geneva,Tahoma, Verdana, sans-serif;
-	min-height: 600px;
-	max-height: 100%;
 	overflow:hidden;
+	display:flex;
+	flex-direction:column;
+	flex:12;
+	height:100vh;
 }
 
 .mapboxgl-ctrl-geocoder input[type='text']{
@@ -184,38 +236,40 @@ h1.text a:hover {
 	color:white;
 }
 
+a.mapboxgl-ctrl-logo{
+	margin-bottom:90px!important;
+}
+
 #menu {
 	width:67%;
-	height:10%;
-	min-height:100px;
 	position: absolute;
 	bottom:0;
 	margin-left:33%;
 	margin-top:10px;
-	background-color:black;
+	background-color:#141414;
+	border-left:3px black solid;
+	height:90px;
 }
 
 .display_buttons a {
-font-size: 13px;
-color: gray;
-background-color:black;
-display: block;
-margin: 0;
-padding: 0;
-padding: 5px;
-text-decoration: none;
-border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-text-align: center;
-width:100%;
+	font-size: 13px;
+	color:rgba(255,255,255,0.4);
+	display: block;
+	margin:auto;
+	margin-bottom:5px;
+	padding: 4px;
+	text-decoration: none;
+	text-align: center;
+	width:100%;
 
 }
  
 #menu a.active {
-background-color:#3D3C3C;
+	color:rgba(255,255,255,0.9);
 }
  
 #menu a.active:hover {
-background-color:#272727;
+	color:rgba(255,255,255,0.7);
 }
 
 #menu2 {
@@ -228,7 +282,7 @@ background-color:#272727;
 }
 
 #menu2 a {
-	font-size: 16px;
+	font-size: 14px;
 	color: white;
 	background-color:#262626;
 	display: block;
@@ -308,24 +362,41 @@ h1.recenter:last-of-type{
 }
 
 .layers {
-	width:25%;
-	margin-right:10px;
+	width:30%;
+	margin-left:1%;
+	margin-right:1%;
 	float:left;
 	height:100%;
 }
 
+.filter #filter, .layers #layers, .display_buttons #population {
+	visibility:hidden;
+	opacity:0;
+	/*-webkit-transition: opacity 600ms, visibility 600ms;*/
+  	transition: opacity 1000ms, visibility 1000ms;
+}
+
+
 .filter {
-	width:25%;
-	margin-right:10px;
+	width:30%;
+	margin-left:1%;
+	margin-right:1%;
 	float:left;
 	height:100%;
 }
 
 .display_buttons {
-	width:20%;
-	margin-right:10px;
+	width:16%;
+	margin-left:1%;
+	margin-right:1%;
 	float:left;
 	height:100%;
+	margin-top:15px;
+	align-items: center;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+	background-color:rgba(255, 255, 255, 0.2)!important;
 }
 .menus1{
 	margin-top:10px;
@@ -440,20 +511,13 @@ h1.title2 {
 	text-align: center;
 }
 
-h1.title3 {
-	color:white;
-	font-size: 20px;
-	margin-top:20px;
-	width:95%;
-	text-align: center;
-}
-
 h2.subtext {
-	color:white;
-	font-size: 30px;
-	margin-left:10px;
-	margin-bottom:15px;
+	color:darkgray;
+	font-size: 20px;
+	margin:auto;
+	text-align:center;
 	font-weight:bold;
+	margin-top:30px;
 }
 
 
@@ -467,25 +531,6 @@ h4.data_header {
 	color: #9d0606;
 	font-weight: bold;
 	margin: 10px;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:active .dropdown-content {
-  display: block;
 }
 
 h2.table_heading {
@@ -531,17 +576,18 @@ h3.robo_value{
 }
 
 fieldset {
-      border: 0;
-      text-align:left;
-      width:200px;
-      margin:auto;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px 0;
-      color:darkgray;
-      font-size:11px;
-    }
+	border: 0;
+	text-align:left;
+	width:200px;
+	margin:auto;
+	margin-top:20px;
+}
+label {
+	display: block;
+	margin: 5px 0 5px 0;
+	color:darkgray;
+	font-size:12px;
+}
 
 .ui-button{
 	background-color:#000000;
@@ -558,24 +604,21 @@ fieldset {
 	width:100%!important;
 	background-color:#000000;
 	color:white;
-	font-size:16px;
+	font-size:14px;
 }
 
 #comparison-button{
-	background-color: #000000;
-	color:white;
-	font-size:16px;
 }
 
 .ui-button:hover{
 	background-color:#000000;
 	color:white;
-	font-size:16px;
+	font-size:14px;
 }
 .ui-menu-item{
 	background-color:#000000;
 	color:white;
-	font-size:16px;
+	font-size:14px;
 }
 
 h2.risk_label {
@@ -790,4 +833,15 @@ wn Button */
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+@media only screen and (min-height: 600px){
+
+    #map {
+
+	}
+
+	#menu {
+	}
+
+}
 

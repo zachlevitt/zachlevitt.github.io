@@ -33,31 +33,34 @@
 <link rel='stylesheet' type='text/css' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' />
 </head>
 
-<body>
-  <div id="map" style="height:600px;margin-bottom:10%;max-height:90%;width:67%;margin-left:33%"></div>
-  <div id="menu">
-    <div class="layers" style="">
-      <div class="menus">
+<body style="">
+  <div id="map" style="height:100%;width:67%;margin-left:33%"></div>
+  <div id="menu" style="">
+    <div class="layers">
+      <div class="menus" id="layers" style="">
          <form action="#">
  
           <fieldset>
-            <label for="indicator"><i>Select indicator:</i></label>
             <select name="indicator" id="indicator">
-              <option value="total">Gross Domestic Product (GDP)</option>
+              <option value="total">Total economic damage</option>
+              <option value="population">Population density</option>
               <option value="mortality">Mortality rate</option>
               <option value="violent">Violent crime rate</option>
               <option value="agricultural">Agricultural yields</option>
+              <option value="none">None</option>
             </select>
+            <label for="indicator">Choose data layer</label>
           </fieldset>
         </form>
       </div>
+  
     </div>
-    <div class="filter" style="display:block">
-      <div class="menus1">
+    <div class="filter">
+      <div class="menus1" id="filter" style="">
         <form action="#">
  
           <fieldset>
-            <label for="comparison"><i>Filter map display:</i></label>
+            
             <select name="comparison" id="comparison">
                 <option value="all">All U.S. counties</option>
                 <option value="pop">Similar population size</option>
@@ -68,14 +71,17 @@
                 <!--<option value="greater">Counties with greater risk</option>
                 <option value="lower">Counties with lower risk</option>-->
             </select>
+            <label for="comparison">Filter map display</label>
             
         
           </fieldset>
         </form>
 
       </div>
-    </div>
-    <div class="display_buttons" id="symbolization"><a style="" href="#" id="population" onClick="show('population')" class="">Hide population</a></div>
+      </div>
+    
+    <div class="display_buttons" id="symbolization"><a style="visibility:none;opacity:0" href="#" id="population" onClick="show('population')" class="active">Hide population</a></div>
+    
     <div class="display_buttons" id="reference"><a href="#" id="populated-places" onClick="show('populated-places')" class="">Show major cities</a><a href="#" id="states-outline" onClick="show('states-outline')" class="active">Hide state outlines</a></div>
 
     
@@ -86,7 +92,7 @@
       <h1 class="header1">Geographies of <span style="color:#C80000;font-size:46px">Climate Change</span> in the United States</h1>
       <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
       <!--<h2 class="byline">A senior project completed as part of a joint degree in geography and computer science at Middlebury College.<br><br>Advised by Dr. Jeff Howarth.</h1>-->
-      <h1 class="text" id="sec1">Increasing temperatures. Sea level rise. Frequent natural disasters. Economic upheaval. Worsening social inequality.</h1>
+      <h1 class="text" id="sec1">Increasing temperatures. Rising sea levels. More frequent natural disasters. Economic upheaval. Worsening social inequality.</h1>
 
       <h1 class="text" id="sec1">Climate change poses grave threats to the world yet it can often feel like an invisible and distant threat. This is especially true for many in the United States, where the crisis is highly politicized and it is easy to feel guarded from the worst effects. So what would it take for Americans to understand the ways in which climate change could fundamentally alter life and worsen existing inequalities?</h1>
 
@@ -167,10 +173,11 @@
       </div>
     </div>
 
-      <h1 class="text">These maps demonstrate the nationwide geography of a sample of climate change impacts. However, at this point you may be wondering how your county compares. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>
+      <!--<h1 class="text">These maps demonstrate the nationwide geography of a sample of climate change impacts. However, at this point you may be wondering how your county compares. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>-->
+  
+      <h1 class="title2" id="search" style="color:white">Explore the data</h1> 
+      <h2 class="subtext">Search for your address</h2>
 
-      <h1 class="title2" id="search" style="color:white">Search for your address</h1> 
-      <!--<h2 class="subtext">Search for your address:</h2>-->
       <div id="geocoder" class="geocoder" style="width:100%"></div>
 
       <!--<h2 class="subtext2">Or view scenarios for major urban centers:</h2>

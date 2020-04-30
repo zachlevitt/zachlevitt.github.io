@@ -108,12 +108,12 @@ function show(layer){
       }
     }
     else {
-      if (document.getElementById('population').className == "active"){
+      if (document.getElementById('population').className == ""){
         map.setPaintProperty('counties-total','fill-opacity',0.8)
         map.setPaintProperty('counties-mortality','fill-opacity',0.8)
         map.setPaintProperty('counties-violent','fill-opacity',0.8)
         map.setPaintProperty('counties-agricultural','fill-opacity',0.8)
-        document.getElementById('population').className = ""
+        document.getElementById('population').className = "active"
         document.getElementById('population').innerHTML = "Show population";
         document.getElementById('agricultural_legend').style.display = 'none'
         document.getElementById('agricultural_legend_simple').style.display = 'block'
@@ -123,7 +123,7 @@ function show(layer){
         document.getElementById('mortality_legend_simple').style.display = 'block'
       }
       else {
-        document.getElementById('population').className = "active"
+        document.getElementById('population').className = ""
         document.getElementById('population').innerHTML = "Hide population";
         document.getElementById('agricultural_legend').style.display = 'block'
         document.getElementById('agricultural_legend_simple').style.display = 'none'
@@ -221,7 +221,7 @@ function show(layer){
     
 }
 
-var chapterNames = ["search","pop","total_econ","agricultural_yields","mortality_rate","mortality_data"]
+var chapterNames = ["sec0","search","total_econ","agricultural_yields","mortality_rate","mortality_data"]
 
 function onScroll() {
   //console.log("scrolling")
@@ -229,26 +229,40 @@ function onScroll() {
     var chapterName = chapterNames[i];
     if (isElementActive(chapterName)) {
       //console.log(chapterName + " is active")
-      if (chapterName == "pop"){
+      if (chapterName == "sec0"){
+
+      }
+      /*else if (chapterName == "pop"){
         //map.setLayoutProperty('populated-places',"visibility","visible")
         map.setLayoutProperty('counties-mortality-full-opacity',"visibility","none")
-        map.setLayoutProperty('counties-poly-background',"visibility","visible")
         map.setLayoutProperty('population','visibility','visible')
         map.setLayoutProperty('counties-mortality','visibility','none')
         //map.setLayoutProperty('counties-violent','visibility','none')
         map.setLayoutProperty('counties-agricultural','visibility','none')
         map.setLayoutProperty('counties-total','visibility','none')
-      }
+      }*/
       else if (chapterName == "mortality_data"){
+
+        map.setLayoutProperty('states-outline',"visibility","visible")
         map.setLayoutProperty('counties-highlight',"visibility","visible")
         map.setLayoutProperty('counties-poly-background',"visibility","visible")
-        map.setLayoutProperty('counties-mortality-full-opacity',"visibility","visible")
+        map.setLayoutProperty('counties-mortality','visibility','visible')
+        map.setPaintProperty('counties-mortality','fill-opacity',0.8)
+        //map.setLayoutProperty('counties-mortality-full-opacity',"visibility","visible")
         map.setLayoutProperty('counties-total','visibility','none')
         map.setLayoutProperty('counties-agricultural','visibility','none')
+        document.getElementById("population").style.visibility = 'visible';
+        document.getElementById("population").style.opacity = 1;
+        //document.getElementById("population").style.border = '1px solid white';
+        document.getElementById("map").style.opacity = 1;
+        document.getElementById("menu").style.borderTop = '2px solid #262626'
         //map.setLayoutProperty('counties-violent','visibility','none')
         map.setLayoutProperty('population','visibility','none')
-        map.setLayoutProperty('counties-mortality','visibility','none')
+
+        
+        
       }
+
       else if (chapterName == "mortality_rate"){
         map.setLayoutProperty('counties-mortality-full-opacity',"visibility","none")
         map.setLayoutProperty('counties-total','visibility','none')
@@ -256,9 +270,14 @@ function onScroll() {
         //map.setLayoutProperty('counties-violent','visibility','none')
         map.setLayoutProperty('population','visibility','none')
         map.setLayoutProperty('counties-mortality','visibility','visible')
-        document.getElementById("population").style.visibility = 'visible';
-        document.getElementById("population").style.opacity = 1;
+        document.getElementById("populated-places").style.visibility = 'visible';
+        document.getElementById("populated-places").style.opacity = 1;
+        document.getElementById("states-outline").style.visibility = 'visible';
+        document.getElementById("states-outline").style.opacity = 1;
+        
+        
       }
+        
       /*if (chapterName == "violent_crime"){
         map.setLayoutProperty('counties-total','visibility','none')
         map.setLayoutProperty('counties-agricultural','visibility','none')
@@ -292,8 +311,7 @@ function onScroll() {
         document.getElementById("filter").style.opacity = 1;
       }
 
-      
-    }
+      }
   }
 };
 
@@ -1027,7 +1045,7 @@ function display(coordinates, query){
   
   document.getElementById("mortality_percentile").innerHTML = labelPercentile(mortality_percentile)
   document.getElementById("mortality_percentile").style.color = chooseColor(mortality_percentile) 
-  document.getElementById("mortality_value").innerHTML = mortality_display + "deaths per 100,000"
+  document.getElementById("mortality_value").innerHTML = mortality_display + " deaths per 100,000"
   document.getElementById("mortality_value").style.color = chooseColor(mortality_percentile) 
   
   document.getElementById("agricultural_percentile").innerHTML = labelPercentile(agricultural_percentile)

@@ -180,12 +180,13 @@ p.info {
 
 
 body {
-	font-family: Geneva,Tahoma, Verdana, sans-serif;
+	font-family: Helvetica, serif;
 	overflow:hidden;
 	display:flex;
 	flex-direction:column;
 	flex:12;
 	height:100vh;
+	background-color:black;
 }
 
 .mapboxgl-ctrl-geocoder input[type='text']{
@@ -246,23 +247,33 @@ a.mapboxgl-ctrl-logo{
 	bottom:0;
 	margin-left:33%;
 	margin-top:10px;
-	background-color:#141414;
+	background-color:black;/*#141414*/
 	border-left:5px black solid;
 	height:90px;
 }
 
-
+h1.next_button {
+	padding:10px;
+	border:1px solid gray;
+	text-align:center;
+	margin:auto;
+	width:70px;
+	font-size:14px;
+	color:white;
+	margin-top:100px;
+	margin-bottom:20px;
+}
 
 .display_buttons a {
 	font-size: 13px;
 	color:rgba(255,255,255,0.4);
 	margin:auto;
 	margin-bottom:5px;
-	padding: 4px;
+	padding: 5px 5px 5px 5px;
 	text-decoration: none;
 	text-align: center;
 	width:100%;
-
+	border: 1px solid #5E5E5E;
 }
  
 #menu a.active {
@@ -315,7 +326,7 @@ h1.text {
 	margin-top:15px;
 	margin-bottom:30px;
 	line-height: 23px;
-	font-weight:100;
+	font-weight:150;
 	text-align:left;
 }
 
@@ -370,7 +381,11 @@ h1.recenter:last-of-type{
 	height:100%;
 }
 
-.filter #filter, .layers #layers, .display_buttons #population {
+#map, .intro {
+	transition: opacity 1000ms,
+}
+
+.filter #filter, .layers #layers, .display_buttons #population,.display_buttons #populated-places, .display_buttons #states-outline {
 	visibility:hidden;
 	opacity:0;
 	/*-webkit-transition: opacity 600ms, visibility 600ms;*/
@@ -385,6 +400,8 @@ h1.recenter:last-of-type{
 	float:left;
 	height:100%;
 }
+
+
 
 .display_buttons {
 	width:16%;
@@ -451,13 +468,13 @@ h1.recenter {
 }
 
 h1.header1 {
-	color:white;
+	color:#bbb;
 	margin: auto;
-	font-size: 38px;
+	font-size: 40px;
 	line-height: 50px;
 	text-align: center;
-	margin-top:25px;
-	margin-bottom: 10px;
+	margin-top:200px;
+	margin-bottom: 30px;
 	width:90%;
 	font-weight: normal;
 
@@ -474,25 +491,38 @@ h1.header2 {
 	font-weight: normal;
 }
 
+.arrow {
+  border: solid gray;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 
 h1.byline {
-	color:gray;
+	color:#737373;
 	margin:auto;
 	font-size: 13px;
 	text-align: center;
-	margin-top:30px;
-	margin-bottom:30px;
+	margin-top:50px;
+	margin-bottom:150px;
 }
 
 h1.byline a {
 	text-decoration: none;
-	color: darkgray;
+	color: #737373;
 	font-weight:bold;
 }
 
 h1.byline a:hover {
 	text-decoration: none;
-	color: white;
+	color: #484848;
 }
 
 h2.byline {

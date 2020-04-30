@@ -247,14 +247,15 @@ a.mapboxgl-ctrl-logo{
 	margin-left:33%;
 	margin-top:10px;
 	background-color:#141414;
-	border-left:3px black solid;
+	border-left:5px black solid;
 	height:90px;
 }
+
+
 
 .display_buttons a {
 	font-size: 13px;
 	color:rgba(255,255,255,0.4);
-	display: block;
 	margin:auto;
 	margin-bottom:5px;
 	padding: 4px;
@@ -505,15 +506,14 @@ h2.byline {
 
 h1.title2 {
 	color:white;
-	font-size: 24px;
+	font-size: 28px;
 	margin-top:50px;
-	width:95%;
 	text-align: center;
 }
 
 h2.subtext {
 	color:darkgray;
-	font-size: 20px;
+	font-size: 16px;
 	margin:auto;
 	text-align:center;
 	font-weight:bold;

@@ -27,7 +27,6 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <script src="js/scrollmagic/minified/ScrollMagic.min.js"></script>
   <!--<script src='https://api.mapbox.com/mapbox.js/plugins/geojson-ex10t/v0.0.1/geojson-ex10t.js'></script>-->
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.2/mapbox-gl.css' rel='stylesheet' />
 <link rel='stylesheet' type='text/css' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' />
@@ -82,7 +81,7 @@
     
     <div class="display_buttons" id="symbolization"><a style="visibility:none;opacity:0" href="#" id="population" onClick="show('population')" class="active">Hide population</a></div>
     
-    <div class="display_buttons" id="reference"><a href="#" id="populated-places" onClick="show('populated-places')" class="">Show major cities</a><a href="#" id="states-outline" onClick="show('states-outline')" class="active">Hide state outlines</a></div>
+    <div class="display_buttons" id="reference"><a href="#" id="populated-places" onClick="show('populated-places')" class="">Show major cities</a><br><a href="#" id="states-outline" onClick="show('states-outline')" class="active">Hide state outlines</a></div>
 
     
     
@@ -98,46 +97,46 @@
 
       <h1 class="text" id="sec1">With this challenging question as its premise, this project seeks to make climate change in America more visible and personalized by visualizing its geography. Utilizing data from a recent 2017 study of estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), I examined the expected change for several economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates. The projections reflect estimated changes in these indicators between 2080 and 2099 due to climate change.</h1>
 
-      <h1 class="text">Due to the nature of these data the raw changes are less meaningful than the relative geography of impact. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>
+      <h1 class="text">Due to the nature of these data the raw changes are less meaningful than the relative geography of impact. All of the data shown reflect changes in a worst-case scenario (RCP8.5) relative to "no additional climate change" trajectories. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>
 
-      <div class="introduction" id="mortality_data" style="margin-top:250px;height:470px;">
+      <div class="introduction" id="mortality_data" style="margin-top:250px;height:625px;">
         <h1 class="text_scroll">Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates. The South, especially the rural counties of the Southeast, are expected to suffer the greatest increases due to rising temperatures while Northern counties may experience lower rates due to more temperate climates.</h1>
         <h1 class="text_scroll">These patterns are represented on the map by showing the relative severity of a certain county's estimated change compared to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;background-color:#c80000;font-weight:bold;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.</h1>
         <h1 class="text_scroll"><i> Click on a county to view the estimated change.</i></h1>
-        <div id="mortality_legend">
+        <div id="mortality_legend_data">
       <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
       <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
           <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
       </div>
+      <h1 class="text_scroll" style="margin-top:30px">This map displays change in the number of deaths per 100,000 people, meaning the changes are scaled to the population of a given county. However, the map would suggest that these changes will be felt equally in rural counties like Loving County, Texas (about 100 people) and urban counties like Los Angeles County (over 9 million people).</h1>
       </div>
-
-      <div class="introduction" id="" style="height:200px;margin-top:150px">
-        <h1 class="text_scroll">This map displays change in the number of deaths per 100,000 people, meaning the changes are scaled to the population of a given county. However, the map would suggest that these changes will be felt equally in rural counties like Loving County, Texas (about 100 people) and urban counties like Los Angeles County (over 9 million people).</h1></div>
       
       <div class="introduction" id="pop" style="height:250px;">
         <h1 class="text_scroll">Therefore, it is helpful to visualize the geography of climate change while overlaying the existing population geography of the United States. <!--While counties are a helpful unit of analysis for this study, their populations vary significantly. --></h1>
         <h1 class="text_scroll">This map displays population density by county in 2012 using <span style="color:white;font-size:14px;padding:2px;border-radius:3px;border:1px solid white;">brightness</span>.</h1>
         <h1 class="national">Population density (people/square mile)</h1>
         <table class="population" id="overall"><td id="table_20" style="background-color:#ffffff;opacity:0.2"></td><td id="table_13" style="background-color:#ffffff;opacity:0.4"></td><td id="table_9" style="background-color:#ffffff;opacity:0.6"></td><td id="table_5" style="background-color:#ffffff;opacity:0.8"></td><td id="table_1" style="background-color:#ffffff;opacity:1"></td></table>
-        <table class="labels2"><td style="text-align:left">50</td><td style="text-align:center"></td><td id="100">2000+</td></table>
-
+        <table class="labels2"><td style="text-align:left">50</td><td style="text-align:center"></td><td id="100">2000++</td></table>
       </div>
       
-      
-      <div class="introduction" id="mortality_rate" style="height:450px;">
+      <div class="introduction" id="mortality_rate" style="height:500px;">
         <h1 class="text_scroll">By combining these maps, we get a more accurate visualization of the geography of climate change mortality. While the estimated change in deaths is +31.39 people/100,000 people for Loving County and +10.69 in Los Angeles County, when we standardize for population this accounts for an estimated 0.03 deaths in Loving and more than 1065 deaths in Los Angeles.</h1>
-
-        <div id="mortality_legend">
+        <div id="mortality_legend_simple" style="display:none">
+          <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+          <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        </div>
+        <div id="mortality_legend" style="display:block">
       <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
       <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
-      <table class="labels_left"><tr><td valign="top">2 million+ people</td></tr><tr><td valign="bottom">10,000</td></tr></table>
+      <table class="labels_left"><tr><td valign="top">2000+ people/mi<sup>2</sup></td></tr><tr><td valign="bottom">50</td></tr></table>
       <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.6"></td><td id="table_13" style="background-color:#ebb075;opacity:0.6"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.6"></td><td id="table_1" style="background-color:#c80000;opacity:0.6"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.4"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.4"></td><td id="table_5" style="background-color:#d35617;opacity:0.4"></td><td id="table_1" style="background-color:#c80000;opacity:0.4"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.2"></td><td id="table_9" style="background-color:#e28740;opacity:0.2"></td><td id="table_5" style="background-color:#d35617;opacity:0.2"></td><td id="table_1" style="background-color:#c80000;opacity:0.2"></td></table>
       </div>
-      <h1 class="text_scroll" style="margin-top:30px">Scroll down to view the national distribution of other indicators of climate change risk.</h1>
+      <h1 class="text_scroll" style="margin-top:30px">Scroll down to view the national distribution of other indicators of climate change risk. To toggle between the basic and population-weighted view, use the button on the bottom bar.</h1>
     </div>
 
     <!--<div class="introduction" id="violent_crime">
@@ -148,35 +147,49 @@
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.5"></td><td id="table_13" style="background-color:#ebb075;opacity:0.5"></td><td id="table_9" style="background-color:#e28740;opacity:0.5"></td><td id="table_5" style="background-color:#d35617;opacity:0.5"></td><td id="table_1" style="background-color:#c80000;opacity:0.5"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.25"></td><td id="table_13" style="background-color:#ebb075;opacity:0.25"></td><td id="table_9" style="background-color:#e28740;opacity:0.25"></td><td id="table_5" style="background-color:#d35617;opacity:0.25"></td><td id="table_1" style="background-color:#c80000;opacity:0.25"></td></table>
     </div>-->
-    <div class="introduction" id="agricultural_yields">
-      <div id="agricultural_legend">
-      <h1 class="national">Percent change in agricultural yields</h1>
-      <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
-      <table class="labels_left"><tr><td valign="top">Largest increase</td></tr><tr><td valign="bottom">Largest decrease</td></tr></table>
-      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#eedabf;opacity:0.4"></td><td id="table_9" style="background-color:#eedabf;opacity:0.6"></td><td id="table_5" style="background-color:#eedabf;opacity:0.8"></td><td id="table_1" style="background-color:#eedabf;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#ebb075;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#ebb075;opacity:0.6"></td><td id="table_5" style="background-color:#ebb075;opacity:0.8"></td><td id="table_1" style="background-color:#ebb075;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#e28740;opacity:0.2"></td><td id="table_13" style="background-color:#e28740;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#e28740;opacity:0.8"></td><td id="table_1" style="background-color:#e28740;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#d35617;opacity:0.2"></td><td id="table_13" style="background-color:#d35617;opacity:0.4"></td><td id="table_9" style="background-color:#d35617;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#d35617;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+    <div class="introduction" id="agricultural_yields" style="height:500px">
+      <h1 class="text_scroll">Climate change also threatens the productivity and geography of the nation's agricultural industry. Due to changes in rainfall, temperatures and the amount of CO<sub>2</sub> in the air, estimates show that national yields could decrease by 9.1% for every degree Celsius increase in the global mean surface temperature (Hsiang et al. 2017).</h1>
+      <h1 class="text_scroll">The map displays the estimated percent change in the yield of maize, wheat, soybeans, and cotton between 2080 and 2099. Sections of the Midwest and South Central regions could suffer some of the worst losses as areas in the North experience increased yields.</h1>
+      <div id="agricultural_legend_simple" style="display:none">
+          <h1 class="national" style="max-width:250px">National percentile, % change in agricultural yields (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+          <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        </div>
+      <div id="agricultural_legend" style="display:block">
+      <h1 class="national" style="max-width:250px">National percentile, % change in agricultural yields (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+      <table class="labels_left"><tr><td valign="top">2000+ people/mi<sup>2</sup></td></tr><tr><td valign="bottom">50</td></tr></table>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.6"></td><td id="table_13" style="background-color:#ebb075;opacity:0.6"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.6"></td><td id="table_1" style="background-color:#c80000;opacity:0.6"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.4"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.4"></td><td id="table_5" style="background-color:#d35617;opacity:0.4"></td><td id="table_1" style="background-color:#c80000;opacity:0.4"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.2"></td><td id="table_9" style="background-color:#e28740;opacity:0.2"></td><td id="table_5" style="background-color:#d35617;opacity:0.2"></td><td id="table_1" style="background-color:#c80000;opacity:0.2"></td></table>
       </div>
     </div>
-    <div class="introduction" id="total_econ" style="margin-bottom:100px">
+    <div class="introduction" id="total_econ" style="margin-bottom:100px;height:550px">
+      <h1 class="text_scroll">However, agriculture is only one of many industries that will contribute to the economic fallout of climate change. Estimates predict that climate change could cause a 1-3% drop in annual national average GDP by the end of the century. While these estimates are restricted to direct damages to the U.S. economy, Hsiang et al. note that the United States will also experience significant indirect effects from global changes.</h1>
+      <h1 class="text_scroll">This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>
+      <div id="total_legend_simple" style="display:none">
+          <h1 class="national" style="max-width:250px">National percentile, % change in GDP (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+          <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        </div>
       <div id="total_legend">
-      <h1 class="national">Percent change in County GDP</h1>
-      <table class="labels2"><td style="text-align:left">10,000</td><td style="text-align:center"></td><td id="100">2 million+</td></table>
-      <table class="labels_left"><tr><td valign="top">Largest increase</td></tr><tr><td valign="bottom">Largest decrease</td></tr></table>
-      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#eedabf;opacity:0.4"></td><td id="table_9" style="background-color:#eedabf;opacity:0.6"></td><td id="table_5" style="background-color:#eedabf;opacity:0.8"></td><td id="table_1" style="background-color:#eedabf;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#ebb075;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#ebb075;opacity:0.6"></td><td id="table_5" style="background-color:#ebb075;opacity:0.8"></td><td id="table_1" style="background-color:#ebb075;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#e28740;opacity:0.2"></td><td id="table_13" style="background-color:#e28740;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#e28740;opacity:0.8"></td><td id="table_1" style="background-color:#e28740;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#d35617;opacity:0.2"></td><td id="table_13" style="background-color:#d35617;opacity:0.4"></td><td id="table_9" style="background-color:#d35617;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#d35617;opacity:1"></td></table>
-        <table class="overall" id="overall"><td id="table_20" style="background-color:#c80000;opacity:0.2"></td><td id="table_13" style="background-color:#c80000;opacity:0.4"></td><td id="table_9" style="background-color:#c80000;opacity:0.6"></td><td id="table_5" style="background-color:#c80000;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+      <h1 class="national" style="max-width:250px">National percentile, % change in GDP (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+      <table class="labels_left"><tr><td valign="top">2000+ people/mi<sup>2</sup></td></tr><tr><td valign="bottom">50</td></tr></table>
+      <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.6"></td><td id="table_13" style="background-color:#ebb075;opacity:0.6"></td><td id="table_9" style="background-color:#e28740;opacity:0.6"></td><td id="table_5" style="background-color:#d35617;opacity:0.6"></td><td id="table_1" style="background-color:#c80000;opacity:0.6"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.4"></td><td id="table_13" style="background-color:#ebb075;opacity:0.4"></td><td id="table_9" style="background-color:#e28740;opacity:0.4"></td><td id="table_5" style="background-color:#d35617;opacity:0.4"></td><td id="table_1" style="background-color:#c80000;opacity:0.4"></td></table>
+        <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.2"></td><td id="table_13" style="background-color:#ebb075;opacity:0.2"></td><td id="table_9" style="background-color:#e28740;opacity:0.2"></td><td id="table_5" style="background-color:#d35617;opacity:0.2"></td><td id="table_1" style="background-color:#c80000;opacity:0.2"></td></table>
       </div>
     </div>
 
       <!--<h1 class="text">These maps demonstrate the nationwide geography of a sample of climate change impacts. However, at this point you may be wondering how your county compares. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>-->
   
       <h1 class="title2" id="search" style="color:white">Explore the data</h1> 
-      <h2 class="subtext">Search for your address</h2>
+      <h2 class="subtext">Search for your address to compare your risk</h2>
 
       <div id="geocoder" class="geocoder" style="width:100%"></div>
 

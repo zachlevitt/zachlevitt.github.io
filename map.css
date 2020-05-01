@@ -269,11 +269,11 @@ h1.next_button {
 	color:rgba(255,255,255,0.4);
 	margin:auto;
 	margin-bottom:5px;
+	margin-top:20px;
 	padding: 5px 5px 5px 5px;
 	text-decoration: none;
 	text-align: center;
 	width:100%;
-	border: 1px solid #5E5E5E;
 }
  
 #menu a.active {

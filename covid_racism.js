@@ -2,9 +2,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazFpcHpncngxc21nM2ptd
 
 var map = new mapboxgl.Map({
   container: 'map', // container id
-  style: 'mapbox://styles/zachlevitt/ck9iso0pt053c1inqvwpwi8ag/draft', // stylesheet location
+  style: 'mapbox://styles/zachlevitt/ck9qitn4644xr1ipkp6g6z7fs/draft', // stylesheet location
   center: [-2,2], // starting position [lng, lat]
-  zoom: 3.6, // starting zoom
+  zoom: 3.7, // starting zoom
   minZoom: 3,
   maxZoom: 9,
   });
@@ -21,38 +21,107 @@ var geocoder = new MapboxGeocoder({
   placeholder: "ex. XXXXX",
 });
 
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+map.on('click', 'states-cases-yn', function(e) {
+  //console.log(e.features[0])
+  //
+  //var coordinates= [e.features[0].properties.centroid_xcoord,e.features[0].properties.centroid_ycoord]
+  //console.log(coordinates)
+  //var description = e.features[0].properties.description
+  //console.log(e.features[0].properties)
+  //var name = e.features[0].properties.NAME
+  var stateData = e.features[0].properties
+  var stateName = stateData.stateName
+  document.getElementById("robotext1").innerHTML = stateName
+  //var abbrev = states[e.features[0].properties.STATEFP].abbreviation
 
-geocoder.on('result', function(ev) {
+  // if (total_num > 0){
+  //   var total_display = '+'+total_num
+  // }
+  // else {
+  //   var total_display = total_num
+  // }
 
 
-  //check if control is there
-  map.scrollZoom.enable();
-  map.dragPan.enable();
-  map.doubleClickZoom.enable();
-  map.touchZoomRotate.enable();
-
-  //app.map.setLayoutProperty('epicenters-8-12-19-5boyv3',"visibility","none");
+  // if (total_rank < 629){
+  //   total_color = '#c80000'
+  // }
+  // else if (total_rank < 1258){
+  //   total_color = '#d35617'
+  // }
+  // else if (total_rank < 1887){
+  //   total_color = '#e28740'
+  // }
+  // else if (total_rank < 2516){
+  //   total_color = '#ebb075'
+  // }
+  // else {
+  //   total_color = '#eedabf'
+  // }
   
-  //coordinates = ev.result.geometry.coordinates
-  var coordinates = ev.result.center
-  //app.map.getSource('single-point').setData(ev.result.geometry);
-  var query = "https://api.mapbox.com/v4/zachlevitt.4rpv0z04/tilequery/"+coordinates[0]+","+coordinates[1]+".json?limit=20&access_token=pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazdjdmdiemswN3B0M2ZsN3Y0cDdjdWFkIn0.f3Cb4Gj1PRXGHHW6xT6aDA"
-  display(coordinates, query);
   
-})
+  //var text = (name.concat(" County, ")).concat(abbrev)
+  //var display;
+  //if (document.getElementById("layers").style.visibility == 'visible'){
+  //    display = '<h3 style="font-weight:bold">'+text+'</h3>'+'<h5>Population (2012)</h5><h4><b>' + pop_display +'</b></h4><h5>% change in agricultural yields</h5><h4 style="color:' + agricultural_color +'"><b>' + agricultural_display +'</b></h4><h5>Change in deaths per 100,000</h5><h4 style="color:' + mortality_color +'"><b>' + mortality_display +'</b></h4><h5>% change in county GDP</h5><h4 style="color:' + total_color +'"><b>' + total_display +'</b></h4>'
+  //}
 
-function display(coordinates, query){
+  
+  /*new mapboxgl.Popup()
+    .setLngLat(coordinates)
+    .setHTML(display)
+    .addTo(map);*/
 
-  $.ajax({
-    method: 'GET',
-    url: query,
-      }).done(function(data) {
+});
 
+map.on('mouseenter', 'states-cases-yn', function() {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'states-cases-yn', function() {
+map.getCanvas().style.cursor = '';
+});
 
-      })
+var hoveredStateId = null;
 
- }
+//console.log(map.style.sourceCaches)
+//
+
+map.on('mousemove', 'states-cases-yn', function(e) {
+  //console.log(hoveredStateId)
+  if (e.features.length > 0) {
+    if (hoveredStateId) {
+      map.setFeatureState(
+        { source: 'composite', id: hoveredStateId, sourceLayer: 'states_covid_albers' },
+        { hover: false }
+      );
+    }
+      //console.log(e.features[0].id)
+      hoveredStateId = e.features[0].id;
+
+      //console.log("id is now:" + hoveredStateId)
+      map.setFeatureState(
+        { source: 'composite', id: hoveredStateId, sourceLayer: 'states_covid_albers' },
+        { hover: true }
+      );
+      
+  }
+});
+ 
+// When the mouse leaves the state-fill layer, update the feature state of the
+// previously hovered feature.
+map.on('mouseleave', 'states-outlines', function() {
+  //console.log(hoveredStateId)
+if (hoveredStateId) {
+map.setFeatureState(
+{ source: 'composite', id: hoveredStateId, sourceLayer: 'states_covid_albers' },
+{ hover: false }
+);
+//console.log(hoveredStateId)
+}
+hoveredStateId = null;
+});
+
 
 function onScroll() {
   //console.log('hello')

@@ -95,10 +95,10 @@ h2.subheader {
 #map {
  	outline: none!important;
  	height: 600px;
- 	width: 600px;
-	position: relative;
+ 	width: 100%;
+ 	max-width:1500px;
 	margin:auto;
-	margin-top:25px;
+	margin-top:50px;
 	margin-bottom:25px;
 }
 
@@ -185,6 +185,10 @@ h3.byline2{
 	justify-content: center;
 	align-items: center;
 	display: block;
+}
+
+.robotext {
+	height:100px;
 }
 
 /*.landmark {

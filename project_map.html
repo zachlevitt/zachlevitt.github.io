@@ -70,7 +70,7 @@
               <option value="counties-total">Total economic damage</option>
               <option value="counties-violent">Violent crime rate</option>
               <option value="counties-agricultural">Agricultural yields</option>
-              <option value="counties-energy">Energy expenditure</option>
+              <option value="counties-energy">Electricity demand</option>
               <option value="counties-labor-high">High-risk labor</option>
               <option value="counties-property">Property crime rate</option>
               <option value="counties-income">County income (2012)</option>
@@ -95,15 +95,15 @@
   <div class="left_side" id="left_side" onscroll="onScroll()">
     <!--<div id="box1" class="box1" style="display:block">-->
       <div class="opening">
-      <h1 class="header1">The United States of <br><span style="color:white;font-weight:bold;font-size:48px;">Climate Change</span></h1>
+      <h1 class="header1">The United States of <br><span style="color:white;font-weight:bold;font-size:40px;">Climate Change</span></h1>
       <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
-      <h1 class="byline" style="margin-bottom:300px;"><i class="arrow down"></i></h1>
+      <h1 class="byline" style="margin-bottom:200px;"><i class="arrow down"></i></h1>
       <!--<h2 class="byline">A senior project completed as part of a joint degree in geography and computer science at Middlebury College.<br><br>Advised by Dr. Jeff Howarth.</h1>-->
       <h1 class="text" id="sec0" style="font-size:24px;line-height:32px;color:white">What does climate change mean for the United States?<br><br>And how does your county compare?</h1>
       
       <!--<h1 class="text" id="sec1">Increasing temperatures. Rising sea levels. More frequent natural disasters. Economic upheaval. Worsening social inequality.</h1>-->
 
-      <h1 class="text" id="sec1">Despite its gravity, climate change can often feel like an invisible and distant threat. For many in the United States, it is easy to feel guarded from the worst effects. This project asks: what would it take for Americans to understand the ways in which climate change could fundamentally alter life and worsen existing inequalities?</h1>
+      <h1 class="text" id="sec1">Despite its gravity, climate change can often feel like an invisible and distant threat. For many in the United States, it is easy to feel guarded from the worst effects. What would it take for Americans to understand the ways in which climate change could fundamentally alter life and worsen existing inequalities?</h1>
 
       <h1 class="text" id="sec1">Using county-level data from a recent study of estimated climate change damages in the United States between 2080 and 2099 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), this project aims to answer these questions by visualizing and personalizing climate change geography. Due to the nature of the data, this tool allows you to focus on how your county's risk compares to the rest of the country.</h1> <!--I examined the expected change for several economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates.The projections reflect estimated changes in these indicators  due to climate change.</h1>-->
 
@@ -112,15 +112,17 @@
 
       <!--Following a short tutorial, the final section will allow you to explore the data for yourself and understand how the risk in your county compares to the rest of the country.</h1>-->
       <!--<h2 id="explore"><a href="#" onClick="explore()">Explore the data</a></h2>-->
-      <h1 class="text"><a href="#" onClick="tutorial()" style="color:#ECAEA3">View the tutorial</a> or scroll to begin exploring climate change risk in your county.</h2>
+      <!--<h1 class="text">Scroll to begin exploring climate change risk in your county.</h2>-->
+      <h1 class="text" style="text-align:center"><a href="#" onClick="tutorial()" style="color:gray;text-decoration:none;font-size:18px;font-weight:bold">View the tutorial</a></h1>
+      
 
-      <h1 class="text" style="text-align:center"><i class="arrow down"></i></h1>
+      <!--<h1 class="text" style="text-align:center"><i class="arrow down"></i></h1>-->
 
     </div>
 
       <div id="tutorial" style="display:none">
 
-      <div class="introduction" id="scroll1" style="margin-top:250px;height:350px;">
+      <div class="introduction" id="scroll1" style="margin-top:150px;height:350px;">
           <h1 class="text_scroll">The current map displays national percentiles for <span style="font-weight:bold">change in the number of deaths per 100,000 people</span> between 2080 and 2099. Instead of raw numbers, this tool colors each county by its change relative to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;background-color:#c80000;font-weight:bold;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.<!--Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates.--></h1>
           <h1 class="text_scroll"><i> Click on a county to view the estimated change.</i></h1>
           <div id="mortality_legend_data">
@@ -251,9 +253,8 @@
 
       <!--<h1 class="text">These maps demonstrate the nationwide geography of a sample of climate change impacts. However, at this point you may be wondering how your county compares. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>-->
   
-      <h1 class="title2" id="search" style="color:white">Explore the data</h1> 
-      <div class="legend_search" id="legend_search"></div>
-      <h2 class="subtext">Search for your address to compare your risk</h2>
+      <!--<h1 class="title2" id="search" style="color:white">Explore the United States of climate change</h1> -->
+      <h2 class="subtext" id="search">Search for your address to compare your risk</h2>
 
       <div id="geocoder" class="geocoder" style="width:100%"></div>
 
@@ -280,6 +281,13 @@
       <h3 class="robo">Total economic damage<span id="total_value"></span></h3>
        <h3 class="robo_value"><span id="total_percentile"></span>%</h3>-->
     </div>
+    <div class="legend_search" id="legend_search">
+        <div class="table_container_simple">
+          <h1 class="national" id="scroll4_title1" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
+      <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+          <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
+        </div>
+      </div>
       <!--<h3 class="robo" id="robo">Relative to other counties, <span id="name3" style="color:#FFF700"></span> faces the highest risk of <span id="crease1"></span> in <span id="indicator1"></span> due to climate change. With an estimated <span id="crease2"></span> of <span id="min_number" style="border-bottom:1px white solid"></span>, the county ranks <span id="min_rank"></span> in country for change in <span id="indicator2"></span></h3>-->
 
         <!--<Scientists estimate that the county could between 2080 and 2099. This projected change is worse than <span id="percentile"></span>% of counties in the United States.</h3>-->

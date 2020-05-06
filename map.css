@@ -10,7 +10,7 @@
 }
 
 .opening {
-	margin-bottom:200px;
+	margin-bottom:50px;
 }
 
 
@@ -20,7 +20,7 @@
   background:#262626!important;
   border: 1px solid gray;
   box-shadow: 3px 3px 2px #000000;
-  height:250px;
+  height:200px;
   overflow:scroll;
 }
 
@@ -130,10 +130,10 @@ button.mapboxgl-popup-close-button {
   margin: 0;
   display: block;
   padding: 0px;
-  font-size:16px;
+  font-size:14px;
   text-align:center;
   margin-bottom:11px;
-  font-weight:bold;
+  font-weight:normal;
   color:darkgray;
 }
 
@@ -202,12 +202,13 @@ p.info {
 .information h5{
 	color:gray;
 	font-size:14px;
+	margin-bottom:0px;
 }
 
 .information h4{
 	font-size:18px;
+	margin-bottom:10px;
 }
-
 
 .data_wrap {
 	margin-bottom: 25px;
@@ -490,7 +491,7 @@ h2.top {
 	height:400px;
 	background-color:black;
 	margin:auto;
-	margin-top:350px;
+	margin-top:250px;
 }
 
 h1.recenter {
@@ -509,8 +510,8 @@ h1.recenter {
 h1.header1 {
 	color:#bbb;
 	margin: auto;
-	font-size: 40px;
-	line-height: 50px;
+	font-size: 32px;
+	line-height: 45px;
 	text-align: center;
 	margin-top:200px;
 	margin-bottom: 30px;
@@ -575,7 +576,7 @@ h2.byline {
 
 h1.title2 {
 	color:white;
-	font-size: 28px;
+	font-size: 24px;
 	margin-top:50px;
 	text-align: center;
 }

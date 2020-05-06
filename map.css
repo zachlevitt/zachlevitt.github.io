@@ -24,6 +24,10 @@
   overflow:scroll;
 }
 
+.information::-webkit-scrollbar {
+  display: none;
+}
+
 .mapboxgl-popup-content::-webkit-scrollbar {
   display: none;
 }
@@ -187,6 +191,10 @@ p.info {
 .information {
 	width: 95%;
 	margin: auto;
+	height:300px;
+	overflow:scroll;
+	border-bottom:1px solid gray;
+	-ms-overflow-style: none;
 }
 
 .data_wrap {
@@ -561,7 +569,7 @@ h2.subtext {
 	font-size: 16px;
 	margin:auto;
 	text-align:center;
-	font-weight:bold;
+	font-weight:normal;
 	margin-top:30px;
 }
 

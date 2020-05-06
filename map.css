@@ -1,12 +1,12 @@
 .mapboxgl-ctrl-geocoder{
-	width:95%!important;
-	background-color: darkgray!important;
-	border: 1px white solid!important;
-	color: #000000!important;
+	width:90%!important;
+	background-color: #262626!important;
+	border: 1px gray solid!important;
+	color: white!important;
 	margin: auto;
 	margin-top:15px;
 	margin-bottom: 20px;
-	max-width: 90%!important;
+	max-width: 350px!important;
 }
 
 .opening {
@@ -38,7 +38,7 @@
 }
 
 div.ui-selectmenu-menu.ui-front.ui-selectmenu-open {
-	bottom:90px!important;
+	bottom:75px!important;
 	top:auto!important;
 }
 
@@ -132,9 +132,9 @@ button.mapboxgl-popup-close-button {
   padding: 0px;
   font-size:16px;
   text-align:center;
-  margin-bottom:8px;
+  margin-bottom:11px;
   font-weight:bold;
-  color:white;
+  color:darkgray;
 }
 
 .mapboxgl-popup-content h5 {
@@ -189,13 +189,25 @@ p.info {
 }
 
 .information {
+	color:gray;
 	width: 95%;
 	margin: auto;
-	height:300px;
+	height:250px;
 	overflow:scroll;
 	border-bottom:1px solid gray;
 	-ms-overflow-style: none;
+	text-align:center;
 }
+
+.information h5{
+	color:gray;
+	font-size:14px;
+}
+
+.information h4{
+	font-size:18px;
+}
+
 
 .data_wrap {
 	margin-bottom: 25px;
@@ -213,8 +225,8 @@ body {
 }
 
 .mapboxgl-ctrl-geocoder input[type='text']{
-	color:black!important;
-	font-size:16px!important;
+	color:white!important;
+	font-size:14px!important;
 }
 
 input {
@@ -408,11 +420,15 @@ h1.recenter:last-of-type{
 	transition: opacity 1000ms,
 }
 
-.filter #filter, .layers #layers, .display_buttons #population,.display_buttons #populated-places, .display_buttons #states-outline {
+.filter #filter, .information#information, .layers #layers, .display_buttons #population,.display_buttons #populated-places, .display_buttons #states-outline {
 	visibility:hidden;
 	opacity:0;
 	/*-webkit-transition: opacity 600ms, visibility 600ms;*/
   	transition: opacity 1000ms, visibility 1000ms;
+}
+
+.legend_search {
+	height: ;
 }
 
 
@@ -450,7 +466,7 @@ h1.recenter:last-of-type{
 h1.national {
 	margin:auto;
 	margin-top: 30px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	font-size: 13px;
 	text-align:center;
 	color: gray;
@@ -565,12 +581,12 @@ h1.title2 {
 }
 
 h2.subtext {
-	color:darkgray;
+	color:white;
 	font-size: 16px;
 	margin:auto;
 	text-align:center;
 	font-weight:normal;
-	margin-top:30px;
+	margin-top:40px;
 }
 
 
@@ -609,7 +625,7 @@ h2.title {
 }
 
 h3.robo{
-	color:white;
+	color:gray;
 	font-size: 14px;
 	width:100%;
 	margin:auto;
@@ -705,11 +721,22 @@ h4.data1 {
 	margin-top: 10px;
 }
 
+.table_container {
+	margin:auto;
+	width:240px;
+	max-width:240px;
+}
+
+.table_container_simple {
+	margin:auto;
+	width:180px;
+	max-width:180px;
+}
+
 table.labels_left {
 	width:50px;
 	height:100px;
-	margin-left:5px;
-	margin-right:10.5%;
+	margin-left:3px;
 	background-color:none;
 	float:right;
 }
@@ -747,13 +774,11 @@ table.full td {
 	width:20%;
 }
 
-table.overall {
+table#overall.overall {
 	width: 180px;
 	height: 20px;
-	margin: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-right:0px;
+	margin: 0px;
+	margin-right:0px!important;
 	/*background-image: linear-gradient(to right, white ,black);*/
 	background-color: #262626;
 }
@@ -788,6 +813,7 @@ table.labels2 {
 	margin: auto;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	margin-left:0px;
 	background-color:none;
 	text-align: center;
 	border: none;

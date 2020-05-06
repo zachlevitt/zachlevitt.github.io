@@ -238,6 +238,11 @@ function onScroll() {
         document.getElementById("populated-places").style.opacity = 1;
         document.getElementById("states-outline").style.visibility = 'visible';
         document.getElementById("states-outline").style.opacity = 1;
+        map.setFilter('centroids_info',["any",['==', 'GEOID', "06037"],['==', 'GEOID', "48301"]])
+        //map.setFilter('states-highlight',['==', 'name', states[county_GEOID.substring(0,2)].name])
+        map.setFilter('county-rank',["any",['==', 'GEOID', "06037"],['==', 'GEOID', "48301"]])
+        map.setLayoutProperty('county-rank',"visibility","visible")
+        map.setLayoutProperty('centroids_info',"visibility","visible")
       }
       /*else if (chapterName == "pop"){
         //map.setLayoutProperty('populated-places',"visibility","visible")
@@ -285,7 +290,8 @@ function onScroll() {
         //map.setLayoutProperty('counties-violent','visibility','none')
         map.setLayoutProperty('population','visibility','none')
         map.setLayoutProperty('counties-mortality','visibility','visible')
-        
+
+  
         document.getElementById("layers").style.visibility = 'hidden';
         document.getElementById("layers").style.opacity = 0;
         
@@ -299,6 +305,11 @@ function onScroll() {
         map.setLayoutProperty('counties-violent','visibility','visible')
       }*/
       else if (chapterName == "scroll4"){
+        map.setFilter('centroids_info',undefined)
+        //map.setFilter('states-highlight',['==', 'name', states[county_GEOID.substring(0,2)].name])
+        map.setFilter('county-rank',undefined)
+        map.setLayoutProperty('county-rank',"visibility","none")
+        map.setLayoutProperty('centroids_info',"visibility","none")
         //map.setLayoutProperty('counties-total','visibility','none')
         //map.setLayoutProperty('population','visibility','none')
         //map.setLayoutProperty('counties-mortality','visibility','none')
@@ -402,10 +413,11 @@ $('#indicator').on('selectmenuchange', function() {
     
     var indicator = document.getElementById("indicator").value;
     if (indicator != "none"){
-      map.setLayoutProperty(indicator,'visibility','visible')
-    }
 
-    else {
+      map.setLayoutProperty(indicator,'visibility','visible')
+      document.getElementById("scroll4_legend").style.display = "block"
+      document.getElementById("scroll4_legend_simple").style.display = "block"
+      document.getElementById("legend_search").style.display = "block"
       switch (indicator){
         case "counties-agricultural":
           document.getElementById("scroll4_title1").innerHTML = "National percentile, % change in agricultural yields (2080-2099)";
@@ -425,11 +437,24 @@ $('#indicator').on('selectmenuchange', function() {
         case "counties-property":
           document.getElementById("scroll4_title1").innerHTML = 'National percentile, % change in property crime rate (2080-2099)';
           break;
-      }
+        case "counties-violent":
+          document.getElementById("scroll4_title1").innerHTML = 'National percentile, % change in violent crime rate (2080-2099)';
+          break;
+        case "counties-income":
+          document.getElementById("scroll4_title1").innerHTML = 'National percentile, median county income (2012';
+          break;
+    }
+    else {
+      document.getElementById("scroll4_legend").style.display = "none"
+      document.getElementById("scroll4_legend_simple").style.display = "none"
+      document.getElementById("legend_search").style.display = "none"
+    }
       document.getElementById("scroll4_title2").innerHTML = document.getElementById("scroll4_title1").innerHTML
+      document.getElementById("legend_search_title").innerHTML = document.getElementById("scroll4_title1").innerHTML
+
     }
     if (map.getPaintProperty('counties-total',"fill-opacity")==0.8){
-      //document.getElementById('legend_search').innerHTML = document.getElementById('scroll4_legend_simple').innerHTML
+      document.getElementById('legend_search').innerHTML = document.getElementById('scroll4_legend_simple').innerHTML
     }
     else {
       document.getElementById('legend_search').innerHTML = document.getElementById('scroll4_legend').innerHTML

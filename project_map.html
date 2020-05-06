@@ -6,7 +6,7 @@
   <meta name="description" con10t="">
   <meta name="author" con10t="">
 
-  <title>Map | Designing Interactive Maps for Climate Change</title>
+  <title>The United States of Climate Change</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,300,700' rel='stylesheet' type='text/css'>
 
@@ -17,7 +17,7 @@
   <!-- Custom styles for this template -->
   <link href="/map.css" rel="stylesheet">
 
-  <script src = "/counties.js"></script>
+  <script src = "/counties_final.js"></script>
   <script src = "/states.js"></script>
   <script src = "/state_abbrev.js"></script>
 
@@ -66,11 +66,14 @@
  
           <fieldset>
             <select name="indicator" id="indicator">
-              <option value="total">Total economic damage</option>
-              <option value="population">Population density</option>
-              <option value="mortality">Mortality rate</option>
-              <option value="violent">Violent crime rate</option>
-              <option value="agricultural">Agricultural yields</option>
+              <option value="counties-mortality">Mortality rate</option>
+              <option value="counties-total">Total economic damage</option>
+              <option value="counties-violent">Violent crime rate</option>
+              <option value="counties-agricultural">Agricultural yields</option>
+              <option value="counties-energy">Energy expenditure</option>
+              <option value="counties-labor-high">High-risk labor</option>
+              <option value="counties-property">Property crime rate</option>
+              <option value="counties-income">County income (2012)</option>
               <option value="none">None</option>
             </select>
             <label for="indicator">Choose data layer</label>
@@ -91,6 +94,7 @@
   </div>
   <div class="left_side" id="left_side" onscroll="onScroll()">
     <!--<div id="box1" class="box1" style="display:block">-->
+      <div class="opening">
       <h1 class="header1">The United States of <br><span style="color:white;font-weight:bold;font-size:48px;">Climate Change</span></h1>
       <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
       <h1 class="byline" style="margin-bottom:300px;"><i class="arrow down"></i></h1>
@@ -99,25 +103,31 @@
       
       <!--<h1 class="text" id="sec1">Increasing temperatures. Rising sea levels. More frequent natural disasters. Economic upheaval. Worsening social inequality.</h1>-->
 
-      <h1 class="text" id="sec1">In order to answer these questions, this project aims to make climate change more visible and personalized by visualizing its geography. Utilizing data from a recent 2017 study of estimated climate change damages for every county in the United States in 2100 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), I examined the expected change for several economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates. The projections reflect estimated changes in these indicators between 2080 and 2099 due to climate change.</h1>
-
-      <h1 class="text">Due to the nature of these data the raw changes are less meaningful than the relative geography of impact. All of the data shown reflect estimated changes in a worst-case scenario where nothing more is done to fight climate change. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>
-
       <h1 class="text" id="sec1">Despite its gravity, climate change can often feel like an invisible and distant threat. For many in the United States, it is easy to feel guarded from the worst effects. This project asks: what would it take for Americans to understand the ways in which climate change could fundamentally alter life and worsen existing inequalities?</h1>
 
-      <h1 class="text">Following a short tutorial, the final section will allow you to explore the data for yourself and understand how the risk in your county compares to the rest of the country.</h1>
+      <h1 class="text" id="sec1">Using county-level data from a recent study of estimated climate change damages in the United States between 2080 and 2099 (<a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>), this project aims to answer these questions by visualizing and personalizing climate change geography. Due to the nature of the data, this tool allows you to focus on how your county's risk compares to the rest of the country.</h1> <!--I examined the expected change for several economic and social indicators, including county GDP, agricultural yields, mortality rates, and crime rates.The projections reflect estimated changes in these indicators  due to climate change.</h1>-->
+
+
+      <!--<h1 class="text">Due to the nature of these data the raw changes are less meaningful than the relative geography of impact. All of the data shown reflect estimated changes in a worst-case scenario where nothing more is done to fight climate change. By focusing on how each county's risk compares to the rest of country, this project aims to contribute to the development of a geography of climate change in the United States.</h1>-->
+
+      <!--Following a short tutorial, the final section will allow you to explore the data for yourself and understand how the risk in your county compares to the rest of the country.</h1>-->
+      <!--<h2 id="explore"><a href="#" onClick="explore()">Explore the data</a></h2>-->
+      <h1 class="text"><a href="#" onClick="tutorial()" style="color:#ECAEA3">View the tutorial</a> or scroll to begin exploring climate change risk in your county.</h2>
 
       <h1 class="text" style="text-align:center"><i class="arrow down"></i></h1>
 
+    </div>
+
+      <div id="tutorial" style="display:none">
+
       <div class="introduction" id="scroll1" style="margin-top:250px;height:350px;">
-        <div class="intro" id="number1" style="">
-          <h1 class="text_scroll">Instead of raw numbers, this mapping tool displays <b>national rank</b> for each of the indicators, coloring each county by its change relative to the rest of the country. The current map displays percentiles for <span style="font-weight:bold">change in the number of deaths per 100,000 people</span>. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;background-color:#c80000;font-weight:bold;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.<!--Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates.--></h1>
+          <h1 class="text_scroll">The current map displays national percentiles for <span style="font-weight:bold">change in the number of deaths per 100,000 people</span> between 2080 and 2099. Instead of raw numbers, this tool colors each county by its change relative to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;background-color:#c80000;font-weight:bold;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.<!--Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates.--></h1>
           <h1 class="text_scroll"><i> Click on a county to view the estimated change.</i></h1>
           <div id="mortality_legend_data">
-        <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
-        <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
-            <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
-        </div>
+            <h1 class="national" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
+            <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
+                <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
+          </div>
         <!--<h1 class="text_scroll" style="margin-top:30px">Although these changes are scaled to the population of a given county, this visualization suggests that these changes will be felt equally in rural counties like Loving County, Texas (about 100 people) and urban counties like Los Angeles County (over 9 million people). Therefore, it is helpful to visualize the geography of climate change while overlaying the existing population geography of the United States.</h1>-->
           <!--<h1 class="text_scroll"><i> Click on the <b>Show population</b> button below the map to toggle the population layer.</i></h1>-->
         <!--<h1 class="next_button" onClick="document.getElementById('number1').style.display='none';document.getElementById('number2').style.display='block';"><a href="#">NEXT</a></h1>-->
@@ -180,18 +190,18 @@
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.5"></td><td id="table_13" style="background-color:#ebb075;opacity:0.5"></td><td id="table_9" style="background-color:#e28740;opacity:0.5"></td><td id="table_5" style="background-color:#d35617;opacity:0.5"></td><td id="table_1" style="background-color:#c80000;opacity:0.5"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.25"></td><td id="table_13" style="background-color:#ebb075;opacity:0.25"></td><td id="table_9" style="background-color:#e28740;opacity:0.25"></td><td id="table_5" style="background-color:#d35617;opacity:0.25"></td><td id="table_1" style="background-color:#c80000;opacity:0.25"></td></table>
     </div>-->
-    <div class="introduction" id="scroll4" style="height:500px">
+    <div class="introduction" id="scroll4" style="height:350px">
       <h1 class="text_scroll">Using the menu below the map, choose a data layer to display.</h1>
-      <h1 class="text_scroll" id="agricultural_text" style="display:none"><b>Agricultural yields</b><br>Climate change threatens the productivity and geography of the nation's agricultural industry. Due to changes in rainfall, temperatures and the amount of CO<sub>2</sub> in the air, estimates show that national yields could decrease by 9.1% for every degree Celsius increase in the global mean surface temperature (Hsiang et al. 2017).The map displays the estimated percent change in the yield of maize, wheat, soybeans, and cotton between 2080 and 2099. Sections of the Midwest and South Central regions could suffer some of the worst losses as areas in the North experience increased yields.</h1>
+      <!--<h1 class="text_scroll" id="agricultural_text" style="display:none"><b>Agricultural yields</b><br>Climate change threatens the productivity and geography of the nation's agricultural industry. Due to changes in rainfall, temperatures and the amount of CO<sub>2</sub> in the air, estimates show that national yields could decrease by 9.1% for every degree Celsius increase in the global mean surface temperature (Hsiang et al. 2017).The map displays the estimated percent change in the yield of maize, wheat, soybeans, and cotton between 2080 and 2099. Sections of the Midwest and South Central regions could suffer some of the worst losses as areas in the North experience increased yields.</h1>
       <h1 class="text_scroll" id="total_text" style="display:none">Estimates predict that climate change could cause a 1-3% drop in annual national average GDP by the end of the century. While these estimates are restricted to direct damages to the U.S. economy, Hsiang et al. note that the United States will also experience significant indirect effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>
       <h1 class="text_scroll" id="mortality_text" style="display:none">MORTALITY effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>
-      <h1 class="text_scroll" id="violent_text" style="display:none">VIOLENT effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>
-      <div id="mortality_legend_simple2" style="display:none">
+      <h1 class="text_scroll" id="violent_text" style="display:none">VIOLENT effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>-->
+      <div id="scroll4_legend_simple" style="display:none">
           <h1 class="national" style="max-width:250px">National percentile, % change in agricultural yields (2080-2099)</h1>
       <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
           <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:0.8"></td><td id="table_13" style="background-color:#ebb075;opacity:0.8"></td><td id="table_9" style="background-color:#e28740;opacity:0.8"></td><td id="table_5" style="background-color:#d35617;opacity:0.8"></td><td id="table_1" style="background-color:#c80000;opacity:0.8"></td></table>
         </div>
-      <div id="mortality_legend2" style="display:block">
+      <div id="scroll4_legend" style="display:block">
       <h1 class="national" style="max-width:250px">National percentile, % change in agricultural yields (2080-2099)</h1>
       <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>
       <table class="labels_left"><tr><td valign="top">2000+ people/mi<sup>2</sup></td></tr><tr><td valign="bottom">50</td></tr></table>
@@ -203,6 +213,7 @@
       </div>
     </div>
     <h1 class="text" style="text-align:center;margin-top:50px"><i class="arrow down"></i></h1>
+  </div>
     
     <!--<div class="introduction" id="total_econ" style="margin-bottom:100px;height:550px">
       

@@ -10,7 +10,7 @@
 }
 
 .opening {
-	margin-bottom:50px;
+	margin-bottom:25px;
 }
 
 
@@ -110,7 +110,7 @@ div.ui-selectmenu-menu.ui-front.ui-selectmenu-open {
 }
 
 .mapboxgl-popup-content h3 {
-  color: #C4C4C4;
+  color: white;
   margin: 0;
   display: block;
   padding: 10px;
@@ -159,7 +159,9 @@ button.mapboxgl-popup-close-button {
 }
 
 .left_side{
-	width:33%;
+	width:100%;
+	transition-property: width;
+ 	transition-duration: 1.5s;
 	display:block;
 	float:left;
 	background-color:#262626;
@@ -180,7 +182,7 @@ p.info {
 	color: gray;
 	text-align: left;
 	font-size: 11px;
-	margin-top:10px;
+	margin-top:50px;
 	margin-left:10px;
 	width:90%;
 }
@@ -283,6 +285,10 @@ h1.text a:hover {
 	color:white;
 }
 
+h1.text#view_tutorial a:hover {
+	color:white;
+}
+
 a.mapboxgl-ctrl-logo{
 	margin-bottom:90px!important;
 }
@@ -311,7 +317,7 @@ h1.next_button {
 }
 
 .display_buttons a {
-	font-size: 13px;
+	font-size: 14px;
 	color:rgba(255,255,255,0.4);
 	margin:auto;
 	margin-bottom:5px;
@@ -378,14 +384,18 @@ h1.text {
 
 h1.text_scroll {
 	color:#C4C4C4;
-	font-size: 14px;
+	font-size: 13px;
 	margin-left:5%;
 	margin-right:5%;
 	margin-top:10px;
 	margin-bottom:10px;
-	line-height: 20px;
+	line-height: 16px;
 	font-weight:100;
 	text-align:left;
+}
+
+h1.text_scroll a:hover {
+	color:yellow!important;
 }
 
 h1.searchAgain {
@@ -420,7 +430,7 @@ h1.recenter:last-of-type{
 }
 
 .layers {
-	width:30%;
+	width:25%;
 	margin-left:1%;
 	margin-right:1%;
 	float:left;
@@ -432,10 +442,7 @@ h1.recenter:last-of-type{
 }
 
 .filter #filter, .information#information, .layers #layers, .display_buttons #population,.display_buttons #populated-places, .display_buttons #states-outline {
-	visibility:hidden;
-	opacity:0;
 	/*-webkit-transition: opacity 600ms, visibility 600ms;*/
-  	transition: opacity 1000ms, visibility 1000ms;
 }
 
 .legend_search {
@@ -444,7 +451,7 @@ h1.recenter:last-of-type{
 
 
 .filter {
-	width:30%;
+	width:25%;
 	margin-left:1%;
 	margin-right:1%;
 	float:left;
@@ -454,7 +461,7 @@ h1.recenter:last-of-type{
 
 
 .display_buttons {
-	width:16%;
+	width:21%;
 	margin-left:1%;
 	margin-right:1%;
 	float:left;
@@ -498,10 +505,9 @@ h2.top {
 	border-bottom: 1px gray solid;
 	border-right: 1px gray solid;
 	width:90%;
-	height:400px;
+	height:325px;
 	background-color:black;
 	margin:auto;
-	margin-top:250px;
 }
 
 h1.recenter {
@@ -520,10 +526,10 @@ h1.recenter {
 h1.header1 {
 	color:#bbb;
 	margin: auto;
-	font-size: 32px;
-	line-height: 45px;
+	font-size: 38px;
+	line-height: 50px;
 	text-align: center;
-	margin-top:200px;
+	margin-top:25px;
 	margin-bottom: 30px;
 	width:90%;
 	font-weight: normal;
@@ -543,9 +549,10 @@ h1.header2 {
 
 .arrow {
   border: solid gray;
-  border-width: 0 2px 2px 0;
+  border-width: 0 1px 1px 0;
   display: inline-block;
-  padding: 5px;
+  padding: 4px;
+  margin-bottom:2px;
 }
 
 
@@ -554,14 +561,20 @@ h1.header2 {
   -webkit-transform: rotate(45deg);
 }
 
+.intro_text {
+	width:100%;
+	max-width:500px;
+	margin:auto;
+}
+
 
 h1.byline {
 	color:#737373;
 	margin:auto;
 	font-size: 13px;
 	text-align: center;
-	margin-top:50px;
-	margin-bottom:150px;
+	margin-top:25px;
+	margin-bottom:25px;
 }
 
 h1.byline a {
@@ -593,11 +606,11 @@ h1.title2 {
 
 h2.subtext {
 	color:white;
-	font-size: 16px;
+	font-size: 20px;
 	margin:auto;
 	text-align:center;
 	font-weight:normal;
-	margin-top:40px;
+	margin-top:30px;
 	width:90%;
 }
 
@@ -629,8 +642,8 @@ h2.title {
 	font-size: 24px;
 	color: gray;
 	margin: auto;
-	margin-top: 0px;
-	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	text-align: center;
 	font-weight:normal;
 	width:auto;
@@ -659,7 +672,7 @@ h3.robo_value{
 fieldset {
 	border: 0;
 	text-align:left;
-	width:200px;
+	width:170px;
 	margin:auto;
 	margin-top:20px;
 }
@@ -803,7 +816,7 @@ table#overall.overall {
 	margin: 0px;
 	margin-right:0px!important;
 	/*background-image: linear-gradient(to right, white ,black);*/
-	background-color: #262626;
+	background-color: #0d0d0d;
 }
 
 table.overall td {

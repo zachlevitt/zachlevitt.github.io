@@ -43,9 +43,9 @@
           <fieldset>
             
             <select name="comparison" id="comparison">
-                <option value="all">All U.S. counties</option>
-                <option value="pop">Similar population size</option>
-                <option value="income">Similar average income level</option>
+                <option value="all">All counties</option>
+                <option value="pop">Similar population</option>
+                <option value="income">Similar median income</option>
                 <option value="state">Counties in the same state</option>
                 <!--<option value="region">Counties in the same region</option>
                 <option value="similar">Counties with similar values</option>-->
@@ -97,7 +97,7 @@
       <div class="opening">
       <h1 class="header1">The United States of <br><span style="color:white;font-weight:bold;font-size:40px;">Climate Change</span></h1>
       <h1 class="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
-      <h1 class="byline" style="margin-bottom:200px;"><i class="arrow down"></i></h1>
+      <h1 class="byline" style="margin-bottom:150px;"><i class="arrow down"></i></h1>
       <!--<h2 class="byline">A senior project completed as part of a joint degree in geography and computer science at Middlebury College.<br><br>Advised by Dr. Jeff Howarth.</h1>-->
       <h1 class="text" id="sec0" style="font-size:24px;line-height:32px;color:white">What does climate change mean for the United States?<br><br>And how does your county compare?</h1>
       
@@ -122,7 +122,7 @@
 
       <div id="tutorial" style="display:none">
 
-      <div class="introduction" id="scroll1" style="margin-top:150px;height:380px;">
+      <div class="introduction" id="scroll1" style="margin-top:75px;height:380px;">
           <h1 class="text_scroll">The current map displays national percentiles for <span style="font-weight:bold">change in the number of deaths per 100,000 people</span> between 2080 and 2099. Instead of raw numbers, this tool colors each county by its change relative to the rest of the country. For example, the change in mortality rate expected in <span style="border:1px solid #c80000;background-color:#c80000;font-weight:bold;border-radius:3px;padding:2px">red</span> counties is worse than at least 80% of all counties in the country.<!--Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates.--></h1>
           <h1 class="text_scroll"><i> Click on a county to view the estimated change.</i></h1>
           <div id="mortality_legend_data">
@@ -136,7 +136,7 @@
           <!--<h1 class="text_scroll"><i> Click on the <b>Show population</b> button below the map to toggle the population layer.</i></h1>-->
         <!--<h1 class="next_button" onClick="document.getElementById('number1').style.display='none';document.getElementById('number2').style.display='block';"><a href="#">NEXT</a></h1>-->
       </div>
-      <h1 class="text" style="text-align:center;margin-top:75px"><i class="arrow down"></i></h1>
+      <h1 class="text" style="text-align:center;margin-top:40px"><i class="arrow down"></i></h1>
       <div id="scroll2" class="introduction" style="height:500px">
           <h1 class="text_scroll" style="">This visualization suggests that these changes in mortality rate will be felt equally in rural counties like Loving County, Texas (about 100 people) and urban counties like Los Angeles County, California (over 9 million people). Therefore, it is helpful to visualize the geography of climate change while overlaying the existing population geography of the United States.</h1>
           <h1 class="text_scroll"><i> Click on the <b>Show population</b> button below the map to toggle the population layer. You can also toggle <b>state outlines</b> and <b>major cities</b> for reference.</i></h1>
@@ -161,7 +161,7 @@
     </div>
           <!--<h1 class="next_button" onClick="document.getElementById('number3').style.display='none'"><a href="#">NEXT</a></h1>-->
       </div>
-      <h1 class="text" style="text-align:center;margin-top:50px"><i class="arrow down"></i></h1>
+      <h1 class="text" style="text-align:center;margin-top:40px"><i class="arrow down"></i></h1>
       
       <!--<div class="introduction" id="pop" style="height:250px;">
         <h1 class="text_scroll">This map shows population density by county in 2012 using <span style="color:white;font-size:14px;padding:2px;border-radius:3px;border:1px solid white;">brightness</span>.</h1>
@@ -192,7 +192,7 @@
       </div>
     </div>
     </div>
-    <h1 class="text" style="text-align:center;margin-top:50px"><i class="arrow down"></i></h1>
+    <h1 class="text" style="text-align:center;margin-top:40px"><i class="arrow down"></i></h1>
 
     <!--<div class="introduction" id="violent_crime">
       <h1 class="national">VIOLENT CRIME RATE (% change)</h1>
@@ -202,8 +202,11 @@
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.5"></td><td id="table_13" style="background-color:#ebb075;opacity:0.5"></td><td id="table_9" style="background-color:#e28740;opacity:0.5"></td><td id="table_5" style="background-color:#d35617;opacity:0.5"></td><td id="table_1" style="background-color:#c80000;opacity:0.5"></td></table>
         <table class="overall" id="overall"><td id="table_20" style="background-color:#eedabf;opacity:0.25"></td><td id="table_13" style="background-color:#ebb075;opacity:0.25"></td><td id="table_9" style="background-color:#e28740;opacity:0.25"></td><td id="table_5" style="background-color:#d35617;opacity:0.25"></td><td id="table_1" style="background-color:#c80000;opacity:0.25"></td></table>
     </div>-->
-    <div class="introduction" id="scroll4" style="height:275px">
-      <h1 class="text_scroll">Using the menu below the map, choose a data layer to display.</h1>
+    <div class="introduction" id="scroll4" style="height:400px">
+      <h1 class="text_scroll">In addition to mortality rate, this tool allows you to visualize a wide array of indicators of climate change on the county level. Using the menu below the map, <b>choose a data layer</b> to display.</h1>
+
+      <h1 class="text_scroll">Next, search for any address in the United States to compare your risk. This will allow you to view more detailed statistics and filter the map display based on your county of interest.</h1>
+
       <!--<h1 class="text_scroll" id="agricultural_text" style="display:none"><b>Agricultural yields</b><br>Climate change threatens the productivity and geography of the nation's agricultural industry. Due to changes in rainfall, temperatures and the amount of CO<sub>2</sub> in the air, estimates show that national yields could decrease by 9.1% for every degree Celsius increase in the global mean surface temperature (Hsiang et al. 2017).The map displays the estimated percent change in the yield of maize, wheat, soybeans, and cotton between 2080 and 2099. Sections of the Midwest and South Central regions could suffer some of the worst losses as areas in the North experience increased yields.</h1>
       <h1 class="text_scroll" id="total_text" style="display:none">Estimates predict that climate change could cause a 1-3% drop in annual national average GDP by the end of the century. While these estimates are restricted to direct damages to the U.S. economy, Hsiang et al. note that the United States will also experience significant indirect effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>
       <h1 class="text_scroll" id="mortality_text" style="display:none">MORTALITY effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country.</h1>
@@ -229,7 +232,7 @@
             </div>>
       </div>
     </div>
-    <h1 class="text" style="text-align:center;margin-top:50px"><i class="arrow down"></i></h1>
+    <!--<h1 class="text" style="text-align:center;margin-top:40px"><i class="arrow down"></i></h1>-->
   </div>
     
     <!--<div class="introduction" id="total_econ" style="margin-bottom:100px;height:550px">
@@ -254,6 +257,8 @@
       <!--<h1 class="text">These maps demonstrate the nationwide geography of a sample of climate change impacts. However, at this point you may be wondering how your county compares. Search for your address below to explore how the risk in your county compares to the rest of the country.</h1>-->
   
       <!--<h1 class="title2" id="search" style="color:white">Explore the United States of climate change</h1> -->
+      <h1 id="hide_tutorial" class="text" style="display:none;text-align:center;margin-top:25px;margin-bottom:25px;"><a href="#" onClick="
+        hideTutorial()" style="color:gray;text-decoration:none;font-size:18px;font-weight:bold">Hide the tutorial</a></h1>
       <h2 class="subtext" id="search">Search for your address to compare your risk</h2>
 
       <div id="geocoder" class="geocoder" style="width:100%"></div>
@@ -365,7 +370,8 @@
 
 
 </div>
-<p class="info">&#9432 Developed by Zach Levitt, 2020. Learn more about this project <a href="project_home.html">here</a>.</p>
+<hr>
+<p class="info">&#9432 All data reflect estimated county-level changes for 2080 to 2099 based on a "business-as-usual" scenario where no additional action is taken to fight climate change. Sources: <a href="http://www.globalpolicy.science/econ-damage-climate-change-usa" target="_blank">Climate Impact Lab</a>, <a href="https://science.sciencemag.org/content/356/6345/1362" target="_blank">Hsiang et al. 2017</a>, US Census Bureau, Natural Earth. <a href="project_home.html">Learn more about this project</a>.</p>
   <!--<h2 class="subtext"><i>Choose a climate change indicator:</i></h2>
   <ul class="indicators">
     <li>Mortality <i class='fas fa-angle-double-right' style='color:gray'></i></li>

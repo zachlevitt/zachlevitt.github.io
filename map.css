@@ -178,9 +178,15 @@ button.mapboxgl-popup-close-button {
 
 p.info {
 	color: gray;
-	text-align: center;
-	font-size: 10px;
-	margin-top:25px;
+	text-align: left;
+	font-size: 11px;
+	margin-top:10px;
+	margin-left:10px;
+	width:90%;
+}
+
+p.info a {
+	color:gray;
 }
 
 .box2 {
@@ -192,22 +198,26 @@ p.info {
 	color:gray;
 	width: 95%;
 	margin: auto;
-	height:250px;
+	border-bottom: 1px solid #1f1f1f;
+	/*height:250px;
 	overflow:scroll;
-	border-bottom:1px solid gray;
+	
 	-ms-overflow-style: none;
-	text-align:center;
+	text-align:center;*/
 }
 
 .information h5{
 	color:gray;
-	font-size:14px;
+	font-size:12px;
 	margin-bottom:0px;
+	margin-left:5px;
 }
 
 .information h4{
-	font-size:18px;
+	font-size:14px;
 	margin-bottom:10px;
+	margin-left:5px;
+	color:#D7D7D7;
 }
 
 .data_wrap {
@@ -429,7 +439,7 @@ h1.recenter:last-of-type{
 }
 
 .legend_search {
-	height: ;
+	margin-bottom:50px;
 }
 
 
@@ -733,6 +743,17 @@ h4.data1 {
 	margin:auto;
 	width:180px;
 	max-width:180px;
+}
+
+table.robotable {
+	width:100%;
+}
+
+table.robotable td {
+	width:50%;
+	height:50px;
+	text-align:left;
+	/*border:1px solid #1f1f1f;*/
 }
 
 table.labels_left {

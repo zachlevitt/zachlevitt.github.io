@@ -803,7 +803,7 @@ var popup_name,
 
 map.on('click', 'counties-poly-background', function(e) {
   popup_coordinates= [e.features[0].properties.centroid_xcoord,e.features[0].properties.centroid_ycoord]
-  console.log(popup_coordinates)
+  //console.log(popup_coordinates)
   popup_name = e.features[0].properties.NAME
   popup_state_abbrev = states[e.features[0].properties.STATEFP].abbreviation
   popup_full_name = (popup_name.concat(" County, ")).concat(popup_state_abbrev)

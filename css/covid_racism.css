@@ -45,6 +45,7 @@ h3.media {
 	visibility:hidden;
 	opacity:0;
 	transition: opacity 600ms, visibility 600ms;
+	margin-top:100px;
 }
 
 h2.media a {
@@ -67,7 +68,7 @@ h2.media a:hover{
 .header{
 	height: 170px;
 	padding: 0px;
-	margin-bottom: 150px;
+	margin-bottom: 50px;
 }
 
 h1.title {
@@ -187,9 +188,19 @@ h3.byline2{
 	display: block;
 }
 
-.robotext {
-	height:100px;
+h2.robotext {
+	height:25px;
+	font-size:24px;
+	text-align:center;
 }
+
+h2.robotext_sub {
+	font-size:18px;
+	font-weight:normal;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
 
 /*.landmark {
     background-color: white;

@@ -3,8 +3,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiemFjaGxldml0dCIsImEiOiJjazFpcHpncngxc21nM2ptd
 var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/zachlevitt/ck9qitn4644xr1ipkp6g6z7fs/draft', // stylesheet location
-  center: [-2,2], // starting position [lng, lat]
-  zoom: 3.7, // starting zoom
+  center: [-2,-2], // starting position [lng, lat]
+  zoom: 3.5, // starting zoom
   minZoom: 3,
   maxZoom: 9,
   });
@@ -50,17 +50,34 @@ map.on('click', 'states-cases-yn', function(e) {
   var stateTotalDeaths_April1 = stateData.TotalDeaths_April1
   var stateTotalDeaths_May1 = stateData.TotalDeaths_May1
 
-  var statePositives_KnownBlack = stateData.Deaths_KnownBlack
-  var statePositives_KnownHL = stateData.Deaths_KnownHL
-  var statePositives_KnownWhite = stateData.Deaths_KnownWhite
-  var statePositives_KnownAsian = stateData.Deaths_KnownAsian
-
+  var statePositives_KnownBlack = stateData.Positives_KnownBlack
+  var statePositives_KnownHL = stateData.PositivesKnown_HL
+  var statePositives_KnownWhite = stateData.Positives_knownWhite
+  var statePositives_KnownAsian = stateData.PositivesKnown_Asian
+  console.log(statePositives_KnownHL)
   var stateDeaths_KnownBlack = stateData.Deaths_KnownBlack
   var stateDeaths_KnownHL = stateData.Deaths_KnownHL
   var stateDeaths_KnownWhite = stateData.Deaths_KnownWhite
   var stateDeaths_KnownAsian = stateData.Deaths_KnownAsian
 
-  table_display = '<table class="robotable"><tr valign="top";><td>'+(statePositives_KnownBlack/stateDeaths_DailyCount)*100+'% Black</td><td>'+(statePositives_KnownHL/stateDeaths_DailyCount)*100+'% Hispanic/Latinx</td></tr><tr valign="top"><td>'+(statePositives_KnownWhite/stateDeaths_DailyCount)*100+' % White</td><td>'+(statePositives_KnownAsian/stateDeaths_DailyCount)*100+'% Asian</td></tr><tr valign="top"><td>'+(stateDeaths_KnownBlack/stateDeaths_DailyCount)*100+'% Black</td><td>'+(stateDeaths_KnownHL/stateDeaths_DailyCount)*100+'% Hispanic/Latinx</td></tr><tr valign="top"><td>'+(stateDeaths_KnownWhite/stateDeaths_DailyCount)*100+'% White</td><td>'+(stateDeaths_KnownAsian/stateDeaths_DailyCount)*100+'% Asian</td></tr><tr valign="top"><td></td></tr></table>'
+  var statePositive_PercentBlack = ((statePositives_KnownBlack/stateDailyCount_Positives_Total)*100).toFixed(1)
+  var statePositive_PercentHL = ((statePositives_KnownHL/stateDailyCount_Positives_Total)*100).toFixed(1)
+  var statePositive_PercentAsian = ((statePositives_KnownAsian/stateDailyCount_Positives_Total)*100).toFixed(1)
+  var statePositive_PercentWhite = ((statePositives_KnownWhite/stateDailyCount_Positives_Total)*100).toFixed(1)
+  console.log(statePositive_PercentHL)
+
+  var stateDeaths_PercentBlack = ((stateDeaths_KnownBlack/stateDeaths_DailyCount)*100).toFixed(1)
+  var stateDeaths_PercentHL= ((stateDeaths_KnownHL/stateDeaths_DailyCount)*100).toFixed(1)
+  var stateDeaths_PercentAsian = ((stateDeaths_KnownAsian/stateDeaths_DailyCount)*100).toFixed(1)
+  var stateDeaths_PercentWhite = ((stateDeaths_KnownWhite/stateDeaths_DailyCount)*100).toFixed(1)
+
+  table_both = '<table class="robotable" style="float:left;margin-right:30px"><tr valign="top"><td><b>Cases by race</b></td></tr><tr valign="top"><td>'+statePositive_PercentBlack+'% Black</td></tr><tr valign="top"><td>'+statePositive_PercentHL+'% Hispanic/Latinx</td></tr><tr valign="top"><td>'+statePositive_PercentWhite+' % White</td></tr><tr valign="top"><td>'+statePositive_PercentAsian+'% Asian</td></tr><tr valign="top"><td>'+(statePositives_RACE_PercentUnknown*100).toFixed(1)+'% Unknown</td></tr></table><table class="robotable"><tr valign="top"><b>Deaths by race</b></tr><tr valign="top"><td>'+stateDeaths_PercentBlack+'% Black</td></tr><tr valign="top"><td>'+stateDeaths_PercentHL+'% Hispanic/Latinx</td></tr><tr valign="top"><td>'+stateDeaths_PercentWhite+'% White</td></tr><tr valign="top"><td>'+stateDeaths_PercentAsian+'% Asian</td></tr><tr valign="top"><td>'+(stateDeaths_Percent_Unknown*100).toFixed(1)+'% Unknown</td></tr></table>'
+  
+  table_deaths = '<table class="robotable"><tr valign="top"><td><b>Deaths by race</b></td></tr><tr valign="top"><td>'+stateDeaths_PercentBlack+'% Black</td></tr><tr valign="top"><td>'+stateDeaths_PercentHL+'% Hispanic/Latinx</td></tr><tr valign="top"><td>'+stateDeaths_PercentWhite+'% White</td></tr><tr valign="top"><td>'+stateDeaths_PercentAsian+'% Asian</td></tr><tr valign="top"><td>'+(stateDeaths_Percent_Unknown*100).toFixed(1)+'% Unknown</td></tr></table>'
+  
+  table_cases = '<table class="robotable"><tr valign="top"><td><b>Cases by race</b></td></tr><tr valign="top"><td>'+statePositive_PercentBlack+'% Black</td></tr><tr valign="top"><td>'+statePositive_PercentHL+'% Hispanic/Latinx</td></tr><tr valign="top"><td>'+statePositive_PercentWhite+' % White</td></tr><tr valign="top"><td>'+statePositive_PercentAsian+'% Asian</td></tr><tr valign="top"><td>'+(statePositives_RACE_PercentUnknown*100).toFixed(1)+'% Unknown</td></tr></table>'
+
+
 
   var stateRacialBreakdown_Deaths = stateData.RacialBreakdown_Deaths
   var stateRacialBreakdown_Cases = stateData.RacialBreakdown_Cases
@@ -78,22 +95,29 @@ map.on('click', 'states-cases-yn', function(e) {
       var second_sentence = "This data has been released only at the statewide level."
     }
     var third_sentence = "Out of " + stateDeaths_DailyCount + " confirmed COVID-19 deaths, " + stateName + " reports "
+    var table_display = table_both
+    document.getElementById("robotext3").innerHTML = table_display
   } //end of YES YES
 
   else if (stateRacialBreakdown_Cases == 'N' && stateRacialBreakdown_Deaths == 'Y'){
     var first_sentence = " has released racial breakdowns for COVID-19 confirmed deaths but not cases."
 
     var second_sentence = "This data has been released only at the statewide level."
+    var table_display = table_deaths
+    document.getElementById("robotext3").innerHTML = table_display
   }
 
   else if (stateRacialBreakdown_Cases == 'Y' && stateRacialBreakdown_Deaths == 'N'){
     var first_sentence = " has released racial breakdowns for COVID-19 confirmed cases but not deaths."
     var second_sentence = "This data has been released only at the statewide level."
+    var table_display = table_cases
+    document.getElementById("robotext3").innerHTML = table_display
   }
 
   else if (stateRacialBreakdown_Cases == 'N' && stateRacialBreakdown_Deaths == 'N'){
     var first_sentence = " has not released any racial breakdowns for COVID-19 confirmed cases or deaths."
-    var second_sentence = ""
+    var second_sentence = "In total, the state has " + stateDeaths_DailyCount + " confirmed deaths and " + stateDailyCount_Positives_Total + " confirmed cases as of April 30th."
+    document.getElementById("robotext3").innerHTML = ""
   }
 
   var zeroStates = "Zero states have released racial breakdowns for negative COVID-19 tests."
@@ -123,7 +147,6 @@ map.on('click', 'states-cases-yn', function(e) {
   //Total cases: ______
 
   //console.log(e.features[0].properties)
-  document.getElementById("robotext1").innerHTML = stateName
   document.getElementById("robotext2").innerHTML = "<b>" + stateName + "</b>" + first_sentence + " " + second_sentence
   });
   //document.getElementById("robotext3").innerHTML = "Total cases: <b>" + numberWithCommas(stateTotalCases_May1) + "</b> (May 1)"

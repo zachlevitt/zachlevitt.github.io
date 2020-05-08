@@ -15,7 +15,13 @@ canvas.mapboxgl-canvas:focus {
 }
 
 body {
-	font-family: 'Benton Gothic', Arial, serif;;
+	font-family: 'Benton Gothic', Arial, sans-serif;;
+}
+
+.main_text {
+	font-family: 'Georgia', serif;
+	line-height:22px;
+	font-size:16px;
 }
 
 .article {
@@ -39,6 +45,15 @@ h3.media {
 	color:gray;
 	font-weight:100;
 	margin-bottom:150px;
+}
+
+div.legend {
+	margin:auto;
+	font-size:10px;
+	height:50px;
+	width:auto;
+	max-width:550px;
+	margin-top:20px;
 }
 
 .media_narrative {
@@ -95,11 +110,11 @@ h2.subheader {
 }
 #map {
  	outline: none!important;
- 	height: 600px;
+ 	height: 500px;
  	width: 100%;
  	max-width:1500px;
 	margin:auto;
-	margin-top:50px;
+	margin-top:0px;
 	margin-bottom:25px;
 }
 
@@ -192,6 +207,14 @@ h2.robotext {
 	height:25px;
 	font-size:24px;
 	text-align:center;
+}
+
+
+.robo {
+	margin-bottom: 30px;
+	margin-top:25px;
+	border-top:1px solid gray;
+	padding-top:15px;
 }
 
 h2.robotext_sub {

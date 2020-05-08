@@ -225,18 +225,18 @@ hoveredStateId = null;
 function onScroll() {
   //console.log('hello')
   //console.log(window.scrollY)
-  if (window.scrollY > 175){
+  if (window.scrollY > 375){
     //console.log("WE ARE AT 1")
     document.getElementById('scroll1').style.visibility = 'visible';
     document.getElementById('scroll1').style.opacity = 1
   }
 
-  if (window.scrollY > 375){
+  if (window.scrollY > 575){
     document.getElementById('scroll2').style.visibility = 'visible';
     document.getElementById('scroll2').style.opacity = 1
   }
 
-  if (window.scrollY > 575){
+  if (window.scrollY > 725){
     document.getElementById('scroll3').style.visibility = 'visible';
     document.getElementById('scroll3').style.opacity = 1
   }

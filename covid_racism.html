@@ -9,12 +9,17 @@
 
     <title>Racism and Covid-19</title>
 
+
+
+
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 <link rel='stylesheet' type='text/css' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' />
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
 
 <script src="//d1qqc1e9kvmdh8.cloudfront.net/js/picturefill-3.0.2.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
 
 
 
@@ -55,7 +60,7 @@
 
 
                     <!--<div id="geocoder" class="geocoder"></div>-->
-            <h2 class="subheader">Racial data</h2>
+            <h2 class="subheader">Racial data and essential workers</h2>
 
             <p class="main_text" style=""><i>“Without racial data, we can’t see whether there are disparities between the races in coronavirus testing, infection, and death rates. If we can’t see racial disparities, then we can’t see the racist policies behind any disparities and deaths. If we can’t see racist policies, we can’t eliminate racist policies, or replace them with anti-racist policies that protect equity and life.”</i> -Ibram X. Kendi in <a href="https://www.theatlantic.com/ideas/archive/2020/04/stop-looking-away-race-covid-19-victims/609250/" target="">The Atlantic</a></p>
 
@@ -73,14 +78,37 @@
         </div>
                     
                 <div class="display">
-                    <div class="legend">
+                    <div class="legend_zach">
                         <h2 style="font-weight:bold;color:white;"><span style="padding:5px;;border-radius:3px;background-color:#a6a6a6;margin-left:20px;margin-right:20px">No data</span><span style="padding:5px;;border-radius:3px;background-color:#7b9cc1;margin-left:20px;margin-right:20px">Only deaths</span><span style="padding:5px;;border-radius:3px;background-color:#ca8186;margin-left:20px;margin-right:20px">Only cases</span><span style="padding:5px;;border-radius:3px;background-color:#7c82b1;margin-left:20px;margin-right:20px">Cases and deaths</span></h2>
                     </div>
                     <div id="map"></div>
                     <figcaption>Source: <a href="https://covidtracking.com/blog/tracking-race-and-ethnicity" target="_blank">The Covid Tracking Project</a>, US Census Bureau.</figcaption>
-                </div>
-            
-<div class="article">
+
+                    </div>
+    <div class="article">
+    <h2 class="subheader">Essential workers in Chicago and New Orleans</h2>
+    <p class="main_text">State lockdowns have put essential workers in the spotlight. While many were invisible before the lockdown, these workers allowed society to function while people were sheltering-in-place. The workers were at high risk for contracting COVID-19. As an <a href="https://apnews.com/029ea874dc964697358016d3628429fa?utm_campaign=SocialFlow&utm_source=Twitter&utm_medium=AP" target="_blank">Associated Press analysis</a> shows, this “burden has been borne unevenly across gender, racial and socioeconomic lines, They are mostly women, people of color and more likely to be immigrants”.</p>
+
+<p class="main_text">The maps linked use Census Data to show that areas with the most COVID-19 essential workers align with areas where people of color make up a majority of the population in New Orleans and Chicago. Using a methodology similar to the one used by the <a href="https://www.aclum.org/en/publications/data-show-covid-19-hitting-essential-workers-and-people-color-hardest" target="_blank">Massachusetts ACLU</a>, we defined essential workers as:
+<ul>
+<li>Healthcare practitioners and technical occupations</li>
+<li>Construction and extraction occupation</li>
+<li>Farming, fishing, and forestry occupation</li>
+<li>Installation, maintenance, and repair occupation</li>
+<li>Material moving occupation</li>
+<li>Production occupation</li>
+<li>Transportation occupation</li>
+<li>Office and administrative support occupation</li>
+<li>Sales and related occupation</li>
+<li>Building and grounds cleaning and maintenance occupation</li>
+<li>Food preparation and serving related occupation</li>
+<li>Healthcare support occupation</li>
+<li>Personal care and service occupation</li>
+<li>Protective service occupations</li>
+</ul>
+
+<p class="main_text">View the spatial distribution of essential workers and people of color in <a href="/CHI_with_toggle.html" target="_blank">Chicago</a> and <a href="/NO_with_toggle.html" target="_blank">New Orleans</a>.</p>
+
             <h2 class="subheader">Underlying health conditions</h2>
 
             <p class="main_text" style="">COVID-19’s spread across the United States poses a serious health risk to everyone in the country. However, some are more likely to contract the virus than others and many are more likely to die due to its complications. While there are many factors that put an individual at greater risk of suffering from the disease, the presence of comorbidities is one of the powerful indicators of COVID-19 related complications that significantly increases the chance of death. As of April 8th, <a href="https://www.vox.com/science-and-health/2020/4/8/21207269/covid-19-coronavirus-risk-factors" target="_blank">78% of all people</a> who entered into intensive care for coronavirus in the US have had an underlying condition: 32% had diabetes, 29% had heart disease and 21% had chronic lung disease. These diseases cause the most complications when comorbid with coronavirus.</p>
@@ -94,12 +122,13 @@
 <p class="main_text" style="">There is significant research that supports Cottom’s work. The “racial empathy gap” is a phenomenon that has been raised by various authors and researchers as they attempt to understand racial biases in the American healthcare system. Rashawn Ray has found that black patients are, on average, <a href="http://rashawnray.com/wp-content/uploads/2016/07/A-Place-to-Trust_Sewell-and-Ray.pdf" target="_blank">talked to more than listened to</a>. US surveys have found that medical staff are <a href="https://www.ncbi.nlm.nih.gov/pubmed/25032386" target="_blank">more uncertain</a> and <a href="https://www.sciencedirect.com/science/article/abs/pii/S0738399115300252?via%3Dihub" target="_blank">less communicative</a> with non-white patients than white patients. Additionally, black patients may be half as likely to receive pain medication as white patients. <a href="https://www.theguardian.com/environment/2020/apr/02/us-food-banks-coronavirus-demand-unemployment" target="_blank">Cottom was refused</a> sufficient doses of morphine to combat her extreme pain and discomfort after she was admitted to the hospital.</p>
 <p class="main_text" style="">So, why is Cottom’s story important? Research linking racial biases felt by COVID-19 patients has not yet been conducted, but the literature clearly suggests biases may be at play in the hospitals that are currently treating these patients. We have strong evidence to support that people of color are not treated equitably in the health care system, which may be a powerful contributing factor in higher rates of deaths among women in labor and newborn babies. Could these racial biases be playing a role in the immense disparity in the death rate between black and white COVID-19 patients in Illinois, Michigan, Wisconsin, and the rest of the country? It is unlikely the current pandemic would allow us a reprieve from the racial discrimination that affects millions of black men and women in the United States every year. It is not only the tangible, easily-observed factors like comorbidities that increase any given black individual’s chance of death during the pandemic, but also the subtle, hard-to-detect biases that control the way black patients are treated.</p>
  
-You can hear Tressie McMillan Cottom tell her story <a href="http://www.pbs.org/wnet/amanpour-and-company/video/feminist-and-sociology-professor-tressie-mcmillan-cottom/" target="_blank">here</a>.
+<p class="main_text">You can hear Tressie McMillan Cottom tell her story <a href="http://www.pbs.org/wnet/amanpour-and-company/video/feminist-and-sociology-professor-tressie-mcmillan-cottom/" target="_blank">here</a>.
 
  
 Or read about it in her piece: <a href="https://middlebury.instructure.com/courses/5799/files/789659" target="_blank">“dying to be competent”</a>
 </p>
 
+<div class="article">
 <h2 class="subheader">White supremacy, Covid-19 and the Internet</h2>
 
 <p class="main_text" style=""><b>Is the internet raceless?</b> <br><br>No! Whether it's for a research paper, looking up store hours, or fact checking what someone says, internet search engines have become an integral part of knowledge consumption for those who have internet access. Search engines have become so ubiquitous that <a href="https://www.wired.com/story/just-google-it-a-short-history-of-a-newfound-verb/" target="_blank">“Google” was added</a> to both the Oxford Dictionary and the Marriam Webster Dictionary in 2006. In addition to their ubiquity, the internet search engines are the primary organizational structure by which knowledge and information is organized and disseminated to society. Needless to say, they are tremendously powerful and influential.</p>
@@ -131,13 +160,13 @@ I typed Boogaloo into BuzzSumo, an online tool that allows users to find the num
 
 <p class="main_text" style="">These instances of racist policing during the Covid-19 pandemic highlights the fact that we can never speak in universal language around questions of laws, policing and enforcement. While white people may view social distancing guidelines as bothersome or inconvenient, people of color understand them to be another way for the police to oppress their communities. Thus, when we talk about Covid-19 guidelines and regulations, we must talk about their enforcement. The question must arise: <a href="https://time.com/5832403/nypd-pandemic-police-social-distancing-arrests/" target="_blank">why are police in charge of enforcing social distancing?</a> While it may be unlikely to occur, changing the mode of enforcement of these guidelines would have a sizable impact on their effectiveness. Is there a possibility that this oppressive moment could lead us to new possibilities for changing the way space is policed? 
 </p>
-
-            <h2 class="subheader">What's next?</h2>
-            <p class="main_text" style="">In her Washington Post op-ed on white rage, Carol Anderson concludes with a <a href="https://news.stanford.edu/news/2014/august/prison-black-laws-080614.html" target="_blank">study</a> by Stanford University psychology researchers on white people’s opinion on racist policing practices. The study found that, “when white people were told that black Americans are incarcerated in numbers far beyond their proportion of the population, ‘they reported being more afraid of crime and more likely to support the kinds of punitive policies that exacerbate the racial disparities,’ such as three-strikes or stop-and-frisk laws.” While there is a lot of uncertainty about the post-Covid world, if we extrapolate the findings of this study, it is not difficult to imagine racial disparities in deaths and infections from Covid-19 reinforcing and deepening existing racist attitudes. This study suggests that white people often take racial disparities for granted rather than questioning how institutions and systems produce these outcomes.</p>
-            <p class="main_text" style="margin-bottom:50px">How will we talk about race when the crisis is over? Will its spread/lingering in society be blamed on the minority populations that have seen it devastate their communities? The works of race scholars like Tressie McMillan-Cottom, Joe Feagin, and Ibram Kendi are helpful to contextualize the ways in which racial discourses can help shape dominant narratives about the role of race in society. While this moment of global upheaval may seem like an opportunity for racial progress, as we know from Kendi, any positive change will most likely be accompanied by racist progress. If there is hope for restructuring society and our racial systems, it must begin with a recognition of the role of Covid in worsening rather than producing racial disparities. </p>
+<h2 class="subheader">What's next?</h2>
+<p class="main_text" style="">In her Washington Post op-ed on white rage, Carol Anderson concludes with a <a href="https://news.stanford.edu/news/2014/august/prison-black-laws-080614.html" target="_blank">study</a> by Stanford University psychology researchers on white people’s opinion on racist policing practices. The study found that, “when white people were told that black Americans are incarcerated in numbers far beyond their proportion of the population, ‘they reported being more afraid of crime and more likely to support the kinds of punitive policies that exacerbate the racial disparities,’ such as three-strikes or stop-and-frisk laws.” While there is a lot of uncertainty about the post-Covid world, if we extrapolate the findings of this study, it is not difficult to imagine racial disparities in deaths and infections from Covid-19 reinforcing and deepening existing racist attitudes. This study suggests that white people often take racial disparities for granted rather than questioning how institutions and systems produce these outcomes.</p>
+<p class="main_text" style="margin-bottom:50px">How will we talk about race when the crisis is over? Will its spread/lingering in society be blamed on the minority populations that have seen it devastate their communities? The works of race scholars like Tressie McMillan-Cottom, Joe Feagin, and Ibram Kendi are helpful to contextualize the ways in which racial discourses can help shape dominant narratives about the role of race in society. While this moment of global upheaval may seem like an opportunity for racial progress, as we know from Kendi, any positive change will most likely be accompanied by racist progress. If there is hope for restructuring society and our racial systems, it must begin with a recognition of the role of Covid in worsening rather than producing racial disparities. </p>
 </div>  
 </div>
 
 <script type="text/javascript" src="covid_racism.js"></script>
+
   </body>
 </html>

@@ -33,7 +33,7 @@
 </head>
 
 <body style="">
-  <div id="map" style="height:100%;width:67%;margin-left:33%;opacity:0;"></div>
+  <div id="map" style="height:95%;margin-bottom:70px;width:67%;margin-left:33%;opacity:0;"></div>
   <div id="menu" style="">
     
     <div class="filter">
@@ -73,7 +73,8 @@
               <option value="counties-energy">Electricity demand</option>
               <option value="counties-labor-high">High-risk labor</option>
               <option value="counties-property">Property crime rate</option>
-              <option value="counties-income">County income (2012)</option>
+              <option value="counties-income">County income</option>
+              <option value="population">County population</option>
             </select>
             <label id="data_label" for="indicator">Select data layer</label>
           </fieldset>
@@ -94,8 +95,8 @@
   <div class="left_side" id="left_side">
     <!--<div id="box1" class="box1" style="display:block">-->
       <div class="opening">
-      <h1 class="header1" id="header1">The United States of <br><span id="cc" style="color:white;font-weight:bold;font-size:48px;">Climate Change</span></h1>
-      <h1 class="byline" id="byline">By <a href="https://zachlevitt.github.io" target="_blank">ZACH LEVITT</a></h1>
+      <h1 class="header1" id="header1">The United States of <br><span id="cc" style="color:white;font-weight:bold;font-size:55px;">Climate Change</span></h1>
+      <h1 class="byline" id="byline">By <a href="https://zachlevitt.github.io" target="_blank">Zach Levitt</a></h1>
       <h1 class="text" id="view_text" style="display:none;text-align:center;margin-top:10px;margin-bottom:5px;"><a href="#" onClick="viewText()" style="color:gray;text-decoration:none;font-size:14px;">View intro text</a></h1>
       <h1 class="text" id="hide_text" style="display:none;text-align:center;margin-top:5px;margin-bottom:5px;"><a href="#" onClick="hideText()" style="color:gray;text-decoration:none;font-size:14px;">Hide text</a></h1>
       <h1 class="text" id="view_tutorial" style="display:none;text-align:center;margin-top:5px;margin-bottom:5px;"><a href="#" onClick="tutorial()" style="color:gray;font-weight:bold;text-decoration:none;font-size:14px;">View tutorial</a></h1>
@@ -181,9 +182,7 @@
       
       <!--<div class="introduction" id="pop" style="height:250px;">
         <h1 class="text_scroll">This map shows population density by county in 2012 using <span style="color:white;font-size:14px;padding:2px;border-radius:3px;border:1px solid white;">brightness</span>.</h1>
-        <h1 class="national">Population density (people/square mile)</h1>
-        <table class="population" id="overall"><td id="table_20" style="background-color:#ffffff;opacity:0.2"></td><td id="table_13" style="background-color:#ffffff;opacity:0.4"></td><td id="table_9" style="background-color:#ffffff;opacity:0.6"></td><td id="table_5" style="background-color:#ffffff;opacity:0.8"></td><td id="table_1" style="background-color:#ffffff;opacity:1"></td></table>
-        <table class="labels2"><td style="text-align:left">50</td><td style="text-align:center"></td><td id="100">2000++</td></table>
+        
       </div>-->
       
       <!--<div class="introduction" id="scroll3" style="height:420px;">
@@ -286,6 +285,11 @@
       <h3 class="robo">Total economic damage<span id="total_value"></span></h3>
        <h3 class="robo_value"><span id="total_percentile"></span>%</h3>-->
     </div>
+    <div id="legend_pop_only" style="display:none">
+    <h1 class="national">Population density (people/square mile)</h1>
+        <table class="population" id="overall"><td id="table_20" style="background-color:#ffffff;opacity:0.2"></td><td id="table_13" style="background-color:#ffffff;opacity:0.4"></td><td id="table_9" style="background-color:#ffffff;opacity:0.6"></td><td id="table_5" style="background-color:#ffffff;opacity:0.8"></td><td id="table_1" style="background-color:#ffffff;opacity:1"></td></table>
+        <table class="labels2"><td style="text-align:left">50</td><td style="text-align:center"></td><td id="100">2000+</td></table>
+    </div>
     <div id="legend_simple">
             <div class="table_container_simple">
             <h1 class="national" id="legend_title_simple"style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
@@ -293,7 +297,7 @@
                 <table class="full"><td id="table_20" style="background-color:#eedabf;opacity:1"></td><td id="table_13" style="background-color:#ebb075;opacity:1"></td><td id="table_9" style="background-color:#e28740;opacity:1"></td><td id="table_5" style="background-color:#d35617;opacity:1"></td><td id="table_1" style="background-color:#c80000;opacity:1"></td></table>
           </div>
         </div>
-        <div id="legend_pop" style="display:none">
+    <div id="legend_pop" style="display:none">
       <h1 class="national" id="legend_title_pop" style="max-width:250px">National percentile, change in deaths per 100,000 (2080-2099)</h1>
       <div class="table_container">
       <table class="labels2"><td style="text-align:left">0</td><td style="text-align:center"></td><td id="100">100</td></table>

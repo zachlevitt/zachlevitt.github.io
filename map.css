@@ -197,7 +197,7 @@ p.info {
 	color: gray;
 	text-align: left;
 	font-size: 11px;
-	margin-top:100px;
+	margin-top:50px;
 	margin-left:10px;
 	width:90%;
 }
@@ -399,12 +399,12 @@ h1.text {
 
 h1.text_scroll {
 	color:#C4C4C4;
-	font-size: 13px;
+	font-size: 12px;
 	margin-left:5%;
 	margin-right:5%;
-	margin-top:10px;
+	margin-top:20px;
 	margin-bottom:10px;
-	line-height: 16px;
+	line-height: 17px;
 	font-weight:100;
 	text-align:left;
 }
@@ -482,7 +482,7 @@ h1.recenter:last-of-type{
 	float:left;
 	height:100%;
 	margin-top:15px;
-	align-items: center;
+	text-align:center;
 }
 
 .mapboxgl-ctrl.mapboxgl-ctrl-attrib {

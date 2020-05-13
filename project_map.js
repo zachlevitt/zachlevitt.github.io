@@ -21,7 +21,7 @@ var map = new mapboxgl.Map({
   style: 'mapbox://styles/zachlevitt/ck71cbegj0a0f1iqjn8regnj4/draft', // stylesheet location
   center: [-2,-2], // starting position [lng, lat]
   zoom: 3.2, // starting zoom
-  minZoom: 3,
+  minZoom: 3.2,
   maxZoom: 9,
   maxBounds: bounds,
   attributionControl: false,
@@ -33,8 +33,7 @@ var nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
 
 map.addControl(new mapboxgl.AttributionControl({compact: true}));
-map.scrollZoom.disable();
-map.doubleClickZoom.disable();
+
 map.touchZoomRotate.disable();
 
 /*map.on('style.load', () => {
@@ -283,6 +282,7 @@ function show(layer){
             map.setPaintProperty(layer,'fill-opacity',0.8)
           }
         }
+
         document.getElementById('population').className = ""
         document.getElementById('population').innerHTML = "Show population";
         /*document.getElementById('agricultural_legend').style.display = 'none'
@@ -522,20 +522,33 @@ $('#indicator').on('selectmenuchange', function() {
       map.setLayoutProperty(layer,'visibility','none')
     }
 
+
+
+    
+
+
     var indicator = document.getElementById("indicator").value;
     map.setLayoutProperty(indicator,'visibility','visible')
+    if (indicator != "counties-income"){
+      document.getElementById("lowest1").innerHTML = 'Lowest risk';
+      document.getElementById("lowest2").innerHTML = 'Lowest risk';
+    }
 
     if (indicator == "population"){
+      document.getElementById('population').style.display = 'none';
       document.getElementById("legend_pop_only").style.display = 'block';
       document.getElementById("legend_pop").style.display = 'none';
       document.getElementById("legend_simple").style.display = 'none';
+      document.getElementById("accompanying_text").innerHTML = "It is helpful to visualize the geography of climate change while overlaying the existing population geography of the United States. This map displays population density for each county. You can always use the Show Population tab to overlay this map."
 
     }
 
     else {
+      document.getElementById('population').style.display = 'block';
       document.getElementById("legend_pop_only").style.display = 'none';
       if (document.getElementById('population').className == "active"){
         document.getElementById("legend_pop").style.display = 'block';
+
       }
       else {
 
@@ -544,28 +557,39 @@ $('#indicator').on('selectmenuchange', function() {
 
       switch (indicator){
         case "counties-agricultural":
-          document.getElementById("legend_title_simple").innerHTML = "National percentile, % change in agricultural yields (2080-2099)";
+          document.getElementById("legend_title_simple").innerHTML = "Change in agricultural yields";
+          document.getElementById("accompanying_text").innerHTML = "Climate change threatens the productivity and existing geography of the nation's agricultural industry. Due to changes in rainfall, average temperatures and the amount of CO<sub>2</sub> in the air, estimates show that national yields could decrease by 9.1% for every degree Celsius increase in the global mean surface temperature (Hsiang et al. 2017). The map displays the estimated percent change in the yield of maize, wheat, soybeans, and cotton between 2080 and 2099. Sections of the Midwest and South Central regions could suffer some of the worst losses as areas in the North experience increased yields";
           break;
         case "counties-mortality":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, change in deaths per 100,000 (2080-2099)';
+          document.getElementById("legend_title_simple").innerHTML = 'Change in mortality rate';
+          document.getElementById("accompanying_text").innerHTML = "Perhaps the most devastating impact of climate change on human populations will be increasing mortality rates. Due to rising temperatures, the death rate is expected to sharply rise in southern counties and decrease in northern counties. Overall, Hsiang et al. (2017) find that rising mortality in warmer regions will cause the annual national mortality eate to rise by roughly 5 deaths per 100,000 with each degree celsisus increase in global mean surface temperature. Use the <b>Show Population</b> toggle to visualize how changing mortality will be felt differently in rural and urban counties."
           break;
         case "counties-total":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, % change in GDP (2080-2099)';
+          document.getElementById("legend_title_simple").innerHTML = 'Total economic damage';
+          document.getElementById("accompanying_text").innerHTML = "Estimates predict that climate change could cause a 1-3% drop in annual national average GDP by the end of the century. While these estimates are restricted to direct damages to the U.S. economy, Hsiang et al. note that the United States will also experience significant indirect effects from global changes. This map displays the total direct economic damage across all sectors using percent change in gross domestic product (GDP). There is a less stark regional pattern to economic damage due to the myriad factors that impact the economy in different parts of the country."
           break;
         case "counties-energy":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, % change in electricity demand (2080-2099)';
+          document.getElementById("legend_title_simple").innerHTML = 'Change in electricity demand';
+          document.getElementById("accompanying_text").innerHTML = "Rising demand for electricity due to higher temperatures will cause a net increase in national electricity demand. Overall, southern counties tend to have a higher average change in electricity demand during the survey period. These models were run by Hsiang et al. (2017) using the National Energy Modeling System, which estimates energy supply costs using weather predictions."
+
           break;
         case "counties-labor-high":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, % change in labor supply for high risk outdoor jobs (2080-2099)';
+          document.getElementById("legend_title_simple").innerHTML = 'Change in labor supply for outdoor jobs';
+          document.getElementById("accompanying_text").innerHTML = "Roughly 23% of all employed workers in the United States are considered high-risk due to prolonged exposure to outdoor temperatures (Hsiang et al., 2017). Projections show that the total hours of supplied high-risk labor will decrease as temperatures rise. This could lead to shortages in key sectors like construction, agriculture, and manufacturing."
           break;
         case "counties-property":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, % change in property crime rate (2080-2099)';
+          document.getElementById("legend_title_simple").innerHTML = 'Change in property crime rate';
+          document.getElementById("accompanying_text").innerHTML = "As the number of cold days falls, property crime rates are expected to increase. However, research has shown that hot temperatures do not have a relationship with property crime rates. The map shows that colder northern counties are therefore at a higher risk of increased property crime rates, while the south has overall more counties expected to experience only moderate increases and decreases."
           break;
         case "counties-violent":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, % change in violent crime rate (2080-2099)';
+          document.getElementById("legend_title_simple").innerHTML = 'Change in violent crime rate';
+          document.getElementById("accompanying_text").innerHTML = "Violent crime rates are expected to increase linearly with increases in average temperatures. As the map demonstrates, there is a largely uniform distribution of risk as opposed to other indicators that vary by region. Unlike property crime rates, violent crime rates tend to continue to rise despite hot temperatures."
           break;
         case "counties-income":
-          document.getElementById("legend_title_simple").innerHTML = 'National percentile, median county income (2012';
+          document.getElementById("legend_title_simple").innerHTML = 'Average county income';
+          document.getElementById("accompanying_text").innerHTML = "Hsiang et al. (2017) find that median damages from climate change are 'systematically larger in low-income counties.' Low-income areas like the southeast and southwest will be especially at-risk due to warm climates. Since this dataset utilizes income per capita, sparsely-populated areas like the Plains show up as high-income areas in addition to urban and suburban counties. "
+          document.getElementById("lowest1").innerHTML = 'Lowest';
+          document.getElementById("lowest2").innerHTML = 'Lowest';
           break;
 
       }
@@ -606,9 +630,7 @@ $('#indicator').on('selectmenuchange', function() {
       //map.setPaintProperty('centroids-ranks-c9ustg', 'fill-color', '#faafee');
       
       /*document.getElementById('agricultural_text').style.display = 'none';
-      document.getElementById('total_text').style.display = 'none';
-      document.getElementById('mortality_text').style.display = 'block';
-      document.getElementById('violent_text').style.display = 'none';*/
+      */
       //map.setPaintProperty("centroids-ranks-", "circle-color",["<",
        // ["get", "mortality_"],1048,"#fc8d59",2096,"#f7f7f7","#67a9cf"])
       //document.getElementById("risk_label").innerHTML = "Change in mortality rate"
@@ -890,11 +912,12 @@ var popup_name,
     popup_coordinates
 
 map.on('click', 'counties-poly-background', function(e) {
+  console.log(e.features[0].properties)
   popup_coordinates= [e.features[0].properties.centroid_xcoord,e.features[0].properties.centroid_ycoord]
   popup_name = e.features[0].properties.NAME
   
   if (e.features[0].properties.GEOID == "46102"){
-    popup_display = '<h3 style="font-weight:bold">'+popup_name+' Nation</h3><h4>No data available</h4>'
+    popup_display = '<h3 style="font-weight:bold">'+popup_name+' Nation</h3><h5>No data available</h5>'
   }
 
   else {
@@ -984,6 +1007,7 @@ map.on('click', 'counties-poly-background', function(e) {
 
   var popup_label = '<h3 style="font-weight:bold">'+popup_full_name+'</h3>'
   var population_simple = '<h5>Population (2012)</h5><h4><b>' + popup_pop +'</b></h4>'
+  var income_all = '<h5>Average income (2012)</h5><h4><b>$' + popup_income +'</b></h4>'
   var population_all = '<h5>Population (2012)</h5><h4><b>' + popup_pop +'</b></h4><h5>People per square mile</h5><h4><b>' + popup_pop_density +'</b></h4>'
   var mortality_all = '<h5>Change in mortality rate</h5><h4 style="color:' + popup_mortality_color +'"><b>' + popup_mortality_display +'</b><br>'+popup_mortality_risk+' deaths per 100,000</h4>'
   var total_all = '<h5>Total economic damage</h5><h4 style="color:' + popup_total_color +'"><b>' + popup_total_display +'</b><br>'+popup_total_risk+'% of GDP</h4>'
@@ -996,32 +1020,35 @@ map.on('click', 'counties-poly-background', function(e) {
     //console.log(map.setLayoutProperty('counties-mortality','visibility'))
     //console.log(map.querySourceFeatures('composite',{sourceLayer: 'counties_54_goodranks'}))
       if (map.getLayoutProperty('counties-mortality','visibility') == 'visible'){
-        popup_display = popup_label + population_simple + mortality_all + total_all + energy_all + agricultural_all + violent_all + property_all + labor_high_all
+        popup_display = popup_label + population_simple  + income_all+ mortality_all+total_all + energy_all + agricultural_all + violent_all + property_all + labor_high_all
       }
 
       else if (map.getLayoutProperty('counties-total','visibility') == 'visible'){
-        popup_display = popup_label + population_simple  + total_all +mortality_all + energy_all + agricultural_all + violent_all + property_all + labor_high_all
+        popup_display = popup_label + population_simple + income_all+ total_all +income_all+mortality_all + energy_all + agricultural_all + violent_all + property_all + labor_high_all
       }
       else if (map.getLayoutProperty('counties-agricultural','visibility') == 'visible'){
-        popup_display = popup_label+population_simple+agricultural_all+mortality_all+total_all + energy_all + violent_all + property_all + labor_high_all
+        popup_display = popup_label+population_simple + income_all+agricultural_all+mortality_all+total_all + energy_all + violent_all + property_all + labor_high_all
       }
 
       else if (map.getLayoutProperty('counties-energy','visibility') == 'visible'){
-        popup_display = popup_label+population_simple+energy_all+agricultural_all+mortality_all+total_all+ violent_all + property_all + labor_high_all
+        popup_display = popup_label+population_simple+income_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all + property_all + labor_high_all
       }
       else if (map.getLayoutProperty('counties-violent','visibility') == 'visible'){
-        popup_display = popup_label+population_simple+violent_all+energy_all+agricultural_all+mortality_all+total_all+ property_all + labor_high_all
+        popup_display = popup_label+population_simple+income_all+violent_all+energy_all+agricultural_all+mortality_all+total_all+ property_all + labor_high_all
       }
 
       else if (map.getLayoutProperty('counties-labor-high','visibility') == 'visible'){
-        popup_display = popup_label+population_simple+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all + property_all
+        popup_display = popup_label+population_simple+income_all+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all + property_all
       }
 
       else if (map.getLayoutProperty('counties-property','visibility') == 'visible'){
-        popup_display = popup_label+population_simple + property_all+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all
+        popup_display = popup_label+population_simple+income_all+property_all+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all
       }
       else if (map.getLayoutProperty('population','visibility') == 'visible'){
-        popup_display = popup_label+population_all + property_all+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all
+        popup_display = popup_label+population_all+ income_all+property_all+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all
+      }
+      else if (map.getLayoutProperty('counties-income','visibility') == 'visible'){
+        popup_display = popup_label+population_all + income_all+property_all+labor_high_all+energy_all+agricultural_all+mortality_all+total_all+ violent_all
       }
     }
 
@@ -1515,7 +1542,7 @@ function display(coordinates, query){
   filterChange("new_search")
   
   //map.setMaxBounds(zoom_bounds)
-    map.flyTo({center:center_coordinates,zoom:4.5});
+    map.flyTo({center:center_coordinates,zoom:5});
   //map.setZoom(map.getZoom())
   })
 }
@@ -1529,25 +1556,6 @@ function display(coordinates, query){
   //var violent_percentile = parseInt((100*county_violent_rank/3144))
   //var mortality_percentile = parseInt((100*county_mortality_rank/3144))
 
-  //document.getElementById("total_percentile").innerHTML = labelPercentile(total_percentile)
-  // document.getElementById("total_percentile").style.color = chooseColor(total_percentile)
-  // document.getElementById("total_value").innerHTML = total_display + "%"
-  // document.getElementById("total_value").style.color = chooseColor(total_percentile) 
-
-  // document.getElementById("violent_percentile").innerHTML = labelPercentile(violent_percentile)
-  // document.getElementById("violent_percentile").style.color = chooseColor(violent_percentile)
-  // document.getElementById("violent_value").innerHTML = violent_display + "%"
-  // document.getElementById("violent_value").style.color = chooseColor(violent_percentile)
-  
-  // document.getElementById("mortality_percentile").innerHTML = labelPercentile(mortality_percentile)
-  // document.getElementById("mortality_percentile").style.color = chooseColor(mortality_percentile) 
-  // document.getElementById("mortality_value").innerHTML = mortality_display + " deaths per 100,000"
-  // document.getElementById("mortality_value").style.color = chooseColor(mortality_percentile) 
-  
-  // document.getElementById("agricultural_percentile").innerHTML = labelPercentile(agricultural_percentile)
-  // document.getElementById("agricultural_percentile").style.color = chooseColor(agricultural_percentile)
-  // document.getElementById("agricultural_value").innerHTML = agricultural_display + "%"
-  // document.getElementById("agricultural_value").style.color = chooseColor(agricultural_percentile) 
 
   //document.getElementById("percentile").innerHTML = percentile.toFixed(0)
   //document.getElementById("crease1").innerHTML = crease
@@ -1559,82 +1567,6 @@ function display(coordinates, query){
 
   //console.log("MAX: " + max_name + " VALUE: " + max_rank)
   //console.log("MIN: " + min_name + " VALUE: " + min_rank)
-
-  /*var income = numberWithCommas(county_income)
-  var pop = numberWithCommas(county_pop)
-  
-  //var mortality_num = (e.features[0].properties.Mortality).toFixed(2)
-  
-
-  var mortality_color;
-  if (counties_data[county_GEOID]['mortality_rank'] < 629){
-    mortality_color = '#c80000'
-  }
-  else if (counties_data[county_GEOID]['mortality_rank'] < 1258){
-    mortality_color = '#d35617'
-  }
-  else if (counties_data[county_GEOID]['mortality_rank'] < 1887){
-    mortality_color = '#e28740'
-  }
-  else if (counties_data[county_GEOID]['mortality_rank'] < 2516){
-    mortality_color = '#ebb075'
-  }
-  else {
-    mortality_color = '#eedabf'
-  }
-
-  
-
-  var agricultural_color;
-  if (counties_data[county_GEOID]['agricultural_rank'] < 629){
-    agricultural_color = '#c80000'
-  }
-  else if (counties_data[county_GEOID]['agricultural_rank'] < 1258){
-    agricultural_color = '#d35617'
-  }
-  else if (counties_data[county_GEOID]['agricultural_rank'] < 1887){
-    agricultural_color = '#e28740'
-  }
-  else if (counties_data[county_GEOID]['agricultural_rank'] < 2516){
-    agricultural_color = '#ebb075'
-  }
-  else {
-    agricultural_color = '#eedabf'
-  }
-  }
-
-  var display = '<h3>'+county_name+'</h3>'+'<h5>Population (2012)</h5><h4><b>' + pop +'</b></h4><h5>% change in agricultural yields</h5><h4 style="color:' + agricultural_color +'"><b>' + agricultural_display +'</b></h4><h5>Change in deaths per 100,000</h5><h4 style="color:' + mortality_color +'"><b>' + mortality_display +'</b></h4>'
-
-  new mapboxgl.Popup()
-    .setLngLat(center_coordinates)
-    .setHTML(display)
-    .addTo(map);*/
-  //if (map.getLayoutProperty('states-outline','visibility')!='visible'){
-  //  map.setLayoutProperty('counties-mortality',"visibility","visible")
-  //  map.setLayoutProperty('counties-highlight',"visibility","visible")   
-  //  map.setLayoutProperty('counties-poly-background',"visibility","visible")
-  //}
-
-  //var indicators = ["agricultural", "mortality","labor_high","coastal","violent","total"]
-  //var values = [county_agr,county_mortality,county_labor_high,county_coastal,county_crime,county_total_damage]
-  //var changes = ["agricultural yields","mortality rate","high-risk labor supply","damage from coastal storms and sea level rise","violent crime rate","total direct economic damage across sectors"]
-  //document.getElementById("name").innerHTML = county_name
-  //document.getElementById("name2").innerHTML = county_name
-  /*var output_increase = "increases in ";
-  var output_decrease = "decreases in";
-  for (var i = 0; i < changes.length; i++){
-    if (values[i]>0){
-      output_increase = output_increase.concat(changes[i],", ")
-    }
-
-    else {
-      output_decrease = output_decrease.concat(changes[i],", ")
-    }
-  }*/
-
-  //console.log("decreases: ",output_decrease)
-  //console.log("increases: ",output_increase)
-  //document.getElementById("changes").innerHTML = output_increase
 
   
   /*for (var i = 0; i < indicators.length; i++){

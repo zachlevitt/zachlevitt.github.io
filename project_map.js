@@ -185,11 +185,20 @@ function begin(){
   document.getElementById("final").style.display = 'block'
   document.getElementById("sep").style.display = 'block'
   document.getElementById("view_text").style.display="block"
+
   for (layer of indicator_layers){
     if (layer != 'population'){
       map.setPaintProperty(layer,'fill-opacity',0.8)
     }
   }
+  
+  //document.getElementById("state_filter").setAttribute("disabled", "disabled");
+  //document.getElementById("income_filter").setAttribute("disabled", "disabled");
+  //document.getElementById("pop_filter").setAttribute("disabled", "disabled");
+  //document.getElementById("state_filter").disabled=true;
+  //document.getElementById("income_filter").disabled=true;
+  //document.getElementById("pop_filter").disabled=true;
+  map.setLayoutProperty('populated-places','symbol-sort-key',["to-number", ["get", "scalerank"]])
   map.setLayoutProperty('counties-highlight',"visibility","visible")
   map.setLayoutProperty('counties-poly-background',"visibility","visible")
   map.setLayoutProperty('counties-mortality','visibility','visible')
@@ -532,6 +541,8 @@ $('#indicator').on('selectmenuchange', function() {
     if (indicator != "counties-income"){
       document.getElementById("lowest1").innerHTML = 'Lowest risk';
       document.getElementById("lowest2").innerHTML = 'Lowest risk';
+      document.getElementById("highest1").innerHTML = 'Highest risk';
+      document.getElementById("highest2").innerHTML = 'Highest risk';
     }
 
     if (indicator == "population"){
@@ -590,6 +601,8 @@ $('#indicator').on('selectmenuchange', function() {
           document.getElementById("accompanying_text").innerHTML = "Hsiang et al. (2017) find that median damages from climate change are 'systematically larger in low-income counties.' Low-income areas like the southeast and southwest will be especially at-risk due to warm climates. Since this dataset utilizes income per capita, sparsely-populated areas like the Plains show up as high-income areas in addition to urban and suburban counties. "
           document.getElementById("lowest1").innerHTML = 'Lowest';
           document.getElementById("lowest2").innerHTML = 'Lowest';
+          document.getElementById("highest1").innerHTML = 'Highest';
+          document.getElementById("highest2").innerHTML = 'Highest';
           break;
 
       }
@@ -700,7 +713,7 @@ $('#indicator').on('selectmenuchange', function() {
 function filterChange(comparison){
     //console.log("comparison type: " + comparison)
     //console.log("comparison_state: " + comparison_state)
-  
+    //console.log(current_filter)
     if (comparison == "all"){
       //document.getElementById("comparison_title").innerHTML = "counties with similar population"
       if (search){
@@ -730,18 +743,14 @@ function filterChange(comparison){
     }
 
     else if (comparison == "income"){
-      current_filter = "income";
+      
       if (search){
+        current_filter = "income";
       for (layer of indicator_layers){
         map.setFilter(layer,["all",['<', 'county_income_rank', county_income_rank+100],['>', 'county_income_rank', county_income_rank-100]])
       }
       map.flyTo({center:[-2,-2],zoom:3.2});
     }
-      //document.getElementById("comparison_title").innerHTML = "counties with similar income level"
-      //map.setFilter('counties-total',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
-      //map.setFilter('counties-mortality',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
-      //map.setFilter('counties-agricultural',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
-      //map.setFilter('counties-violent',["all",['<', 'county_inc', county_income_rank+100],['>', 'county_inc', county_income_rank-100]])
       
     }
 
@@ -757,16 +766,9 @@ function filterChange(comparison){
         map.flyTo({center:center_coordinates,zoom:4.5});
       }
       
-      //map.setFilter('counties-total',['==','STATEFP', county_GEOID.substring(0,2)])
-      //map.setFilter('counties-mortality',['==','STATEFP', county_GEOID.substring(0,2)])
-      //map.setFilter('counties-agricultural',['==','STATEFP', county_GEOID.substring(0,2)])
-      //map.setFilter('counties-violent',['==','STATEFP', county_GEOID.substring(0,2)])
-      
     }
 
     else if (comparison == "new_search"){
-      //console.log("new search: " + current_filter)
-      //var comparison_state = 1;
       if (current_filter == "state"){
         for (layer of indicator_layers){
           map.setFilter(layer,['==','STATEFP', county_GEOID.substring(0,2)])
@@ -797,7 +799,17 @@ function filterChange(comparison){
 $('#comparison').on('selectmenuchange', function() {
     //console.log(county_GEOID + " " + county_pop_2012)
     var comparison_select = document.getElementById("comparison").value;
-
+    /*if (!search){
+      document.getElementById("comparison").options[1].disabled = false;
+      document.getElementById("comparison").options[2].disabled = false;
+      document.getElementById("comparison").options[3].disabled = false;
+    }
+    else {
+      document.getElementById("comparison").options[1].disabled = true;
+      document.getElementById("comparison").options[2].disabled = true;
+      document.getElementById("comparison").options[3].disabled = true;
+    }*/
+    
     filterChange(comparison_select)
     
 });
@@ -1249,11 +1261,17 @@ geocoder.on('result', function(ev) {
   map.dragPan.enable();
   map.doubleClickZoom.enable();
   search = true;
+  
+  //document.getElementById("comparison").options[1].disabled = false;
+  //document.getElementById("comparison").options[2].disabled = false;
+  //document.getElementById("comparison").options[3].disabled = false;
+  
 
   //map.touchZoomRotate.enable();
-  //document.getElementById("state_filter").disabled=false;
-  //document.getElementById("income_filter").disabled=false;
-  //document.getElementById("pop_filter").disabled=false;
+  document.getElementById("state_filter").removeAttribute("disabled");
+  document.getElementById("income_filter").removeAttribute("disabled");
+  document.getElementById("pop_filter").removeAttribute("disabled");
+
   document.getElementById("information").style.opacity = 1;
   document.getElementById("information").style.visibility = 'visible';
       
@@ -1349,6 +1367,9 @@ function labelPercentile(percentile){
 }
 
 function display(coordinates, query){
+  //document.getElementById("comparison").disabled=false;
+
+  //console.log(document.getElementById('comparison').disabled)
 
   $.ajax({
     method: 'GET',

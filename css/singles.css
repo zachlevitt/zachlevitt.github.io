@@ -18,6 +18,26 @@ body {
 	font-family: 'Benton Gothic', Arial, serif;;
 }
 
+table.results {
+	border-collapse: collapse;
+	font-size:14px;
+}
+
+table.results tr {
+	height:20px;
+}
+
+table.results td {
+	width:150px;
+	border:1px solid #AF7AC5;
+	text-align:center;
+	font-weight:300;
+}
+
+table.results td.category {
+	color:gray;
+}
+
 
 .container{
 	width: 100%!important;
@@ -54,9 +74,9 @@ h2.subhead {
 }
 #map {
  	outline: none!important;
- 	height: 600px;
- 	width: 600px;
-	position: relative;
+ 	height: 400px;
+ 	width: 400px;
+ 	max-width:45%;
 	margin:auto;
 	margin-top:25px;
 	margin-bottom:25px;
@@ -141,6 +161,11 @@ h3.byline2{
 	display: block;
 }
 
+.display {
+	width:100%;
+	height:500px;
+}
+
 /*.ui-button{
 	color:black;
 	font-size:16px;
@@ -189,7 +214,7 @@ fieldset {
 	text-align:left;
 	width:170px;
 	margin:auto;
-	margin-top:20px;
+	margin-top:10px;
 	align-items:center;
 }
 label {
@@ -207,16 +232,20 @@ label {
 
 .robo {
 	margin-bottom: 30px;
-	margin-top:25px;
-	border-top:1px solid gray;
-	padding-top:15px;
+	max-width:45%;
+	float:left;
+	margin-right:10px;
+	margin-left:10px;
+	width:45%;
+	font-size:14px;
 }
 
 h2.robotext_sub {
-	font-size:18px;
+	font-size:16px;
 	font-weight:normal;
 	margin-top:5px;
-	margin-bottom:5px;
+	margin-bottom:15px;
+	color:#7949A5;
 }
 
 /*.landmark {
@@ -316,18 +345,6 @@ h2.robotext_sub {
 .mapboxgl-popup-close-button {
 	display: none;
 }
-
-table {margin-left: 10px;
-margin-bottom: 10px;}
-  table tr#ROW {color: black;}
-  .table table td#nine  {background-color:rgba(122,33,9,0.93); color:black; text-shadow: 0px 0px 0.8em white} /*rgba(122,33,9,0.75*/
-  .table table td#eight  {background-color:rgba(175, 71, 20,0.93); color:black; text-shadow: 0px 0px 0.8em white}
-  .table table td#seven  {background-color:rgba(201, 102, 36,0.93); color:black; text-shadow: 0px 0px 0.8em white}
-  .table table td#six  {background-color:rgba(226, 153, 57,0.93); color:black; text-shadow: 0px 0px 0.8em white}
-  .table table td#five  {background-color:rgba(245, 189, 99,0.93); color:black;text-shadow: 0px 0px 0.8em white}
-  .table table td#four  {background-color:rgba(250, 220, 144,0.93); color:black;text-shadow: 0px 0px 0.8em white}
-  .table table td#three  {background-color:rgba(251, 247, 198,0.93); color:black;text-shadow: 0px 0px 0.8em white}
-
 
 
 @media only screen and (min-width: 500px){

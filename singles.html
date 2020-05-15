@@ -44,25 +44,19 @@
                 <p class="desc">
                     In her polemic, <i>Against Love</i>, Laura Kipnis argues that coupledom is a mechanism of social control that relies upon the labor of love. Advocating for a rethinking of the source of our societal taboo on non-monogamy, Kipnis views American's idolization of marriage as the sole vehicle of love as dangerously intertwined with capitalism. Throughout diverse media, dominant narratives about love and marriage reinforce our view of love as monogamous, committed and worthy of <i>work</i>. Just as the American psyche has been molded to believe that work creates happiness and worth, most of us believe that work creates love.</p>
                     <p class="desc">Where is the resistance? Dating apps. If we are looking for ease of imagining life without the constraints of lifelong marriage, reproduction, and the “work of marriage,” look no further than Tinder, Bumble or Grindr.</p>
-<h2 class="subhead">Choose your preferences</h2>
-    <div class="preferences">
-      <div class="menus1"  style="">
-        <form action="#">
-          <fieldset>
-            <label for="employment">Employment</label>
-            <select onchange="myFunction(this)" name="employment" id="employment">
-                <option value="no_employ">No preference</option>
-                <option value="unemployed">Unemployed</option>
-                <option value="employed">Employed</option>
-                
-            </select>
-            
-          </fieldset>
-        </form>
 
-      </div>
+
+
+                <h2 class="subhead">Search for your address</h2>
+                <div id="geocoder_map">
+                    <div id="geocoder" class="geocoder"></div>
+                    </div>
+<!--                     <h2 class="subhead" style="font-weight:normal;font-size:20px;margin-bottom:0px;margin-top:20px">Choose your preferences</h2> -->
+    <div class="preferences">
+
+      
     
-      <div class="menus1"style="">
+      <div class="menus1" style="">
         <form action="#">
           <fieldset>
             <label for="sex">Sex of partner</label>
@@ -75,7 +69,7 @@
         </form>
       </div>
 
-      <div class="menus1"style="">
+      <div class="menus1" style="">
         <form action="#">
           <fieldset>
             <label for="marriage">Marriage status</label>
@@ -92,28 +86,38 @@
           </fieldset>
         </form>
       </div>
-  </div>
+      <div class="menus1"  style="">
+        <form action="#">
+          <fieldset>
+            <label for="employment">Employment status</label>
+            <select onchange="myFunction(this)" name="employment" id="employment">
+                <option value="no_employ">No preference</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="employed">Employed</option>
+                
+            </select>
+            
+          </fieldset>
+        </form>
 
-                <h2 class="subhead">Search for your address</h2>
-                <div id="geocoder_map">
-                    <div id="geocoder" class="geocoder"></div>
+      </div>
+  </div>
+                </div>
                     </div>
+                <div class="display">
                     <div class="robo">
                         <h2 class="robotext_sub" id="robotext2"></h2>
                 <h2 class="robotext_sub" id="robotext3"></h2>
                 <h2 class="robotext_sub" id="robotext4"></h2>
                 <h2 class="robotext_sub" id="robotext5"></h2>
                     </div>
-                </div>
-                    </div>
-                <div class="display">
                     <div id="map"></div>
    
                 </div>
-                <div class="article"><p class="desc">Note: There may be other scenarios that could produce worse shaking for this location. Fault lines represent the entire fault, not the section that could rupture in a given scenario. No fault data is shown for the Puente Hills thrust fault system, which, unlike many other faults, is a horizontal fault that covers a broad, rectangular area.</p></div>
+
   
                 </div>  
-
+  </div>
 <script type="text/javascript" src="singles.js"></script>
   </body>
 </html>

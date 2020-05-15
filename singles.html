@@ -15,6 +15,9 @@
 <script src="//d1qqc1e9kvmdh8.cloudfront.net/js/picturefill-3.0.2.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<script type="text/javascript" src="https://d1qqc1e9kvmdh8.cloudfront.net/js/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 
@@ -41,39 +44,75 @@
                 <p class="desc">
                     In her polemic, <i>Against Love</i>, Laura Kipnis argues that coupledom is a mechanism of social control that relies upon the labor of love. Advocating for a rethinking of the source of our societal taboo on non-monogamy, Kipnis views American's idolization of marriage as the sole vehicle of love as dangerously intertwined with capitalism. Throughout diverse media, dominant narratives about love and marriage reinforce our view of love as monogamous, committed and worthy of <i>work</i>. Just as the American psyche has been molded to believe that work creates happiness and worth, most of us believe that work creates love.</p>
                     <p class="desc">Where is the resistance? Dating apps. If we are looking for ease of imagining life without the constraints of lifelong marriage, reproduction, and the “work of marriage,” look no further than Tinder, Bumble or Grindr.</p>
+<h2 class="subhead">Choose your preferences</h2>
+    <div class="preferences">
+      <div class="menus1"  style="">
+        <form action="#">
+          <fieldset>
+            <label for="employment">Employment</label>
+            <select onchange="myFunction(this)" name="employment" id="employment">
+                <option value="no_employ">No preference</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="employed">Employed</option>
+                
+            </select>
+            
+          </fieldset>
+        </form>
 
-                    <p class="desc">Use the map below to see which scenario would cause the worst shaking for where you live. Scroll below the map for more context about this project.</p>
+      </div>
+    
+      <div class="menus1"style="">
+        <form action="#">
+          <fieldset>
+            <label for="sex">Sex of partner</label>
+            <select onchange="myFunction(this)" name="sex" id="sex">
+                <option value="no_sex">No preference</option>
+                <option value="male">Male only</option>
+                <option value="female">Female only</option>
+            </select>
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="menus1"style="">
+        <form action="#">
+          <fieldset>
+            <label for="marriage">Marriage status</label>
+            <select onchange="myFunction(this)" name="marriage" id="marriage">
+                <option value="no_marriage">No preference</option>
+                <option value="currently">Currently married</option>
+                <option value="sep">Separated</option>
+                <option value="divorce">Divorced</option>
+                <option value="widow">Widowed</option>
+                 <option value="never">Never married</option>
+
+            </select>
+            
+          </fieldset>
+        </form>
+      </div>
+  </div>
 
                 <h2 class="subhead">Search for your address</h2>
                 <div id="geocoder_map">
                     <div id="geocoder" class="geocoder"></div>
-                    <div class="button-group">
-                        <button class="landmark" type="button" id="dodger">Dodger Stadium</button>
-                        <button class="landmark" type="button" id="pyramid">TransAmerica Pyramid</button>
-                        <button class="landmark" type="button" id="disneyland">Disneyland</button>
-                        <button class="landmark" type="button" id="capitol">State Capitol</button>
+                    </div>
+                    <div class="robo">
+                        <h2 class="robotext_sub" id="robotext2"></h2>
+                <h2 class="robotext_sub" id="robotext3"></h2>
+                <h2 class="robotext_sub" id="robotext4"></h2>
+                <h2 class="robotext_sub" id="robotext5"></h2>
                     </div>
                 </div>
-                    
+                    </div>
                 <div class="display">
                     <div id="map"></div>
-                    <div class="robotext1"></div>
-                    <!--<div class="table2"><table><tc id="ROW"><td id="nine">Violent shaking</td><td id="eight">Severe</td><td id="seven">Very strong</td><td id="six">Strong</td><td id="five">Moderate</td><td id="four">Light</td><td id="three">Weak or less</td></tc></table></div>
-                    <div class="table"><table><tc id="ROW"><td id="nine"></td><td id="eight"></td><td id="seven"></td><td id="six"></td><td id="five"></td><td id="four"></td><td id="three"></td></tc></table></div>-->
+   
                 </div>
-                <div class="figcaption">Note: There may be other scenarios that could produce worse shaking for this location. Fault lines represent the entire fault, not the section that could rupture in a given scenario. No fault data is shown for the Puente Hills thrust fault system, which, unlike many other faults, is a horizontal fault that covers a broad, rectangular area.</div>
+                <div class="article"><p class="desc">Note: There may be other scenarios that could produce worse shaking for this location. Fault lines represent the entire fault, not the section that could rupture in a given scenario. No fault data is shown for the Puente Hills thrust fault system, which, unlike many other faults, is a horizontal fault that covers a broad, rectangular area.</p></div>
   
                 </div>  
-        </section>
-        <section class="text-section">  
-
-            <h2 class="subhead">How this works</h2>
-            
-
-            <h2 class="subhead">Fastest-moving faults</h2>
-            <p class="desc">There are roughly 30,000 miles of faults cutting across California, but the three fault sections that most concern many seismologists are the San Andreas, San Jacinto and Hayward. As they continue to build up seismic stress, ruptures become more and more likely. These faults are located near the Bay Area and Los Angeles, and could potentially displace millions of people. </p>
-
-    </section>
 
 <script type="text/javascript" src="singles.js"></script>
   </body>

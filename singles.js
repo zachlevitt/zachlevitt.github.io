@@ -23,9 +23,9 @@ map.on('style.load', () => {
 });
 
 //map.addControl(new mapboxgl.NavigationControl());
-//map.scrollZoom.disable();
-//map.doubleClickZoom.disable();
-//map.touchZoomRotate.disable();
+map.scrollZoom.disable();
+map.doubleClickZoom.disable();
+map.touchZoomRotate.disable();
 
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken,
@@ -84,6 +84,8 @@ geocoder.on('result', function(ev) {
   //map.touchZoomRotate.enable();
   map.setLayoutProperty('nyc_tracts_highlight','visibility','none')
   map.setFilter('nyc_tracts_highlight',undefined)
+  document.getElementById('preferences').style.display = 'block'
+  document.getElementById('map').style.display = 'block'
 
   //app.map.setLayoutProperty('epicenters-8-12-19-5boyv3',"visibility","none");
   
@@ -98,191 +100,401 @@ geocoder.on('result', function(ev) {
   
 })
 
-var marriage_filter;
-var employ_filter;
-var sex_filter;
+var marriage_filter = 'no_marriage';
+var employ_filter = 'no_employ';
+var sex_filter = 'no_sex';
 
-var employed = ['employed_title','employed_1','employed_2','employed_3','employed_4','employed_5','employed_title_f','employed_1_f','employed_2_f','employed_3_f','employed_4_f','employed_5_f']
-var unemployed = ['unemployed_title','unemployed_1','unemployed_2','unemployed_3','unemployed_4','unemployed_5','unemployed_title_f','unemployed_1_f','unemployed_2_f','unemployed_3_f','unemployed_4_f','unemployed_5_f']
-var currently = ['currently_title','unemployed_1','employed_1','currently_title_f','unemployed_1_f','employed_1_f']
-var divorce = ['divorce_title','unemployed_2','employed_2','divorce_title_f','unemployed_2_f','employed_2_f']
-var widow = ['widow_title','unemployed_3','employed_3','widow_title_f','unemployed_3_f','employed_3_f']
-var separated = ['sep_title','unemployed_4','employed_4','sep_title_f','unemployed_4_f','employed_4_f']
 
-var never = ['never_title','unemployed_5','employed_5','never_title_f','unemployed_5_f','employed_5_f']
 
+// var employed = ['employed_title','employed_1','employed_2','employed_3','employed_4','employed_5','employed_title_f','employed_1_f','employed_2_f','employed_3_f','employed_4_f','employed_5_f']
+// var unemployed = ['unemployed_title','unemployed_1','unemployed_2','unemployed_3','unemployed_4','unemployed_5','unemployed_title_f','unemployed_1_f','unemployed_2_f','unemployed_3_f','unemployed_4_f','unemployed_5_f']
+
+// var divorce = ['divorce_title','unemployed_2','employed_2','divorce_title_f','unemployed_2_f','employed_2_f']
+// var widow = ['widow_title','unemployed_3','employed_3','widow_title_f','unemployed_3_f','employed_3_f']
+// var separated = ['sep_title','unemployed_4','employed_4','sep_title_f','unemployed_4_f','employed_4_f']
+
+// var never = ['never_title','unemployed_5','employed_5','never_title_f','unemployed_5_f','employed_5_f']
+
+var options =['nowmarried','divorced','widowed','separated','nevermarried','employed','unemployed']
+
+var marriage_options =['nowmarried','divorced','widowed','separated','nevermarried']
+var employment_options = ['_employed','unemployed']
+
+var table_ids = ["nowmarried_male_unemployed","nowmarried_male_employed","divorced_male_unemployed","divorced_male_employed","separated_male_unemployed","separated_male_employed","nevermarried_male_unemployed","nevermarried_male_employed","widowed_male_unemployed","widowed_male_employed","nowmarried_female_unemployed","nowmarried_female_employed","divorced_female_unemployed","divorced_female_employed","separated_female_unemployed","separated_female_employed","nevermarried_female_unemployed","nevermarried_female_employed","widowed_female_unemployed","widowed_female_employed"]
+var rows = ['divorced_row_male','nowmarried_row_male','nevermarried_row_male','separated_row_male',"widowed_row_male",'divorced_row_female','nowmarried_row_female','nevermarried_row_female','separated_row_female',"widowed_row_female"]
 function myFunction(selectObject) {
   var value = selectObject.value;  
   //console.log(value)
-  if (value == 'employed'){
+  if (value == '_employed'){
   	employ_filter = value
-  	for (id of unemployed){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of employed){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
+  	for (table_id of table_ids){
+	  	if (table_id.includes(employ_filter)){
+	  		document.getElementById(table_id).style.display = 'table-cell'
+	  	}
+	  	else {
+	  		document.getElementById(table_id).style.display = 'none'
+	  	}
+	  }
+	  document.getElementById('unemployed_title_male').style.display = 'none'
+	document.getElementById('_employed_title_male').style.display = 'table-cell'
+	document.getElementById('unemployed_title_female').style.display = 'none'
+	document.getElementById('_employed_title_female').style.display = 'table-cell'
+	
+	
+  	// if (marriage_filter == 'no_marriage'){
+  	// 	for (id of unemployed){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of employed){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// }
+  	// else {
+  	// 	for (id of unemployed){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of employed){
+  	// 	if (document.getElementById(id).style.display == 'table-cell'){
+  	// 		document.getElementById(id).style.display = 'table-cell'
+  	// 	}
+  	// }
+  	// }
+  	
 
   }
 
   else if (value == 'unemployed'){
   	employ_filter = value
-  	for (id of employed){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of unemployed){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
+  	for (table_id of table_ids){
+	  	if (table_id.includes(employ_filter)){
+	  		document.getElementById(table_id).style.display = 'table-cell'
+	  	}
+	  	else {
+	  		document.getElementById(table_id).style.display = 'none'
+	  	}
+	  }
+	  document.getElementById('unemployed_title_male').style.display = 'table-cell'
+	document.getElementById('_employed_title_male').style.display = 'none'
+	document.getElementById('unemployed_title_female').style.display = 'table-cell'
+	document.getElementById('_employed_title_female').style.display = 'none'
+
+
+  // 	if (marriage_filter == 'no_marriage'){
+  // 	for (id of employed){
+  // 		document.getElementById(id).style.display = 'none'
+  // 	}
+  // 	for (id of unemployed){
+  // 		document.getElementById(id).style.display = 'table-cell'
+  // 	}
+  // 	}
+  // 	else {
+  // 		for (id of employed){
+  // 		document.getElementById(id).style.display = 'none'
+  // 	}
+  // 	for (id of unemployed){
+  // 		if (document.getElementById(id).style.display == 'table-cell'){
+  // 			document.getElementById(id).style.display = 'table-cell'
+  // 		}
+  // 	}
+  // }
   }
 
   else if (value == 'no_employ'){
   	employ_filter = value
-  	for (id of employed){
-  		document.getElementById(id).style.display = 'table-cell'
+  	for (table_id of table_ids){
+
+			for (option of employment_options){
+	  			if (table_id.includes(option)){
+	  				document.getElementById(table_id).style.display = 'table-cell'
+	  			}
+			}
+		
   	}
-  	for (id of unemployed){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
+  	document.getElementById('unemployed_title_male').style.display = 'table-cell'
+	document.getElementById('_employed_title_male').style.display = 'table-cell'
+		document.getElementById('unemployed_title_female').style.display = 'table-cell'
+	document.getElementById('_employed_title_female').style.display = 'table-cell'
+  	// for (id of employed){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of unemployed){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
   }
   else if (value == 'no_sex'){
   	sex_filter = value
   	document.getElementById('female_all').style.display = 'block'
   	document.getElementById('male_all').style.display = 'block'
+  	document.getElementById('robotext2').style.display = 'block'
+  	document.getElementById('robotext_female').style.display = 'none'
+  	document.getElementById('robotext_male').style.display = 'none'
   }
 
-  else if (value == 'male'){
+  else if (value == '_male'){
   	sex_filter = value
   	document.getElementById('male_all').style.display = 'block'
   	document.getElementById('female_all').style.display = 'none'
+  	document.getElementById('robotext2').style.display = 'none'
+  	document.getElementById('robotext_female').style.display = 'none'
+  	document.getElementById('robotext_male').style.display = 'block'
   }
   else if (value == 'female'){
   	sex_filter = value
   	document.getElementById('female_all').style.display = 'block'
   	document.getElementById('male_all').style.display = 'none'
+  	document.getElementById('robotext2').style.display = 'none'
+  	document.getElementById('robotext_female').style.display = 'block'
+  	document.getElementById('robotext_male').style.display = 'none'
   }
 
   else if (value == 'no_marriage'){
   	marriage_filter = value
-  	for (id of currently){
-  		document.getElementById(id).style.display = 'table-cell'
+  	for (table_id of table_ids){
+  	//console.log(table_id)
+  		for (option of marriage_options){
+  			if (table_id.includes(option)){
+  				if (employ_filter == 'no_employ'){
+  				document.getElementById(table_id).style.display = 'table-cell'
+  			}
+  			else {
+  				if (table_id.includes(employ_filter)){
+  					document.getElementById(table_id).style.display = 'table-cell'
+  				}
+  				else {
+  					document.getElementById(table_id).style.display = 'none'
+  				}
+  			}
+  			}
+
+  		}
   	}
-  	for (id of separated){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of divorce){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of widow){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of never){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  }
-  else if (value == 'currently'){
-  	marriage_filter = value
-  	for (id of currently){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of separated){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of divorce){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of widow){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of never){
-  		document.getElementById(id).style.display = 'none'
+  	for (row of rows){
+  		document.getElementById(row).style.display = 'table-row'
   	}
   }
-  else if (value == 'sep'){
+  	// for (id of currently){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of separated){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of divorce){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of widow){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of never){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  else if (value == 'nowmarried'){
   	marriage_filter = value
-  	for (id of separated){
-  		document.getElementById(id).style.display = 'table-cell'
+
+  	for (table_id of table_ids){
+  		if (table_id.includes(marriage_filter)){
+  			if (employ_filter == 'no_employ'){
+  				document.getElementById(table_id).style.display = 'table-cell'
+  			}
+  			else {
+  				if (table_id.includes(employ_filter)){
+  					document.getElementById(table_id).style.display = 'table-cell'
+  				}
+  				else {
+  					document.getElementById(table_id).style.display = 'none'
+  				}
+  			}
+  			
+  		}
+	  	else {
+	  		document.getElementById(table_id).style.display = 'none'
+	  	}
+	}
+
+	for (row of rows){
+		if (row.includes(marriage_filter)){
+			document.getElementById(row).style.display = 'table-row'
+		}
+		else {
+			document.getElementById(row).style.display = 'none'
+		}
+  		
   	}
-  	for (id of divorce){
-  		document.getElementById(id).style.display = 'none'
+
+	//document.getElementById('nowmarried_title').style.display = 'table-cell'
+  	// for (id of currently){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of separated){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of divorce){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of widow){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of never){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  }
+  else if (value == 'separated'){
+  	marriage_filter = value
+  	for (table_id of table_ids){
+
+
+  		if (table_id.includes(marriage_filter)){
+  			if (employ_filter == 'no_employ'){
+  				document.getElementById(table_id).style.display = 'table-cell'
+  			}
+  			else {
+  				if (table_id.includes(employ_filter)){
+  					document.getElementById(table_id).style.display = 'table-cell'
+  				}
+  				else {
+  					document.getElementById(table_id).style.display = 'none'
+  				}
+  			}
+  			
+  		}
+	}
+	for (row of rows){
+		if (row.includes(marriage_filter)){
+			document.getElementById(row).style.display = 'table-row'
+		}
+		else {
+			document.getElementById(row).style.display = 'none'
+		}
+  		
   	}
-  	for (id of widow){
-  		document.getElementById(id).style.display = 'none'
+  	// for (id of separated){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of divorce){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of widow){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of never){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of currently){
+  	// 	document.getElementById(id).style.display = 'none'
+  	//}
+  }
+
+  else if (value == 'divorced'){
+  	marriage_filter = value
+  	for (table_id of table_ids){
+
+
+  		if (table_id.includes(marriage_filter)){
+  			if (employ_filter == 'no_employ'){
+  				document.getElementById(table_id).style.display = 'table-cell'
+  			}
+  			else {
+  				if (table_id.includes(employ_filter)){
+  					document.getElementById(table_id).style.display = 'table-cell'
+  				}
+  				else {
+  					document.getElementById(table_id).style.display = 'none'
+  				}
+  			}
+  			
+  		}
+	}
+	for (row of rows){
+		if (row.includes(marriage_filter)){
+			document.getElementById(row).style.display = 'table-row'
+		}
+		else {
+			document.getElementById(row).style.display = 'none'
+		}
+  		
   	}
-  	for (id of never){
-  		document.getElementById(id).style.display = 'none'
+  	// for (id of divorce){
+  	// 	document.getElementById(id).style.display = 'table-cell'
+  	// }
+  	// for (id of separated){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of widow){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of never){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  	// for (id of currently){
+  	// 	document.getElementById(id).style.display = 'none'
+  	// }
+  }
+
+  else if (value == 'widowed'){
+  	marriage_filter = value
+  	for (table_id of table_ids){
+
+
+  		if (table_id.includes(marriage_filter)){
+  			if (employ_filter == 'no_employ'){
+  				document.getElementById(table_id).style.display = 'table-cell'
+  			}
+  			else {
+  				if (table_id.includes(employ_filter)){
+  					document.getElementById(table_id).style.display = 'table-cell'
+  				}
+  				else {
+  					document.getElementById(table_id).style.display = 'none'
+  				}
+  			}
+  			
+  		}
+	}
+	for (row of rows){
+		if (row.includes(marriage_filter)){
+			document.getElementById(row).style.display = 'table-row'
+		}
+		else {
+			document.getElementById(row).style.display = 'none'
+		}
+  		
   	}
-  	for (id of currently){
-  		document.getElementById(id).style.display = 'none'
+
+  }
+
+  else if (value == 'nevermarried'){
+  	marriage_filter = value
+  	for (table_id of table_ids){
+
+
+  		if (table_id.includes(marriage_filter)){
+  			if (employ_filter == 'no_employ'){
+  				document.getElementById(table_id).style.display = 'table-cell'
+  			}
+  			else {
+  				if (table_id.includes(employ_filter)){
+  					document.getElementById(table_id).style.display = 'table_cell'
+  				}
+  				else {
+  					document.getElementById(table_id).style.display = 'none'
+  				}
+  			}
+  			
+  		}
+	}
+	for (row of rows){
+		if (row.includes(marriage_filter)){
+			document.getElementById(row).style.display = 'table-row'
+		}
+		else {
+			document.getElementById(row).style.display = 'none'
+		}
+  		
   	}
   }
 
-  else if (value == 'divorce'){
-  	marriage_filter = value
-  	for (id of divorce){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of separated){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of widow){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of never){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of currently){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  }
-
-  else if (value == 'widow'){
-  	marriage_filter = value
-  	for (id of widow){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of separated){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of divorce){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of never){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of currently){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  }
-
-  else if (value == 'never'){
-  	marriage_filter = value
-  	for (id of never){
-  		document.getElementById(id).style.display = 'table-cell'
-  	}
-  	for (id of currently){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of separated){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of divorce){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  	for (id of widow){
-  		document.getElementById(id).style.display = 'none'
-  	}
-  }
+  	
 }
 
-// $( function() {
-//     $( "#employment" ).selectmenu();
- 
-//     $( "#sex" ).selectmenu();
-
-//     $( "#marriage" ).selectmenu();
-
-
-//   } );
 
 function buildFilter(arr) {
   var filter = ['in', 'boro_ct2010'];
@@ -304,7 +516,6 @@ function numberWithCommas(x) {
 
 
 function display(coordinates, query){
-	
 
   $.ajax({
     method: 'GET',
@@ -350,10 +561,10 @@ function display(coordinates, query){
         var total_widowed_female_unemployed = 0;
         var total_widowed = 0;
 
-		console.log(data.features)
+		//console.log(data.features)
         
         for (feature of data.features){
-        	console.log(total_nowmarried_male_employed)
+        	//console.log(total_nowmarried_male_employed)
         	var total_population = total_population + feature.properties.population
 
         	var total_nevermarried = total_nevermarried + feature.properties['16years_ov']
@@ -447,12 +658,14 @@ function display(coordinates, query){
           	//there's basically one for each combination
           	//	when you filter, it'll filter out certain combinations
 
-          	var full_male_table = '<table id="male_all" class="results"><tr style="background-color:#EBDEF0"><td style="color:#905393;font-weight:bold">Male-identifying</td><td style="color:#905393" id="employed_title">Employed</td><td style="color:#905393" id="unemployed_title">Unemployed</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="currently_title">Currently married</td><td id="employed_1">'+total_nowmarried_male_employed+'</td><td id="unemployed_1">'+total_nowmarried_male_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="divorce_title">Divorced</td><td id="employed_2">'+total_divorced_male_employed+'</td><td id="unemployed_2">'+total_divorced_male_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="widow_title">Widowed</td><td id="employed_3">'+total_widowed_male_employed+'</td><td id="unemployed_3">'+total_widowed_male_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="sep_title">Separated</td><td id="employed_4">'+total_separated_male_employed+'</td><td id="unemployed_4">'+total_separated_male_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="never_title">Never married</td><td id="employed_5">'+total_nevermarried_male_employed+'</td><td id="unemployed_5">'+total_nevermarried_male_unemployed+'</td></tr></table>'
+          	var full_male_table = '<table id="male_all" class="results"><tr style="background-color:#EBDEF0" id="title_all_male"><td style="color:#905393;font-weight:bold">Male-identifying</td><td style="color:#905393" id="_employed_title_male">Employed</td><td style="color:#905393" id="unemployed_title_male">Unemployed</td></tr><tr id="nowmarried_row_male"><td style="color:#905393;background-color:#EBDEF0" id="nowmarried_title_male">Currently married</td><td id="nowmarried_male_employed">'+total_nowmarried_male_employed+'</td><td id="nowmarried_male_unemployed">'+total_nowmarried_male_unemployed+'</td></tr><tr id="divorced_row_male"><td style="color:#905393;background-color:#EBDEF0" id="divorced_title_male">Divorced</td><td id="divorced_male_employed">'+total_divorced_male_employed+'</td><td id="divorced_male_unemployed">'+total_divorced_male_unemployed+'</td></tr><tr id="widowed_row_male"><td style="color:#905393;background-color:#EBDEF0" id="widowed_title_male">Widowed</td><td id="widowed_male_employed">'+total_widowed_male_employed+'</td><td id="widowed_male_unemployed">'+total_widowed_male_unemployed+'</td></tr><tr id="separated_row_male"><td style="color:#905393;background-color:#EBDEF0" id="separated_title">Separated</td><td id="separated_male_employed">'+total_separated_male_employed+'</td><td id="separated_male_unemployed">'+total_separated_male_unemployed+'</td></tr><tr id="nevermarried_row_male"><td style="color:#905393;background-color:#EBDEF0" id="nevermarried_title">Never married</td><td id="nevermarried_male_employed">'+total_nevermarried_male_employed+'</td><td id="nevermarried_male_unemployed">'+total_nevermarried_male_unemployed+'</td></tr></table>'
 
-          	var full_female_table = '<table id="female_all" class="results"><tr style="background-color:#EBDEF0"><td style="color:#905393;font-weight:bold">Female-identifying</td><td style="color:#905393" id="employed_title_f">Employed</td><td style="color:#905393" id="unemployed_title_f">Unemployed</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="currently_title_f">Currently married</td><td id="employed_1_f">'+total_nowmarried_female_employed+'</td><td id="unemployed_1_f">'+total_nowmarried_female_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="divorce_title_f">Divorced</td><td id="employed_2_f">'+total_divorced_female_employed+'</td><td id="unemployed_2_f">'+total_divorced_female_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="widow_title_f">Widowed</td><td id="employed_3_f">'+total_widowed_female_employed+'</td><td id="unemployed_3_f">'+total_widowed_female_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="sep_title_f">Separated</td><td id="employed_4_f">'+total_separated_female_employed+'</td><td id="unemployed_4_f">'+total_separated_female_unemployed+'</td></tr><tr><td style="color:#905393;background-color:#EBDEF0" id="never_title_f">Never married</td><td id="employed_5_f">'+total_nevermarried_female_employed+'</td><td id="unemployed_5_f">'+total_nevermarried_female_unemployed+'</td></tr></table>'
+          	var full_female_table = '<table id="female_all" class="results"><tr style="background-color:#EBDEF0" id="title_all_female"><td style="color:#905393;font-weight:bold">Female-identifying</td><td style="color:#905393" id="_employed_title_female">Employed</td><td style="color:#905393" id="unemployed_title_female">Unemployed</td></tr><tr id="nowmarried_row_female"><td style="color:#905393;background-color:#EBDEF0" id="nowmarried_title_female">Currently married</td><td id="nowmarried_female_employed">'+total_nowmarried_female_employed+'</td><td id="nowmarried_female_unemployed">'+total_nowmarried_female_unemployed+'</td></tr><tr id="divorced_row_female"><td style="color:#905393;background-color:#EBDEF0" id="divorced_title_female">Divorced</td><td id="divorced_female_employed">'+total_divorced_female_employed+'</td><td id="divorced_female_unemployed">'+total_divorced_female_unemployed+'</td></tr><tr id="widowed_row_female"><td style="color:#905393;background-color:#EBDEF0" id="widowed_title_female">Widowed</td><td id="widowed_female_employed">'+total_widowed_female_employed+'</td><td id="widowed_female_unemployed">'+total_widowed_female_unemployed+'</td></tr><tr id="separated_row_female"><td style="color:#905393;background-color:#EBDEF0" id="separated_title">Separated</td><td id="separated_female_employed">'+total_separated_female_employed+'</td><td id="separated_female_unemployed">'+total_separated_female_unemployed+'</td></tr><tr id="nevermarried_row_female"><td style="color:#905393;background-color:#EBDEF0" id="nevermarried_title">Never married</td><td id="nevermarried_female_employed">'+total_nevermarried_female_employed+'</td><td id="nevermarried_female_unemployed">'+total_nevermarried_female_unemployed+'</td></tr></table>'
+          	document.getElementById('robotext2').innerHTML = 'Within <span style="background-color:hsla(297, 28%, 45%, 0.49);color:white;font-weight:bold;border-radius:3px;padding:3px">1 kilometer</span> of your location, there are about <b>' + numberWithCommas(total_population) + '</b> people who are 16 years or older. Based on your preferences, here are their demographics:'
+          	document.getElementById('robotext_male').innerHTML = 'Within <span style="background-color:hsla(297, 28%, 45%, 0.49);color:white;font-weight:bold;border-radius:3px;padding:3px">1 kilometer</span> of your location, there are about <b>' + numberWithCommas(total_male_population) + '</b> male-identifying people who are 16 years or older. Based on your preferences, here are their demographics:'
+          	document.getElementById('robotext_female').innerHTML = 'Within <span style="background-color:hsla(297, 28%, 45%, 0.49);color:white;font-weight:bold;border-radius:3px;padding:3px">1 kilometer</span> of your location, there are about <b>' + numberWithCommas(total_female_population) + '</b> female-identifying people who are 16 years or older. Based on your preferences, here are their demographics:'
 
           	if  (sex_filter == "no_sex" || !sex_filter){
-          		document.getElementById('robotext2').innerHTML = 'Within 1 kilometer of your location, there are about ' + numberWithCommas(total_population) + ' people who are 16 years or older.'
           		document.getElementById('robotext3').innerHTML = full_male_table
 				document.getElementById('robotext4').innerHTML = full_female_table
           		/*document.getElementById('robotext2').innerHTML = 'There are about ' + numberWithCommas(total_population) + ' people who are 16 years or older within 1 kilometer of your location, ' + numberWithCommas(total_male_population) + ' male-identifying and ' numberWithCommas(total_male_population) + ' female-identifying.' 
@@ -461,14 +674,21 @@ function display(coordinates, query){
 				document.getElementById('robotext5').innerHTML = numberWithCommas(total_separated) + ' people are currently separated. There are ' + numberWithCommas(total_widowed) + ' widows. There are ' + numberWithCommas(total_divorced) + ' total divorced people.'*/
           	}
           	else if (sex_filter == 'male'){
-				document.getElementById('robotext2').innerHTML = 'There are about ' + numberWithCommas(total_male_population) + ' male-identifying people who are 16 years or older within 1 kilometer of your location'
+          		document.getElementById("robotext2").style.display = 'none'
+
+          		document.getElementById("robotext_male").style.display = 'block'
+          		document.getElementById("robotext_female").style.display = 'none'
 				document.getElementById('robotext3').innerHTML = full_male_table
 				document.getElementById('robotext4').innerHTML = full_female_table
 				document.getElementById('female_all').style.display = 'none'
           	}
 
           	else if (sex_filter == 'female'){
-          		document.getElementById('robotext2').innerHTML = 'There are about ' + numberWithCommas(total_female_population) + ' female-identifying people who are 16 years or older within 1 kilometer of your location'
+          		document.getElementById("robotext2").style.display = 'none'
+
+          		document.getElementById("robotext_male").style.display = 'none'
+          		document.getElementById("robotext_female").style.display = 'female'
+          		
           		document.getElementById('robotext3').innerHTML = full_female_table
           		document.getElementById('robotext4').innerHTML = full_male_table
 				document.getElementById('male_all').style.display = 'none'

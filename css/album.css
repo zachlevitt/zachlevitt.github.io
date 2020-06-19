@@ -1,4 +1,6 @@
 @media only screen and (max-width: 600px) {
+
+
   
 .overlay2 h5 {
   font-size: 14px;
@@ -60,9 +62,42 @@ body {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
+/* Parent Container */
+.content_img{
+ position: relative;
+}
+
+/* Child Text Container */
+.content_img div{
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ color: white;
+ background-color:rgba(0,0,0,0.5);
+ margin-bottom: 15px;
+ opacity: 0;
+ visibility: hidden;
+ -webkit-transition: visibility 0.5s, opacity 0.5s linear; 
+ transition: visibility 0.5s, opacity 0.5s linear;
+ width: 100%;
+ padding: 8px 15px;
+ text-align:right;
+ font-size:11px;
+}
+
+/* Hover on Parent Container */
+.content_img:hover{
+ cursor: pointer;
+}
+
+.content_img:hover div{
+ visibility: visible;
+ opacity: 1; 
+}
+
 h2.about {
   color: black;
-  font-size: 18px;
+  font-size: 16px;
   font-weight:300;
   margin: auto;
   margin-top: 15px;
@@ -90,7 +125,7 @@ hr {
 h2.about a {
   color: black;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 h2.about a:hover {
@@ -171,7 +206,7 @@ footer p {
 
 .container2 {
   width: 95%;
-  max-width: 900px;
+  max-width: 700px;
   margin: auto;
   margin-top: 30px;
 }
@@ -221,33 +256,12 @@ footer p {
   margin-bottom:2px;
 }
 
-.example .image:hover {
+/*.example .image:hover {
   opacity: 0.70;
 }
 
 .image_hp:hover {
   opacity: 0.70;
-}
-
-/*h2.label {
-  position:absolute;
-  font-size:12px;
-  color:white;
-  margin-top:15px;
-  margin-left:10px;
-}*/
-
-/*.overlay1 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /*height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #ffffff;
 }*/
 
 .overlay2 {
@@ -271,29 +285,6 @@ footer p {
   margin-bottom:30px;
   margin-top: 30px;
 }
-
-/*
-
-
-.card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-  -webkit-filter: brightness(100%);
-}
-
-.card img:hover {
-    -webkit-filter: brightness(20%);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-}
-
-.card a {
-  color: black;
-}*/
 
 
 .card-text {

@@ -80,8 +80,19 @@ h2.about {
   font-size: 18px;
   font-weight:300;
   margin: auto;
-  max-width: 600px;
+  max-width: 625px;
   text-align:left;
+}
+
+h2.heading {
+  color: white;
+  font-size: 24px;
+  font-weight:300;
+  margin: auto;
+  width:100%;
+  text-align:center;
+  margin-top:50px;
+  margin-bottom:25px;
 }
 
 h2#about.about {
@@ -128,7 +139,7 @@ h2.about a:hover {
   padding: 0px;
   text-align: center;
   margin-top:25px;
-  padding-bottom:25px;
+  padding-bottom:5px;
 }
 
 h1.jumbotron-heading {
@@ -227,7 +238,7 @@ footer p {
 .image5 {
   display:block;
   max-width:600px;
-  max-height: 500px;
+  max-height: 600px;
   margin:auto;
   margin-bottom:2px;
   border:5px black solid
@@ -355,6 +366,7 @@ footer p {
   padding: 0 4px;
   width: 95%;
   margin: auto;
+  max-width:1200px;
 }
 
 .column_art{
@@ -370,17 +382,18 @@ footer p {
 }
 
 /* Create four equal columns that sits next to each other */
-.column {
-  flex: 25%;
-  max-width: 25%;
+.column_two {
+  flex: 50%;
+  max-width: 50%;
   padding: 0 10px 0 10px;
 }
 
-.column img {
-  margin-top: 10px;
+.column_two img {
+  margin-top: 25px;
   margin-bottom: 10px;
   vertical-align: middle;
-  width: 100%;
+  max-width: 90%;
+  width:auto;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */

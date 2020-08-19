@@ -73,7 +73,7 @@ body {
  bottom: 0;
  right: 0;
  color: white;
- background-color:rgba(0,0,0,0.5);
+ background-color:rgba(0,0,0,0.7);
  margin-bottom: 15px;
  opacity: 0;
  visibility: hidden;
@@ -206,7 +206,7 @@ footer p {
 
 .container2 {
   width: 95%;
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
   margin-top: 30px;
 }
@@ -334,7 +334,9 @@ footer p {
   padding: 0 4px;
   width: 95%;
   margin: auto;
+  max-width:1200px;
 }
+
 
 
 

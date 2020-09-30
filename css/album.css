@@ -102,8 +102,10 @@ h2.about {
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  max-width: 600px;
+  max-width: 500px;
   text-align:left;
+  line-height: 20px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 h2#about.about {
@@ -126,6 +128,7 @@ h2.about a {
   color: black;
   font-weight: bold;
   font-size: 16px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 h2.about a:hover {
@@ -205,8 +208,8 @@ footer p {
 
 
 .container2 {
-  width: 95%;
-  max-width: 600px;
+  max-width: 90%;
+  width: 500px;
   margin: auto;
   margin-top: 30px;
 }

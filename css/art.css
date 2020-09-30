@@ -77,11 +77,17 @@ body {
 
 h2.about {
   color: gray;
-  font-size: 18px;
+  font-size: 16px;
   font-weight:300;
   margin: auto;
-  max-width: 625px;
+  max-width: 525px;
   text-align:left;
+  line-height: 20px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+pre {
+  color: gray;
 }
 
 h2.heading {
@@ -114,7 +120,9 @@ hr {
 h2.about a {
   color: gray;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 h2.about a:hover {

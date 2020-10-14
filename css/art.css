@@ -33,6 +33,10 @@ h3.about {
   font-size: 14px!important;
 }
 
+h3 {
+  color: white;
+}
+
 /*.button-group {
   margin: auto;
   margin-bottom: 20px!important;
@@ -251,6 +255,10 @@ footer p {
   margin-bottom:2px;
   border:5px black solid
 }
+
+figcaption {
+  font-size: 11px;
+}
 .art_figure {
   margin:auto;
   margin-left:0px;
@@ -368,6 +376,8 @@ footer p {
   margin-bottom: .25rem;
 }
 
+
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -375,6 +385,7 @@ footer p {
   width: 95%;
   margin: auto;
   max-width:1200px;
+  text-align:center;
 }
 
 .column_art{
@@ -390,13 +401,13 @@ footer p {
 }
 
 /* Create four equal columns that sits next to each other */
-.column_two {
-  flex: 50%;
-  max-width: 50%;
-  padding: 0 10px 0 10px;
+.column_ {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 5px 0 5px;
 }
 
-.column_two img {
+.column_ img {
   margin-top: 25px;
   margin-bottom: 10px;
   vertical-align: middle;

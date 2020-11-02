@@ -90,8 +90,31 @@ h2.about {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
+h2.submenu {
+  color: gray;
+  font-size: 16px;
+  margin: auto;
+  max-width: 525px;
+  text-align:left;
+  line-height: 20px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+h2.submenu a {
+  color: white;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+h2.submenu a:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
 pre {
   color: gray;
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 h2.heading {

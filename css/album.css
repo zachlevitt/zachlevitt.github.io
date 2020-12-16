@@ -108,6 +108,11 @@ h2.about {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
+pre {
+  color: gray;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
 h2#about.about {
   text-align:center;
 }

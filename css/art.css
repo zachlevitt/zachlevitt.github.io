@@ -1,64 +1,4 @@
-@media only screen and (max-width: 600px) {
-  
-.overlay2 h5 {
-  font-size: 14px;
-}
 
-#explainer{
-  margin-top: 50px;
-}
-
-.image5 {
-  max-height: 500px
-}
-
-
-p {
-  font-size: 12px;
-}
-
-.overlay2 {
-  float: left;
-  height: 100%;
-  width: 100%!important;
-}
-
-.image {
-  display: block;
-  width: 100%!important;
-  margin-bottom: 10px!important;
-}
-
-h3.about {
-  font-size: 14px!important;
-}
-
-h3 {
-  color: white;
-}
-
-/*.button-group {
-  margin: auto;
-  margin-bottom: 20px!important;
-}
-
-button.button {
-  background-color: white!important;
-  font-weight: normal;
-  margin-right: 10px;
-  border-radius: 2px!important;
-  padding: 3px 10px!important;
-  margin-bottom: 5px!important;
-  border: 1px solid lightgray!important;
-  font-size: 12px;
-}
-
-button#income {
-  font-size: 12px;
-}*/
-
-
-}
 
 .art {
   background-color:#2c2c2c;
@@ -440,7 +380,7 @@ footer p {
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
-  .column {
+  .column_ {
     flex: 50%;
     max-width: 50%;
   }
@@ -453,7 +393,7 @@ footer p {
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
+  .column_ {
     flex: 100%;
     max-width: 100%;
   }
@@ -462,4 +402,66 @@ footer p {
     flex: 100%;
     max-width: 100%;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  
+.overlay2 h5 {
+  font-size: 14px;
+}
+
+#explainer{
+  margin-top: 50px;
+}
+
+.image5 {
+  max-width: 95vw
+}
+
+
+p {
+  font-size: 12px;
+}
+
+.overlay2 {
+  float: left;
+  height: 100%;
+  width: 100%!important;
+}
+
+.image {
+  display: block;
+  width: 100%!important;
+  margin-bottom: 10px!important;
+}
+
+h3.about {
+  font-size: 14px!important;
+}
+
+h3 {
+  color: white;
+}
+
+/*.button-group {
+  margin: auto;
+  margin-bottom: 20px!important;
+}
+
+button.button {
+  background-color: white!important;
+  font-weight: normal;
+  margin-right: 10px;
+  border-radius: 2px!important;
+  padding: 3px 10px!important;
+  margin-bottom: 5px!important;
+  border: 1px solid lightgray!important;
+  font-size: 12px;
+}
+
+button#income {
+  font-size: 12px;
+}*/
+
+
 }

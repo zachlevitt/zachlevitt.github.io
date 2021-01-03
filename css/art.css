@@ -351,7 +351,7 @@ footer p {
   text-align:center;
 }
 
-.column_art{
+/*.column_art{
   flex: 33%;
   max-width: 33%;
   padding: 0 10px 0 10px;
@@ -361,7 +361,7 @@ footer p {
   margin-bottom: 3px;
   vertical-align: middle;
   width: 100%;
-}
+}*/
 
 /* Create four equal columns that sits next to each other */
 .column_ {
@@ -385,10 +385,10 @@ footer p {
     max-width: 50%;
   }
 
-  .column_art {
+/*  .column_art {
     flex: 50%;
     max-width: 50%;
-  }
+  }*/
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -398,10 +398,10 @@ footer p {
     max-width: 100%;
   }
 
-  .column_art {
+/*  .column_art {
     flex: 100%;
     max-width: 100%;
-  }
+  }*/
 }
 
 @media only screen and (max-width: 480px) {

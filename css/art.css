@@ -36,14 +36,13 @@ h2.submenu {
   margin: auto;
   max-width: 525px;
   text-align:left;
-  line-height: 20px;
+  line-height: 32px;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 h2.submenu a {
   color: white;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 22px;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 

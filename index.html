@@ -17,46 +17,6 @@
   <!-- Custom styles for this template -->
   <link href="/css/album.css" rel="stylesheet">
 
-  <script>
-    var data = [
-      {
-        imageLink: 'images/earthquake.png',
-        toLink: 'portfolio.html#earthquakes',
-        title: 'Interactive earthquake risk map',
-        organization: 'Los Angeles Times',
-        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Illustrator, Mapshaper',
-      },
-      {
-        imageLink: 'images/blackfeet.png',
-        toLink: 'portfolio.html#badger',
-        title: 'Blackfeet reservation timeline map',
-        organization: '',
-        tools: 'Illustrator, QGIS',
-      },
-      {
-        imageLink: 'images/oregon.png',
-        toLink: 'portfolio.html#oregon',
-        title: 'West Coast housing crisis visualizations',
-        organization: 'Los Angeles Times',
-        tools: 'Illustrator, R',
-      },
-      {
-        imageLink: 'images/ridgecrest_print.png',
-        toLink: 'portfolio.html#ridgecrest',
-        title: 'Ridgecrest earthquake map',
-        organization: 'Los Angeles Times',
-        tools: 'QGIS, Illustrator',
-      },
-      {
-        imageLink: 'images/hospital_capacity.png',
-        toLink: 'portfolio.html#hospitals',
-        title: 'COVID Hospital Capacity Charts',
-        organization: 'NPR',
-        tools: 'JavaScript, D3, Python',
-      }
-    ]
-    console.log(data)
-  </script>
 </head>
 
 <body>
@@ -68,7 +28,7 @@
   </section>
   <hr>
 
-  <div class="row"> 
+  <div id="ports" class="row"> 
     <div class="column">
       <div class="content_img">
         <a href="portfolio.html#earthquakes"><img class="image_hp" src="images/earthquake.png">
@@ -238,6 +198,7 @@
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
       <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>-->
       <script src="/js/bootstrap.min.js"></script>
+      <script src="./data.js"></script>
     </body>
     </html>
 

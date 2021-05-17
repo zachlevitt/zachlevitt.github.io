@@ -34,76 +34,76 @@ var data = [
         organization: 'NPR',
         tools: 'JavaScript, D3, Python',
       },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
-      {
-        imageLink: 'images/TKTKTKTK.png',
-        toLink: 'portfolio.html#TKTKTKTK',
-        title: 'TKTKTKTK',
-        organization: 'TKTKTKTK',
-        tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
-      },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
+      // {
+      //   imageLink: 'images/TKTKTKTK.png',
+      //   toLink: 'portfolio.html#TKTKTKTK',
+      //   title: 'TKTKTKTK',
+      //   organization: 'TKTKTKTK',
+      //   tools: 'TKTKTKTK, TKTKTKTK, TKTKTKTK',
+      // },
     ]
 
 
@@ -119,11 +119,10 @@ document.body.onload = addClipsToHP(data);
 
 function addClipsToHP (data) {
 
+  //console.log("add")
+
   var dataLength = data.length
   var dataPerColumn = dataLength/3
-  //var count = 0;
-
-  
 
   data.forEach(function(item,i){
 
@@ -164,8 +163,19 @@ function addElement(item,index){
 
   // and give it some content
   const newContent = document.createElement("a");
-  newContent.href = item.toLink
+  newContent.href = item.toLink;
 
+  const newImage = document.createElement("img")
+  newImage.src = item.imageLink;
+  newImage.classList.add("image_hp")
+
+  const innerDiv = document.createElement("div");
+  innerDiv.innerHTML = `<b>${item.title}</b><br>${item.organization}<br><span style="color:darkgray; font-size:12px">${item.tools}</span></div>`
+
+
+  //ADD IMAGE AND OTHER STUFF HERE
+  newContent.appendChild(newImage)
+  newContent.appendChild(innerDiv)
   // add the text node to the newly created div
   newDiv.appendChild(newContent);
 

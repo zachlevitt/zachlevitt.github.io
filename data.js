@@ -197,7 +197,7 @@ var data = [
         title: 'GIS Applications in Environmental Science course',
         organization: 'Middlebury College',
         tools: 'ArcMap',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/mggg.png',

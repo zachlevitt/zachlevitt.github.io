@@ -17,6 +17,14 @@ var data = [
         tools: 'JavaScript (React, Node), Google Firebase, GitHub',
         include: 'false',
       },
+      {
+        imageLink: 'images/redlining.png',
+        toLink: 'https://www.npr.org/sections/codeswitch/2021/05/08/991535564/black-americans-and-the-racist-architecture-of-homeownership',
+        title: 'Black Americans And The Racist Architecture Of Homeownership',
+        organization: 'NPR',
+        tools: 'JavaScript (D3), Illustrator, Photoshop',
+        include: 'true',
+      },
        {
         imageLink: 'images/art/FilteredSLIC2_Minimalism_20-Sep-18-00-48-17.png',
         toLink: 'portfolio.html#generative',
@@ -58,15 +66,6 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/hospital_capacity.png',
-        toLink: 'portfolio.html#hospitals',
-        title: 'COVID Hospital Capacity Charts',
-        organization: 'NPR',
-        tools: 'JavaScript, D3, Python',
-        include: 'false',
-      },
-
-      {
         imageLink: 'images/power.png',
         toLink: 'portfolio.html#power_companies',
         title: 'Interactive power company emissions article',
@@ -92,6 +91,14 @@ var data = [
         title: 'The United States of Climate Change',
         organization: 'Middlebury College',
         tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/cartogram.png',
+        toLink: 'https://www.npr.org/2021/04/26/983082132/census-to-release-1st-results-that-shift-electoral-college-house-seats',
+        title: "Here's How The First 2020 Census Results Changed Electoral College, House Seats",
+        organization: 'NPR',
+        tools: 'JavaScript (D3), Illustrator',
         include: 'true',
       },
       {
@@ -136,6 +143,30 @@ var data = [
       }]},
       {column: 2,
       content: [
+      {
+        imageLink: 'images/vaccines.png',
+        toLink: 'https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state',
+        title: 'COVID Vaccine and Hospital Capacity Trackers',
+        organization: 'NPR',
+        tools: 'JavaScript, D3, Python',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/flood.png',
+        toLink: 'https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat',
+        title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
+        organization: 'NPR',
+        tools: 'JavaScript (D3)',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/south_to_mexico.png',
+        toLink: 'https://www.npr.org/2021/02/28/971325620/a-chapter-in-u-s-history-often-ignored-the-flight-of-runaway-slaves-to-mexico',
+        title: "A Chapter In U.S. History Often Ignored: The Flight Of Runaway Slaves To Mexico",
+        organization: 'NPR',
+        tools: 'JavaScript (D3), Illustrator, ai2html',
+        include: 'true',
+      },
       {
         imageLink: 'images/dapl-ss.png',
         toLink: 'portfolio.html#dapl',

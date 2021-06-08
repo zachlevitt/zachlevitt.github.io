@@ -309,8 +309,7 @@ footer p {
 
 .card-text2 a {
   color: black;
-  font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .card-text2 a:hover {

@@ -1,12 +1,14 @@
+///MAKE SEPARATE DATA FILE THAT PROJECTS AND HP.JS CALL ON TO ADD
+
 var data = [
     {column: 0,
      content: [
       {
         imageLink: 'images/earthquake.png',
         toLink: 'portfolio.html#earthquakes',
-        title: 'What would a powerful earthquake feel like where you live?',
+        title: 'Interactive earthquake risk map',
         organization: 'Los Angeles Times',
-        tools: 'Mapbox, JavaScript, HTML/CSS, QGIS, Illustrator, Mapshaper',
+        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Illustrator, Mapshaper',
         include: 'true',
       },
       {
@@ -66,54 +68,39 @@ var data = [
         include: 'true',
       },
       {
+        imageLink: 'images/power.png',
+        toLink: 'portfolio.html#power_companies',
+        title: 'Interactive power company emissions article',
+        organization: 'Los Angeles Times',
+        tools: 'Illustrator, HTML/CSS, JavaScript',
+        include: 'true',
+      },
+      {
         imageLink: 'images/antarctica.png',
         toLink: 'portfolio.html#antarctica',
         title: 'Antarctic expeditions map',
         organization: 'Middlebury College',
         tools: 'ArcMap, Illustrator',
-        include: 'false',
-      },
-      {
-        imageLink: 'images/chart_ss.png',
-        toLink: 'portfolio.html#divest',
-        title: 'Middlebury College divestment graphics',
-        organization: 'Middlebury Campus',
-        tools: 'QGIS, Illustrator, HTML/CSS, JavaScript, WordPress',
         include: 'true',
-      },
-      {
-        imageLink: 'images/WaterWalks_v2.png',
-        toLink: 'portfolio.html#guntram',
-        title: 'Indigenous experiences at the U.S.-Canada border',
-        organization: 'Middlebury College',
-        tools: 'Illustrator, QGIS',
-        include: 'true',
-      },
+      }
       ]},
       {column: 1,
       content: [
+
+      {
+        imageLink: 'images/senior_project_summary_image.png',
+        toLink: 'portfolio.html#cc',
+        title: 'The United States of Climate Change',
+        organization: 'Middlebury College',
+        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
+        include: 'true',
+      },
       {
         imageLink: 'images/cartogram.png',
         toLink: 'https://www.npr.org/2021/04/26/983082132/census-to-release-1st-results-that-shift-electoral-college-house-seats',
         title: "Here's How The First 2020 Census Results Changed Electoral College, House Seats",
         organization: 'NPR',
         tools: 'JavaScript (D3), Illustrator',
-        include: 'true',
-      },
-      {
-        imageLink: 'images/npr_hospitalizations.png',
-        toLink: 'https://www.npr.org/sections/health-shots/2020/12/09/944379919/new-data-reveal-which-hospitals-are-dangerously-full-is-yours',
-        title: 'NPR COVID Hospital Capacity Tracker',
-        organization: 'NPR',
-        tools: 'JavaScript, D3, Python',
-        include: 'true',
-      },
-      {
-        imageLink: 'images/flood.png',
-        toLink: 'https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat',
-        title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
-        organization: 'NPR',
-        tools: 'JavaScript (D3)',
         include: 'true',
       },
       {
@@ -147,31 +134,31 @@ var data = [
         organization: 'Los Angeles Times',
         tools: 'Illustrator',
         include: 'true',
+      },
+      {
+        imageLink: 'images/WaterWalks_v2.png',
+        toLink: 'portfolio.html#guntram',
+        title: 'Indigenous experiences at the U.S.-Canada border',
+        organization: 'Middlebury College',
+        tools: 'Illustrator, QGIS',
+        include: 'true',
       }]},
       {column: 2,
       content: [
       {
-        imageLink: 'images/senior_project_summary_image.png',
-        toLink: 'portfolio.html#cc',
-        title: 'The United States of Climate Change',
-        organization: 'Middlebury College',
-        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
-        include: 'true',
-      },
-      {
         imageLink: 'images/vaccines.png',
         toLink: 'https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state',
-        title: 'NPR COVID Vaccine Tracker',
+        title: 'COVID Vaccine and Hospital Capacity Trackers',
         organization: 'NPR',
         tools: 'JavaScript, D3, Python',
         include: 'true',
       },
       {
-        imageLink: 'images/power.png',
-        toLink: 'portfolio.html#power_companies',
-        title: 'Which power companies are the worst polluters?',
-        organization: 'Los Angeles Times',
-        tools: 'Illustrator, HTML/CSS, JavaScript',
+        imageLink: 'images/flood.png',
+        toLink: 'https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat',
+        title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
+        organization: 'NPR',
+        tools: 'JavaScript (D3)',
         include: 'true',
       },
       {
@@ -196,6 +183,14 @@ var data = [
         title: 'Prison gerrymandering in North Carolina',
         organization: 'Voting Rights Data Institute',
         tools: 'QGIS',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/chart_ss.png',
+        toLink: 'portfolio.html#divest',
+        title: 'Middlebury College divestment graphics',
+        organization: 'Middlebury Campus',
+        tools: 'QGIS, Illustrator, HTML/CSS, JavaScript, WordPress',
         include: 'true',
       },
       {
@@ -230,6 +225,9 @@ var homepageColumns = document.querySelectorAll(".column")
 
 //add clips
 document.body.onload = setupHP(data);
+
+//add descriptions
+document.body.onload = setupProjects(data);
 
 ////////////////////////////////////////////////
 //HOMEPAGE

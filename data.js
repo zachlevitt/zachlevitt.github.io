@@ -26,6 +26,14 @@ var data = [
         include: 'true',
       },
        {
+        imageLink: 'images/joy-generator.png',
+        toLink: 'https://apps.npr.org/joy-generator/',
+        title: 'Joy Generator',
+        organization: 'National Public Radio',
+        tools: 'JavaScript, React, Illustrator, Figma',
+        include: 'true',
+      },
+       {
         imageLink: 'images/art/FilteredSLIC2_Minimalism_20-Sep-18-00-48-17.png',
         toLink: 'portfolio.html#generative',
         title: 'Generative image processing',

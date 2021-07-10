@@ -33,6 +33,14 @@ var data = [
         tools: 'JavaScript, React, Illustrator, Figma',
         include: 'true',
       },
+      {
+        imageLink: 'images/reservoirs.png',
+        toLink: 'https://www.washingtonpost.com/weather/2021/07/09/western-reservoirs-drought-california-nevada/',
+        title: 'Reservoirs are drying up as consequences of the Western drought worsen',
+        organization: 'Washington Post',
+        tools: 'Illustrator, ai2html, QGIS',
+        include: 'true',
+      },
        {
         imageLink: 'images/art/FilteredSLIC2_Minimalism_20-Sep-18-00-48-17.png',
         toLink: 'portfolio.html#generative',

@@ -25,6 +25,14 @@ var data = [
         tools: 'JavaScript (D3), Illustrator, Photoshop',
         include: 'true',
       },
+      {
+        imageLink: 'images/census2020.png',
+        toLink: 'https://www.washingtonpost.com/nation/interactive/2021/census-maps-race-population-demographics/',
+        title: "Mapping America’s racial population shifts over the last decade",
+        organization: 'Washington Post',
+        tools: 'D3, HTML/CSS, JavaScript, React, QGIS',
+        include: 'true',
+      },
        {
         imageLink: 'images/joy-generator.png',
         toLink: 'https://apps.npr.org/joy-generator/',
@@ -163,19 +171,28 @@ var data = [
         organization: 'Los Angeles Times',
         tools: 'Illustrator',
         include: 'true',
-      }]},
+      },
+      {
+        imageLink: 'images/ss_lapd.png',
+        toLink: 'portfolio.html#lapd',
+        title: 'LAPD traffic stops graphics',
+        organization: 'Los Angeles Times',
+        tools: 'Illustrator',
+        include: 'true',
+      }
+      ]},
       {column: 2,
       content: [
       {
-        imageLink: 'images/senior_project_summary_image.png',
-        toLink: 'portfolio.html#cc',
-        title: 'The United States of Climate Change',
-        organization: 'Middlebury College',
-        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
+        imageLink: 'images/urbanGrowth.png',
+        toLink: 'https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/',
+        title: "Where America's developed areas are growing",
+        organization: 'Washington Post',
+        tools: 'Mapbox, ai2html, HTML/CSS, JavaScript, React, QGIS,',
         include: 'true',
       },
       {
-        imageLink: 'images/vaccines.png',
+        imageLink: 'images/vaccineDaily.png',
         toLink: 'https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state',
         title: 'NPR COVID Vaccine Tracker',
         organization: 'NPR',
@@ -188,6 +205,14 @@ var data = [
         title: 'Which power companies are the worst polluters?',
         organization: 'Los Angeles Times',
         tools: 'Illustrator, HTML/CSS, JavaScript',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/senior_project_summary_image.png',
+        toLink: 'portfolio.html#cc',
+        title: 'The United States of Climate Change',
+        organization: 'Middlebury College',
+        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
         include: 'true',
       },
       {
@@ -229,15 +254,7 @@ var data = [
         organization: 'Voting Rights Data Institute',
         tools: 'R, QGIS',
         include: 'true',
-      },
-      {
-        imageLink: 'images/ss_lapd.png',
-        toLink: 'portfolio.html#lapd',
-        title: 'LAPD traffic stops graphics',
-        organization: 'Los Angeles Times',
-        tools: 'Illustrator',
-        include: 'true',
-      },]}
+      }]}
     ]
 
 //get columns and rows

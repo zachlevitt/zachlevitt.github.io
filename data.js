@@ -87,7 +87,7 @@ var data = [
         title: 'Ridgecrest earthquake map',
         organization: 'Los Angeles Times',
         tools: 'QGIS, Illustrator',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/antarctica.png',
@@ -98,20 +98,12 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/chart_ss.png',
-        toLink: 'portfolio.html#divest',
-        title: 'Middlebury College divestment graphics',
-        organization: 'Middlebury Campus',
-        tools: 'QGIS, Illustrator, HTML/CSS, JavaScript, WordPress',
-        include: 'true',
-      },
-      {
         imageLink: 'images/WaterWalks_v2.png',
         toLink: 'portfolio.html#guntram',
         title: 'Indigenous experiences at the U.S.-Canada border',
         organization: 'Middlebury College',
         tools: 'Illustrator, QGIS',
-        include: 'true',
+        include: 'false',
       },
       ]},
       {column: 1,
@@ -162,7 +154,7 @@ var data = [
         title: 'Antarctic expeditions map',
         organization: 'Middlebury College',
         tools: 'ArcMap, Illustrator',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/homelessness.png',
@@ -170,6 +162,15 @@ var data = [
         title: 'Homelessness in Los Angeles graphics',
         organization: 'Los Angeles Times',
         tools: 'Illustrator',
+        include: 'false',
+      },
+
+      {
+        imageLink: 'images/chart_ss.png',
+        toLink: 'portfolio.html#divest',
+        title: 'Middlebury College divestment graphics',
+        organization: 'Middlebury Campus',
+        tools: 'QGIS, Illustrator, HTML/CSS, JavaScript, WordPress',
         include: 'true',
       },
       {
@@ -178,7 +179,7 @@ var data = [
         title: 'LAPD traffic stops graphics',
         organization: 'Los Angeles Times',
         tools: 'Illustrator',
-        include: 'true',
+        include: 'false',
       }
       ]},
       {column: 2,
@@ -237,7 +238,7 @@ var data = [
         title: 'Prison gerrymandering in North Carolina',
         organization: 'Voting Rights Data Institute',
         tools: 'QGIS',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/gis_work_ss.png',
@@ -253,7 +254,7 @@ var data = [
         title: 'Congressional redistricting rules',
         organization: 'Voting Rights Data Institute',
         tools: 'R, QGIS',
-        include: 'true',
+        include: 'false',
       }]}
     ]
 

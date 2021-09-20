@@ -193,6 +193,14 @@ var data = [
         include: 'true',
       },
       {
+        imageLink: 'images/smoke.png',
+        toLink: 'https://www.washingtonpost.com/nation/2021/08/26/wildfires-smoke-air-quality-pollution/',
+        title: "Here’s what to know as a summer of wildfires prompts air-quality alerts across the West",
+        organization: 'Washington Post',
+        tools: 'ai2html, HTML/CSS, Illustrator, QGIS,',
+        include: 'true',
+      },
+      {
         imageLink: 'images/vaccineDaily.png',
         toLink: 'https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state',
         title: 'NPR COVID Vaccine Tracker',

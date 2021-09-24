@@ -42,11 +42,11 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/reservoirs.png',
-        toLink: 'https://www.washingtonpost.com/weather/2021/07/09/western-reservoirs-drought-california-nevada/',
-        title: 'Reservoirs are drying up as consequences of the Western drought worsen',
-        organization: 'Washington Post',
-        tools: 'Illustrator, ai2html, QGIS',
+        imageLink: 'images/flood.png',
+        toLink: 'https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat',
+        title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
+        organization: 'NPR',
+        tools: 'JavaScript (D3)',
         include: 'true',
       },
        {
@@ -125,11 +125,11 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/flood.png',
-        toLink: 'https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat',
-        title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
-        organization: 'NPR',
-        tools: 'JavaScript (D3)',
+        imageLink: 'images/reservoirs.png',
+        toLink: 'https://www.washingtonpost.com/weather/2021/07/09/western-reservoirs-drought-california-nevada/',
+        title: 'Reservoirs are drying up as consequences of the Western drought worsen',
+        organization: 'Washington Post',
+        tools: 'Illustrator, ai2html, QGIS',
         include: 'true',
       },
       {
@@ -206,6 +206,14 @@ var data = [
         title: 'NPR COVID Vaccine Tracker',
         organization: 'NPR',
         tools: 'JavaScript, D3, Python',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/hosp-vax.png',
+        toLink: 'https://www.washingtonpost.com/health/2021/09/23/covid-vaccination-hospitalization-map/',
+        title: 'Mapping America’s hospitalization and vaccination divide',
+        organization: 'Washington Post',
+        tools: 'QGIS, Illustrator, ai2html',
         include: 'true',
       },
       {

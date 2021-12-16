@@ -87,7 +87,7 @@ var data = [
         title: 'West Coast housing crisis visualizations',
         organization: 'Los Angeles Times',
         tools: 'Illustrator, R',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/ridgecrest_print.png',
@@ -154,7 +154,7 @@ var data = [
         title: 'Environmental Injustice and Natural Disasters',
         organization: 'Middlebury College',
         tools: 'ArcGIS, Illustrator',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/antarctica.png',
@@ -254,7 +254,7 @@ var data = [
         title: 'Dakota Access Pipeline map',
         organization: 'Middlebury College',
         tools: 'ArcMap, Illustrator',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/nc_vote.png',

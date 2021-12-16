@@ -2,6 +2,14 @@ var data = [
     {column: 0,
      content: [
       {
+        imageLink: 'images/disasters2021.png',
+        toLink: 'https://www.washingtonpost.com/nation/interactive/2021/weather-disasters-2021/',
+        title: 'Cold, heat, fires, hurricanes and tornadoes: The year in weather disasters',
+        organization: 'Washington Post',
+        tools: 'JavaScript (React), HTML/CSS, QGIS, Illustrator, GDAL, ffmpeg',
+        include: 'true',
+      },
+      {
         imageLink: 'images/earthquake.png',
         toLink: 'portfolio.html#earthquakes',
         title: 'What would a powerful earthquake feel like where you live?',

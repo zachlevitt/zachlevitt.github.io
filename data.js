@@ -179,7 +179,7 @@ var data = [
         title: 'Middlebury College divestment graphics',
         organization: 'Middlebury Campus',
         tools: 'QGIS, Illustrator, HTML/CSS, JavaScript, WordPress',
-        include: 'true',
+        include: 'false',
       },
       {
         imageLink: 'images/ss_lapd.png',

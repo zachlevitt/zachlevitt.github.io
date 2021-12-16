@@ -196,7 +196,7 @@ var data = [
         organization: 'Middlebury College',
         tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
         include: 'true',
-      },
+      }
       ]},
       {column: 2,
       content: [

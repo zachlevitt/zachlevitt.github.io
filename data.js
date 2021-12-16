@@ -188,7 +188,15 @@ var data = [
         organization: 'Los Angeles Times',
         tools: 'Illustrator',
         include: 'false',
-      }
+      },
+      {
+        imageLink: 'images/senior_project_summary_image.png',
+        toLink: 'portfolio.html#cc',
+        title: 'The United States of Climate Change',
+        organization: 'Middlebury College',
+        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
+        include: 'true',
+      },
       ]},
       {column: 2,
       content: [
@@ -230,14 +238,6 @@ var data = [
         title: 'Which power companies are the worst polluters?',
         organization: 'Los Angeles Times',
         tools: 'Illustrator, HTML/CSS, JavaScript',
-        include: 'true',
-      },
-      {
-        imageLink: 'images/senior_project_summary_image.png',
-        toLink: 'portfolio.html#cc',
-        title: 'The United States of Climate Change',
-        organization: 'Middlebury College',
-        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
         include: 'true',
       },
       {

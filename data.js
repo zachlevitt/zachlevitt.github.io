@@ -125,6 +125,14 @@ var data = [
         include: 'true',
       },
       {
+        imageLink: 'images/ukraine_map.png',
+        toLink: 'https://www.nytimes.com/interactive/2022/02/25/opinion/russia-ukraine-invasion-maps.html',
+        title: 'How to Think About Ukraine, in Maps and Charts',
+        organization: 'New York Times',
+        tools: 'QGIS, Illustrator',
+        include: 'true',
+      },
+      {
         imageLink: 'images/npr_hospitalizations.png',
         toLink: 'https://www.npr.org/sections/health-shots/2020/12/09/944379919/new-data-reveal-which-hospitals-are-dangerously-full-is-yours',
         title: 'NPR COVID Hospital Capacity Tracker',
@@ -190,11 +198,19 @@ var data = [
         include: 'false',
       },
       {
+        imageLink: 'images/ukraine_bubbles.png',
+        toLink: 'https://www.nytimes.com/interactive/2022/03/15/opinion/ukraine-refugee-crisis.html',
+        title: 'How to Think About the Ukrainian Refugee Crisis, in Maps and Charts',
+        organization: 'New York Times',
+        tools: 'JavaScript (Svelte), D3, HTML/CSS, QGIS, Illustrator',
+        include: 'true',
+      },
+      {
         imageLink: 'images/senior_project_summary_image.png',
         toLink: 'portfolio.html#cc',
         title: 'The United States of Climate Change',
         organization: 'Middlebury College',
-        tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
+        tools: 'Mapbox GL JS, HTML/CSS, QGIS, Mapshaper',
         include: 'true',
       }
       ]},

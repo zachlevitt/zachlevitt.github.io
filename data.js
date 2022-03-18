@@ -149,6 +149,14 @@ var data = [
         include: 'true',
       },
       {
+        imageLink: 'images/ukraine_bubbles.png',
+        toLink: 'https://www.nytimes.com/interactive/2022/03/15/opinion/ukraine-refugee-crisis.html',
+        title: 'How to Think About the Ukrainian Refugee Crisis, in Maps and Charts',
+        organization: 'New York Times',
+        tools: 'JavaScript (Svelte), D3, HTML/CSS, QGIS, Illustrator',
+        include: 'true',
+      },
+      {
         imageLink: 'images/ee_ss.png',
         toLink: 'portfolio.html#ee',
         title: 'Machine learning and satellite imagery analysis',
@@ -197,14 +205,7 @@ var data = [
         tools: 'Illustrator',
         include: 'false',
       },
-      {
-        imageLink: 'images/ukraine_bubbles.png',
-        toLink: 'https://www.nytimes.com/interactive/2022/03/15/opinion/ukraine-refugee-crisis.html',
-        title: 'How to Think About the Ukrainian Refugee Crisis, in Maps and Charts',
-        organization: 'New York Times',
-        tools: 'JavaScript (Svelte), D3, HTML/CSS, QGIS, Illustrator',
-        include: 'true',
-      },
+      
       {
         imageLink: 'images/senior_project_summary_image.png',
         toLink: 'portfolio.html#cc',

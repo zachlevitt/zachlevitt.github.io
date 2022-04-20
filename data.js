@@ -231,7 +231,7 @@ var data = [
         title: "The Taliban Promised Them Amnesty. Then They Executed Them.",
         organization: 'New York Times',
         tools: 'JavaScript, D3, ai2html, QGIS',
-        include: 'false',
+        include: 'true',
       },
       {
         imageLink: 'images/smoke.png',

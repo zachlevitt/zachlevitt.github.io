@@ -225,6 +225,14 @@ var data = [
         tools: 'Mapbox, ai2html, HTML/CSS, JavaScript, React, QGIS,',
         include: 'true',
       },
+          {
+        imageLink: 'images/afgh.png',
+        toLink: 'https://www.nytimes.com/interactive/2022/04/12/opinion/taliban-afghanistan-revenge.html',
+        title: "The Taliban Promised Them Amnesty. Then They Executed Them.",
+        organization: 'New York Times',
+        tools: 'JavaScript, D3, ai2html, QGIS',
+        include: 'false',
+      },
       {
         imageLink: 'images/smoke.png',
         toLink: 'https://www.washingtonpost.com/nation/2021/08/26/wildfires-smoke-air-quality-pollution/',

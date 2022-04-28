@@ -81,7 +81,7 @@ body {
  padding: 8px 15px;
  text-align:right;
  font-size:12px;
- border: 1px solid black;
+ /*border: 1px solid black;*/
 }
 
 /* Hover on Parent Container */
@@ -213,7 +213,7 @@ footer p {
 
 .container2 {
   max-width: 90%;
-  width: 500px;
+  width: 400px;
   margin: auto;
   margin-top: 30px;
 }
@@ -244,7 +244,7 @@ footer p {
 
 .image_hp {
   padding: 5px!important;
-  border: 1px solid lightgray!important;
+  /*border: 1px solid lightgray!important;*/
 }
 
 .image2 {

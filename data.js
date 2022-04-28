@@ -10,7 +10,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/earthquake.png',
+        imageLink: 'images/resize50/earthquake.png',
         toLink: 'portfolio.html#earthquakes',
         title: 'What would a powerful earthquake feel like where you live?',
         organization: 'Los Angeles Times',
@@ -18,7 +18,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/mmusic_hp.png',
+        imageLink: 'images/resize50/mmusic_hp.png',
         toLink: 'portfolio.html#music',
         title: 'Midd Music web app',
         organization: 'Middlebury College',
@@ -26,7 +26,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/redlining.png',
+        imageLink: 'images/resize50/redlining.png',
         toLink: 'https://www.npr.org/sections/codeswitch/2021/05/08/991535564/black-americans-and-the-racist-architecture-of-homeownership',
         title: 'Black Americans And The Racist Architecture Of Homeownership',
         organization: 'NPR',
@@ -34,7 +34,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/census2020.png',
+        imageLink: 'images/resize50/census2020.png',
         toLink: 'https://www.washingtonpost.com/nation/interactive/2021/census-maps-race-population-demographics/',
         title: "Mapping America’s racial population shifts over the last decade",
         organization: 'Washington Post',
@@ -42,7 +42,7 @@ var data = [
         include: 'true',
       },
        {
-        imageLink: 'images/joy-generator.png',
+        imageLink: 'images/resize50/joy-generator.png',
         toLink: 'https://apps.npr.org/joy-generator/',
         title: 'Joy Generator',
         organization: 'National Public Radio',
@@ -50,7 +50,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/flood.png',
+        imageLink: 'images/resize50/flood.png',
         toLink: 'https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat',
         title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
         organization: 'NPR',
@@ -58,7 +58,7 @@ var data = [
         include: 'true',
       },
        {
-        imageLink: 'images/art/FilteredSLIC2_Minimalism_20-Sep-18-00-48-17.png',
+        imageLink: 'images/resize50/art/FilteredSLIC2_Minimalism_20-Sep-18-00-48-17.png',
         toLink: 'portfolio.html#generative',
         title: 'Generative image processing',
         organization: '',
@@ -66,7 +66,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/art/warhol_processing-Sep-18-00-48-17.png',
+        imageLink: 'images/resize50/art/warhol_processing-Sep-18-00-48-17.png',
         toLink: 'portfolio.html#sketches',
         title: 'Code sketches',
         organization: '',
@@ -74,7 +74,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/blackfeet.png',
+        imageLink: 'images/resize50/blackfeet.png',
         toLink: 'portfolio.html#badger',
         title: 'Blackfeet reservation timeline map',
         organization: '',
@@ -82,7 +82,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/oregon.png',
+        imageLink: 'images/resize50/oregon.png',
         toLink: 'portfolio.html#oregon',
         title: 'West Coast housing crisis visualizations',
         organization: 'Los Angeles Times',
@@ -90,7 +90,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/ridgecrest_print.png',
+        imageLink: 'images/resize50/ridgecrest_print.png',
         toLink: 'portfolio.html#ridgecrest',
         title: 'Ridgecrest earthquake map',
         organization: 'Los Angeles Times',
@@ -98,7 +98,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/antarctica.png',
+        imageLink: 'images/resize50/antarctica.png',
         toLink: 'portfolio.html#antarctica',
         title: 'Antarctic expeditions map',
         organization: 'Middlebury College',
@@ -106,7 +106,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/WaterWalks_v2.png',
+        imageLink: 'images/resize50/WaterWalks_v2.png',
         toLink: 'portfolio.html#guntram',
         title: 'Indigenous experiences at the U.S.-Canada border',
         organization: 'Middlebury College',
@@ -117,7 +117,7 @@ var data = [
       {column: 1,
       content: [
       {
-        imageLink: 'images/cartogram.png',
+        imageLink: 'images/resize50/cartogram.png',
         toLink: 'https://www.npr.org/2021/04/26/983082132/census-to-release-1st-results-that-shift-electoral-college-house-seats',
         title: "Here's How The First 2020 Census Results Changed Electoral College, House Seats",
         organization: 'NPR',
@@ -133,7 +133,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/npr_hospitalizations.png',
+        imageLink: 'images/resize50/npr_hospitalizations.png',
         toLink: 'https://www.npr.org/sections/health-shots/2020/12/09/944379919/new-data-reveal-which-hospitals-are-dangerously-full-is-yours',
         title: 'NPR COVID Hospital Capacity Tracker',
         organization: 'NPR',
@@ -141,7 +141,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/reservoirs.png',
+        imageLink: 'images/resize50/reservoirs.png',
         toLink: 'https://www.washingtonpost.com/weather/2021/07/09/western-reservoirs-drought-california-nevada/',
         title: 'Reservoirs are drying up as consequences of the Western drought worsen',
         organization: 'Washington Post',
@@ -157,7 +157,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/ee_ss.png',
+        imageLink: 'images/resize50/ee_ss.png',
         toLink: 'portfolio.html#ee',
         title: 'Machine learning and satellite imagery analysis',
         organization: 'Middlebury College',
@@ -165,7 +165,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/houston.png',
+        imageLink: 'images/resize50/houston.png',
         toLink: 'portfolio.html#houston',
         title: 'Environmental Injustice and Natural Disasters',
         organization: 'Middlebury College',
@@ -173,7 +173,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/antarctica.png',
+        imageLink: 'images/resize50/antarctica.png',
         toLink: 'portfolio.html#antarctica',
         title: 'Antarctic expeditions map',
         organization: 'Middlebury College',
@@ -181,7 +181,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/homelessness.png',
+        imageLink: 'images/resize50/homelessness.png',
         toLink: 'portfolio.html#homelessness',
         title: 'Homelessness in Los Angeles graphics',
         organization: 'Los Angeles Times',
@@ -190,7 +190,7 @@ var data = [
       },
 
       {
-        imageLink: 'images/chart_ss.png',
+        imageLink: 'images/resize50/chart_ss.png',
         toLink: 'portfolio.html#divest',
         title: 'Middlebury College divestment graphics',
         organization: 'Middlebury Campus',
@@ -198,7 +198,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/ss_lapd.png',
+        imageLink: 'images/resize50/ss_lapd.png',
         toLink: 'portfolio.html#lapd',
         title: 'LAPD traffic stops graphics',
         organization: 'Los Angeles Times',
@@ -218,7 +218,7 @@ var data = [
       {column: 2,
       content: [
       {
-        imageLink: 'images/urbanGrowth.png',
+        imageLink: 'images/resize50/urbanGrowth.png',
         toLink: 'https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/',
         title: "Where America's developed areas are growing",
         organization: 'Washington Post',
@@ -226,7 +226,7 @@ var data = [
         include: 'true',
       },
           {
-        imageLink: 'images/afgh.png',
+        imageLink: 'images/resize50/afgh.png',
         toLink: 'https://www.nytimes.com/interactive/2022/04/12/opinion/taliban-afghanistan-revenge.html',
         title: "The Taliban Promised Them Amnesty. Then They Executed Them.",
         organization: 'New York Times',
@@ -234,7 +234,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/smoke.png',
+        imageLink: 'images/resize50/smoke.png',
         toLink: 'https://www.washingtonpost.com/nation/2021/08/26/wildfires-smoke-air-quality-pollution/',
         title: "Here’s what to know as a summer of wildfires prompts air-quality alerts across the West",
         organization: 'Washington Post',
@@ -242,7 +242,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/vaccineDaily.png',
+        imageLink: 'images/resize50/vaccineDaily.png',
         toLink: 'https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state',
         title: 'NPR COVID Vaccine Tracker',
         organization: 'NPR',
@@ -250,7 +250,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/hosp-vax.png',
+        imageLink: 'images/resize50/hosp-vax.png',
         toLink: 'https://www.washingtonpost.com/health/2021/09/23/covid-vaccination-hospitalization-map/',
         title: 'Mapping America’s hospitalization and vaccination divide',
         organization: 'Washington Post',
@@ -258,15 +258,23 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/power.png',
+        imageLink: 'images/resize50/power.png',
         toLink: 'portfolio.html#power_companies',
         title: 'Which power companies are the worst polluters?',
         organization: 'Los Angeles Times',
         tools: 'Illustrator, HTML/CSS, JavaScript',
         include: 'true',
       },
+      // {
+      //   imageLink: 'images/resize50/senior_project_summary_image.png',
+      //   toLink: 'portfolio.html#cc',
+      //   title: 'The United States of Climate Change',
+      //   organization: 'Middlebury College',
+      //   tools: 'Mapbox GL JS, HTML, CSS, QGIS, Mapshaper',
+      //   include: 'true',
+      // },
       {
-        imageLink: 'images/south_to_mexico.png',
+        imageLink: 'images/resize50/south_to_mexico.png',
         toLink: 'https://www.npr.org/2021/02/28/971325620/a-chapter-in-u-s-history-often-ignored-the-flight-of-runaway-slaves-to-mexico',
         title: "A Chapter In U.S. History Often Ignored: The Flight Of Runaway Slaves To Mexico",
         organization: 'NPR',
@@ -274,7 +282,7 @@ var data = [
         include: 'true',
       },
       {
-        imageLink: 'images/dapl-ss.png',
+        imageLink: 'images/resize50/dapl-ss.png',
         toLink: 'portfolio.html#dapl',
         title: 'Dakota Access Pipeline map',
         organization: 'Middlebury College',
@@ -282,7 +290,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/nc_vote.png',
+        imageLink: 'images/resize50/nc_vote.png',
         toLink: 'portfolio.html#nc',
         title: 'Prison gerrymandering in North Carolina',
         organization: 'Voting Rights Data Institute',
@@ -290,7 +298,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/gis_work_ss.png',
+        imageLink: 'images/resize50/gis_work_ss.png',
         toLink: 'portfolio.html#gis',
         title: 'GIS Applications in Environmental Science course',
         organization: 'Middlebury College',
@@ -298,7 +306,7 @@ var data = [
         include: 'false',
       },
       {
-        imageLink: 'images/mggg.png',
+        imageLink: 'images/resize50/mggg.png',
         toLink: 'portfolio.html#rules',
         title: 'Congressional redistricting rules',
         organization: 'Voting Rights Data Institute',

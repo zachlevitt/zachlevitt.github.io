@@ -83,7 +83,7 @@ var data = [
       },
       {
         imageLink: 'images/resize50/blackfeet.png',
-        toLink: 'images/resize50/blackfeet.png',
+        toLink: 'files/02_Blackfeet_Nation_History.pdf',
         title: 'Blackfeet reservation timeline map',
         organization: '',
         tools: 'Illustrator, QGIS',

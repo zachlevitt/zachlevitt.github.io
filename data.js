@@ -11,10 +11,18 @@ var data = [
       },
       {
         imageLink: 'images/resize50/earthquake.png',
-        toLink: 'portfolio.html#earthquakes',
+        toLink: 'https://www.latimes.com/projects/california-earthquake-fault-map/',
         title: 'What would a powerful earthquake feel like where you live?',
         organization: 'Los Angeles Times',
         tools: 'Mapbox, JavaScript, HTML/CSS, QGIS, Illustrator, Mapshaper',
+        include: 'true',
+      },
+      {
+        imageLink: 'images/resize50/cpcs.png',
+        toLink: 'https://www.nytimes.com/interactive/2022/05/12/opinion/crisis-pregnancy-centers-roe.html',
+        title: 'Pregnant? Need Help? They Have an Agenda.',
+        organization: 'New York Times',
+        tools: 'HTML/CSS, JavaScript, Svelte, QGIS, Illustrator, Mapshaper',
         include: 'true',
       },
       {
@@ -75,7 +83,7 @@ var data = [
       },
       {
         imageLink: 'images/resize50/blackfeet.png',
-        toLink: 'portfolio.html#badger',
+        toLink: 'images/resize50/blackfeet.png',
         title: 'Blackfeet reservation timeline map',
         organization: '',
         tools: 'Illustrator, QGIS',
@@ -158,7 +166,7 @@ var data = [
       },
       {
         imageLink: 'images/resize50/ee_ss.png',
-        toLink: 'portfolio.html#ee',
+        toLink: 'https://github.com/zachlevitt/earth-engine',
         title: 'Machine learning and satellite imagery analysis',
         organization: 'Middlebury College',
         tools: 'Google Earth Engine, JavaScript, Python',
@@ -208,7 +216,7 @@ var data = [
       
       {
         imageLink: 'images/senior_project_summary_image.png',
-        toLink: 'portfolio.html#cc',
+        toLink: 'https://zachlevitt.github.io/project_map.html',
         title: 'The United States of Climate Change',
         organization: 'Middlebury College',
         tools: 'Mapbox GL JS, HTML/CSS, QGIS, Mapshaper',
@@ -259,7 +267,7 @@ var data = [
       },
       {
         imageLink: 'images/resize50/power.png',
-        toLink: 'portfolio.html#power_companies',
+        toLink: 'https://www.latimes.com/projects/la-fi-power-companies-ranked-climate-change/',
         title: 'Which power companies are the worst polluters?',
         organization: 'Los Angeles Times',
         tools: 'Illustrator, HTML/CSS, JavaScript',

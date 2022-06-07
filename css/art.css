@@ -24,7 +24,8 @@ h2.about {
   font-size: 16px;
   font-weight:300;
   margin: auto;
-  max-width: 525px;
+  max-width: 90%;
+  width:400px;
   text-align:left;
   line-height: 20px;
   font-family: 'Helvetica', 'Arial', sans-serif;
@@ -125,7 +126,7 @@ h1.jumbotron-heading {
 
 .jumbotron-heading a {
   font-weight: bold;
-  color: white;
+  color: black;
   margin-top: 25px;
 }
 

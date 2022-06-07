@@ -39,6 +39,7 @@ h2.submenu {
   text-align:left;
   line-height: 32px;
   font-family: 'Helvetica', 'Arial', sans-serif;
+  display:none;
 }
 
 h2.submenu a {
@@ -58,15 +59,15 @@ pre {
 }
 
 h2.heading {
-  color: white;
+  color: gray;
   font-size: 24px;
   font-weight:300;
   margin: auto;
   width:100%;
   text-align:center;
-  margin-top:50px;
-  margin-bottom:25px;
-  text-transform: uppercase;
+  margin-bottom:15px;
+  margin-top:10px;
+/*   text-transform: uppercase; */
   letter-spacing: 3px;
 }
 
@@ -110,9 +111,8 @@ h2.about a:hover {
   width: 100%;
   font-family: 'Helvetica', 'Arial', sans-serif;
   max-width: 800px;
-  border-bottom: 2px solid #000000;
+/*   border-bottom: 2px solid #000000; */
   margin: auto;
-  margin-bottom: 50px;
   padding: 0px;
   text-align: center;
   margin-top:25px;

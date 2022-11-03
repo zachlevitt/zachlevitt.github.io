@@ -121,9 +121,6 @@ var data = [
         tools: 'Illustrator, QGIS',
         include: 'false',
       },
-      ]},
-      {column: 1,
-      content: [
       {
         imageLink: 'images/resize50/cartogram.png',
         toLink: 'https://www.npr.org/2021/04/26/983082132/census-to-release-1st-results-that-shift-electoral-college-house-seats',
@@ -221,10 +218,7 @@ var data = [
         organization: 'Middlebury College',
         tools: 'Mapbox GL JS, HTML/CSS, QGIS, Mapshaper',
         include: 'false',
-      }
-      ]},
-      {column: 2,
-      content: [
+      },
       {
         imageLink: 'images/resize50/urbanGrowth.png',
         toLink: 'https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/',
@@ -335,9 +329,6 @@ document.body.onload = setupHP(data);
 ////////////////////////////////////////////////
 
 function setupHP(data) {
-  //figure out how many per column
-  var dataLength = data.length
-  var dataPerColumn = dataLength/3
 
   data.forEach(function(group,i){
       group.content.forEach(function(item,i){
@@ -355,6 +346,10 @@ function addElementToHP(item,index){
   newDiv.classList.add("content_img")
 
   // and give it some content
+  const newP = document.createElement("p");
+  //newP.href = item.toLink;
+  newP.innerHTML = item.title;
+  // and give it some content
   const newContent = document.createElement("a");
   newContent.href = item.toLink;
 
@@ -367,10 +362,12 @@ function addElementToHP(item,index){
   const innerDiv = document.createElement("div");
   innerDiv.innerHTML = `<b>${item.title}</b><br>${item.organization}<br><span style="color:darkgray; font-size:12px">${item.tools}</span></div>`
 
+  const hr = document.createElement("hr");
 
   //ADD IMAGE AND OTHER STUFF HERE
+  newContent.appendChild(newP)
   newContent.appendChild(newImage)
-  newContent.appendChild(innerDiv)
+  //newContent.appendChild(innerDiv)
   // add the text node to the newly created div
   newDiv.appendChild(newContent);
 

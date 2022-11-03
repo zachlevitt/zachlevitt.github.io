@@ -13,8 +13,15 @@
 }
 
 
-p {
+
+
+a:hover {
+  text-decoration: none!important;
+}
+
+p, p:hover {
   font-size: 14px;
+  text-decoration:none!important;
 }
 
 .overlay2 {
@@ -63,6 +70,30 @@ body {
 /* Parent Container */
 .content_img{
  position: relative;
+ filter:grayscale(255)!important;
+ margin-top:10px;
+ margin-bottom:50px;
+ text-decoration:none!important;
+ position:relative;
+ 
+}
+
+.content_img p {
+  margin-bottom:5px;
+  line-height:18px;
+  font-size:16px;
+  text-decoration:none!important;
+  color:gray;
+}
+
+.content_img p:hover {
+  text-decoration: none!important;
+  color:black
+}
+
+.content_img a:hover, .content_img a {
+  text-decoration: none!important;
+  color:black
 }
 
 /* Child Text Container */
@@ -78,7 +109,6 @@ body {
  -webkit-transition: visibility 0.5s, opacity 0.5s linear; 
  transition: visibility 0.5s, opacity 0.5s linear;
  width: 100%;
- padding: 8px 15px;
  text-align:right;
  font-size:12px;
  /*border: 1px solid black;*/
@@ -87,6 +117,7 @@ body {
 /* Hover on Parent Container */
 .content_img:hover{
  cursor: pointer;
+ filter:grayscale(0)!important;
 }
 
 .content_img:hover div{
@@ -133,6 +164,7 @@ h2.about a {
   font-weight: bold;
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;
+  text-decoration: none;
 }
 
 h2.about a:hover {
@@ -152,7 +184,7 @@ h2.about a:hover {
 .jumbotron {
   width: 95%;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  max-width: 800px;
+  max-width: 400px;
   background-color: #ffffff;
   margin: auto;
   margin-bottom: 20px;
@@ -165,12 +197,14 @@ h1.jumbotron-heading {
   margin-top: 25px;
     margin-bottom: 25px;
     font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size:40px;
 }
 
 .jumbotron-heading a {
   font-weight: bold;
   color: black;
   margin-top: 25px;
+  text-decoration: none;
 }
 
 .jumbotron-heading a:hover {
@@ -193,10 +227,6 @@ h1.jumbotron-heading {
 .container {
   width: 90%;
   max-width: 1000px;
-}
-
-footer p {
-  color: gray;
 }
 
 .float-right a{
@@ -243,7 +273,7 @@ footer p {
 }
 
 .image_hp {
-  padding: 5px!important;
+  padding: 0px!important;
   /*border: 1px solid lightgray!important;*/
 }
 
@@ -263,13 +293,6 @@ footer p {
   margin-bottom:2px;
 }
 
-/*.example .image:hover {
-  opacity: 0.70;
-}
-
-.image_hp:hover {
-  opacity: 0.70;
-}*/
 
 .overlay2 {
   position: relative;
@@ -341,37 +364,21 @@ footer p {
   padding: 0 4px;
   width: 100%;
   margin: auto;
-  max-width:900px;
+  max-width:400px;
 }
 
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 33%;
-  max-width: 33%;
+  flex: 100%;
+  max-width: 100%;
   padding: 0 10px 0 10px;
 }
 
 .column img {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   vertical-align: middle;
   width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-
-}

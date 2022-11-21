@@ -1,8 +1,14 @@
 <script>
+// @ts-nocheck
+
     //node scripts/doc-to-archieml.js
     import doc from '../doc.json';
-    let menu = doc.menu;
-    let headline = doc.headline;
+
+    let menu = doc.menu,
+        headline = doc.headline,
+        projects = doc.projects;
+
+    console.log(projects)
 
 </script>
 <section class="jumbotron">
@@ -11,15 +17,19 @@
     
     {#each menu as item}
         <div class="about">
-            <h2>{item.value}</h2>
+            {@html item.value}
         </div>
     {/each}
+    
+    <div class="row"> 
+        <div class="column">
+            {#each projects as project}
+                    <p>{@html project.title}</p>
+            {/each}
+        </div>
+    </div>
 
   </section>
-
-<div id="ports" class="row"> 
-<div class="column"></div>
-</div>
 
 <style>
     .jumbotron {

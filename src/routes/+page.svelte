@@ -8,23 +8,23 @@
         headline = doc.headline,
         projects = doc.projects;
 
-    console.log(projects)
-
 </script>
 <section class="jumbotron">
 
     <h1 class="jumbotron-heading">{headline}</h1>
     
-    {#each menu as item}
-        <div class="about">
-            {@html item.value}
-        </div>
-    {/each}
+    <!-- {#each menu as item}
+        <p class="menu">
+            <span>{@html item.value}</span>
+        </p>
+    {/each} -->
     
     <div class="row"> 
         <div class="column">
-            {#each projects as project}
-                    <p>{@html project.title}</p>
+            {#each projects as project, i}
+                <p class="project" style="font-style:{project.section ? 'italic' : 'normal' }; margin-top:{project.section && i > 0 ? '35px' : '0px' }">
+                    <span>{@html project.title}</span>
+                </p>
             {/each}
         </div>
     </div>
@@ -36,6 +36,17 @@
         font-family: 'Helvetica', 'Arial', sans-serif;
     }
 
+    :global(a) {
+        text-decoration:none!important;
+        color: #737272!important;
+        font-weight:100!important;
+    }
+
+    :global(a:hover) {
+        text-decoration:none!important;
+        color: black!important;
+        font-weight:500!important;
+    }
 
 /* Parent Container */
 .content_img{
@@ -95,29 +106,35 @@
  opacity: 1; 
 }
 
-h2.about {
-  color: black;
+
+
+p.menu {
+  color: #797979;
+  text-align:center;
   font-size: 16px;
   font-weight:300;
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
   max-width: 500px;
-  text-align:left;
   line-height: 20px;
+  text-transform: capitalize;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
+
+
 
 pre {
   color: gray;
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-h2#about.about {
-  text-align:center;
+.project {
+    text-align:left!important;
 }
 
-h2.about:last-of-type {
+
+p.menu:last-of-type {
   margin-bottom: 25px;
 }
 
@@ -129,7 +146,7 @@ hr {
   border-top: 2px solid rgba(0,0,0,.1);
 }
 
-h2.about a {
+p.menu a {
   color: black;
   font-weight: bold;
   font-size: 16px;
@@ -137,10 +154,6 @@ h2.about a {
   text-decoration: none;
 }
 
-h2.about a:hover {
-  text-decoration: none;
-  color: gray;
-}
 
 .section-header {
   text-align: left;
@@ -197,17 +210,6 @@ h1.jumbotron-heading {
 .container {
   width: 90%;
   max-width: 1000px;
-}
-
-.float-right a{
-  color: gray;
-  font-weight: bold;
-}
-
-.float-right a:hover{
-  color: lightgray;
-  text-decoration: none;
-  
 }
 
 

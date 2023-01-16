@@ -6,14 +6,9 @@ const dev = "production" === "development";
 /** @type {import(""@sveltejs/kit").Config} */
 const config = {
     kit: {
-        adapter: adapter({
-            pages: "docs",
-            assets: "docs",
-            fallback: '200.html'
-        }),
+        adapter: adapter(),
         paths: {
-            // change below to your repo name
-            base: dev ? "" : "",
+            base: process.env.NODE_ENV === "production" ? "/zachlevitt.github.io" : "",
         },
     }
 };

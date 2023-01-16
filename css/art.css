@@ -11,7 +11,7 @@
   margin-top: 25px;
   margin-bottom: 25px;
   font-size: 28px;
-  color: black;
+  color: rgb(90, 90, 90);
   border: none;
 }
 
@@ -124,7 +124,7 @@ h1.jumbotron-heading {
 
 .jumbotron-heading a {
   font-weight: bold;
-  color: black;
+  color: rgb(67, 67, 67);
   margin-top: 25px;
 }
 

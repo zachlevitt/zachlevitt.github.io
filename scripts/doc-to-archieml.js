@@ -11,8 +11,10 @@ async function main() {
   // environment variables to establish authentication
 
   const auth = await google.auth.getClient({
-    scopes: ['https://www.googleapis.com/auth/documents.readonly'],
+    scopes: ['https://www.googleapis.com/auth/documents','https://www.googleapis.com/auth/drive'],
   });
+
+  // console.log(auth)
   // pass in the valid authentication and ID of the document you want to process
   const results = await docToArchieML({ documentId: '1GFXvkgO4XMFIstoXgYHb7eLtNSrV4CsiZ2FMSwJ1LKE', auth });
   var json = JSON.stringify(results);

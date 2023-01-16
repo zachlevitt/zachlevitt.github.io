@@ -40,26 +40,6 @@ h3.about {
   font-size: 14px!important;
 }
 
-/*.button-group {
-  margin: auto;
-  margin-bottom: 20px!important;
-}
-
-button.button {
-  background-color: white!important;
-  font-weight: normal;
-  margin-right: 10px;
-  border-radius: 2px!important;
-  padding: 3px 10px!important;
-  margin-bottom: 5px!important;
-  border: 1px solid lightgray!important;
-  font-size: 12px;
-}
-
-button#income {
-  font-size: 12px;
-}*/
-
 
 }
 
@@ -68,67 +48,42 @@ body {
 }
 
 /* Parent Container */
-.content_img{
+.link{
  position: relative;
  filter:grayscale(255)!important;
  margin-top:10px;
- margin-bottom:50px;
+ margin-bottom:10px;
  text-decoration:none!important;
  position:relative;
  
 }
+.link p {
+  margin-top:1px;
+  margin-bottom:none;
+  text-transform:uppercase;
+  font-size:9px;
+  color:rgb(161, 161, 161);
+}
 
-.content_img p {
+.link a {
   margin-bottom:5px;
   line-height:18px;
   font-size:16px;
   text-decoration:none!important;
-  color:gray;
+  color:rgb(73, 73, 73);
+  font-weight:100!important;
 }
 
-.content_img p:hover {
-  text-decoration: none!important;
-  color:black
-}
-
-.content_img a:hover, .content_img a {
-  text-decoration: none!important;
-  color:black
-}
-
-/* Child Text Container */
-.content_img div{
- position: absolute;
- bottom: 0;
- right: 0;
- color: black;
- background-color:rgba(255,255,255,0.9);
- margin-bottom: 15px;
- opacity: 0;
- visibility: hidden;
- -webkit-transition: visibility 0.5s, opacity 0.5s linear; 
- transition: visibility 0.5s, opacity 0.5s linear;
- width: 100%;
- text-align:right;
- font-size:12px;
- /*border: 1px solid black;*/
-}
-
-/* Hover on Parent Container */
-.content_img:hover{
- cursor: pointer;
- filter:grayscale(0)!important;
-}
-
-.content_img:hover div{
- visibility: visible;
- opacity: 1; 
+.link a:hover {
+  text-decoration: underline!important;
+  color:black;
+  font-weight:500!important;
 }
 
 h2.about {
   color: black;
   font-size: 16px;
-  font-weight:300;
+  font-weight:100;
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -161,10 +116,11 @@ hr {
 
 h2.about a {
   color: black;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 12px;
   font-family: 'Helvetica', 'Arial', sans-serif;
   text-decoration: none;
+  text-transform:uppercase;
 }
 
 h2.about a:hover {
@@ -202,7 +158,7 @@ h1.jumbotron-heading {
 
 .jumbotron-heading a {
   font-weight: bold;
-  color: black;
+  color: #121212;
   margin-top: 25px;
   text-decoration: none;
 }
@@ -224,119 +180,31 @@ h1.jumbotron-heading {
   background-color: #ffffff;
 }
 
-.container {
-  width: 90%;
-  max-width: 1000px;
-}
-
-.float-right a{
-  color: gray;
-  font-weight: bold;
-}
-
-.float-right a:hover{
-  color: lightgray;
-  text-decoration: none;
-  
-}
-
 
 .container2 {
   max-width: 90%;
-  width: 400px;
+  width: 350px;
   margin: auto;
   margin-top: 30px;
 }
 
-.example {
-  position: relative;
-  /*width: 50%;*/
-}
 
-.image {
-  display: block;
-  width: 60%;
-  margin-left: 0%;
-  height: auto;
-  margin-bottom: 20px;
-  float: left;
-  
-}
-
-.image3 {
-  width: 60%;
-  margin-left: 0%;
-  height: auto;
-  margin-bottom: 20px;
-  float: left;
-  
-}
-
-.image_hp {
-  padding: 0px!important;
-  /*border: 1px solid lightgray!important;*/
-}
-
-.image2 {
-  display: block;
-  width: 100%;
-  margin-left: 0%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.image5 {
-  display:block;
-  max-width:600px;
-  max-height: 500px;
-  margin:auto;
-  margin-bottom:2px;
-}
-
-
-.overlay2 {
-  position: relative;
-  float: right;
-  /*height: 100%;*/
-  width: 37%;
-}
-
-.overlay2 a:hover{
-  text-decoration: underline;
-}
-
-.overlay2 a {
-  color: black;
-  font-weight: bold;
-}
-
-
-.card {
-  border: 0;
-  margin-bottom:30px;
-  margin-top: 30px;
-}
-
-
-.card-text {
+.bio-text {
   font-weight: 300;
-  font-size: 14px;
+  color: rgb(44, 44, 44);
+  line-height:1.3;
+  font-size:14px;
+}
+
+.bio-text a {
   color: gray;
-}
-
-.card-text2 {
-  font-weight: 300;
-  color: black;
-}
-
-.card-text2 a {
-  color: black;
-  text-decoration: underline;
-}
-
-.card-text2 a:hover {
   text-decoration: none;
-  color: gray;
+}
+
+.bio-text a:hover {
+  text-decoration: underline;
+  color: black;
+  font-weight:500;
 }
 
 .subhead {
@@ -347,15 +215,6 @@ h1.jumbotron-heading {
 .subhead a {
   color: gray;
   font-weight: lighter;
-}
-
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
 }
 
 .row {

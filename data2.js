@@ -123,7 +123,7 @@ var data = [
       {
         imageLink: 'images/resize50/vaccineDaily.png',
         toLink: 'https://www.npr.org/sections/health-shots/2021/01/28/960901166/how-is-the-covid-19-vaccination-campaign-going-in-your-state',
-        title: 'NPR COVID Vaccine Tracker',
+        title: 'COVID-19 Vaccine Tracker',
         organization: 'NPR',
         tools: 'JavaScript, D3, Python',
         include: 'true',
@@ -157,7 +157,7 @@ var data = [
       {
         imageLink: 'images/resize50/npr_hospitalizations.png',
         toLink: 'https://www.npr.org/sections/health-shots/2020/12/09/944379919/new-data-reveal-which-hospitals-are-dangerously-full-is-yours',
-        title: 'NPR COVID Hospital Capacity Tracker',
+        title: 'COVID-19 Hospital Capacity Tracker',
         organization: 'NPR',
         tools: 'JavaScript, D3, Python',
         include: 'true',

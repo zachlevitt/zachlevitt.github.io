@@ -1,60 +1,57 @@
-@media only screen and (max-width: 600px) {
-
-.overlay2 h5 {
-  font-size: 16px;
-}
-
-#explainer{
-  margin-top: 50px;
-}
-
-.image5 {
-  max-height: 500px
-}
-
-
-
-
-a:hover {
-  text-decoration: none!important;
-}
-
-p, p:hover {
-  font-size: 14px;
-  text-decoration:none!important;
-}
-
-.overlay2 {
-  float: left;
-  height: 100%;
-  width: 100%!important;
-}
-
-.image {
-  display: block;
-  width: 100%!important;
-  margin-bottom: 10px!important;
-}
-
-h3.about {
-  font-size: 14px!important;
-}
-
-
-}
 
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
+  margin:0;
+}
+
+.page-wrapper {
+  width:calc(100% - 40px);
+  max-width:375px;
+  margin:auto;
+}
+
+.jumbotron {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background-color: #ffffff;
+  margin: auto;
+  padding: 0px;
+  text-align: center;
+  border-bottom:1px solid rgb(180, 180, 180);
+  margin-bottom:25px;
+}
+
+h1.jumbotron-heading {
+  margin:25px 0px 25px 0px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size:40px;
+  font-weight: bold;
+  color: #121212;
+  text-decoration: none;
+}
+
+.jumbotron-heading a:hover {
+  text-decoration: none;
+  color: rgb(86, 86, 86);
+}
+
+#story_column.column {
+  border-bottom:1px solid rgb(180, 180, 180);
+  padding-bottom:25px;
+  
+}
+
+.column {
+  margin-bottom:25px;
 }
 
 /* Parent Container */
 .link{
- position: relative;
- filter:grayscale(255)!important;
- margin-top:10px;
- margin-bottom:10px;
- text-decoration:none!important;
- position:relative;
+  position: relative;
+  filter:grayscale(255)!important;
+  margin-top:10px;
+  margin-bottom:10px;
+  text-decoration:none!important;
+  position:relative;
  
 }
 .link p {
@@ -70,14 +67,12 @@ body {
   line-height:18px;
   font-size:16px;
   text-decoration:none!important;
-  color:rgb(73, 73, 73);
+  color:#121212;
   font-weight:100!important;
 }
 
 .link a:hover {
-  text-decoration: underline!important;
-  color:black;
-  font-weight:500!important;
+  color:rgb(133, 133, 133);
 }
 
 h2.about {
@@ -87,7 +82,6 @@ h2.about {
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  max-width: 500px;
   text-align:left;
   line-height: 20px;
   font-family: 'Helvetica', 'Arial', sans-serif;
@@ -96,22 +90,6 @@ h2.about {
 pre {
   color: gray;
   font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-h2#about.about {
-  text-align:center;
-}
-
-h2.about:last-of-type {
-  margin-bottom: 25px;
-}
-
-.overlay2 h5 {
-  font-weight: medium;
-}
-
-hr {
-  border-top: 2px solid rgba(0,0,0,.1);
 }
 
 h2.about a {
@@ -135,55 +113,12 @@ h2.about a:hover {
   margin-top: 50px;
 }
 
-
-
-.jumbotron {
-  width: 95%;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  max-width: 400px;
-  background-color: #ffffff;
-  margin: auto;
-  margin-bottom: 20px;
-  padding: 0px;
-  text-align: center;
-  margin-top: 25px;
-}
-
-h1.jumbotron-heading {
-  margin-top: 25px;
-    margin-bottom: 25px;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size:40px;
-}
-
-.jumbotron-heading a {
-  font-weight: bold;
-  color: #121212;
-  margin-top: 25px;
-  text-decoration: none;
-}
-
-.jumbotron-heading a:hover {
-  text-decoration: none;
-  color: gray;
-}
-
-.jumbotron p {
-  max-width: 100%;
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
 .album {
   background-color: #ffffff;
 }
 
 
 .container2 {
-  max-width: 400px;
-  width:100%;
   margin: auto;
   margin-top: 30px;
   padding: 0 10px 0 10px;
@@ -192,9 +127,10 @@ h1.jumbotron-heading {
 
 .bio-text {
   font-weight: 300;
-  color: rgb(44, 44, 44);
+  color: rgb(83, 83, 83);
   line-height:1.3;
   font-size:14px;
+  margin-top:0px;
 }
 
 .bio-text a {
@@ -203,9 +139,8 @@ h1.jumbotron-heading {
 }
 
 .bio-text a:hover {
-  text-decoration: underline;
-  color: black;
-  font-weight:500;
+  text-decoration: none;
+  color: rgb(173, 173, 173);
 }
 
 .subhead {
@@ -222,23 +157,12 @@ h1.jumbotron-heading {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  width: 100%;
   margin: auto;
-  max-width:400px;
 }
 
 
 /* Create four equal columns that sits next to each other */
 .column {
   flex: 100%;
-  max-width: 100%;
-  padding: 0 10px 0 10px;
-}
-
-.column img {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  vertical-align: middle;
-  width: 100%;
 }
 

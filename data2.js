@@ -183,7 +183,7 @@ var data = [
 
 //get columns and rows
 var homepageGrid = document.querySelector(".row")
-var homepageColumns = document.querySelectorAll(".column")
+var homepageColumn = document.getElementById("story_column")
 
 //add clips
 document.body.onload = setupHP(data);
@@ -238,6 +238,6 @@ function addElementToHP(item,index){
   newDiv.appendChild(newP)
 
   // add the newly created element and its content into the DOM
-  homepageColumns[index].appendChild(newDiv);
+  homepageColumn.appendChild(newDiv);
 
 }

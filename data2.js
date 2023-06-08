@@ -4,7 +4,7 @@ var data = [
          {
              title:"Extreme Weather Maps: Track the Risks for Your Places",
              toLink: 'https://www.nytimes.com/interactive/2023/us/extreme-weather-forecast-maps.html',
-             include'true',
+             include: 'true',
              organization: 'New York Times',
          },
          {

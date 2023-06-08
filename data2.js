@@ -2,6 +2,12 @@ var data = [
     {column: 0,
      content: [
          {
+             title:"Extreme Weather Maps: Track the Risks for Your Places",
+             toLink: 'https://www.nytimes.com/interactive/2023/us/extreme-weather-forecast-maps.html',
+             include'true',
+             organization: 'New York Times',
+         }.
+         {
         title: "Why the West Got Buried in Snow, While the East Got Little",
         toLink: "https://www.nytimes.com/interactive/2023/04/12/us/snow-winter-2023.html",
         include: 'true',

@@ -2,7 +2,7 @@ var data = [
     {column: 0,
      content: [
          {
-             title:"'War Against the Children",
+             title:"'War Against the Children'",
              toLink: 'https://www.nytimes.com/interactive/2023/08/30/us/native-american-boarding-schools.html',
              include: 'true',
              organization: 'New York Times',

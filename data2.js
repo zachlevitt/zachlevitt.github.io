@@ -28,7 +28,7 @@ var data = [
       {
         title: "Tracking the California Storms",
         toLink: "https://www.nytimes.com/article/california-storm-maps-weather-rain.html",
-        include: 'true',
+        include: 'false',
         organization: 'New York Times',
       },
       {
@@ -74,6 +74,14 @@ var data = [
         organization: 'New York Times',
         tools: 'JavaScript, D3, ai2html, QGIS',
         include: 'true',
+      }, 
+      {
+        imageLink: 'images/resize50/cpcs.png',
+        toLink: 'https://www.nytimes.com/interactive/2022/05/12/opinion/crisis-pregnancy-centers-roe.html',
+        title: 'Pregnant? Need Help? They Have an Agenda.',
+        organization: 'New York Times',
+        tools: 'HTML/CSS, JavaScript, Svelte, QGIS, Illustrator, Mapshaper',
+        include: 'true',
       },
       {
         imageLink: 'images/disasters2021.png',
@@ -81,14 +89,6 @@ var data = [
         title: 'Cold, heat, fires, hurricanes and tornadoes: The year in weather disasters',
         organization: 'Washington Post',
         tools: 'JavaScript (React), HTML/CSS, QGIS, Illustrator, GDAL, ffmpeg',
-        include: 'true',
-      },
-      {
-        imageLink: 'images/resize50/cpcs.png',
-        toLink: 'https://www.nytimes.com/interactive/2022/05/12/opinion/crisis-pregnancy-centers-roe.html',
-        title: 'Pregnant? Need Help? They Have an Agenda.',
-        organization: 'New York Times',
-        tools: 'HTML/CSS, JavaScript, Svelte, QGIS, Illustrator, Mapshaper',
         include: 'true',
       },
       {

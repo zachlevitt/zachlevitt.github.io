@@ -2,6 +2,12 @@ var data = [
     {column: 0,
      content: [
          {
+             title:"Where This Summer Was Relentlessly Hot",
+             toLink: 'https://www.nytimes.com/interactive/2023/10/09/world/hottest-summer-global-map.html',
+             include: 'true',
+             organization: 'New York Times',
+         },
+         {
              title:"'War Against the Children'",
              toLink: 'https://www.nytimes.com/interactive/2023/08/30/us/native-american-boarding-schools.html',
              include: 'true',

@@ -1,16 +1,22 @@
-import adapter from "@sveltejs/adapter-static"; 
-// was "@sveltejs/adapter-auto"
+import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-const dev = "production" === "development";
-
-/** @type {import(""@sveltejs/kit").Config} */
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
-    kit: {
-        adapter: adapter(),
-        paths: {
-            base: process.env.NODE_ENV === "production" ? "/zachlevitt.github.io" : "",
-        },
-    }
+	kit: {
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: false,
+			strict: true
+		}),
+		paths: {
+			base: ''
+		},
+		appDir: 'app'
+	},
+	preprocess: vitePreprocess()
 };
 
 export default config;

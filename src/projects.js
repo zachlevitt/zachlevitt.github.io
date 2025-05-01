@@ -5,7 +5,7 @@ const data = [
         toLink: "https://www.nytimes.com/interactive/2025/04/30/us/university-funding-research.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "university-funding.png"
+        imageLink: "university-funding_resized_smaller.png"
     },
     {
         title: "These Maps Show Federal Employees Work in Every Corner of America",
@@ -40,7 +40,7 @@ const data = [
         toLink: "https://www.nytimes.com/interactive/2025/01/09/us/la-wildfires-damage-photos-map.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "la-fire-damage.jpg"
+        imageLink: "la-fire-damage_resized.jpg"
     },
     {
         title: "Did Republicans Take Washington in a Landslide? Not So Much",
@@ -68,14 +68,14 @@ const data = [
         toLink: "https://www.nytimes.com/interactive/2023/12/02/world/middleeast/gaza-map-displaced-people.html",
         include: "false",
         organization: "New York Times",
-        imageLink: "gaza-displacement.jpg"
+        imageLink: "gaza-displacement_resized.jpg"
     },
     {
         title: "'War Against the Children'",
         toLink: "https://www.nytimes.com/interactive/2023/08/30/us/native-american-boarding-schools.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "carlisle.png"
+        imageLink: "carlisle_resized_smaller.png"
     },
     {
         title: "Where This Summer Was Relentlessly Hot",
@@ -103,7 +103,7 @@ const data = [
         toLink: "https://www.nytimes.com/2023/04/09/business/bitcoin-mining-electricity-pollution.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "bitcoin.png"
+        imageLink: "bitcoin_resized_smaller.png"
     },
     {
         title: "Tracking the California Storms",
@@ -116,14 +116,14 @@ const data = [
         toLink: "https://www.nytimes.com/interactive/2022/12/22/us/white-christmas.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "snow.png"
+        imageLink: "snow_resized_smaller.png"
     },
     {
         title: "The Monsoon Is Becoming More Extreme",
         toLink: "https://www.nytimes.com/interactive/2022/10/04/climate/south-asia-monsoon-climate-change.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "monsoon.png"
+        imageLink: "monsoon_resized_smaller.png"
     },
     {
         title: "Vulnerable and Trapped: A Look at Those Lost in Hurricane Ian",
@@ -138,17 +138,17 @@ const data = [
         toLink: "https://www.nytimes.com/interactive/2022/07/11/opinion/immigrants-success-america.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "immigrants.png"
+        imageLink: "immigrants_resized_smaller.png"
     },
     {
         title: "Who Will Remember the Horrors of Ukraine?",
         toLink: "https://www.nytimes.com/interactive/2022/06/13/opinion/ukraine-russia-babyn-yar.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "ukraine-babyn-yar.png"
+        imageLink: "ukraine-babyn-yar_resized_smaller.png"
     },
     {
-        imageLink: "afgh.png",
+        imageLink: "afgh_resized.png",
         toLink: "https://www.nytimes.com/interactive/2022/04/12/opinion/taliban-afghanistan-revenge.html",
         title: "The Taliban Promised Them Amnesty. Then They Executed Them.",
         organization: "New York Times",
@@ -156,7 +156,7 @@ const data = [
         include: "false"
     },
     {
-        imageLink: "cpcs.png",
+        imageLink: "cpcs_resized.png",
         toLink: "https://www.nytimes.com/interactive/2022/05/12/opinion/crisis-pregnancy-centers-roe.html",
         title: "Pregnant? Need Help? They Have an Agenda.",
         organization: "New York Times",
@@ -164,7 +164,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "disasters2021.png",
+        imageLink: "disasters2021_resized.png",
         toLink: "https://www.washingtonpost.com/nation/interactive/2021/weather-disasters-2021/",
         title: "Cold, heat, fires, hurricanes and tornadoes: The year in weather disasters",
         organization: "Washington Post",
@@ -172,7 +172,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "census2020.png",
+        imageLink: "census2020_resized.png",
         toLink: "https://www.washingtonpost.com/nation/interactive/2021/census-maps-race-population-demographics/",
         title: "Mapping America's racial population shifts over the last decade",
         organization: "Washington Post",
@@ -180,7 +180,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "hosp-vax.png",
+        imageLink: "hosp-vax_resized.png",
         toLink: "https://www.washingtonpost.com/health/2021/09/23/covid-vaccination-hospitalization-map/",
         title: "Mapping America's hospitalization and vaccination divide",
         organization: "Washington Post",
@@ -196,7 +196,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "urbanGrowth.png",
+        imageLink: "urbanGrowth_resized.png",
         toLink: "https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/",
         title: "Where America's developed areas are growing",
         organization: "Washington Post",
@@ -204,7 +204,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "smoke.png",
+        imageLink: "smoke_resized.png",
         toLink: "https://www.washingtonpost.com/nation/2021/08/26/wildfires-smoke-air-quality-pollution/",
         title: "Here's what to know as a summer of wildfires prompts air-quality alerts across the West",
         organization: "Washington Post",
@@ -212,7 +212,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "joy-generator.png",
+        imageLink: "joy-generator_resized.png",
         toLink: "https://apps.npr.org/joy-generator/",
         title: "Joy Generator",
         organization: "NPR",
@@ -220,7 +220,7 @@ const data = [
         include: "false"
     },
     {
-        imageLink: "flood.png",
+        imageLink: "flood_resized.png",
         toLink: "https://www.npr.org/2021/02/22/966428165/a-looming-disaster-new-data-reveal-where-flood-damage-is-an-existential-threat",
         title: "A Looming Disaster: New Data Reveal Where Flood Damage Is An Existential Threat",
         organization: "NPR",
@@ -253,7 +253,7 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "power.png",
+        imageLink: "power_resized.png",
         toLink: "https://www.latimes.com/projects/la-fi-power-companies-ranked-climate-change/",
         title: "Which power companies are the worst polluters?",
         organization: "Los Angeles Times",
@@ -261,7 +261,7 @@ const data = [
         include: "false"
     },
     {
-        imageLink: "earthquake.png",
+        imageLink: "earthquake_resized.png",
         toLink: "https://www.latimes.com/projects/california-earthquake-fault-map/",
         title: "What would a powerful earthquake feel like where you live?",
         organization: "Los Angeles Times",

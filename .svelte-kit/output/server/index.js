@@ -1,11 +1,10 @@
-import { a as assets, b as base, c as app_dir, p as public_env, s as safe_public_env, o as override, r as reset, d as read_implementation, e as options, g as get_hooks, f as set_private_env, h as prerendering, i as set_public_env, j as set_safe_public_env, k as set_read_implementation } from "./chunks/internal.js";
+import { a as assets, b as base, c as app_dir, p as public_env, s as safe_public_env, r as reset, d as read_implementation, o as options, g as get_hooks, e as set_private_env, f as prerendering, h as set_public_env, i as set_safe_public_env, j as set_read_implementation } from "./chunks/internal.js";
 import * as devalue from "devalue";
 import { m as make_trackable, d as disable_search, a as decode_params, v as validate_layout_server_exports, b as validate_layout_exports, c as validate_page_server_exports, e as validate_page_exports, n as normalize_path, r as resolve, f as decode_pathname, g as validate_server_exports } from "./chunks/exports.js";
 import { n as noop, s as safe_not_equal } from "./chunks/ssr.js";
 import { parse, serialize } from "cookie";
 import * as set_cookie_parser from "set-cookie-parser";
 const BROWSER = false;
-const SVELTE_KIT_ASSETS = "/_svelte_kit_assets";
 const ENDPOINT_METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"];
 const PAGE_METHODS = ["GET", "POST", "HEAD"];
 function negotiate(accept, types) {
@@ -634,18 +633,6 @@ function b64_encode(buffer) {
       new Uint16Array(new Uint8Array(buffer))
     )
   );
-}
-function get_relative_path(from, to) {
-  const from_parts = from.split(/[/\\]/);
-  const to_parts = to.split(/[/\\]/);
-  from_parts.pop();
-  while (from_parts[0] === to_parts[0]) {
-    from_parts.shift();
-    to_parts.shift();
-  }
-  let i = from_parts.length;
-  while (i--) from_parts[i] = "..";
-  return from_parts.concat(to_parts).join("/");
 }
 async function load_server_data({ event, state, node, parent }) {
   if (!node?.server) return null;
@@ -1443,7 +1430,7 @@ function exec(match, params, matchers) {
 }
 function generate_route_object(route, url, manifest) {
   const { errors, layouts, leaf } = route;
-  const nodes = [...errors, ...layouts.map((l) => l?.[1]), leaf[1]].filter((n) => typeof n === "number").map((n) => `'${n}': () => ${create_client_import(manifest._.client.nodes?.[n], url)}`).join(",\n		");
+  const nodes = [...errors, ...layouts.map((l) => l?.[1]), leaf[1]].filter((n) => typeof n === "number").map((n) => `'${n}': () => ${create_client_import(manifest._.client.nodes?.[n])}`).join(",\n		");
   return [
     `{
 	id: ${s(route.id)}`,
@@ -1464,9 +1451,9 @@ function create_client_import(import_path, url) {
   if (assets !== "") {
     return `import('${assets}/${import_path}')`;
   }
-  let path = get_relative_path(url.pathname, `${base}/${import_path}`);
-  if (path[0] !== ".") path = `./${path}`;
-  return `import('${path}')`;
+  {
+    return `import('${base}/${import_path}')`;
+  }
 }
 async function resolve_route(resolved_path, url, manifest) {
   if (!manifest._.client.routes) {
@@ -1513,8 +1500,7 @@ function create_css_import(route, url, manifest) {
   if (!css) return "";
   return `${create_client_import(
     /** @type {string} */
-    manifest._.client.start,
-    url
+    manifest._.client.start
   )}.then(x => x.load_css([${css}]));`;
 }
 const updated = {
@@ -1554,18 +1540,6 @@ async function render_response({
   let base$1 = base;
   let assets$1 = assets;
   let base_expression = s(base);
-  {
-    if (!state.prerendering?.fallback) {
-      const segments = event.url.pathname.slice(base.length).split("/").slice(2);
-      base$1 = segments.map(() => "..").join("/") || ".";
-      base_expression = `new URL(${s(base$1)}, location).pathname.slice(0, -1)`;
-      if (!assets || assets[0] === "/" && assets !== SVELTE_KIT_ASSETS) {
-        assets$1 = base$1;
-      }
-    } else if (options2.hash_routing) {
-      base_expression = "new URL('.', location).pathname.slice(0, -1)";
-    }
-  }
   if (page_config.ssr) {
     const props = {
       stores: {
@@ -1601,7 +1575,6 @@ async function render_response({
       form: form_value,
       state: {}
     };
-    override({ base: base$1, assets: assets$1 });
     const render_opts = {
       context: /* @__PURE__ */ new Map([
         [

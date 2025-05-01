@@ -7,14 +7,24 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
+			fallback: 'fallback.html',
 			precompress: false,
 			strict: true
 		}),
 		paths: {
-			base: ''
+			base: process.env.NODE_ENV === 'production' ? '/zachlevitt.github.io' : '',
+			relative: false
 		},
-		appDir: 'app'
+		appDir: 'app',
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// ignore all 404s
+				if (message.includes('404')) {
+					return;
+				}
+				throw new Error(message);
+			}
+		}
 	},
 	preprocess: vitePreprocess()
 };

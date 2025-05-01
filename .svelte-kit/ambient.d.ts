@@ -78,7 +78,6 @@ declare module '$env/static/private' {
 	export const npm_config_npm_version: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
-	export const NODE_ENV: string;
 	export const GDAL_DATA: string;
 	export const ARTIFACTORY_ACCESS_TOKEN: string;
 	export const npm_config_node_gyp: string;
@@ -89,7 +88,6 @@ declare module '$env/static/private' {
 	export const SHLVL: string;
 	export const HOME: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
-	export const npm_config_loglevel: string;
 	export const HOMEBREW_PREFIX: string;
 	export const npm_config_cache: string;
 	export const CONDA_PYTHON_EXE: string;
@@ -107,6 +105,7 @@ declare module '$env/static/private' {
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
+	export const NODE_ENV: string;
 }
 
 /**
@@ -190,7 +189,6 @@ declare module '$env/dynamic/private' {
 		npm_config_npm_version: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
-		NODE_ENV: string;
 		GDAL_DATA: string;
 		ARTIFACTORY_ACCESS_TOKEN: string;
 		npm_config_node_gyp: string;
@@ -201,7 +199,6 @@ declare module '$env/dynamic/private' {
 		SHLVL: string;
 		HOME: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
-		npm_config_loglevel: string;
 		HOMEBREW_PREFIX: string;
 		npm_config_cache: string;
 		CONDA_PYTHON_EXE: string;
@@ -219,6 +216,7 @@ declare module '$env/dynamic/private' {
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;
+		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

@@ -20,12 +20,12 @@ jobs:
         run: npm install
         
       - name: Build
-        run: npm run build
+        run: NODE_ENV=production npm run build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: 'build'
 
   deploy:
     needs: build

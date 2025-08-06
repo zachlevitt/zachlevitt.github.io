@@ -9,7 +9,7 @@
 
 <section>
   <h1 class="heading">Zach Levitt</h1>
-  <p class="bio-text">Hello, I'm currently making maps and interactive graphics at the <a href="https://www.nytimes.com/by/zach-levitt">New York Times</a>. Previously, I worked at the <a href="https://www.washingtonpost.com/people/zach-levitt/">Washington Post</a>, <a href="https://www.npr.org/people/966348865/zach-levitt" target="_blank">NPR</a> and the <a href="https://www.latimes.com/people/zach-levitt">Los Angeles Times</a>. I have a background in cartographic design, geospatial analysis and front-end development.</p>
+  <p class="bio-text">Hello, I'm currently making maps and interactive graphics at the <a href="https://www.nytimes.com/by/zach-levitt">New York Times</a>. Previously, I worked at the <a href="https://www.washingtonpost.com/people/zach-levitt/">Washington Post</a>, <a href="https://www.npr.org/people/966348865/zach-levitt" target="_blank">NPR</a> and the <a href="https://www.latimes.com/people/zach-levitt">Los Angeles Times</a>. I have a background in software development, cartographic design, geospatial analysis and data visualization.</p>
   <p class="bio-text">Please be in touch via levittzach [at] gmail</p>
   <p class="bio-text">Here are some selected stories I have worked on:</p>
 </section>

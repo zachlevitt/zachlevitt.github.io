@@ -1,6 +1,20 @@
 // Project data
 const data = [
     {
+        title: "How Louisiana Built Trump’s Busiest Deportation Hub",
+        toLink: "https://www.nytimes.com/interactive/2025/07/31/us/ice-deportation-hub-alexandria-louisiana.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "louisiana.jpg"
+    },
+    {
+        title: "What Visual and Audio Evidence Reveals About the Air India Crash",
+        toLink: "https://www.nytimes.com/interactive/2025/06/27/world/asia/air-india-crash-cause.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "air-india.jpg"
+    },
+    {
         title: "Where Federal Dollars Flow to Universities Around the Country",
         toLink: "https://www.nytimes.com/interactive/2025/04/30/us/university-funding-research.html",
         include: "true",

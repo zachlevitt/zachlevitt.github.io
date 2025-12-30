@@ -8,11 +8,12 @@ const data = [
         imageLink: "ice.jpg"
     },
     {
-        title: "The Real-World Costs of the Digital Race for Bitcoin",
-        toLink: "https://www.nytimes.com/2023/04/09/business/bitcoin-mining-electricity-pollution.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "bitcoin_resized_smaller.png"
+        imageLink: "urbanGrowth.jpg",
+        toLink: "https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/",
+        title: "Where America's developed areas are growing",
+        organization: "Washington Post",
+        tools: "Mapbox, ai2html, HTML/CSS, JavaScript, React, QGIS",
+        include: "true"
     },
 
     {
@@ -23,6 +24,13 @@ const data = [
         imageLink: "carlisle_resized_smaller.png"
     },
     {
+        title: "See the Voting Groups That Swung to the Right in the 2024 Vote",
+        toLink: "https://www.nytimes.com/interactive/2024/11/06/us/elections/trump-america-red-shift-victory.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "voting-groups.png"
+    },
+    {
         imageLink: "disasters2021_resized.png",
         toLink: "https://www.washingtonpost.com/nation/interactive/2021/weather-disasters-2021/",
         title: "Cold, heat, fires, hurricanes and tornadoes: The year in weather disasters",
@@ -31,12 +39,18 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "urbanGrowth_resized.png",
-        toLink: "https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/",
-        title: "Where America's developed areas are growing",
-        organization: "Washington Post",
-        tools: "Mapbox, ai2html, HTML/CSS, JavaScript, React, QGIS",
-        include: "true"
+        title: "The Monsoon Is Becoming More Extreme",
+        toLink: "https://www.nytimes.com/interactive/2022/10/04/climate/south-asia-monsoon-climate-change.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "monsoon_resized_smaller.png"
+    },
+    {
+        title: "The Real-World Costs of the Digital Race for Bitcoin",
+        toLink: "https://www.nytimes.com/2023/04/09/business/bitcoin-mining-electricity-pollution.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "bitcoin_resized_smaller.png"
     },
     {
         title: "How Louisiana Built Trump’s Busiest Deportation Hub",
@@ -51,13 +65,6 @@ const data = [
         include: "true",
         organization: "New York Times",
         imageLink: "la-fire-damage_resized.jpg"
-    },
-    {
-        title: "The Monsoon Is Becoming More Extreme",
-        toLink: "https://www.nytimes.com/interactive/2022/10/04/climate/south-asia-monsoon-climate-change.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "monsoon_resized_smaller.png"
     },
     {
         title: "Extreme Weather Maps: Track the Risks for Your Places",
@@ -114,13 +121,6 @@ const data = [
         include: "true",
         organization: "New York Times",
         imageLink: "nyc-votes.jpg"
-    },
-    {
-        title: "See the Voting Groups That Swung to the Right in the 2024 Vote",
-        toLink: "https://www.nytimes.com/interactive/2024/11/06/us/elections/trump-america-red-shift-victory.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "voting-groups.png"
     },
     {
         title: "What Visual and Audio Evidence Reveals About the Air India Crash",

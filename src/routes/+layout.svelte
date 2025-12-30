@@ -18,6 +18,7 @@
     margin-right:20px;
     max-width: 1600px;
     margin: auto;
+    background-color: white;
   }
 
   /* :global(a) {

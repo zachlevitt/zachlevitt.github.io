@@ -1,6 +1,6 @@
 import { c as create_ssr_component } from "../../chunks/ssr.js";
 const css = {
-  code: "body{font-family:'Helvetica', 'Arial', sans-serif;margin:0}.page-wrapper{width:calc(100% - 40px);margin-left:20px;margin-right:20px;max-width:1600px;margin:auto}",
+  code: "body{font-family:'Helvetica', 'Arial', sans-serif;margin:0}.page-wrapper{width:calc(100% - 40px);margin-left:20px;margin-right:20px;max-width:1600px;margin:auto;background-color:white}",
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {

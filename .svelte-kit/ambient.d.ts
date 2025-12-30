@@ -28,10 +28,12 @@
 declare module '$env/static/private' {
 	export const NVM_INC: string;
 	export const PROJ_LIB: string;
+	export const VSCODE_GIT_IPC_AUTH_TOKEN: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
 	export const NVM_CD_FLAGS: string;
+	export const ANDROID_HOME: string;
 	export const TERM: string;
 	export const SHELL: string;
 	export const HOMEBREW_REPOSITORY: string;
@@ -48,6 +50,7 @@ declare module '$env/static/private' {
 	export const COLOR: string;
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
+	export const LC_ALL: string;
 	export const ZSH: string;
 	export const NVM_DIR: string;
 	export const USER: string;
@@ -65,6 +68,7 @@ declare module '$env/static/private' {
 	export const GSETTINGS_SCHEMA_DIR: string;
 	export const npm_package_json: string;
 	export const _: string;
+	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
 	export const USER_ZDOTDIR: string;
@@ -72,6 +76,7 @@ declare module '$env/static/private' {
 	export const __CFBundleIdentifier: string;
 	export const npm_command: string;
 	export const PWD: string;
+	export const JAVA_HOME: string;
 	export const npm_lifecycle_event: string;
 	export const EDITOR: string;
 	export const npm_package_name: string;
@@ -103,6 +108,7 @@ declare module '$env/static/private' {
 	export const GIT_ASKPASS: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+	export const SECURITYSESSIONID: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -140,10 +146,12 @@ declare module '$env/dynamic/private' {
 	export const env: {
 		NVM_INC: string;
 		PROJ_LIB: string;
+		VSCODE_GIT_IPC_AUTH_TOKEN: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
 		NVM_CD_FLAGS: string;
+		ANDROID_HOME: string;
 		TERM: string;
 		SHELL: string;
 		HOMEBREW_REPOSITORY: string;
@@ -160,6 +168,7 @@ declare module '$env/dynamic/private' {
 		COLOR: string;
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
+		LC_ALL: string;
 		ZSH: string;
 		NVM_DIR: string;
 		USER: string;
@@ -177,6 +186,7 @@ declare module '$env/dynamic/private' {
 		GSETTINGS_SCHEMA_DIR: string;
 		npm_package_json: string;
 		_: string;
+		LaunchInstanceID: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
 		USER_ZDOTDIR: string;
@@ -184,6 +194,7 @@ declare module '$env/dynamic/private' {
 		__CFBundleIdentifier: string;
 		npm_command: string;
 		PWD: string;
+		JAVA_HOME: string;
 		npm_lifecycle_event: string;
 		EDITOR: string;
 		npm_package_name: string;
@@ -215,6 +226,7 @@ declare module '$env/dynamic/private' {
 		GIT_ASKPASS: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+		SECURITYSESSIONID: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;

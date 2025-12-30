@@ -1,6 +1,44 @@
 // Project data
 const data = [
     {
+        title: "The Complex Deportation Network Behind Trump’s Immigration Crackdown",
+        toLink: "https://www.nytimes.com/interactive/2025/12/22/us/trump-immigration-deportation-network-ice-arrests.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "ice.jpg"
+    },
+    {
+        title: "The Real-World Costs of the Digital Race for Bitcoin",
+        toLink: "https://www.nytimes.com/2023/04/09/business/bitcoin-mining-electricity-pollution.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "bitcoin_resized_smaller.png"
+    },
+
+    {
+        title: "'War Against the Children'",
+        toLink: "https://www.nytimes.com/interactive/2023/08/30/us/native-american-boarding-schools.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "carlisle_resized_smaller.png"
+    },
+    {
+        imageLink: "disasters2021_resized.png",
+        toLink: "https://www.washingtonpost.com/nation/interactive/2021/weather-disasters-2021/",
+        title: "Cold, heat, fires, hurricanes and tornadoes: The year in weather disasters",
+        organization: "Washington Post",
+        tools: "JavaScript (React), HTML/CSS, QGIS, Illustrator, GDAL, ffmpeg",
+        include: "true"
+    },
+    {
+        imageLink: "urbanGrowth_resized.png",
+        toLink: "https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/",
+        title: "Where America's developed areas are growing",
+        organization: "Washington Post",
+        tools: "Mapbox, ai2html, HTML/CSS, JavaScript, React, QGIS",
+        include: "true"
+    },
+    {
         title: "How Louisiana Built Trump’s Busiest Deportation Hub",
         toLink: "https://www.nytimes.com/interactive/2025/07/31/us/ice-deportation-hub-alexandria-louisiana.html",
         include: "true",
@@ -8,11 +46,25 @@ const data = [
         imageLink: "louisiana.jpg"
     },
     {
-        title: "What Visual and Audio Evidence Reveals About the Air India Crash",
-        toLink: "https://www.nytimes.com/interactive/2025/06/27/world/asia/air-india-crash-cause.html",
+        title: "Mapping the Damage in Altadena and Pacific Palisades",
+        toLink: "https://www.nytimes.com/interactive/2025/01/09/us/la-wildfires-damage-photos-map.html",
         include: "true",
         organization: "New York Times",
-        imageLink: "air-india.jpg"
+        imageLink: "la-fire-damage_resized.jpg"
+    },
+    {
+        title: "The Monsoon Is Becoming More Extreme",
+        toLink: "https://www.nytimes.com/interactive/2022/10/04/climate/south-asia-monsoon-climate-change.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "monsoon_resized_smaller.png"
+    },
+    {
+        title: "Extreme Weather Maps: Track the Risks for Your Places",
+        toLink: "https://www.nytimes.com/interactive/2023/us/extreme-weather-forecast-maps.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "extreme-weather.jpg"
     },
     {
         title: "Where Federal Dollars Flow to Universities Around the Country",
@@ -50,13 +102,6 @@ const data = [
         imageLink: "santa-ana-winds.jpg"
     },
     {
-        title: "Mapping the Damage in Altadena and Pacific Palisades",
-        toLink: "https://www.nytimes.com/interactive/2025/01/09/us/la-wildfires-damage-photos-map.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "la-fire-damage_resized.jpg"
-    },
-    {
         title: "Did Republicans Take Washington in a Landslide? Not So Much",
         toLink: "https://www.nytimes.com/interactive/2025/01/16/us/politics/2024-election-washington-gop.html",
         include: "true",
@@ -78,18 +123,18 @@ const data = [
         imageLink: "voting-groups.png"
     },
     {
+        title: "What Visual and Audio Evidence Reveals About the Air India Crash",
+        toLink: "https://www.nytimes.com/interactive/2025/06/27/world/asia/air-india-crash-cause.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "air-india.jpg"
+    },
+    {
         title: "What the Scale of Displacement in Gaza Looks Like",
         toLink: "https://www.nytimes.com/interactive/2023/12/02/world/middleeast/gaza-map-displaced-people.html",
         include: "false",
         organization: "New York Times",
         imageLink: "gaza-displacement_resized.jpg"
-    },
-    {
-        title: "'War Against the Children'",
-        toLink: "https://www.nytimes.com/interactive/2023/08/30/us/native-american-boarding-schools.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "carlisle_resized_smaller.png"
     },
     {
         title: "Where This Summer Was Relentlessly Hot",
@@ -99,25 +144,11 @@ const data = [
         imageLink: "summer-heat.jpg"
     },
     {
-        title: "Extreme Weather Maps: Track the Risks for Your Places",
-        toLink: "https://www.nytimes.com/interactive/2023/us/extreme-weather-forecast-maps.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "extreme-weather.jpg"
-    },
-    {
         title: "Why the West Got Buried in Snow, While the East Got Little",
         toLink: "https://www.nytimes.com/interactive/2023/04/12/us/snow-winter-2023.html",
         include: "true",
         organization: "New York Times",
         imageLink: "snow-winter.jpg"
-    },
-    {
-        title: "The Real-World Costs of the Digital Race for Bitcoin",
-        toLink: "https://www.nytimes.com/2023/04/09/business/bitcoin-mining-electricity-pollution.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "bitcoin_resized_smaller.png"
     },
     {
         title: "Tracking the California Storms",
@@ -127,17 +158,10 @@ const data = [
     },
     {
         title: "Will You Have a White Christmas This Year?",
-        toLink: "https://www.nytimes.com/interactive/2022/12/22/us/white-christmas.html",
+        toLink: "https://www.nytimes.com/interactive/2025/12/22/weather/white-christmas-forecast-2025.html",
         include: "true",
         organization: "New York Times",
         imageLink: "snow_resized_smaller.png"
-    },
-    {
-        title: "The Monsoon Is Becoming More Extreme",
-        toLink: "https://www.nytimes.com/interactive/2022/10/04/climate/south-asia-monsoon-climate-change.html",
-        include: "true",
-        organization: "New York Times",
-        imageLink: "monsoon_resized_smaller.png"
     },
     {
         title: "Vulnerable and Trapped: A Look at Those Lost in Hurricane Ian",
@@ -178,14 +202,6 @@ const data = [
         include: "true"
     },
     {
-        imageLink: "disasters2021_resized.png",
-        toLink: "https://www.washingtonpost.com/nation/interactive/2021/weather-disasters-2021/",
-        title: "Cold, heat, fires, hurricanes and tornadoes: The year in weather disasters",
-        organization: "Washington Post",
-        tools: "JavaScript (React), HTML/CSS, QGIS, Illustrator, GDAL, ffmpeg",
-        include: "true"
-    },
-    {
         imageLink: "census2020_resized.png",
         toLink: "https://www.washingtonpost.com/nation/interactive/2021/census-maps-race-population-demographics/",
         title: "Mapping America's racial population shifts over the last decade",
@@ -207,14 +223,6 @@ const data = [
         title: "Reservoirs are drying up as consequences of the Western drought worsen",
         organization: "Washington Post",
         tools: "Illustrator, ai2html, QGIS",
-        include: "true"
-    },
-    {
-        imageLink: "urbanGrowth_resized.png",
-        toLink: "https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/",
-        title: "Where America's developed areas are growing",
-        organization: "Washington Post",
-        tools: "Mapbox, ai2html, HTML/CSS, JavaScript, React, QGIS",
         include: "true"
     },
     {

@@ -1,0 +1,6 @@
+static/art
+static/.DS_Store
+.DS_Store
+/.svelte-kit
+/build
+/node_modules

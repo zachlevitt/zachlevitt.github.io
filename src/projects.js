@@ -229,7 +229,7 @@ const data = [
         title: "Mapping America's hospitalization and vaccination divide",
         organization: "Washington Post",
         tools: "QGIS, Illustrator, ai2html",
-        include: "true"
+        include: "false"
     },
     {
         imageLink: "reservoirs.png",
@@ -237,7 +237,7 @@ const data = [
         title: "Reservoirs are drying up as consequences of the Western drought worsen",
         organization: "Washington Post",
         tools: "Illustrator, ai2html, QGIS",
-        include: "true"
+        include: "false"
     },
     {
         imageLink: "smoke_resized.png",

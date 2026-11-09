@@ -90,7 +90,7 @@ const data = [
     {
         title: "Where Federal Dollars Flow to Universities Around the Country",
         toLink: "https://www.nytimes.com/interactive/2025/04/30/us/university-funding-research.html",
-        include: "true",
+        include: "false",
         organization: "New York Times",
         imageLink: "university-funding_resized_smaller.png"
     },
@@ -139,7 +139,7 @@ const data = [
     {
         title: "What Visual and Audio Evidence Reveals About the Air India Crash",
         toLink: "https://www.nytimes.com/interactive/2025/06/27/world/asia/air-india-crash-cause.html",
-        include: "true",
+        include: "false",
         organization: "New York Times",
         imageLink: "air-india.jpg"
     },
@@ -213,7 +213,7 @@ const data = [
         title: "Pregnant? Need Help? They Have an Agenda.",
         organization: "New York Times",
         tools: "HTML/CSS, JavaScript, Svelte, QGIS, Illustrator, Mapshaper",
-        include: "true"
+        include: "false"
     },
     {
         imageLink: "census2020_resized.png",
@@ -269,7 +269,7 @@ const data = [
         title: "Here's How The First 2020 Census Results Changed Electoral College, House Seats",
         organization: "NPR",
         tools: "JavaScript (D3), Illustrator",
-        include: "true"
+        include: "false"
     },
 
     {

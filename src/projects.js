@@ -278,7 +278,7 @@ const data = [
         title: "COVID-19 Vaccine Tracker",
         organization: "NPR",
         tools: "JavaScript, D3, Python",
-        include: "true"
+        include: "false"
     },
     {
         imageLink: "npr_hospitalizations.png",
@@ -286,7 +286,7 @@ const data = [
         title: "COVID-19 Hospital Capacity Tracker",
         organization: "NPR",
         tools: "JavaScript, D3, Python",
-        include: "true"
+        include: "false"
     },
     {
         imageLink: "power_resized.png",

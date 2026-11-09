@@ -1,6 +1,20 @@
 // Project data
 const data = [
     {
+        title: "2026 Midterm Election Results",
+        toLink: "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "house.jpg"
+    },
+    {
+        title: "See Trump’s Plan to Fill the Gaps in the Border Wall",
+        toLink: "https://www.nytimes.com/interactive/2026/08/11/us/trump-border-wall-construction.html",
+        include: "true",
+        organization: "New York Times",
+        imageLink: "border.jpg"
+    },
+    {
         title: "The Complex Deportation Network Behind Trump’s Immigration Crackdown",
         toLink: "https://www.nytimes.com/interactive/2025/12/22/us/trump-immigration-deportation-network-ice-arrests.html",
         include: "true",
